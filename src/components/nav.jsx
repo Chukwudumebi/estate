@@ -38,7 +38,7 @@ export default function Nav(){
                  </div>
                 <ul className={` flex  justify-between items-center py-4 md:flex md:items-center top-20 ${open ? "hidden":"block"}`}>
                     {Links.map((link)=>(
-                        <li key={link.name} className="md:ml-8 text-xl rounded border-gray-500 hover:text-4xl hover:scale-100">
+                        <li key={link.name} className=" shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:text-blue-700 ">
                             <a href={link.link} className="text-blue-600 hover:text-blue-500 duration-500 ">{link.name}</a>
                         </li>
                     ))
