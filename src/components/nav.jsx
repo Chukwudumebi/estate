@@ -41,7 +41,7 @@ export default function Nav(){
                     <h4 className="font-bold text-blue-500" >Public_ID:</h4>
                     <div className=" shadow-md rounded py-3 px-2 flex justify-center items-center md:shadow  md:rounded-md md:pd-3 md:px-3 md:py-3 md:flex md:items-center md:gap-2 text-center">
 
-                    <span className="font-bold text-gray-400">#A67777779</span>
+                    <span className="font-bold text-gray-400">839AC125001ADC</span>
                     <AiOutlineCopy className="text-2xl hover:text-blue-700 hover: cursor-pointer"/>
                     </div>
                  </div>
