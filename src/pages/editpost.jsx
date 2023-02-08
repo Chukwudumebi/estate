@@ -1,8 +1,8 @@
-export default function RemovePost(){
+export default function EditPost(){
     return(
         <div style={{marginTop:"160px"}}>
 
-            <h1>Remove post</h1>
+            <h1>Edit post</h1>
         </div>
     )
 }
