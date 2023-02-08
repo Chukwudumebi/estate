@@ -55,7 +55,7 @@ export default function Nav(){
                     }
 
                 </ul>
-                <div className={`${open ? "hidden" :"block"}`}>
+                <div className={` md:block ${open ?  "hidden" :"block"}`}>
                 <NavSearch/>
 
                 </div>
