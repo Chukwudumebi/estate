@@ -1,11 +1,11 @@
 import logo from "../logo.svg"
 import { Link } from "react-router-dom";
-import { AiOutlinePlus,AiOutlineMinus,AiOutlineSearch,AiOutlineMenu ,AiOutlineClose} from "react-icons/ai";
+import { AiOutlinePlus,AiOutlineMinus,AiOutlineCopy,AiOutlineMenu ,AiOutlineClose,AiOutlineLock} from "react-icons/ai";
 import {BiEdit} from "react-icons/bi"
 import Button from "./button";
 import { useState } from "react";
 import NavSearch from "./Navseearch";
-
+import {MdOutlineStoreMallDirectory} from "react-icons/md"
 
 export default function Nav(){
     const [open,setOpen]=useState(true)
@@ -13,9 +13,14 @@ export default function Nav(){
         fontSize:"28px",
     }
    let Links=[
+       {name:<MdOutlineStoreMallDirectory style={style}/>,link:"/"},
     {name:<AiOutlinePlus style={style}/>,link:"/"},
     {name:<AiOutlineMinus style={style}/>,link:"/"},
     {name:<BiEdit style={style}/>,link:"/"},
+    {name:<AiOutlineLock style={style}/>,link:"/"}
+    ,
+
+
 
    ]
 
@@ -32,14 +37,19 @@ export default function Nav(){
                     {open ? 
                     <AiOutlineMenu/>:<AiOutlineClose/>}
                  </div>
-                 <div className={`flex sm:flex flex-col${open ? "hidden":"block"}`}>
-                    <h4 className="font-bold text-blue-500" >Public ID:</h4>
+                 <div className={`flex sm:flex flex-col  ${open ? "hidden":"block"}`}>
+                    <h4 className="font-bold text-blue-500" >Public_ID:</h4>
+                    <div className=" shadow-md rounded py-3 px-2 flex justify-center items-center md:shadow  md:rounded-md md:pd-3 md:px-3 md:py-3 md:flex md:items-center md:gap-2 text-center">
+
                     <span className="font-bold text-gray-400">#A67777779</span>
+                    <AiOutlineCopy className="text-2xl hover:text-blue-700 hover: cursor-pointer"/>
+                    </div>
                  </div>
+                 
                 <ul className={` flex  justify-between items-center py-4 md:flex md:items-center top-20 ${open ? "hidden":"block"}`}>
                     {Links.map((link)=>(
-                        <li key={link.name} className=" shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:text-blue-700 ">
-                            <a href={link.link} className="text-blue-600 hover:text-blue-500 duration-500 ">{link.name}</a>
+                        <li key={link.name} className=" shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  ">
+                            <a href={link.link} className="text-blue-600 hover:text-white duration-500 ">{link.name}</a>
                         </li>
                     ))
                     }

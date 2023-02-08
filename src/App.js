@@ -5,21 +5,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./components/nav";
 
 function App() {
-  const [loading, setisLoading] = useState(true);
-  const spinner = document.getElementById("spinner");
-
-  if (spinner) {
-    setTimeout(() => {
-      spinner.style.display = "none";
-      setisLoading(false);
-    }, 4000);
-  }
   return (
-    !loading && (
-      <div className="App">
-        <Nav />
-      </div>
-    )
+    <div className="App">
+      <Nav />
+    </div>
   );
 }
 
