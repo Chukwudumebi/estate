@@ -3,17 +3,34 @@ import logo from "../logo.svg"
 import { AiOutlinePlus,AiOutlineMinus,AiOutlineCopy,AiOutlineMenu ,AiOutlineClose,AiOutlineLock} from "react-icons/ai";
 import {BiEdit} from "react-icons/bi"
 import Button from "./button";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import NavSearch from "./Navseearch";
 import {MdOutlineStoreMallDirectory} from "react-icons/md"
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
 
 export default function Nav(){
+    
+    const [activeTab,setActiveTab]=useState(true);
     const [open,setOpen]=useState(true)
+    const location = useLocation();
     const style={
         fontSize:"28px",
     }
-  
+    useEffect(() => {
+        if (location.pathname == "/") {
+          setActiveTab("home");
+        } else if (location.pathname == "/AddPost") {
+          setActiveTab("AddPost");
+        } else if (location.pathname == "/RemovePost") {
+          setActiveTab("RemovePost");
+        } else if (location.pathname == "/EditPost") {
+          setActiveTab("EditPost");
+        } else if (location.pathname == "/stores") {
+          setActiveTab("stores");
+        } else if (location.pathname == "/LockPage") {
+          setActiveTab("LockPage");
+        }
+      }, [location]);
 
 
     return(
@@ -21,7 +38,12 @@ export default function Nav(){
             <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
                 <div className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] text-blue-600">
                 <span>
-                    <img src={logo} alt="logo"/></span>
+                  <Link to ="/">
+                  <img src={logo} alt="logo"/>
+
+                  </Link>  
+                  </span>
+
                  </div>
                  <div className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden "
                   onClick={()=>setOpen(!open)}>
@@ -40,8 +62,11 @@ export default function Nav(){
                 <ul className={` flex  justify-between items-center py-4 md:flex md:items-center top-20 ${open ? "hidden":"block"}`}>
                     <Link to="/stores">
 
-                        <li  className=" shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  ">
-                            <a href="#" className="text-blue-600 hover:text-white duration-500 ">
+                        <li  
+                         onClick={() => setActiveTab("stores")}
+                        //  style={{backgroundColor:"dodgerblue"}}
+                        className={` ${activeTab== "stores" ? "md:bg-blue-500":""} shadow-md p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  `}>
+                            <a href="#" className={`text-blue-600 ${activeTab== "stores" ? "text-white":""} hover:text-white duration-500`} >
                             <MdOutlineStoreMallDirectory style={style}/>
                             </a>
                         </li>
@@ -49,8 +74,8 @@ export default function Nav(){
                     </Link>
                      <Link to="/AddPost">
 
-                        <li  className=" shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  ">
-                            <a href="#" className="text-blue-600 hover:text-white duration-500 ">
+                        <li  className={` ${activeTab == "AddPost" ? "md:bg-blue-500" :""} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  `}>
+                            <a href="#" className={`text-blue-600 ${activeTab =="AddPost" ? "text-white" :""} hover:text-white duration-500 `}>
                             <AiOutlinePlus style={style}/>
                             </a>
                         </li>
@@ -58,28 +83,28 @@ export default function Nav(){
                     </Link>
                     <Link to="/RemovePost">
 
-                        <li  className=" shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  ">
-                            <a href="#" className="text-blue-600 hover:text-white duration-500 ">
+                        <li  className={`${ activeTab =="RemovePost" ? "md:bg-blue-500" :""} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  `}>
+                            <a href="#" className={`text-blue-600 ${ activeTab =="RemovePost" ? "text-white":""} hover:text-white duration-500 `}>
                             <AiOutlineMinus style={style}/>
                             </a>
                         </li>
                 
                     </Link>
                     
-                    <Link to="">
+                    <Link to="/EditPost">
 
-                        <li  className=" shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  ">
-                            <a href="#" className="text-blue-600 hover:text-white duration-500 ">
+                        <li  className={`${activeTab =="EditPost" ? "md:bg-blue-500":""} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  `}>
+                            <a href="#" className={`text-blue-600 ${activeTab=="EditPost" ? "text-white" :""} hover:text-white duration-500 `}>
                             <BiEdit style={style}/>
                             </a>
                         </li>
                 
                     </Link>
                     
-                    <Link to="">
+                    <Link to="/LockPage">
 
-                        <li  className=" shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  ">
-                            <a href="#" className="text-blue-600 hover:text-white duration-500 ">
+                        <li  className={`${ activeTab=="LockPage" ? "md:bg-blue-500":""} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]`}>
+                            <a href="#" className={`${activeTab=="LockPage" ? "text-white" :""} text-blue-600 hover:text-white duration-500 `}>
                             <AiOutlineLock style={style}/>
                             </a>
                         </li>
