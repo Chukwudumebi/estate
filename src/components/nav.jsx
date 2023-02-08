@@ -64,8 +64,8 @@ export default function Nav(){
 
                         <li  
                          onClick={() => setActiveTab("stores")}
-                        //  style={{backgroundColor:"dodgerblue"}}
-                        className={` ${activeTab== "stores" ? "md:bg-blue-500":""} shadow-md p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  `}>
+                      
+                        className={` ${activeTab== "stores" ? "bg-blue-500":""} shadow-md p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  `}>
                             <a href="#" className={`text-blue-600 ${activeTab== "stores" ? "text-white":""} hover:text-white duration-500`} >
                             <MdOutlineStoreMallDirectory style={style}/>
                             </a>
@@ -74,7 +74,7 @@ export default function Nav(){
                     </Link>
                      <Link to="/AddPost">
 
-                        <li  className={` ${activeTab == "AddPost" ? "md:bg-blue-500" :""} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  `}>
+                        <li  className={` ${activeTab == "AddPost" ? "bg-blue-500" :""} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  `}>
                             <a href="#" className={`text-blue-600 ${activeTab =="AddPost" ? "text-white" :""} hover:text-white duration-500 `}>
                             <AiOutlinePlus style={style}/>
                             </a>
@@ -83,7 +83,7 @@ export default function Nav(){
                     </Link>
                     <Link to="/RemovePost">
 
-                        <li  className={`${ activeTab =="RemovePost" ? "md:bg-blue-500" :""} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  `}>
+                        <li  className={`${ activeTab =="RemovePost" ? "bg-blue-500" :""} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  `}>
                             <a href="#" className={`text-blue-600 ${ activeTab =="RemovePost" ? "text-white":""} hover:text-white duration-500 `}>
                             <AiOutlineMinus style={style}/>
                             </a>
@@ -93,7 +93,7 @@ export default function Nav(){
                     
                     <Link to="/EditPost">
 
-                        <li  className={`${activeTab =="EditPost" ? "md:bg-blue-500":""} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  `}>
+                        <li  className={`${activeTab =="EditPost" ? "bg-blue-500":""} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  `}>
                             <a href="#" className={`text-blue-600 ${activeTab=="EditPost" ? "text-white" :""} hover:text-white duration-500 `}>
                             <BiEdit style={style}/>
                             </a>
@@ -103,7 +103,7 @@ export default function Nav(){
                     
                     <Link to="/LockPage">
 
-                        <li  className={`${ activeTab=="LockPage" ? "md:bg-blue-500":""} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]`}>
+                        <li  className={`${ activeTab=="LockPage" ? "bg-blue-500":""} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]`}>
                             <a href="#" className={`${activeTab=="LockPage" ? "text-white" :""} text-blue-600 hover:text-white duration-500 `}>
                             <AiOutlineLock style={style}/>
                             </a>
