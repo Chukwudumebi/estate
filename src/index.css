@@ -7,3 +7,18 @@ body{
 .active{
     background-color: dodgerblue;
 }
+.homepage{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+@media(max-width:768px){
+    .homepage{
+        display: flex;
+        flex-direction: column;
+        margin-right: 30px;
+    }
+    .container{
+        text-align: center;
+    }
+}

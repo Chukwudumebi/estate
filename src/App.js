@@ -7,6 +7,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./components/nav";
 import EditPost from "./pages/editpost";
 import LockPage from "./pages/lockpage";
+import Region from "./components/region";
+import Category from "./components/category";
+import Homepage from "./pages/Homepage";
 
 function App() {
   return (
@@ -14,6 +17,7 @@ function App() {
       <Router>
         <Nav />
         <Routes>
+          <Route path="/" element={<Homepage />} />
           <Route path="/AddPost" element={<AddPost />} />
           <Route path="/RemovePost" element={<RemovePost />} />
           <Route path="/stores" element={<Stores />} />
@@ -21,7 +25,6 @@ function App() {
           <Route path="/LockPage" element={<LockPage />} />
         </Routes>
       </Router>
-      <h1 style={{ color: "red", marginTop: "130px" }}>homePage</h1>
     </div>
   );
 }

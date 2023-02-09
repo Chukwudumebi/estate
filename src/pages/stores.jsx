@@ -1,6 +1,6 @@
 export default function Stores(){
     return(
-        <div  style={{marginTop:"170px"}}>
+        <div>
 
             <h1>stores</h1>
         </div>
