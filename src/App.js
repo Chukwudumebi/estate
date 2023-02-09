@@ -10,6 +10,7 @@ import LockPage from "./pages/lockpage";
 import Region from "./components/region";
 import Category from "./components/category";
 import Homepage from "./pages/Homepage";
+import Description from "./components/description";
 
 function App() {
   return (
