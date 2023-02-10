@@ -2,16 +2,23 @@ import { AiOutlinePlus,AiOutlineMinus,AiOutlineCopy,AiOutlineMenu ,AiOutlineClos
 
 
 export default function Footer(){
+    const style={
+        fontSize:"28px",
+    }
     return(
-        <div className="fixed bottom-3 rounded shadow-md flex justify-center items-center">
-            <div className="flex justifty-between items-center">
-            <div className="flex ">
-                <AiOutlineClose/>
-                <AiOutlineLock/>
-                <AiOutlinePlus/>
-                <AiOutlineMinus/>
+        <div className="footer shadow-lg rounded-full">
+            <div className="footer1">
+            <div className="flex justify-between items-center py-2">
+                <AiOutlineClose style={style} className="text-blue-600 mr-4 shadow-lg hover:text-white duration-500" />
+                <AiOutlinePlus style={style}  className="text-blue-600 mr-4 shadow-lg  hover:text-white duration-500"/>
+                <AiOutlineMinus style={style} className="text-blue-600 mr-4 shadow-lg  hover:text-white duration-500" />
+                <AiOutlineMinus style={style} className="text-blue-600 mr-4 shadow-lg hover:text-white duration-500" />
+
             </div>
-            <AiOutlineCopy/>
+            <a href="" className=" shadow-lg">
+
+            <AiOutlineCopy style={style} className="text-blue-600   hover:text-white duration-500" />
+            </a>
             </div>
         </div>
     )

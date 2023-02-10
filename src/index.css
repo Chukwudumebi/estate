@@ -22,7 +22,23 @@ body{
 .price{
     padding:40px;
 }
-
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 15px;
+    width: 100%;
+    z-index: 2;
+    background-color: white;
+    
+}
+.footer1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:130px;
+}
 @media(max-width:768px){
     .homepage{
         display: flex;

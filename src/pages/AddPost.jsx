@@ -96,11 +96,7 @@ export default function AddPost(){
   </form>
   </div>
   
-            {/* <input type="file"  accept="image/"
-            onChange={handleProductImageUpload}/>
-            {productImg ? 
-             <img src={productImg} alt="product"/> : " upload an image"}
-            <h1>Addpost page</h1> */}
+           <div className="m-[10px]"></div>
         </div>
     )
 }
