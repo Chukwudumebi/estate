@@ -41,7 +41,6 @@ function App() {
             <Route path="/Category/Electronics" element={<Electronics />} />
             <Route path="/Category/Construction" element={<Construction />} />
           </Routes>
-          <Footer />
         </Router>
       </div>
     </Provider>

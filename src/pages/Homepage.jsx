@@ -1,6 +1,7 @@
 import Region from "../components/region"
 import Category from "../components/category";
 import Postlist from "./Postlist";
+import Footer from "../components/footer";
 
 export default function Homepage(){
 
@@ -17,6 +18,8 @@ export default function Homepage(){
         </div>
 
         <Postlist/>
+        <Footer/>
+        
       </div>
 
     )

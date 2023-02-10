@@ -36,6 +36,10 @@ export default function Postlist(){
                         
                     </div>
                 </div>
+                <div className="mb">
+          <h1 className="hidden">hdhdhdh</h1>
+        </div>
+
                 </div>
             ))
         }

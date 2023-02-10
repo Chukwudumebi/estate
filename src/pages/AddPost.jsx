@@ -96,7 +96,7 @@ export default function AddPost(){
   </form>
   </div>
   
-           <div className="m-[10px]"></div>
+           
         </div>
     )
 }
