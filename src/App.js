@@ -12,9 +12,13 @@ import Category from "./components/category";
 import Homepage from "./pages/Homepage";
 import Description from "./components/description";
 import { Provider } from "./components/PostContext";
-import Postlist from "./pages/Postlist";
+import Services from "./pages/services";
+import Automotives from "./pages/automotives";
+import Goods from "./pages/goods";
+import Recreational from "./pages/recreational";
+import Electronics from "./pages/Electronics";
+import Construction from "./pages/construction";
 
-// import { Container } from "tailwind-react-ui";
 function App() {
   return (
     <Provider>
@@ -29,7 +33,12 @@ function App() {
             <Route path="/stores" element={<Stores />} />
             <Route path="/EditPost" element={<EditPost />} />
             <Route path="/LockPage" element={<LockPage />} />
-            <Route path="/Category/Services" element={<LockPage />} />
+            <Route path="/Category/Services" element={<Services />} />
+            <Route path="/Category/Goods" element={<Goods />} />
+            <Route path="/Category/Automotives" element={<Automotives />} />
+            <Route path="/Category/Recreational" element={<Recreational />} />
+            <Route path="/Category/Electronics" element={<Electronics />} />
+            <Route path="/Category/Construction" element={<Construction />} />
           </Routes>
         </Router>
       </div>

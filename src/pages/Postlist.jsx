@@ -12,9 +12,9 @@ export default function Postlist(){
                 <div className="mr-6">
                     <img src={postlist.image} alt="item" className=" object-cover  w-[200px] shadow rounded" />           
                 </div>
-                <div className="mr-4">
+                <div className="mr-4 mt-2">
                     <p>{postlist.description}</p>
-                    <p className="font-bold text-xl text-gray-400 m-4"><span className="font-bold text-xl"> Category: </span>  {postlist.category}</p>
+                    <p className="font-bold text-xl text-gray-400 m-2"><span className="font-bold text-xl"> Category: </span>  {postlist.category}</p>
                     <p className="font-bold text-gray-400"> Time Posted: {postlist.time}</p>
                     <p className="font-bold text-gray-400"> Date Posted: {postlist.date}</p>
 
@@ -32,7 +32,7 @@ export default function Postlist(){
                         onClick={()=>{
                             RemovePost(postlist.id)
 
-                        }} className="text-xl  px-6 rounded text-white bg-[dodgerblue]">Remove</button>
+                        }} className="text-xl  px-6 rounded text-white bg-red-500 hover: bg-red-500">Remove</button>
                         
                     </div>
                 </div>

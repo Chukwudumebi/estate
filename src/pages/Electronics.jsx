@@ -1,4 +1,4 @@
-export default function Recreational(){
+export default function Electronics(){
     return(
         <div>
             <h1>Electronics</h1>

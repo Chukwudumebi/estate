@@ -9,6 +9,18 @@ export default function Category(){
         if(selected=="services"){
 
             Navigate(`/Category/${selected}`)
+        }else if(selected =="goods"){
+            Navigate(`/Category/${selected}`)
+            
+        }else if(selected=="construction"){
+            Navigate(`/Category/${selected}`)
+        } else if (selected=="electronics"){
+            Navigate(`/Category/${selected}`)
+        } else if(selected == "recreational"){
+            Navigate(`/Category/${selected}`)
+        } else if (selected == "automotives"){
+            Navigate(`/Category/${selected}`)
+
         }
     },[selected])
 
@@ -20,12 +32,12 @@ export default function Category(){
        onClick={(e)=>setSelected(e.target.value)}>
   <option selected 
   >Choose a Category</option>
-  <option value="Goods">Goods</option>
+  <option value="goods">Goods</option>
   <option value="services">Services</option>
   <option value="construction">construction</option>
-  <option value="Electronics">Electronics</option>
-  <option value="Recreational">Recreational</option>
-  <option value="Automotives">Automotives</option>
+  <option value="electronics">Electronics</option>
+  <option value="recreational">Recreational</option>
+  <option value="automotives">Automotives</option>
 
 </select>
         </div>
