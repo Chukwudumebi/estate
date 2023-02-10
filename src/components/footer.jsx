@@ -3,7 +3,8 @@ import { AiOutlinePlus,AiOutlineMinus,AiOutlineCopy,AiOutlineMenu ,AiOutlineClos
 
 export default function Footer(){
     return(
-        <div className="fixed bottom-[10px] rounded shadow flex justify-between items-center">
+        <div className="fixed bottom-3 rounded shadow-md flex justify-center items-center">
+            <div className="flex justifty-between items-center">
             <div className="flex ">
                 <AiOutlineClose/>
                 <AiOutlineLock/>
@@ -11,6 +12,7 @@ export default function Footer(){
                 <AiOutlineMinus/>
             </div>
             <AiOutlineCopy/>
+            </div>
         </div>
     )
 }
