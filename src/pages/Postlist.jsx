@@ -5,20 +5,19 @@ export default function Postlist(){
     const{Postlist}=useContext(PostContext)
     console.log(Postlist)
     return(
-       <div className="flex justify-center items-center">
+       <div className="flex flex-col md:ml-[250px] md:w-[1000px] md:overflow-auto h-60 mt-[60px]">
         {
             Postlist.map((postlist)=>(
-                <div className="Descc md:flex md:justify-between md:items-center " key={postlist.id}>
-                {/* <div className="object-cover h-48 w-[200px] shadow rounded">
-                    <img src="/logo512.png" alt="item" />
-                </div> */}
-                <div>
+                <div className="Desc mt-4" key={postlist.id}>
+                <div className="mr-6">
                     <img src={postlist.image} alt="item" className=" object-cover  w-[200px] shadow rounded" />           
                 </div>
-                <div>
+                <div className="mr-4">
                     <p>{postlist.description}</p>
-                    <p>{postlist.category}</p>
-                    <p>{postlist.time}</p>
+                    <p className="font-bold text-xl text-gray-400 m-4"><span className="font-bold text-xl"> Category: </span>  {postlist.category}</p>
+                    <p className="font-bold text-gray-400"> Time Posted: {postlist.time}</p>
+                    <p className="font-bold text-gray-400"> Date Posted: {postlist.date}</p>
+
                 </div>
                 <div className="flex justify-evenly items-center">
                     <div className="price text-center">
@@ -28,7 +27,7 @@ export default function Postlist(){
                     </div>
                     <div className="text-center">
                         <h2 className="font-bold text-xl text-gray-500 m-1">Time Left</h2>
-                        <p className="font-bold text-gray-400 m-1">{postlist.timeleft}</p>
+                        <p className="font-bold text-gray-400 m-1">{postlist.timeleft > 1 ? `${postlist.timeleft} Days`:`${postlist.timeleft} Day`}</p>
                         <button className="text-xl invisible px-6 rounded text-white bg-[dodgerblue]">Buy</button>
                         
                     </div>

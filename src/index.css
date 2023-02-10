@@ -16,7 +16,8 @@ body{
 .Desc{
     display:flex;
     align-items: center;
-    justify-content: space-around
+    justify-content: space-evenly;
+    border-bottom: 1px solid gray;
 }
 .price{
     padding:40px;

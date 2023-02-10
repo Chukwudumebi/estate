@@ -21,8 +21,9 @@ function App() {
       <div className="App">
         <Router>
           <Nav />
+
           <Routes>
-            <Route path="/" element={<Postlist />} />
+            <Route path="/" element={<Homepage />} />
             <Route path="/AddPost" element={<AddPost />} />
             <Route path="/RemovePost" element={<RemovePost />} />
             <Route path="/stores" element={<Stores />} />
