@@ -31,7 +31,7 @@ export default function Category(){
        <select id="countries" class="bg-white" 
        onClick={(e)=>setSelected(e.target.value)}>
   <option selected 
-  >Choose a Category</option>
+  >Category</option>
   <option value="goods">Goods</option>
   <option value="services">Services</option>
   <option value="construction">construction</option>

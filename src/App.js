@@ -18,6 +18,7 @@ import Goods from "./pages/goods";
 import Recreational from "./pages/recreational";
 import Electronics from "./pages/Electronics";
 import Construction from "./pages/construction";
+import Footer from "./components/footer";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             <Route path="/Category/Electronics" element={<Electronics />} />
             <Route path="/Category/Construction" element={<Construction />} />
           </Routes>
+          <Footer />
         </Router>
       </div>
     </Provider>
