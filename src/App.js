@@ -11,22 +11,28 @@ import Region from "./components/region";
 import Category from "./components/category";
 import Homepage from "./pages/Homepage";
 import Description from "./components/description";
+import { Provider } from "./components/PostContext";
+import Postlist from "./pages/Postlist";
 
+// import { Container } from "tailwind-react-ui";
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Nav />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/AddPost" element={<AddPost />} />
-          <Route path="/RemovePost" element={<RemovePost />} />
-          <Route path="/stores" element={<Stores />} />
-          <Route path="/EditPost" element={<EditPost />} />
-          <Route path="/LockPage" element={<LockPage />} />
-        </Routes>
-      </Router>
-    </div>
+    <Provider>
+      <div className="App">
+        <Router>
+          <Nav />
+          <Routes>
+            <Route path="/" element={<Postlist />} />
+            <Route path="/AddPost" element={<AddPost />} />
+            <Route path="/RemovePost" element={<RemovePost />} />
+            <Route path="/stores" element={<Stores />} />
+            <Route path="/EditPost" element={<EditPost />} />
+            <Route path="/LockPage" element={<LockPage />} />
+            <Route path="/Category/Services" element={<LockPage />} />
+          </Routes>
+        </Router>
+      </div>
+    </Provider>
   );
 }
 
