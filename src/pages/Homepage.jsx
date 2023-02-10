@@ -8,7 +8,7 @@ export default function Homepage(){
         <div>
         <div className="homepage">
           <h1 className="shadow py-4 px-4 font-bold rounded w-[200px]  mb-3">
-            Username: Kingsley
+            Username: Hamid
           </h1>
           <Region />
           <Category/>

@@ -2,7 +2,7 @@ import { PostContext } from "../components/PostContext"
 
 import{useContext} from "react"
 export default function Postlist(){
-    const{Postlist}=useContext(PostContext)
+    const{Postlist ,RemovePost}=useContext(PostContext)
     console.log(Postlist)
     return(
        <div className="flex flex-col md:ml-[250px] md:w-[1000px] md:overflow-auto h-60 mt-[60px]">
@@ -23,12 +23,16 @@ export default function Postlist(){
                     <div className="price text-center">
                         <h2 className="font-bold text-xl text-gray-500 m-1">Price</h2>
                         <p className="font-bold text-gray-400 m-1">{postlist.price}</p>
-                        <button className="text-xl px-6 rounded text-white bg-[dodgerblue]">Buy</button>
+                        <button className="text-xl px-6 rounded text-white bg-[dodgerblue] hover:bg-blue-300">Buy</button>
                     </div>
                     <div className="text-center">
                         <h2 className="font-bold text-xl text-gray-500 m-1">Time Left</h2>
                         <p className="font-bold text-gray-400 m-1">{postlist.timeleft > 1 ? `${postlist.timeleft} Days`:`${postlist.timeleft} Day`}</p>
-                        <button className="text-xl invisible px-6 rounded text-white bg-[dodgerblue]">Buy</button>
+                        <button 
+                        onClick={()=>{
+                            RemovePost(postlist.id)
+
+                        }} className="text-xl  px-6 rounded text-white bg-[dodgerblue]">Remove</button>
                         
                     </div>
                 </div>
