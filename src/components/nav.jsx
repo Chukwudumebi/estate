@@ -7,15 +7,18 @@ import { useState ,useEffect} from "react";
 import NavSearch from "./Navseearch";
 import {MdOutlineStoreMallDirectory} from "react-icons/md"
 import { Link,useLocation } from "react-router-dom";
-
+import { CopyToClipboard } from "react-copy-to-clipboard";
 export default function Nav(){
     
     const [activeTab,setActiveTab]=useState(true);
     const [open,setOpen]=useState(true)
     const location = useLocation();
+    const[key,setKeys]=useState("A46E12347k")
+    const[copy,setCopied]=useState(false)
     const style={
         fontSize:"28px",
     }
+    
     useEffect(() => {
         if (location.pathname == "/") {
           setActiveTab("home");
@@ -31,7 +34,7 @@ export default function Nav(){
           setActiveTab("LockPage");
         }
       }, [location]);
-
+  console.log(copy)
 
     return(
         <div className="shadow-md w-full sticky top-0 left-0 mb-10">
@@ -51,11 +54,17 @@ export default function Nav(){
                     <AiOutlineMenu/>:<AiOutlineClose/>}
                  </div>
                  <div className={`flex text-center sm:flex flex-col  ${open ? "hidden":"block"}`}>
-                    <h4 className="font-bold text-blue-500" >Public_ID:</h4>
+                   <h4 className="font-bold text-blue-500" >Public_ID:</h4>
                     <div className=" shadow-md rounded py-3 px-2 flex justify-center items-center md:shadow  md:rounded-md md:pd-3 md:px-3 md:py-3 md:flex md:items-center md:gap-2 text-center">
 
-                    <span className="font-bold text-gray-400">839AC125001ADC</span>
-                    <AiOutlineCopy className="text-2xl hover:text-blue-700 hover: cursor-pointer"/>
+                    <span className={`font-bold text-gray-400 ${copy ? "text-black":""}`}>{key}</span>
+                    <CopyToClipboard text={key}
+                    onCopy={()=>setCopied(true)}>
+                  
+                        
+                    <AiOutlineCopy className={`text-2xl ${copy ? "text-blue-600":""} hover:text-blue-700 hover: cursor-pointer`}/>
+                  
+                    </CopyToClipboard>
                     </div>
                  </div>
                  
