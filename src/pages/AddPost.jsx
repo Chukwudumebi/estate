@@ -1,6 +1,7 @@
 import React, { useState,useContext } from "react"
 import { useNavigate } from "react-router-dom";
 import { PostContext } from "../components/PostContext";
+import countries from "../data/Countries.json"
 
 
 export default function AddPost(){
@@ -11,6 +12,7 @@ export default function AddPost(){
     const [timeLeft,setTimeleft]=useState("");
     const [description,setDescription]=useState("");
     const [price,setPrice]=useState("$");
+    const [region,setRegion]=useState("")
 
 
     const handleProductImageUpload=(e)=>{
@@ -45,12 +47,24 @@ export default function AddPost(){
       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="description..."/>
     </div>
     <div className="mb-4">
-      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="price">
         price
       </label>
       <input
       value={price}
       onChange={(e)=>setPrice(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="USD"/>
+    </div>
+    <div className="bg-white shadow appearance-none border text-center w-full py-2 px-3 mb-4 font-bold text-sm rounded-md  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
+    
+    <select className="bg-white border-none focus:border-none" onChange={(e)=>setRegion(e.target.value)}>
+      <option value="0">Choose a region</option>
+      {
+        countries.map((ctr,index)=>(
+          <option key={index} value={ctr.name}>{ctr.name}</option>
+        ))
+      }
+        
+    </select>
     </div>
     <div className="mb-4">
       <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
@@ -85,7 +99,7 @@ export default function AddPost(){
     
       <button 
       onClick={()=>{
-        AddPost(price,timeLeft,productImg,selected,description);
+        AddPost(price,timeLeft,productImg,selected,description,region);
         navigate("/")
         console.log("added")
       }} className="bg-blue-500 hover:bg-blue-700 m-6 w-[200px] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">

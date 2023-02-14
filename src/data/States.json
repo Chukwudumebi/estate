@@ -1,0 +1,13 @@
+[
+    {"id":"1","countryId":"1","name":"Bihar"},
+    {"id":"2","countryId":"1","name":"Karnataka"},
+    {"id":"3","countryId":"1","name":"Chhattisgarh"},
+    {"id":"4","countryId":"1","name":"Rajagthan"},
+    {"id":"5","countryId":"1","name":"Punjab"},
+
+    {"id":"6","countryId":"2","name":"BerdfordShire"},
+    {"id":"7","countryId":"2","name":"Berkshire"},
+    {"id":"8","countryId":"2","name":"Buckingham"},
+    {"id":"9","countryId":"2","name":"Cambridgeshire"},
+    {"id":"10","countryId":"2","name":"Chesire"}
+  ]

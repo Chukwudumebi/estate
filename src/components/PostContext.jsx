@@ -22,6 +22,7 @@ const PostReducer = (state, action) => {
             timeleft:action.time,
             description:action.description,
             image:action.image,
+            region:action.region,
             category:action.category,
             date: new Date().toDateString(),
             time: new Date().toLocaleTimeString(),
@@ -43,8 +44,8 @@ export const Provider = ({ children }) => {
   const [state, dispatch] = useReducer(PostReducer, initialState);
   const value = {
     Postlist: state.Postlist,
-    AddPost: (price,timeLeft,productImg,selected,description) => {
-      dispatch({ type: Actions.Add_post, price: price,time:timeLeft,category:selected,image:productImg,description:description});
+    AddPost: (price,timeLeft,productImg,selected,description,region) => {
+      dispatch({ type: Actions.Add_post, price: price,time:timeLeft,category:selected,region:region,image:productImg,description:description});
     },
     RemovePost: (postId) => {
       dispatch({ type: Actions.Remove_post, payload: postId });

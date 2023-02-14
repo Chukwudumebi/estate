@@ -8,13 +8,15 @@ export default function Postlist(){
        <div className="flex flex-col md:ml-[250px] md:w-[1000px] md:overflow-auto h-60 mt-[60px]">
         {
             Postlist.map((postlist)=>(
-                <div className="Desc mt-4" key={postlist.id}>
+                <div className="Desc border-b border-gray-200 mt-4" key={postlist.id}>
                 <div className="mr-6">
-                    <img src={postlist.image} alt="item" className=" object-cover  w-[200px] shadow rounded" />           
+                    <img src={postlist.image} alt="item" className=" object-cover  w-[100px] shadow rounded" />           
                 </div>
                 <div className="mr-4 mt-2">
                     <p>{postlist.description}</p>
                     <p className="font-bold text-xl text-gray-400 m-2"><span className="font-bold text-xl"> Category: </span>  {postlist.category}</p>
+                    <p className="font-bold text-xl text-gray-400 m-2"><span className="font-bold text-xl"> Region: </span>  {postlist.region}</p>
+
                     <p className="font-bold text-gray-400"> Time Posted: {postlist.time}</p>
                     <p className="font-bold text-gray-400"> Date Posted: {postlist.date}</p>
 

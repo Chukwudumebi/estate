@@ -9,11 +9,12 @@ import {MdOutlineStoreMallDirectory} from "react-icons/md"
 import { Link,useLocation } from "react-router-dom";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 export default function Nav(){
-    
+    const Public_ID='A567EF675679ERH5124GHIK4H2348I90A567EF675679ERH5124GHIK4H2348I90'
+    const display=Public_ID.slice(0,9)
     const [activeTab,setActiveTab]=useState(true);
     const [open,setOpen]=useState(true)
     const location = useLocation();
-    const[key,setKeys]=useState("A46E12347k")
+    const[key,setKeys]=useState(display)
     const[copy,setCopied]=useState(false)
     const style={
         fontSize:"28px",
@@ -58,7 +59,7 @@ export default function Nav(){
                     <div className=" shadow-md rounded py-3 px-2 flex justify-center items-center md:shadow  md:rounded-md md:pd-3 md:px-3 md:py-3 md:flex md:items-center md:gap-2 text-center">
 
                     <span className={`font-bold text-gray-400 ${copy ? "text-black":""}`}>{key}</span>
-                    <CopyToClipboard text={key}
+                    <CopyToClipboard text={Public_ID}
                     onCopy={()=>setCopied(true)}>
                   
                         

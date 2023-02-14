@@ -1,0 +1,11 @@
+[
+    {"id":"1","stateId":"1","name":"Bihar"},
+    {"id":"2","stateId":"2","name":"Chhattisgarh"},
+
+    {"id":"4","stateId":"2","name":"Rajagthan"},
+    {"id":"5","stateId":"3","name":"Punjab"},
+    {"id":"3","stateId":"3","name":"Chhattisgarh"},
+    {"id":"4","stateId":"4","name":"Rajagthan"},
+    {"id":"5","stateId":"4","name":"Punjab"}
+
+  ]

@@ -9,16 +9,16 @@ export default function Category(){
         if(selected=="services"){
 
             Navigate(`/Category/${selected}`)
-        }else if(selected =="goods"){
+        }else if(selected ==="goods"){
             Navigate(`/Category/${selected}`)
             
-        }else if(selected=="construction"){
+        }else if(selected==="construction"){
             Navigate(`/Category/${selected}`)
-        } else if (selected=="electronics"){
+        } else if (selected==="electronics"){
             Navigate(`/Category/${selected}`)
-        } else if(selected == "recreational"){
+        } else if(selected === "recreational"){
             Navigate(`/Category/${selected}`)
-        } else if (selected == "automotives"){
+        } else if (selected === "automotives"){
             Navigate(`/Category/${selected}`)
 
         }
