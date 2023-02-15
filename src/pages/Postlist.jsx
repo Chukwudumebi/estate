@@ -95,15 +95,15 @@ export default function Postlist() {
   </Modal>
   <Modal
     show={open}
-    size="md"
+    size="sm"
     popup={true}
-    onClose={()=>setOpen(false)}
-    className="mt-8"
+    onClick={()=>setOpen(false)}
+    
   >
-    <Modal.Header />
-    <Modal.Body className="mt-7">
-        <div className="object-cover text-center">
-      <img src={postlist.image} alt="item" className="w-[330px] h-[300px] rounded ml-5 shadow-lg"/>       
+    
+    <Modal.Body >
+        <div className="object-fill">
+      <img src={postlist.image} alt="item" className="rounded ml-5 shadow-lg"/>       
 
         </div>
 
