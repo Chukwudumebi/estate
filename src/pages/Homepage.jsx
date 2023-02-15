@@ -10,7 +10,7 @@ import provinces from "../data/Provinces.json"
 console.log(countries)
 export default function Homepage(){  
   const [country,setCountries]=useState([]);
-  const[province,setProvince]=useState([]);
+
   useEffect(()=>{
     setCountries(countries)
   },[])

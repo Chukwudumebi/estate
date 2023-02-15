@@ -4,16 +4,21 @@ import { useContext } from "react"
 import { Button } from "flowbite-react";
 import { Modal } from "flowbite-react";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+
 import {HiOutlineExclamationCircle} from "react-icons/hi"
-import { set } from "react-hook-form";
+
 export default function Postlist() {
     const [visible,setVisible]=useState(false);
-    const navigate=useNavigate()
+    const [open,setOpen]=useState(false);
+
+    
 
     const handleModalOpen = () =>{
       setVisible(true)
     }
+    const handlOpen = () =>{
+        setOpen(true)
+      }
     
     const { Postlist, RemovePost } = useContext(PostContext)
     console.log(Postlist)
@@ -22,7 +27,7 @@ export default function Postlist() {
             {
                 Postlist.map((postlist) => (
                     <div className="Desc border-b border-gray-200 mt-4" key={postlist.id}>
-                        <div className="mr-6">
+                        <div className="mr-6" onClick={handlOpen}>
                             <img src={postlist.image} alt="item" className=" object-cover  w-[100px] shadow rounded" />
                         </div>
                         <div className="mr-4 mt-2">
@@ -43,31 +48,28 @@ export default function Postlist() {
                             <div className="text-center">
                                 <h2 className="font-bold text-xl text-gray-500 m-1">Time Left</h2>
                                 <p className="font-bold text-gray-400 m-1">{postlist.timeleft > 1 ? `${postlist.timeleft} Days` : `${postlist.timeleft} Day`}</p>
-                                {/* <button onClick={handleModalOpen}
-                                    className="text-xl  px-6 rounded text-white bg-red-500 hover: bg-red-500">Remove</button>
-                               </div> */}
-                                  <Button 
+                               
+                                  <button
                                 className="text-xl  px-6 rounded text-white bg-red-500 hover: bg-red-500"
 
                                   onClick={handleModalOpen}>
-    Remove
-  </Button>
+                                    Remove
+                                    </button>
+ 
                         </div>
 
-                        <div className="mb">
-                            <h1 className="hidden">hdhdhdh</h1>
-                        </div>
+                      
                         <Modal
     show={visible}
-    size="md"
+    size="sm"
     popup={true}
     onClose={()=>setVisible(false)}
   >
     <Modal.Header />
     <Modal.Body>
-      <div className="text-center">
-        <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14 text-gray-400 dark:text-gray-200" />
-        <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
+      <div className="text-center ">
+        <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14 text-blue-400" />
+        <h3 className="mb-5 text-lg  text-gray-500 dark:text-gray-400 font-bold">
           Are you sure you want to delete this item?
         </h3>
         <div className="flex justify-center gap-4">
@@ -91,8 +93,29 @@ export default function Postlist() {
       </div>
     </Modal.Body>
   </Modal>
+  <Modal
+    show={open}
+    size="md"
+    popup={true}
+    onClose={()=>setOpen(false)}
+    className="mt-8"
+  >
+    <Modal.Header />
+    <Modal.Body className="mt-7">
+        <div className="object-cover text-center">
+      <img src={postlist.image} alt="item" className="w-[330px] h-[300px] rounded ml-5 shadow-lg"/>       
+
+        </div>
+
+       
+    </Modal.Body>
+  </Modal>
   </div>
+  <div className="mb">
+                            <h1 className="hidden">hdhdhdh</h1>
+                        </div>
 </div>
+
 ))}
 
         </div>

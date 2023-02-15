@@ -21,17 +21,17 @@ export default function Nav(){
     }
     
     useEffect(() => {
-        if (location.pathname == "/") {
+        if (location.pathname === "/") {
           setActiveTab("home");
-        } else if (location.pathname == "/AddPost") {
+        } else if (location.pathname === "/AddPost") {
           setActiveTab("AddPost");
-        } else if (location.pathname == "/RemovePost") {
+        } else if (location.pathname === "/RemovePost") {
           setActiveTab("RemovePost");
-        } else if (location.pathname == "/EditPost") {
+        } else if (location.pathname === "/EditPost") {
           setActiveTab("EditPost");
-        } else if (location.pathname == "/stores") {
+        } else if (location.pathname === "/stores") {
           setActiveTab("stores");
-        } else if (location.pathname == "/LockPage") {
+        } else if (location.pathname === "/LockPage") {
           setActiveTab("LockPage");
         }
       }, [location]);

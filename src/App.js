@@ -18,12 +18,7 @@ import Goods from "./pages/goods";
 import Recreational from "./pages/recreational";
 import Electronics from "./pages/Electronics";
 import Construction from "./pages/construction";
-import Footer from "./components/footer";
-import Copy from "./components/copy";
-import Modal from "./components/modal";
-import Postlist from "./pages/Postlist";
-import Modals from "./components/modal";
-import Example from "./components/mode";
+
 
 function App() {
   return (
@@ -46,7 +41,6 @@ function App() {
             <Route path="/Category/Electronics" element={<Electronics />} />
             <Route path="/Category/Construction" element={<Construction />} />
           </Routes>
-          <Modals />
         </Router>
       </div>
     </Provider>
