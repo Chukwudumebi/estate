@@ -65,8 +65,8 @@ export default function Postlist() {
     popup={true}
     onClose={()=>setVisible(false)}
   >
-    <Modal.Header />
-    <Modal.Body>
+    <Modal.Header className="mt-[200px] md:mt-0" />
+    <Modal.Body >
       <div className="text-center ">
         <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14 text-blue-400" />
         <h3 className="mb-5 text-lg  text-gray-500 dark:text-gray-400 font-bold">
@@ -101,11 +101,11 @@ export default function Postlist() {
     
   >
     
-    <Modal.Body >
-        <div className="object-fill">
-      <img src={postlist.image} alt="item" className="rounded ml-5 shadow-lg"/>       
+    <Modal.Body className="p-3 mt-[200px] md:mt-0" >
+    
+      <img src={postlist.image} alt="item" className="object-cover  w-full "/>       
 
-        </div>
+    
 
        
     </Modal.Body>
