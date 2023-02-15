@@ -19,7 +19,7 @@ export default function Region({country,states,provinces}){
 console.log(state)
     return(
       <div className="flex flex-col">
-        <div className="bg-white shadow text-center px-2 w-[200px] mb-3 py-2 font-bold text-sm rounded-md  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
+        <div className="bg-white shadow text-center px-4 w-[200px] mb-3 py-4 font-bold text-sm rounded-md  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
     
 <select className="bg-white border-none focus:border-none" onChange={(e)=>handleCountry(e.target.value)}>
   <option value="0">Choose a region</option>
@@ -34,7 +34,7 @@ console.log(state)
     }
 </select>
 </div>
- {state.length > 1 && <div className="bg-white shadow text-center px-2 w-[200px] mb-3 py-2 font-bold text-sm rounded-md  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
+ {state.length > 1 && <div className="bg-white shadow text-center px-4 w-[200px] mb-3 py-4 font-bold text-sm rounded-md  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
   <select className="bg-white border-none  focus:border-none" onChange={(e)=>handleState(e.target.value)}>
   <option value="0">select state</option>
     {
@@ -48,7 +48,7 @@ console.log(state)
     }
 </select>
 </div>}
-{province.length > 1 && <div className="bg-white shadow text-center px-2 w-[200px] mb-1 py-2 font-bold text-sm rounded-md  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
+{province.length > 1 && <div className="bg-white shadow text-center px-4 w-[200px] mb-1 py-4 font-bold text-sm rounded-md  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
  <select className="bg-white border-none focus:border-none">
   <option value="0">select province</option>
     {
