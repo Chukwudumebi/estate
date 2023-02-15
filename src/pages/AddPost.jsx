@@ -1,7 +1,8 @@
 import React, { useState,useContext } from "react"
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { PostContext } from "../components/PostContext";
 import countries from "../data/Countries.json"
+import {BsArrowLeftCircle} from "react-icons/bs";
 
 
 export default function AddPost(){
@@ -109,7 +110,11 @@ export default function AddPost(){
 
   </form>
   </div>
-  
+  <div className="whatsss rounded-full bg-blue-500 flex justify-center items-center shadow-md w-[60px] h-[60px]">
+        <Link to="/" className=" " >     
+          <BsArrowLeftCircle/>
+        </Link>
+      </div>
            
         </div>
     )

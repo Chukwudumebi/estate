@@ -18,7 +18,7 @@ import Goods from "./pages/goods";
 import Recreational from "./pages/recreational";
 import Electronics from "./pages/Electronics";
 import Construction from "./pages/construction";
-
+import Postlist from "./pages/Postlist";
 
 function App() {
   return (

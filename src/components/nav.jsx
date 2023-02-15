@@ -1,6 +1,6 @@
 import logo from "../logo.svg"
 
-import { AiOutlinePlus,AiOutlineMinus,AiOutlineCopy,AiOutlineMenu ,AiOutlineClose,AiOutlineLock} from "react-icons/ai";
+import { AiOutlinePlus,AiOutlineFundView,AiOutlineMinus,AiOutlineCopy,AiOutlineMenu ,AiOutlineClose,AiOutlineLock} from "react-icons/ai";
 import {BiEdit} from "react-icons/bi"
 import Button from "./button";
 import { useState ,useEffect} from "react";
@@ -116,6 +116,16 @@ export default function Nav(){
                         <li  className={`${ activeTab=="LockPage" ? "bg-blue-500":""} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]`}>
                             <a href="#" className={`${activeTab=="LockPage" ? "text-white" :""} text-blue-600 hover:text-white duration-500 `}>
                             <AiOutlineLock style={style}/>
+                            </a>
+                        </li>
+                
+                    </Link>
+                    <Link to="/">
+
+                        <li  className={`${ activeTab=="home" ? "bg-blue-500":""} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]`}>
+                            <a href="#" className={`${activeTab=="home" ? "text-white" :""} text-blue-600 hover:text-white duration-500 `}>
+                          
+                            <AiOutlineFundView style={style}/>
                             </a>
                         </li>
                 

@@ -44,6 +44,18 @@ body{
     margin-bottom: 20px;
     background-color: white;
 }
+.whatsss {
+    position: fixed;
+   
+    left: 33px;
+    bottom: 10px;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 40px;
+    z-index:2;
+  }
+ 
 @media(max-width:768px){
     .homepage{
         display: flex;

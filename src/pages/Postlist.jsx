@@ -23,7 +23,7 @@ export default function Postlist() {
     const { Postlist, RemovePost } = useContext(PostContext)
     console.log(Postlist)
     return (    
-        <div className="flex flex-col md:ml-[250px] md:w-[1000px] md:overflow-auto h-60 mt-[60px]">
+        <div className="flex flex-col md:ml-[80px] md:w-[1400px] md:overflow-auto h-60 mt-[60px]">
             {
                 Postlist.map((postlist) => (
                     <div className="Desc border-b border-gray-200 mt-4" key={postlist.id}>
@@ -99,15 +99,9 @@ export default function Postlist() {
     popup={true}
     onClick={()=>setOpen(false)}
     
-  >
-    
+  > 
     <Modal.Body className="p-3 mt-[200px] md:mt-0" >
-    
-      <img src={postlist.image} alt="item" className="object-cover  w-full "/>       
-
-    
-
-       
+      <img src={postlist.image} alt="item" className="object-cover  w-full group-hover:scale-110"/>       
     </Modal.Body>
   </Modal>
   </div>
