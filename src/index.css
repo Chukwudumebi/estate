@@ -55,7 +55,13 @@ body{
     font-size: 40px;
     z-index:2;
   }
- 
+ .image{
+
+   width: 100%;
+   object-fit: cover;
+    height: auto;
+
+ }
 @media(max-width:768px){
     .homepage{
         display: flex;

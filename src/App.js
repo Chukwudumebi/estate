@@ -11,6 +11,8 @@ import Region from "./components/region";
 import Category from "./components/category";
 import Homepage from "./pages/Homepage";
 import Description from "./components/description";
+import Image from "./components/image";
+
 import { Provider } from "./components/PostContext";
 import Services from "./pages/services";
 import Automotives from "./pages/automotives";

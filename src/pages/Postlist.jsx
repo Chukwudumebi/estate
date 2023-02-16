@@ -28,7 +28,7 @@ export default function Postlist() {
                 Postlist.map((postlist) => (
                     <div className="Desc border-b border-gray-200 mt-4" key={postlist.id}>
                         <div className="mr-6" onClick={handlOpen}>
-                            <img src={postlist.image} alt="item" className=" object-cover  w-[100px] shadow rounded" />
+                            <img src={postlist.image} alt="item" className=" object-cover  w-[100px] shadow rounded mb-2" />
                         </div>
                         <div className="mr-4 mt-2">
                             <p>{postlist.description}</p>
@@ -65,10 +65,10 @@ export default function Postlist() {
     popup={true}
     onClose={()=>setVisible(false)}
   >
-    <Modal.Header className="mt-[200px] md:mt-0" />
-    <Modal.Body >
-      <div className="text-center ">
-        <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14 text-blue-400" />
+    {/* <Modal.Header className="mt-[200px] md:mt-0" /> */}
+    <Modal.Body className="mt-[200px] md:mt-0 " >
+      <div className="text-center p-3">
+        <HiOutlineExclamationCircle className="mx-auto m-[20px] h-14 w-14 text-blue-400" />
         <h3 className="mb-5 text-lg  text-gray-500 dark:text-gray-400 font-bold">
           Are you sure you want to delete this item?
         </h3>
@@ -100,8 +100,8 @@ export default function Postlist() {
     onClick={()=>setOpen(false)}
     
   > 
-    <Modal.Body className="p-3 mt-[200px] md:mt-0" >
-      <img src={postlist.image} alt="item" className="object-cover  w-full group-hover:scale-110"/>       
+    <Modal.Body className="p-2 mt-[200px]   flex justify-center items-center  md:mt-0" >
+      <img src={postlist.image} alt="item" className=" object-cover rounded-lg mt-4 w-[600px]  " />       
     </Modal.Body>
   </Modal>
   </div>
