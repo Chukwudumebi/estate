@@ -106,11 +106,9 @@ export default function AddPost(){
       }} className="bg-blue-500 hover:bg-blue-700 m-6 w-[200px] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
         Add Post
       </button>
-    
-
   </form>
   </div>
-  <div className="whatsss rounded-full bg-blue-500 flex justify-center items-center shadow-md w-[60px] h-[60px]">
+  <div className="whatsss rounded-full bg-blue-500 flex justify-center items-center shadow-xl w-[60px] h-[60px] hover:text-black">
         <Link to="/" className=" " >     
           <BsArrowLeftCircle/>
         </Link>

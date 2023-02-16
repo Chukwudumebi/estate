@@ -1,5 +1,6 @@
 import logo from "../logo.svg"
-
+import {TbCurrencyNaira} from "react-icons/tb"
+import { BsCurrencyBitcoin,BsCurrencyDollar,BsCurrencyPound,BsCurrencyYen ,BsCurrencyEuro} from "react-icons/bs";
 import { AiOutlinePlus,AiOutlineFundView,AiOutlineMinus,AiOutlineCopy,AiOutlineMenu ,AiOutlineClose,AiOutlineLock} from "react-icons/ai";
 import {BiEdit} from "react-icons/bi"
 import Button from "./button";
@@ -16,6 +17,8 @@ export default function Nav(){
     const location = useLocation();
     const[key,setKeys]=useState(display)
     const[copy,setCopied]=useState(false)
+    const [currency,setCurrency]=useState("")
+    console.log(currency)
     const style={
         fontSize:"28px",
     }
@@ -68,6 +71,18 @@ export default function Nav(){
                     </CopyToClipboard>
                     </div>
                  </div>
+                 
+                 <div className={`  sm:flex ${open ?"hidden":"block"} bg-white shadow text-center px-4  mt-2  font-bold text-sm rounded-md  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 `}>
+                        <select className=" bg-white border-none focus:border-none" onChange={(e)=>setCurrency(e.target.value)}>
+                          <option value="USD">
+                            USD </option>
+                            <option value="YEN">YEN</option>
+                            <option value="EUR">EUR</option>
+                            <option value="NGN">NGN</option>
+
+                           
+                          </select>
+                        </div>
                  
                 <ul className={` flex  justify-between items-center py-4 md:flex md:items-center top-20 ${open ? "hidden":"block"}`}>
                     <Link to="/stores">
@@ -142,3 +157,4 @@ export default function Nav(){
         </div>
     )
 }
+
