@@ -10,6 +10,7 @@ import {HiOutlineExclamationCircle} from "react-icons/hi"
 export default function Postlist() {
     const [visible,setVisible]=useState(false);
     const [open,setOpen]=useState(false);
+    const [item,setItem]=useState(false)
 
     
 
@@ -30,6 +31,8 @@ export default function Postlist() {
                         <div className="mr-6" onClick={handlOpen}>
                             <img src={postlist.image} alt="item" className=" object-cover  w-[100px] shadow rounded mb-2" />
                         </div>
+
+
                         <div className="mr-4 mt-2">
                             <p>{postlist.description}</p>
                             <p className="font-bold text-xl text-gray-400 m-2"><span className="font-bold text-xl"> Category: </span>  {postlist.category}</p>
@@ -39,13 +42,16 @@ export default function Postlist() {
                             <p className="font-bold text-gray-400"> Date Posted: {postlist.date}</p>
 
                         </div>
+
+
                         <div className="flex justify-evenly items-center">
                             <div className="price text-center">
                                 <h2 className="font-bold text-xl text-gray-500 m-1">Price</h2>
                                 <p className="font-bold text-gray-400 m-1">{postlist.price}</p>
                                 <button className="text-xl px-6 rounded text-white bg-[dodgerblue] hover:bg-blue-300">Buy</button>
                             </div>
-                            <div className="text-center">
+
+                               <div className="text-center">
                                 <h2 className="font-bold text-xl text-gray-500 m-1">Time Left</h2>
                                 <p className="font-bold text-gray-400 m-1">{postlist.timeleft > 1 ? `${postlist.timeleft} Days` : `${postlist.timeleft} Day`}</p>
                                
@@ -55,8 +61,9 @@ export default function Postlist() {
                                   onClick={handleModalOpen}>
                                     Remove
                                     </button>
- 
-                        </div>
+                                </div>
+                           
+                     
 
                       
                         <Modal
@@ -105,14 +112,23 @@ export default function Postlist() {
     </Modal.Body>
   </Modal>
   </div>
-  <div className="mb">
+  <div className="flex justify-center items-center">
+                          <input type="checkbox"
+                          onChange={(e)=>setItem(e.target.checked)}
+                           checked={item}/>
+                           
+                        </div>
+  
+                          <div className="mb">
                             <h1 className="hidden">hdhdhdh</h1>
                         </div>
+                    </div>
+
+))
+}
+
 </div>
 
-))}
-
-        </div>
-
     )
+    
 }
