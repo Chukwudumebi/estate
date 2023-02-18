@@ -57,11 +57,25 @@ export default function Nav(){
                     {open ? 
                     <AiOutlineMenu/>:<AiOutlineClose/>}
                  </div>
-                 <div className={`flex text-center sm:flex flex-col  ${open ? "hidden":"block"}`}>
+                 <div className={`flex flex-col sm:flex flex-col  ${open ? "hidden":"block"}`}>
+                  <h4 className="font-bold text-blue-500">Username:HTP02886</h4>
                    <h4 className="font-bold text-blue-500" >Public_ID:</h4>
                     <div className=" shadow-md rounded py-3 px-2 flex justify-center items-center md:shadow  md:rounded-md md:pd-3 md:px-3 md:py-3 md:flex md:items-center md:gap-2 text-center">
+                       <div>
+                       <p className={`font-bold text-gray-400 ${copy ? "text-black":""}`}>
 
-                    <span className={`font-bold text-gray-400 ${copy ? "text-black":""}`}>{key}</span>
+                      1458DTHET6789123H</p>
+                       <p className={`font-bold text-gray-400 ${copy ? "text-black":""}`}>
+
+                      1458DTHET6789123H</p>
+                      <p className={`font-bold text-gray-400 ${copy ? "text-black":""}`}>
+
+                        1458DTHET6789123H</p>
+                      <p className={`font-bold text-gray-400 ${copy ? "text-black":""}`}>
+
+                        1458DTHET6789123H</p>
+                       </div>
+                      
                     <CopyToClipboard text={Public_ID}
                     onCopy={()=>setCopied(true)}>
                   
@@ -71,6 +85,9 @@ export default function Nav(){
                     </CopyToClipboard>
                     </div>
                  </div>
+                 <button className="font-bold bg-blue-500 text-white rounded-lg p-1 px-2 ">
+                  send
+                 </button>
                  
                  <div className={`  sm:flex ${open ?"hidden":"block"} bg-white shadow text-center px-4  mt-2  font-bold text-sm rounded-md  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 `}>
                         <select className=" bg-white border-none focus:border-none" onChange={(e)=>setCurrency(e.target.value)}>
@@ -79,7 +96,7 @@ export default function Nav(){
                             <option value="YEN">YEN</option>
                             <option value="EUR">EUR</option>
                             <option value="NGN">NGN</option>
-
+ 
                            
                           </select>
                         </div>
