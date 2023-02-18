@@ -62,18 +62,22 @@ export default function Nav(){
                    <h4 className="font-bold text-blue-500" >Public_ID:</h4>
                     <div className=" shadow-md rounded py-3 px-2 flex justify-center items-center md:shadow  md:rounded-md md:pd-3 md:px-3 md:py-3 md:flex md:items-center md:gap-2 text-center">
                        <div>
-                       <p className={`font-bold text-gray-400 ${copy ? "text-black":""}`}>
+                      
+                      <p className={`font-bold text-sm text-gray-400 ${copy ? "text-black":""}`}>
+                           
+                        1458DTHET6789123H1458DTHET678912
+                       </p>
+                      <p className={`font-bold text-sm text-gray-400 ${copy ? "text-black":""}`}>
 
-                      1458DTHET6789123H</p>
-                       <p className={`font-bold text-gray-400 ${copy ? "text-black":""}`}>
-
-                      1458DTHET6789123H</p>
-                      <p className={`font-bold text-gray-400 ${copy ? "text-black":""}`}>
-
-                        1458DTHET6789123H</p>
-                      <p className={`font-bold text-gray-400 ${copy ? "text-black":""}`}>
-
-                        1458DTHET6789123H</p>
+                        1458DTHET6789123H1458DTHET678912</p>
+                        
+                      <p className={`font-bold text-sm text-gray-400 ${copy ? "text-black":""}`}>
+                           
+                           1458DTHET6789123H1458DTHET678912
+                          </p>
+                         <p className={`font-bold text-sm text-gray-400 ${copy ? "text-black":""}`}>
+   
+                           1458DTHET6789123H1458DTHET678912</p>
                        </div>
                       
                     <CopyToClipboard text={Public_ID}
@@ -85,7 +89,7 @@ export default function Nav(){
                     </CopyToClipboard>
                     </div>
                  </div>
-                 <button className="font-bold bg-blue-500 text-white rounded-lg p-1 px-2 ">
+                 <button className="font-bold bg-blue-500 text-white rounded-lg p-1 px-2 mt-3 md:mt-0">
                   send
                  </button>
                  
