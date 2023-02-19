@@ -10,7 +10,8 @@ import {MdOutlineStoreMallDirectory} from "react-icons/md"
 import { Link,useLocation } from "react-router-dom";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 export default function Nav(){
-    const Public_ID='A567EF675679ERH5124GHIK4H2348I90A567EF675679ERH5124GHIK4H2348I90'
+ 
+    const Public_ID="A567EF675679ERH5124GHIK4H2348I90A567EF675679ERH5124GHIK4H2348I90A567EF675679ERH5124GHIK4H2348I90A567EF675679ERH5124GHIK4H2348I90AGH7890657HET"
     const display=Public_ID.slice(0,9)
     const [activeTab,setActiveTab]=useState(true);
     const [open,setOpen]=useState(true)
@@ -65,19 +66,19 @@ export default function Nav(){
                       
                       <p className={`font-bold text-sm text-gray-400 ${copy ? "text-black":""}`}>
                            
-                        1458DTHET6789123H1458DTHET678912
+                        {Public_ID.slice(0,17)}
                        </p>
                       <p className={`font-bold text-sm text-gray-400 ${copy ? "text-black":""}`}>
 
-                        1458DTHET6789123H1458DTHET678912</p>
+                        {Public_ID.slice(17,34)}</p>
                         
                       <p className={`font-bold text-sm text-gray-400 ${copy ? "text-black":""}`}>
                            
-                           1458DTHET6789123H1458DTHET678912
+                          {Public_ID.slice(34,51)}
                           </p>
                          <p className={`font-bold text-sm text-gray-400 ${copy ? "text-black":""}`}>
    
-                           1458DTHET6789123H1458DTHET678912</p>
+                           {Public_ID.slice(51,68)}</p>
                        </div>
                       
                     <CopyToClipboard text={Public_ID}
@@ -89,7 +90,7 @@ export default function Nav(){
                     </CopyToClipboard>
                     </div>
                  </div>
-                 <button className="font-bold bg-blue-500 text-white rounded-lg p-1 px-2 mt-3 md:mt-0">
+                 <button className={`sm:flex ${open ?"hidden" :"block"} font-bold bg-blue-500 text-white rounded-lg p-1 px-2 mt-3 md:mt-0`}>
                   send
                  </button>
                  
