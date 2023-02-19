@@ -9,20 +9,38 @@ import NavSearch from "./Navseearch";
 import {MdOutlineStoreMallDirectory} from "react-icons/md"
 import { Link,useLocation } from "react-router-dom";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { Modal } from "flowbite-react";
+import Search from "./search";
+
 export default function Nav(){
- 
-    const Public_ID="A567EF675679ERH5124GHIK4H2348I90A567EF675679ERH5124GHIK4H2348I90A567EF675679ERH5124GHIK4H2348I90A567EF675679ERH5124GHIK4H2348I90AGH7890657HET"
+    
+  
+  //  1E25A0C7F23601892B34527CF9F0021523415F672345F001925613252F0234A7
+//   F9F2921523415F010A65F23113252F02344E0C7F23601342B1E25A0C7F23642E
+//   23415F672A65C7F23601892B3215234C7F23619256132524F67D982C9A001D89
+  
+
+  const Public_ID="027E5F9358C12A83F0112513252F02344E0C7F1925613252F15F672A65F231821 "
     const display=Public_ID.slice(0,9)
     const [activeTab,setActiveTab]=useState(true);
-    const [open,setOpen]=useState(true)
+    const [open,setOpen]=useState(false);
+    const [visible,setVisible]=useState(false);
     const location = useLocation();
     const[key,setKeys]=useState(display)
     const[copy,setCopied]=useState(false)
     const [currency,setCurrency]=useState("")
-    console.log(currency)
+    
     const style={
         fontSize:"28px",
-    }
+      }
+      
+      const handleModalOpen = () =>{
+        setVisible(true)
+      }
+      const handleOpen = () =>{
+          setOpen(true)
+        }
+
     
     useEffect(() => {
         if (location.pathname === "/") {
@@ -78,7 +96,7 @@ export default function Nav(){
                           </p>
                          <p className={`font-bold text-sm text-gray-400 ${copy ? "text-black":""}`}>
    
-                           {Public_ID.slice(51,68)}</p>
+                           {Public_ID.slice(51,64)}</p>
                        </div>
                       
                     <CopyToClipboard text={Public_ID}
@@ -90,7 +108,7 @@ export default function Nav(){
                     </CopyToClipboard>
                     </div>
                  </div>
-                 <button className={`sm:flex ${open ?"hidden" :"block"} font-bold bg-blue-500 text-white rounded-lg p-1 px-2 mt-3 md:mt-0`}>
+                 <button onClick={handleOpen} className={`sm:flex ${open ? "hidden":"block"} font-bold bg-blue-500 text-white rounded-lg p-1 px-2 mt-3 md:mt-0`}>
                   send
                  </button>
                  
@@ -158,23 +176,27 @@ export default function Nav(){
                 
                     </Link>
                     <Link to="/">
-
                         <li  className={`${ activeTab=="home" ? "bg-blue-500":""} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]`}>
                             <a href="#" className={`${activeTab=="home" ? "text-white" :""} text-blue-600 hover:text-white duration-500 `}>
                           
                             <AiOutlineFundView style={style}/>
                             </a>
-                        </li>
-                
+                        </li>               
                     </Link>
-                    
-                    
-
                 </ul>
                 <div className={` md:block ${open ?  "hidden" :"block"}`}>
                 <NavSearch/>
-
                 </div>
+                <Modal
+            show={open}
+            size="sm"
+            popup={true}
+            onClose={() => setOpen(false)}
+          >
+            <Modal.Body>
+              <Search />
+            </Modal.Body>
+          </Modal>
             </div>
         </div>
     )

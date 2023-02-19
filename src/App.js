@@ -2,6 +2,7 @@ import { useState } from "react";
 import AddPost from "./pages/AddPost";
 import RemovePost from "./pages/removepost";
 import Stores from "./pages/stores";
+import { Modal } from "flowbite-react";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./components/nav";
@@ -21,13 +22,24 @@ import Recreational from "./pages/recreational";
 import Electronics from "./pages/Electronics";
 import Construction from "./pages/construction";
 import Postlist from "./pages/Postlist";
-
+import Search from "./components/search";
 function App() {
+  const [open, setOpen] = useState(true);
+  const [visible, setVisible] = useState(false);
+  const handleModalOpen = () => {
+    setVisible(true);
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
+    console.log("run");
+  };
+
   return (
     <Provider>
       <div className="App">
         <Router>
-          <Nav />
+          <Nav handleOpen={handleOpen} />
 
           <Routes>
             <Route path="/" element={<Homepage />} />
@@ -43,6 +55,16 @@ function App() {
             <Route path="/Category/Electronics" element={<Electronics />} />
             <Route path="/Category/Construction" element={<Construction />} />
           </Routes>
+          <Modal
+            show={open}
+            size="sm"
+            popup={true}
+            onClick={() => setOpen(false)}
+          >
+            <Modal.Body className="mt-[200px] md:mt-0">
+              <Search setVisible={setVisible} />
+            </Modal.Body>
+          </Modal>
         </Router>
       </div>
     </Provider>

@@ -50,56 +50,48 @@ export default function Postlist() {
                                 <p className="font-bold text-gray-400 m-1">{postlist.price}</p>
                                 <button className="text-xl px-6 rounded text-white bg-[dodgerblue] hover:bg-blue-300">Buy</button>
                             </div>
-
-                               <div className="text-center">
+                        <div className="text-center">
                                 <h2 className="font-bold text-xl text-gray-500 m-1">Time Left</h2>
-                                <p className="font-bold text-gray-400 m-1">{postlist.timeleft > 1 ? `${postlist.timeleft} Days` : `${postlist.timeleft} Day`}</p>
-                               
+                                <p className="font-bold text-gray-400 m-1">{postlist.timeleft > 1 ? `${postlist.timeleft} Days` : `${postlist.timeleft} Day`}</p>                              
                                   <button
                                 className="text-xl  px-6 rounded text-white bg-red-500 hover: bg-red-500"
-
                                   onClick={handleModalOpen}>
                                     Remove
                                     </button>
-                                </div>
-                           
-                     
-
-                      
-                        <Modal
-    show={visible}
-    size="sm"
-    popup={true}
-    onClose={()=>setVisible(false)}
-  >
+                                </div>    
+                            <Modal
+                             show={visible}
+                              size="sm"
+                             popup={true}
+                            onClose={()=>setVisible(false)}
+                               >
     {/* <Modal.Header className="mt-[200px] md:mt-0" /> */}
-    <Modal.Body className="mt-[200px] md:mt-0 " >
-      <div className="text-center p-3">
-        <HiOutlineExclamationCircle className="mx-auto m-[20px] h-14 w-14 text-blue-400" />
-        <h3 className="mb-5 text-lg  text-gray-500 dark:text-gray-400 font-bold">
-          Are you sure you want to delete this item?
-        </h3>
-        <div className="flex justify-center gap-4">
-          <Button
-            color="failure"
-            onClick={()=>{
-                RemovePost(postlist.id)
-                setVisible(false)
-
-            }}
-          >
-            Yes, I'm sure
-          </Button>
-          <Button
-            color="gray"
-            onClick={()=>setVisible(false)}
-          >
-            No, cancel
-          </Button>
-        </div>
-      </div>
-    </Modal.Body>
-  </Modal>
+                            <Modal.Body className="mt-[200px] md:mt-0 " >
+                                <div className="text-center p-3">
+                                 <HiOutlineExclamationCircle className="mx-auto m-[20px] h-14 w-14 text-blue-400" />
+                                 <h3 className="mb-5 text-lg  text-gray-500 dark:text-gray-400 font-bold">
+                                   Are you sure you want to delete this item?
+                                   </h3>
+                                  <div className="flex justify-center gap-4">
+                             <Button
+                              color="failure"
+                              onClick={()=>{
+                              RemovePost(postlist.id);
+                              setVisible(false)
+                                  }}
+                                >
+                               Yes, I'm sure
+                             </Button>
+                             <Button
+                              color="gray"
+                              onClick={()=>setVisible(false)}
+                                    >
+                                  No, cancel
+                              </Button>
+                           </div>
+                         </div>
+                      </Modal.Body>
+                   </Modal>
   <Modal
     show={open}
     size="sm"
@@ -112,7 +104,7 @@ export default function Postlist() {
     </Modal.Body>
   </Modal>
   </div>
-  <div className="flex justify-center items-center">
+                       <div className="flex justify-center items-center">
                           <input type="checkbox"
                           onChange={(e)=>setItem(e.target.checked)}
                            checked={item}/>
