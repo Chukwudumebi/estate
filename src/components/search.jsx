@@ -41,8 +41,8 @@ export default function Search({setVisible}){
                 <button
                               onClick={()=>setVisible(false)}
 
-                 className="text-white bg-red-600 rounded border-none shadow-md px-2 py-2">cancel</button>
-                <button className="text-white bg-blue-500 rounded border-none shadow-sm px-4 py-2">send</button>
+                 className="text-white bg-red-600 rounded border-none shadow-md px-2 py-2 hover:transition-all duration-300 hover:bg-red-500 hover:shadow-lg">cancel</button>
+                <button className=" text-white bg-blue-500 rounded border-none shadow-sm px-4 py-2 hover:transition-all duration-300 hover:shadow-lg hover:bg-blue-400">send</button>
 
             </div>
 
