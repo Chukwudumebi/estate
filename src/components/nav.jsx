@@ -37,9 +37,9 @@ export default function Nav(){
       const handleModalOpen = () =>{
         setVisible(true)
       }
-      const handleOpen = () =>{
-          setOpen(true)
-        }
+      // const handleOpen = () =>{
+      //     setOpen(true)
+      //   }
 
     
     useEffect(() => {
@@ -108,7 +108,7 @@ export default function Nav(){
                     </CopyToClipboard>
                     </div>
                  </div>
-                 <button onClick={handleOpen} className={`sm:flex ${open ? "hidden":"block"} font-bold bg-blue-500 text-white rounded-lg p-1 px-2 mt-3 md:mt-0`}>
+                 <button onClick={handleModalOpen} className={`sm:flex ${open ? "hidden":"block"} font-bold bg-blue-500 text-white rounded-lg p-1 px-2 mt-3 md:mt-0`}>
                   send
                  </button>
                  
@@ -188,13 +188,13 @@ export default function Nav(){
                 <NavSearch/>
                 </div>
                 <Modal
-            show={open}
+            show={visible}
             size="sm"
             popup={true}
-            onClose={() => setOpen(false)}
+            onClose={() => setVisible(false)}
           >
-            <Modal.Body>
-              <Search />
+            <Modal.Body className="mt-[200px]">
+              <Search  setVisible={setVisible}/>
             </Modal.Body>
           </Modal>
             </div>
