@@ -55,16 +55,6 @@ function App() {
             <Route path="/Category/Electronics" element={<Electronics />} />
             <Route path="/Category/Construction" element={<Construction />} />
           </Routes>
-          <Modal
-            show={open}
-            size="sm"
-            popup={true}
-            onClick={() => setOpen(false)}
-          >
-            <Modal.Body className="mt-[200px] md:mt-0">
-              <Search setVisible={setVisible} />
-            </Modal.Body>
-          </Modal>
         </Router>
       </div>
     </Provider>
