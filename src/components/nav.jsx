@@ -20,7 +20,7 @@ export default function Nav(){
 //   23415F672A65C7F23601892B3215234C7F23619256132524F67D982C9A001D89
   
 
-  const Public_ID="027E5F9358C12A83F0112513252F02344E0C7F1925613252F15F672A65F231821 "
+  const Public_ID="027E5F9358C12A83F0112513252F02344E0C7F1925613252F15F672A65F23182178 "
     const display=Public_ID.slice(0,9)
     const [activeTab,setActiveTab]=useState(true);
     const [open,setOpen]=useState(false);
@@ -84,19 +84,9 @@ export default function Nav(){
                       
                       <p className={`font-bold text-sm text-gray-400 ${copy ? "text-black":""}`}>
                            
-                        {Public_ID.slice(0,17)}
+                        {`${Public_ID.slice(0,5)}...${Public_ID.slice(-5)}`}
                        </p>
-                      <p className={`font-bold text-sm text-gray-400 ${copy ? "text-black":""}`}>
-
-                        {Public_ID.slice(17,34)}</p>
-                        
-                      <p className={`font-bold text-sm text-gray-400 ${copy ? "text-black":""}`}>
-                           
-                          {Public_ID.slice(34,51)}
-                          </p>
-                         <p className={`font-bold text-sm text-gray-400 ${copy ? "text-black":""}`}>
-   
-                           {Public_ID.slice(51,64)}</p>
+                      
                        </div>
                       
                     <CopyToClipboard text={Public_ID}

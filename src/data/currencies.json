@@ -1,0 +1,43 @@
+{
+
+    "USD":{
+        "symbol":"$",
+        "name":"US Dollar",
+        "symbol_native":"$",
+        "decimal_digits":2,
+        "rounding":0,
+        "code":"USD",
+        "country_code":"US",
+        "name_plural":"US dollars"
+    },
+    "CAD":{
+        "symbol":"CA$",
+        "name":"Canadian Dollar",
+        "symbol_native":"$",
+        "decimal_digits":2,
+        "rounding":0,
+        "code":"CAD",
+        "country_code":"CA",
+        "name_plural":"Canadian dollars"
+    },
+    "EUR":{
+        "symbol":"€",
+        "name":"Euro",
+        "symbol_native":"€",
+        "decimal_digits":2,
+        "rounding":0,
+        "code":"EUR",
+        "country_code":"EUR",
+        "name_plural":"euros"
+    },
+    "ARS":{
+        "symbol":"ARS",
+        "name":"Argentina Peso",
+        "symbol_native":"$",
+        "decimal_digits":2,
+        "rounding":0,
+        "code":"ARS",
+        "country_code":"AR",
+        "name_plural":"Argentina Peso"
+    }
+}

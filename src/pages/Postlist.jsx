@@ -27,7 +27,7 @@ export default function Postlist() {
         <div className="flex flex-col md:ml-[80px] md:w-[1400px] md:overflow-auto h-60 mt-[60px]">
             {
                 Postlist.map((postlist) => (
-                    <div className="Desc border-b border-gray-200 mt-4" key={postlist.id}>
+                    <div className="Desc border-b border-gray-200 mt-4 hover:bg-slate-100 hover:text-white hover:shadow-lg" key={postlist.id}>
                         <div className="mr-6" onClick={handlOpen}>
                             <img src={postlist.image} alt="item" className=" object-cover  w-[100px] shadow rounded mb-2" />
                         </div>
@@ -69,7 +69,7 @@ export default function Postlist() {
                             <Modal.Body className="mt-[200px] md:mt-0 " >
                                 <div className="text-center p-3">
                                  <HiOutlineExclamationCircle className="mx-auto m-[20px] h-14 w-14 text-blue-400" />
-                                 <h3 className="mb-5 text-lg  text-gray-500 dark:text-gray-400 font-bold">
+                                 <h3 className="mb-5 text-lg  text-gray-500 font-bold">
                                    Are you sure you want to delete this item?
                                    </h3>
                                   <div className="flex justify-center gap-4">
@@ -111,7 +111,7 @@ export default function Postlist() {
                            
                         </div>
   
-                          <div className="mb">
+                          <div className="mb hidden">
                             <h1 className="hidden">hdhdhdh</h1>
                         </div>
                     </div>

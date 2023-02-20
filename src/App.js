@@ -23,6 +23,7 @@ import Electronics from "./pages/Electronics";
 import Construction from "./pages/construction";
 import Postlist from "./pages/Postlist";
 import Search from "./components/search";
+import Currency from "./components/currenct";
 function App() {
   const [open, setOpen] = useState(true);
   const [visible, setVisible] = useState(false);
@@ -55,6 +56,7 @@ function App() {
             <Route path="/Category/Electronics" element={<Electronics />} />
             <Route path="/Category/Construction" element={<Construction />} />
           </Routes>
+          <Currency />
         </Router>
       </div>
     </Provider>
