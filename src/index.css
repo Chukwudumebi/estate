@@ -19,6 +19,11 @@ body{
     justify-content: space-evenly;
     
 }
+.details{
+    display: flex;
+    justify-content: space-between;
+    gap:30px
+}
 .price{
     padding:40px;
 }

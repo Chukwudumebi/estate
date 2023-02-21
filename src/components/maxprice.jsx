@@ -3,7 +3,7 @@ import { useState } from "react"
 export default function Maxprice(){
     const[maxprice,setMaxprice]=useState("")
     return(
-        <div className="flex justify-center">
+        <div className="flex justify-center items-center">
 
         <div className="bg-white shadow  px-4 w-[200px] mb-3 py-3 font-bold text-sm rounded-md  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
                         

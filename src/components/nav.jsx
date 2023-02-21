@@ -99,6 +99,8 @@ export default function Nav(){
                     </div>
                   </div>
                  </div>
+
+                 
                  <button onClick={handleModalOpen} className={`sm:flex ${open ? "hidden":"block"} font-bold bg-blue-500 text-white rounded-lg p-1 px-2 mt-3 md:mt-0`}>
                   send
                  </button>
