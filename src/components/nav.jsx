@@ -60,7 +60,7 @@ export default function Nav(){
   console.log(copy)
 
     return(
-        <div className="shadow-md w-full sticky top-0 left-0 mb-10">
+        <div className="shadow-md w-full sticky top-0 left-0 mb-10 z-[20]">
           <div className="border-b bg-white">
           <span className="ml-5">
                   <Link to ="/">
