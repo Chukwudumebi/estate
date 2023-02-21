@@ -6,7 +6,7 @@ export default function Footer(){
         fontSize:"28px",
     }
     return(
-        <div className="footer shadow-lg rounded-full">
+        <div className="footer shadow-lg rounded-full mt-4">
             <div className="footer1">
             <div className="flex justify-between items-center py-2">
                 <AiOutlineClose style={style} className="text-blue-600 mr-4 shadow-lg hover:text-white duration-500" />

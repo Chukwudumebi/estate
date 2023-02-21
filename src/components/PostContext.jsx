@@ -26,6 +26,7 @@ const PostReducer = (state, action) => {
             category:action.category,
             date: new Date().toDateString(),
             time: new Date().toLocaleTimeString(),
+            isChecked:false,
           },
         ],
       };

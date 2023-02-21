@@ -24,11 +24,11 @@ export default function Postlist() {
     const { Postlist, RemovePost } = useContext(PostContext)
     console.log(Postlist)
     return (    
-        <div className="flex flex-col md:ml-[80px] md:w-[1400px] md:overflow-auto h-60 mt-[60px]">
+        <div className="flex flex-col md:ml-[80px] md:w-[1400px] md:overflow-auto h-60 mt-[60px] mb-[80px]">
             {
                 Postlist.map((postlist) => (
-                    <div className="Desc border-b border-gray-200 mt-4 hover:bg-slate-100 hover:text-white hover:shadow-lg" key={postlist.id}>
-                        <div className="mr-6" onClick={handlOpen}>
+                    <div className="Desc border-b border-gray-200  hover:bg-slate-100 hover:text-white hover:shadow-xl" key={postlist.id}>
+                        <div className="mr-6 mt-1" onClick={handlOpen}>
                             <img src={postlist.image} alt="item" className=" object-cover  w-[100px] shadow rounded mb-2" />
                         </div>
 
@@ -104,7 +104,7 @@ export default function Postlist() {
     </Modal.Body>
   </Modal>
   </div>
-                       <div className="flex justify-center items-center">
+                       <div className="flex justify-center items-center mb-2">
                           <input type="checkbox"
                           onChange={(e)=>setItem(e.target.checked)}
                            checked={item}/>
