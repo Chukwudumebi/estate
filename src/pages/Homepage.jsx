@@ -7,24 +7,35 @@ import countries from "../data/Countries.json"
 import states from "../data/States.json"
 import provinces from "../data/Provinces.json"
 import Search from "../components/search";
+import NavSearch from "../components/Navseearch";
+import Maxprice from "../components/maxprice";
+import Privateseller from "../components/privateseller";
 console.log(countries)
 export default function Homepage(){  
   const [country,setCountries]=useState([]);
+  const [post,setPost]=useState(false)
 
   useEffect(()=>{
     setCountries(countries)
   },[])
  
     return(
-        <div>
-        <div className="homepage">
-          <h1 className="shadow py-4 px-4 font-bold rounded w-[200px]  mb-3">
-            Username: Hamid
-          </h1>
+        <div className="top-0 sticky">
+            <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
+         
           <Region country={country} states={states} provinces={provinces}/>
           <Category/>
-          <h1 className="shadow text-center py-4 px-4 w-[200px]  mb-3 pl-6 font-bold rounded">YOURS</h1>
-          <h1 className="shadow  text-center font-bold rounded w-[200px] px-4 py-4 mb-3">PUBLIC</h1>
+          <Privateseller/>
+          <Maxprice/>
+          <div className="flex justify-center items-center mb-2">
+                          <input type="checkbox"
+                          onChange={(e)=>setPost(e.target.checked)}
+                           checked={post}/>
+                           <span className="font-bold ml-2 ">New Post</span>
+                           
+                        </div>
+         
+          <NavSearch/>
         </div>
         
 

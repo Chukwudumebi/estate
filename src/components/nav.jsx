@@ -61,32 +61,32 @@ export default function Nav(){
 
     return(
         <div className="shadow-md w-full sticky top-0 left-0 mb-10">
-            <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
-                <div className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] text-blue-600">
-                <span>
+          <div className="border-b bg-white">
+          <span className="ml-5">
                   <Link to ="/">
                   <img src={logo} alt="logo"/>
-
                   </Link>  
                   </span>
-
-                 </div>
+          </div>
+            <div className="md:flex items-center justify-between bg-white  md:px-10 px-7">
                  <div className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden "
                   onClick={()=>setOpen(!open)}>
                     {open ? 
                     <AiOutlineMenu/>:<AiOutlineClose/>}
                  </div>
                  <div className={`flex flex-col sm:flex flex-col  ${open ? "hidden":"block"}`}>
-                  <h4 className="font-bold text-blue-500">Username:HTP02886</h4>
+                  <h4 className="font-bold text-blue-500 text-center md:flex">Username:HTP02886</h4>
+                  <div className="flex justify-center items-center ">
+
                    <h4 className="font-bold text-blue-500" >Public_ID:</h4>
-                    <div className=" shadow-md rounded py-3 px-2 flex justify-center items-center md:shadow  md:rounded-md md:pd-3 md:px-3 md:py-3 md:flex md:items-center md:gap-2 text-center">
+                    <div className="  py-3 px-2 flex justify-center items-center md:pd-3 md:px-3 md:py-3 md:flex md:items-center md:gap-2 text-center">
                        <div>
                       
                       <p className={`font-bold text-sm text-gray-400 ${copy ? "text-black":""}`}>
-                           
+      
                         {`${Public_ID.slice(0,5)}...${Public_ID.slice(-5)}`}
                        </p>
-                      
+                    
                        </div>
                       
                     <CopyToClipboard text={Public_ID}
@@ -97,6 +97,7 @@ export default function Nav(){
                   
                     </CopyToClipboard>
                     </div>
+                  </div>
                  </div>
                  <button onClick={handleModalOpen} className={`sm:flex ${open ? "hidden":"block"} font-bold bg-blue-500 text-white rounded-lg p-1 px-2 mt-3 md:mt-0`}>
                   send
@@ -108,9 +109,14 @@ export default function Nav(){
                             USD </option>
                             <option value="YEN">YEN</option>
                             <option value="EUR">EUR</option>
-                            <option value="NGN">NGN</option>
- 
-                           
+                            <option value="NGN">NGN</option>                          
+                          </select>
+                        </div>
+                        <div className={`  sm:flex ${open ?"hidden":"block"} bg-white shadow text-center px-4  mt-2  font-bold text-sm rounded-md  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 `}>
+                        <select className=" bg-white border-none focus:border-none" onChange={(e)=>setCurrency(e.target.value)}>
+                          <option value="public">
+                            Public </option>
+                            <option value="NGN">NGN</option>                      
                           </select>
                         </div>
                  
@@ -174,9 +180,7 @@ export default function Nav(){
                         </li>               
                     </Link>
                 </ul>
-                <div className={` md:block ${open ?  "hidden" :"block"}`}>
-                <NavSearch/>
-                </div>
+               
                 <Modal
             show={visible}
             size="sm"
