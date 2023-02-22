@@ -84,7 +84,7 @@ export default function Nav(){
                     <AiOutlineMenu/>:<AiOutlineClose/>}
                  </div> */}
                  <div className={`flex flex-col sm:flex flex-col  ${open ? "hidden":"block"}`}>
-                  <h4 className="font-bold text-blue-500 ml-[85px] md:ml-0  md:flex">Username:HTP02886</h4>
+                  <h4 className="font-bold text-blue-500 ml-[75px] md:ml-0 mt-1 md:flex">Username:HTP02886</h4>
                   <div className="flex justify-center items-center ">
 
                    <h4 className="font-bold text-blue-500" >Public_ID:</h4>
