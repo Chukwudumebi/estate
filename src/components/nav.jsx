@@ -32,7 +32,7 @@ export default function Nav(){
   const Public_ID="027E5F9358C12A83F0112513252F02344E0C7F1925613252F15F672A65F23182178 "
     const display=Public_ID.slice(0,9)
     const [activeTab,setActiveTab]=useState(true);
-    const [open,setOpen]=useState(false);
+    const [open,setOpen]=useState(true);
     const [visible,setVisible]=useState(false);
     const location = useLocation();
     const[key,setKeys]=useState(display)
@@ -78,11 +78,11 @@ export default function Nav(){
                   
           </div>
             <div className="md:flex items-center justify-evenly bg-white  md:px-10 px-7">
-                 {/* <div className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden "
+                  <div className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden "
                   onClick={()=>setOpen(!open)}>
                     {open ? 
                     <AiOutlineMenu/>:<AiOutlineClose/>}
-                 </div> */}
+                 </div> 
                  <div className={`flex flex-col sm:flex flex-col  ${open ? "hidden":"block"}`}>
                   <h4 className="font-bold text-blue-500 ml-[75px] md:ml-0 mt-1 md:flex">Username:HTP02886</h4>
                   <div className="flex justify-center items-center ">
