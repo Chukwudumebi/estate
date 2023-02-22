@@ -2,7 +2,6 @@ import { useState } from "react";
 import select from "react-select";
 import currencies from "../data/currencies.json"
 import CurrencySelect from "./selectCurrency";
-console.log(currencies)
 export default function Currency(){
 const [selectedOption,setSelectedOption]=useState(null)
 const [formatOptions,setFormatOptions]=useState({

@@ -11,8 +11,17 @@ import { Link,useLocation } from "react-router-dom";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Modal } from "flowbite-react";
 import Search from "./search";
-
+import useAxios from "../hooks/useAxios"
 export default function Nav(){
+  const[values,setValue]=useState(null)
+    const [data]=useAxios("https://restcountries.com/v3.1/all");
+
+    const filteredData=data.filter(item=> "currencies" in item)
+    const dataCountries=filteredData.map((item)=>{
+        return `${item.flag} ${Object.keys(item.currencies)[0]}`
+    })  
+    console.log(dataCountries)
+    
     
   
   //  1E25A0C7F23601892B34527CF9F0021523415F672345F001925613252F0234A7
@@ -107,11 +116,10 @@ export default function Nav(){
                  
                  <div className={`  sm:flex ${open ?"hidden":"block"} bg-white shadow text-center px-4  mt-2  font-bold text-sm rounded-md  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 `}>
                         <select className=" bg-white border-none focus:border-none" onChange={(e)=>setCurrency(e.target.value)}>
-                          <option value="USD">
-                            USD </option>
-                            <option value="YEN">YEN</option>
-                            <option value="EUR">EUR</option>
-                            <option value="NGN">NGN</option>                          
+                        {dataCountries.slice(0,11).map((ctr)=>(
+                <option value={ctr} key={ctr}>{ctr}</option>
+            ))          
+        }                        
                           </select>
                         </div>
                         <div className={`  sm:flex ${open ?"hidden":"block"} bg-white shadow text-center px-4  mt-2  font-bold text-sm rounded-md  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 `}>

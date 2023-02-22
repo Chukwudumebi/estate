@@ -10,7 +10,7 @@ import Search from "../components/search";
 import NavSearch from "../components/Navseearch";
 import Maxprice from "../components/maxprice";
 import Privateseller from "../components/privateseller";
-console.log(countries)
+
 export default function Homepage(){  
   const [country,setCountries]=useState([]);
   const [post,setPost]=useState(false)
