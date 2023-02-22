@@ -1,9 +1,16 @@
+import { useState } from "react"
+
+
 export default function Image(){
+    const [files,setFiles]=useState([])
+
+    const handleChange=(e)=>{
+        setFiles(e.target.files)
+    }
     return(
         <center>
-            <div className="w-[300px] h-[300px]">
-                <img src="setup.jpg"/>
-            </div>
+            <input type="file" multiple/>
+            <button>upload</button>
         </center>
     )
 }

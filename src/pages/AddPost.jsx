@@ -45,7 +45,7 @@ export default function AddPost(){
       <textarea 
       value={description}
       onChange={(e)=>setDescription(e.target.value)}
-      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="description..."/>
+      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="description..."  required/>
     </div>
     <div className="mb-4">
       <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="price">
@@ -53,7 +53,7 @@ export default function AddPost(){
       </label>
       <input
       value={price}
-      onChange={(e)=>setPrice(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="USD"/>
+      onChange={(e)=>setPrice(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="USD" required/>
     </div>
     <div className="bg-white shadow appearance-none border text-center w-full py-2 px-3 mb-4 font-bold text-sm rounded-md  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
     
@@ -72,7 +72,7 @@ export default function AddPost(){
         Time left
       </label>
       <input 
-      onChange={(e)=>setTimeleft(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter in Number of Days "/>
+      onChange={(e)=>setTimeleft(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter in Number of Days " required/>
     </div>
     <div className="mb-4">
       <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="image">
@@ -80,7 +80,7 @@ export default function AddPost(){
       </label>
       <input type="file"  accept="image/"
             onChange={handleProductImageUpload}
-       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required/>
     </div>
 
     <select id="countries" className="bg-white" 

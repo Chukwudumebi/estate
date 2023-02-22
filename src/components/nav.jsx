@@ -62,13 +62,13 @@ export default function Nav(){
     return(
         <div className="shadow-md w-full sticky top-0 left-0 mb-10 z-[20]">
           <div className="border-b bg-white">
-          <span className="ml-5">
+          
                   <Link to ="/">
-                  <img src={logo} alt="logo"/>
+                  <img src={logo} alt="logo" className="md:ml-[35px]"/>
                   </Link>  
-                  </span>
+                  
           </div>
-            <div className="md:flex items-center justify-between bg-white  md:px-10 px-7">
+            <div className="md:flex items-center justify-evenly bg-white  md:px-10 px-7">
                  <div className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden "
                   onClick={()=>setOpen(!open)}>
                     {open ? 

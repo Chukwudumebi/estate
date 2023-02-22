@@ -55,6 +55,7 @@ function App() {
             <Route path="/Category/Recreational" element={<Recreational />} />
             <Route path="/Category/Electronics" element={<Electronics />} />
             <Route path="/Category/Construction" element={<Construction />} />
+            <Route path="/multiple" element={<Image />} />
           </Routes>
           <Currency />
         </Router>
