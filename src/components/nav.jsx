@@ -82,7 +82,7 @@ export default function Nav(){
                     <AiOutlineMenu/>:<AiOutlineClose/>}
                  </div> 
                  <div className={`flex flex-col sm:flex flex-col  ${open ? "hidden":"block"}`}>
-                  <h4 className="font-bold text-blue-500 ml-[75px] md:ml-0 mt-1 md:flex">Username:HTP02886</h4>
+                  <h4 className="font-bold text-blue-500 ml-[85px] md:ml-0 mt-1 md:flex">Username:HTP02886</h4>
                   <div className="flex justify-center items-center ">
 
                    <h4 className="font-bold text-blue-500" >Public_ID:</h4>
@@ -107,8 +107,8 @@ export default function Nav(){
                   </div>
                  </div>
 
-                 
-                 <button onClick={handleModalOpen} className={`sm:flex ${open ? "hidden":"block"} font-bold bg-blue-500 text-white rounded-lg p-1 px-2 mt-3 md:mt-0`}>
+                
+                 <button onClick={handleModalOpen} className={`sm:flex ${open ? "hidden":"block"} font-bold bg-blue-500 text-white md:ml-0 ml-[140px] rounded-lg py-2 px-5 mt-3 md:mt-0 shadow-lg hover:bg-blue-400`}>
                   send
                  </button>
                  
