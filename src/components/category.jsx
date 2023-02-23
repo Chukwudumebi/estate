@@ -29,7 +29,7 @@ export default function Category(){
         <div className="flex justify-center">
 
 
-        <div className="bg-white text-center w-[200px] px-4 py-3 justify-center flex items-center  mb-3 shadow font-bold text-sm rounded-md  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
+        <div className="bg-white text-center w-[200px] px-4 py-3 justify-center flex items-center  mb-3 shadow font-bold text-sm rounded-full  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
      <link to={`/Category/${selected}`}></link>
        <select id="countries" class="bg-white" 
        onClick={(e)=>setSelected(e.target.value)}>

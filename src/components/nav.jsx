@@ -20,7 +20,7 @@ export default function Nav(){
     const dataCountries=filteredData.map((item)=>{
         return `${item.flag} ${Object.keys(item.currencies)[0]}`
     })  
-    console.log(dataCountries)
+  console.log(dataCountries)
     
     
   
@@ -66,8 +66,6 @@ export default function Nav(){
           setActiveTab("LockPage");
         }
       }, [location]);
-  console.log(copy)
-
     return(
         <div className="shadow-md w-full sticky top-0 left-0 mb-10 z-[20]">
           <div className="border-b bg-white">
@@ -114,7 +112,7 @@ export default function Nav(){
                   send
                  </button>
                  
-                 <div className={`  sm:flex ${open ?"hidden":"block"} bg-white shadow text-center px-4  mt-2  font-bold text-sm rounded-md  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 `}>
+                 <div className={`  sm:flex ${open ?"hidden":"block"} bg-white shadow text-center px-4  mt-2  font-bold text-sm rounded-full  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 `}>
                         <select className=" bg-white border-none focus:border-none" onChange={(e)=>setCurrency(e.target.value)}>
                         {dataCountries.slice(0,11).map((ctr)=>(
                 <option value={ctr} key={ctr}>{ctr}</option>
@@ -122,11 +120,11 @@ export default function Nav(){
         }                        
                           </select>
                         </div>
-                        <div className={`  sm:flex ${open ?"hidden":"block"} bg-white shadow text-center px-4  mt-2  font-bold text-sm rounded-md  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 `}>
+                        <div className={`  sm:flex ${open ?"hidden":"block"} bg-white shadow text-center px-4  mt-2  font-bold text-sm rounded-full  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 `}>
                         <select className=" bg-white border-none focus:border-none" onChange={(e)=>setCurrency(e.target.value)}>
-                          <option value="public">
+                          <option value="Public">
                             Public </option>
-                            <option value="NGN">NGN</option>                      
+                            <option value="Personal">Personal</option>                                          
                           </select>
                         </div>
                  

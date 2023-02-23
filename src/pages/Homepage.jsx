@@ -31,8 +31,7 @@ export default function Homepage(){
                           <input type="checkbox"
                           onChange={(e)=>setPost(e.target.checked)}
                            checked={post}/>
-                           <span className="font-bold ml-2 ">New Post</span>
-                           
+                           <span className="font-bold ml-2 ">New Post</span>                           
                         </div>
          
           <NavSearch/>

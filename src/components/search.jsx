@@ -6,13 +6,13 @@ export default function Search({setVisible}){
     const [username,setUsername]=useState("HTPO2886")
     const [search,setSearch]=useState("")
     
-    console.log(search)
+
     const searcher=(data)=>{
         return data.filter(item=>item.username.includes(search.toUpperCase()))
 
     }
     const result =searcher(Users)
-    console.log(result)
+
     return(
 
         <div >

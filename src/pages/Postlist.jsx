@@ -33,7 +33,7 @@ export default function Postlist() {
     return (    
         <div className="flex flex-col md:ml-[80px] md:w-[1400px] md:overflow-auto h-60 mt-[60px] mb-[80px]">
             {
-                Postlist.map((postlist) => (
+                Postlist.slice(0,4).map((postlist) => (
                   //image
                     <div div className="Desc border-b border-gray-200  hover:bg-gray-100 hover:text-white hover:shadow-xl" key={postlist.id}>
                         <div className="mr-6 mt-1" onClick={handlOpen}>
@@ -86,15 +86,6 @@ export default function Postlist() {
                         
 
                   </div>
-
-                 
-
-
-
-
-
-
-
                             </div>
 
                           {/* //buttons */}
