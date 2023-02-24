@@ -15,6 +15,7 @@ import useAxios from "../hooks/useAxios"
 import { CurrencyContext } from "../context/CurrencyProvider";
 import { PostContext } from "./PostContext";
 
+
 export default function Nav(){
   const {
     tocurrency,
@@ -122,11 +123,12 @@ export default function Nav(){
                   </div>
                  </div>
 
-                
+               
                  <button onClick={handleModalOpen} className={`sm:flex ${open ? "hidden":"block"} font-bold bg-blue-500 text-white md:ml-0 ml-[140px] rounded-lg py-2 px-5 mt-3 md:mt-0 shadow-lg hover:bg-blue-400`}>
                   send
-                 </button>
-                 
+                 </button> 
+          
+          
                  <div className={`  sm:flex ${open ?"hidden":"block"} bg-white shadow text-center px-4  mt-2  font-bold text-sm rounded-full  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 `}>
                         <select className=" bg-white border-none focus:border-none" onChange={handleSet}>
                           <option value={tocurrency}>{tocurrency}</option>

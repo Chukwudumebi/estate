@@ -24,6 +24,7 @@ import Construction from "./pages/construction";
 import Postlist from "./pages/Postlist";
 import Search from "./components/search";
 import Currency from "./components/currenct";
+import Dialogs from "./components/dialog";
 function App() {
   const [open, setOpen] = useState(true);
   const [visible, setVisible] = useState(false);
@@ -57,7 +58,7 @@ function App() {
             <Route path="/Category/Construction" element={<Construction />} />
             <Route path="/multiple" element={<Image />} />
           </Routes>
-          <Currency />
+          <Dialogs />
         </Router>
       </div>
     </Provider>
