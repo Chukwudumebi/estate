@@ -124,7 +124,7 @@ export default function Nav(){
                  </div>
 
                
-                 <button onClick={handleModalOpen} className={`sm:flex ${open ? "hidden":"block"} font-bold bg-blue-500 text-white md:ml-0 ml-[120px] rounded-lg py-2 px-5 mt-3 md:mt-0 shadow-lg hover:bg-blue-400`}>
+                 <button onClick={handleModalOpen} className={`sm:flex ${open ? "hidden":"block"} font-bold bg-blue-500 text-white md:ml-0 ml-[135px] rounded-lg py-2 px-5 mt-3 md:mt-0 shadow-lg hover:bg-blue-400`}>
                   send
                  </button> 
           
