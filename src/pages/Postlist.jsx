@@ -45,7 +45,7 @@ export default function Postlist() {
       }
       
     const { Postlist, RemovePost } = useContext(PostContext)
-    console.log(Postlist)
+    
     useEffect(()=>{
     if(Postlist){
 
@@ -73,59 +73,45 @@ export default function Postlist() {
          })
  
         })
-
-    return (    
-        <div className="flex flex-col md:ml-[80px] md:w-[1400px] md:overflow-auto h-60 mt-[60px] mb-[80px]">
+      console.log(Postlist)
+    return (  
+      <>
+     { Postlist.length > 0 ?<div className="flex flex-col  md:mt-[120px] mt-[280px] rounded-md bg-white shadow-lg md:ml-[70px] md:w-[1400px] md:overflow-auto h-80 mt-[60px] ">
             {
-                Postlist.slice(0,4).map((postlist) => (
+                Postlist.slice(0,4).map((post) => (
                   //image
-                    <div div className="Desc border-b border-gray-200  hover:bg-gray-100 hover:text-white hover:shadow-xl" key={postlist.id}>
+                    <div key={post.id} className="Desc border-b border-gray-200  hover:bg-slate-100 hover:text-white hover:shadow-xl" >
                         <div className="mr-6 mt-1" onClick={handlOpen}>
-                            <img src={postlist.image} alt="item" className=" object-cover  w-[100px] shadow rounded mb-2" />
+                            <img src={post.image} alt="item" className=" object-cover  w-[100px] shadow rounded mb-2" />
                         </div>
                           {/* // description */}
 
-                        <div className="mr-4 mt-2">
-                            <p>{postlist.description}</p>
-                            <p className="font-bold text-xl text-gray-400 m-2"><span className="font-bold text-xl"> Category: </span>  {postlist.category}</p>
-                            <p className="font-bold text-xl text-gray-400 m-2"><span className="font-bold text-xl"> Region: </span>  {postlist.region}</p>
-                            <p className="font-bold text-gray-400"> Time Posted: {postlist.time}</p>
-                            <p className="font-bold text-gray-400"> Date Posted: {postlist.date}</p>
+                        <div className=" px-2 md:px-8">
+                            <p className="font-bold  text-gray-500">{post.description}</p>
+                            <p className="font-bold  text-gray-500"> Category: {post.category}</p>
+                            <p className="font-bold  text-gray-500">Region: {post.region}</p>
+                            <p className="font-bold text-gray-500"> Time Posted: {post.time}</p>
+                            <p className="font-bold text-gray-500"> Date Posted: {post.date}</p>
                         </div>
                             
                             {/* details */}
                             <div  className="de">
                               <div className="details">
-                                <h3 className="font-bold text-gray-500 ">Price:
-                               
-<span> 
-
-                                  {convert.toFixed(2)}-{tocurrency.split(" ")[1]} 
-                                </span> 
-
-                               
-                                  </h3>
+                                <p className="font-bold text-gray-500 ">Price:
+                                  {convert.toFixed(2)}-{tocurrency.split(" ")[1]}                              
+                                  </p>
                                 <div >
                                   <input type="checkbox" onChange={(e)=>setItem(e.target.checked)}   checked={item}/>
                                      <span className="font-bold text-gray-500 ml-2">Select</span>
                                   </div>
                               </div>
-                               <h3 className="font-bold text-xl m-1 text-gray-500">Delivery Cost <span>$80</span></h3> 
-
-
-
-
-
-
-
-
-
+                               <p className="font-bold  text-gray-500">Delivery Cost <span>$80</span></p>
                                <div className="">
 
                    <div  className="font-bold flex justify-between items-center text-blue-500 mr-4" >
                     <span>Public_ID:</span>
-                     <span className={`font-bold text-sm text-gray-600 ${copy ? "text-black":""}`}>{`${Public_ID.slice(0,7)}...${Public_ID.slice(-5)}`}
-                     </span> 
+                     <p className={`font-bold text-sm text-gray-600 ${copy ? "text-black":""}`}>{`${Public_ID.slice(0,7)}...${Public_ID.slice(-5)}`}
+                     </p> 
                      <CopyToClipboard text={Public_ID}
                     onCopy={()=>setCopied(true)}>
                   
@@ -137,12 +123,12 @@ export default function Postlist() {
                   </div>
                   <div className="flex justify-center items-center gap-5">
 
-                      <h3 className="font-bold text-xl text-gray-500">Seller's Rating 
-                        </h3>
-                        <AiFillStar className="text-blue-500 text-2xl"/>
-                        <AiFillStar className="text-blue-500 text-2xl"/>
-                        <AiFillStar className="text-blue-500 text-2xl"/>
-                        <AiFillStar className="text-blue-500 text-2xl"/>
+                      <p className="font-bold  text-gray-500">Seller's Rating 
+                        </p>
+                        <AiFillStar className="text-blue-500 "/>
+                        <AiFillStar className="text-blue-500 "/>
+                        <AiFillStar className="text-blue-500 "/>
+                        <AiFillStar className="text-blue-500 "/>
                   </div>
                             </div>
                           {/* //buttons */}
@@ -186,7 +172,7 @@ export default function Postlist() {
               <button
                 type="button"
                 className=" rounded border-none bg-blue-500 px-4 py-2 text-white shadow-sm duration-300 hover:bg-blue-400 hover:shadow-lg hover:transition-all"
-              >
+                >
                 send
               </button>
             </div>
@@ -200,7 +186,7 @@ export default function Postlist() {
         <button
           type="button"
           className="py-2 px-2 m-2 bg-blue-500 font-bold text-white shadow-md rounded"
-      
+          
         >
           Contact Seller
         </button>
@@ -267,7 +253,7 @@ export default function Postlist() {
                              <Button
                               color="failure"
                               onClick={()=>{
-                              RemovePost(postlist.id);
+                              RemovePost(post.id);
                               setVisible(false)
                                   }}
                                 >
@@ -291,13 +277,14 @@ export default function Postlist() {
     
   > 
     <Modal.Body className="p-2 mt-[200px]   flex justify-center items-center  md:mt-0" >
-      <img src={postlist.image} alt="item" className=" object-cover rounded-lg mt-4 w-[600px]  " />       
+      <img src={post.image} alt="item" className=" object-cover rounded-lg mt-4 w-[600px]  " />       
     </Modal.Body>
   </Modal>
   </div>
 ))
 }
-</div>
+</div>:""}
+          </>  
     )
     
 }

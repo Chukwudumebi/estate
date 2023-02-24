@@ -20,8 +20,9 @@ export default function Homepage(){
   },[])
  
     return(
-        <div className="">
-            <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
+      <>
+        <div className=" fixed md:bottom-[550px]   w-full">
+            <div className="md:flex items-center justify-between bg-white py-3 md:px-10 px-7">
          
           <Region country={country} states={states} provinces={provinces}/>
           <Category/>
@@ -36,12 +37,13 @@ export default function Homepage(){
          
           <NavSearch/>
         </div>
+      </div>
         
 
         <Postlist/>
         <Footer/>
+      </>
         
-      </div>
 
     )
 }

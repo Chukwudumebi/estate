@@ -38,13 +38,13 @@ export default function Table(){
         const [item,setItem]=useState(false)
         const[copy,setCopied]=useState(false)
     return(
-        <div className="mx-auto  grid w-full max-w-4xl self-start overflow-x-hidden rounded-md bg-white shadow-lg">
+        <div className="mx-auto mb-[40px] grid w-[400px]md:w-full max-w-4xl self-start overflow-x-hidden rounded-md bg-white shadow-lg">
 
 
             
-      <table className="w-full table-auto border-collapse font-grotesk text-sm  md:overflow-auto md:h-60">
+      <table className="mx-auto w-[100%] table-auto border-collapse font-grotesk text-sm" >
      
-        <tbody className="md:overflow-auto md:h-6" style={{height:"30px"}}>
+        <tbody >
         <tr className="h-14 cursor-pointer font-grotesk text-xs hover:bg-slate-300 sm:text-sm">
         <td className="border-b border-b-slate-100 px-10 py-5">
         <div className="grid w-full grid-cols-auto-1fr gap-2">
@@ -54,7 +54,7 @@ export default function Table(){
         </td>
       <td className="border-b border-b-slate-100 px-2 md:px-8">
       
-        <p className="font-bold  text-gray-400 ">Category: </p>
+        <p className="font-bold  text-gray-400 ">Category:united </p>
         <p className="font-bold  text-gray-400 "> Region:  </p>
         <p className="font-bold text-gray-400"> Time Posted: </p>
         <p className="font-bold text-gray-400"> Date Posted: </p>
@@ -72,7 +72,7 @@ export default function Table(){
                                      <span className="font-bold text-gray-500 ml-2">Select</span>
                                   </div>
                               </div>
-                               <p className="font-bold text-gray-500">Delivery Cost <span>$80</span></p>
+                               <p className="font-bold text-gray-500">Delivery Cost :<span>$80</span></p>
                                <div className="">
 
                    <div  className="font-bold flex justify-between items-center text-blue-500 mr-4" >
@@ -1108,25 +1108,7 @@ export default function Table(){
 
 
       </td>
-    </tr>
-
-    <tr className="h-14 cursor-pointer font-grotesk text-xs hover:bg-slate-300 sm:text-sm">
-        <td className="border-b border-b-slate-100 px-1">
-        <div className="grid w-full grid-cols-auto-1fr gap-2">
-          <img src={logo} alt="" className="aspect-square h-[30px] self-center" />
-    
-        </div>
-        </td>
-      <td className="border-b border-b-slate-100 px-2 md:px-8">descrription</td>
-      <td className="border-b border-b-slate-100 px-2 md:px-8">
-        desc
-      </td>
-      <td className="border-b border-b-slate-100 px-2 md:px-8">
-        buttons
-      </td>
-    </tr>
-
-          
+    </tr>       
         </tbody>
       </table>
         </div>

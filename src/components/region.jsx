@@ -13,10 +13,9 @@ export default function Region({country,states,provinces}){
   })  
 
 
-  const handleCountry=(str)=>{
-    const strs=str.split(" ")[1].toLowerCase()
-    console.log(strs)
-    const state=states.filter(s=>s.name ===strs);
+  const handleCountry=(id)=>{
+    console.log(id)
+    const state=states.filter(s=>s.countryId===id);
     setState(state)
   }
   const handleState=(id)=>{
@@ -31,24 +30,20 @@ export default function Region({country,states,provinces}){
     
 <select className="bg-white border-none focus:border-none" onChange={(e)=>handleCountry(e.target.value)}>
   <option value="0">Choose a region</option>
-    {/* {
+    {
       country && country !== undefined ? country.map((ctr,index)=>{
         return(
           <option key={index} value={ctr.id}>{ctr.name}</option>
         )
-      } */}
-        {dataCountries.slice(0,11).map((ctr)=>(
-                <option value={ctr} key={ctr}>{ctr}</option>
-            ))          
-        }              
-
-      {/* ):"No Region"
-    } */}
+      } 
+       
+       ):"No Region"
+    } 
 </select>
 </div>
- {state.length > 1 && <div className="bg-white shadow text-center px-4 w-[200px] mb-3 py-4 font-bold text-sm rounded-md  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
+ {state.length > 1 && <div className="bg-white shadow text-center px-4 w-[200px] mb-3 py-4 font-bold text-sm rounded-full  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
   <select className="bg-white border-none  focus:border-none" onChange={(e)=>handleState(e.target.value)}>
-  {/* <option value="0">select state</option>
+  <option value="0">select state</option>
     {
       state && state !== undefined ? state.map((st,index)=>{
         return(
@@ -57,10 +52,10 @@ export default function Region({country,states,provinces}){
       }
 
       ):"No Region"
-    } */}
+    } 
 </select>
 </div>}
-{province.length > 1 && <div className="bg-white shadow text-center px-4 w-[200px] mb-1 py-4 font-bold text-sm rounded-md  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
+{province.length > 1 && <div className="bg-white shadow text-center px-4 w-[200px] mb-1 py-4 font-bold text-sm rounded-full  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
  <select className="bg-white border-none focus:border-none">
   <option value="0">select province</option>
     {

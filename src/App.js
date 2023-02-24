@@ -59,7 +59,7 @@ function App() {
             <Route path="/Category/Construction" element={<Construction />} />
             <Route path="/multiple" element={<Image />} />
           </Routes>
-          <Table />
+        
         </Router>
       </div>
     </Provider>

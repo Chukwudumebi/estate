@@ -6,8 +6,9 @@ const initialState = {
   Postlist: [],
 };
 const Actions = {
-  Add_post: "Add_todo",
-  Remove_post: "Remove_todo",
+  Add_post: "Add_post",
+  Remove_post: "Remove_post",
+  Checked_post:"Checked_post"
 };
 
 const PostReducer = (state, action) => {
@@ -35,7 +36,19 @@ const PostReducer = (state, action) => {
         ...state,
         Postlist: state.Postlist.filter((post) => post.id !== action.payload),
       };
-  
+      case Actions.Checked_post:
+        return {
+          ...state,
+          Postlist: state.Postlist.map((post) =>
+            post.id == action.payload
+              ? {
+                  ...post,
+                  isChecked: true,
+                  
+                }
+              : post
+          ),
+        };
     default:
       return state;
   }
