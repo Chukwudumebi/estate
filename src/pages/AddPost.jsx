@@ -12,7 +12,7 @@ export default function AddPost(){
     const [selected,setSelected]=useState("");
     const [timeLeft,setTimeleft]=useState("");
     const [description,setDescription]=useState("");
-    const [price,setPrice]=useState("$");
+    const [price,setPrice]=useState(" ");
     const [region,setRegion]=useState("")
 
 
@@ -53,7 +53,7 @@ export default function AddPost(){
       </label>
       <input
       value={price}
-      onChange={(e)=>setPrice(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="USD" required/>
+      onChange={(e)=>setPrice(e.target.value)}  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="$" required/>
     </div>
     <div className="bg-white shadow appearance-none border text-center w-full py-2 px-3 mb-4 font-bold text-sm rounded-md  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
     

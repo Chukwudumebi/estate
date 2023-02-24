@@ -20,7 +20,7 @@ export default function Homepage(){
   },[])
  
     return(
-        <div className="top-0 sticky">
+        <div className="">
             <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
          
           <Region country={country} states={states} provinces={provinces}/>

@@ -3,12 +3,10 @@ import { createContext, useState } from "react";
 export const CurrencyContext = createContext();
 
 const CurrencyProvider = ({ children }) => {
-  const [fromcurrency, setFromCurrency] = useState("🇻🇬 USD");
-  const [tocurrency, setToCurrency] = useState("");
+  const [tocurrency, setToCurrency] = useState("🇻🇬 USD");
 
   const value = {
-    fromcurrency,
-    setFromCurrency,
+   
     tocurrency,
     setToCurrency,
   };

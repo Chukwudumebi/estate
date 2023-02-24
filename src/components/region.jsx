@@ -2,7 +2,7 @@ import{useState} from "react"
 import useAxios from "../hooks/useAxios";
 export default function Region({country,states,provinces}){
   const[state,setState]=useState([]);
-  // console.log(state.trim().split("").slice(5).toString())
+  // console.log(state.split(" ")[1].toLowerCase())
   const[province,setProvince]=useState([]);
 
   const [data]=useAxios("https://restcountries.com/v3.1/all");
@@ -13,8 +13,10 @@ export default function Region({country,states,provinces}){
   })  
 
 
-  const handleCountry=(id)=>{
-    const state=states.filter(s=>s.countryId ===id);
+  const handleCountry=(str)=>{
+    const strs=str.split(" ")[1].toLowerCase()
+    console.log(strs)
+    const state=states.filter(s=>s.name ===strs);
     setState(state)
   }
   const handleState=(id)=>{

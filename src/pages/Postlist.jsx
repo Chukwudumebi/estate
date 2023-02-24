@@ -1,35 +1,77 @@
 import { PostContext } from "../components/PostContext"
-import { useState } from "react";
-import { useContext } from "react"
+import { useState,useContext,useEffect } from "react";
 import { Button } from "flowbite-react";
 import { Modal } from "flowbite-react";
 import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { AiFillStar, AiOutlinePlus,AiOutlineFundView,AiOutlineMinus,AiOutlineCopy,AiOutlineMenu ,AiOutlineClose,AiOutlineLock} from "react-icons/ai";
-
-
 import {HiOutlineExclamationCircle} from "react-icons/hi"
+import { CurrencyContext } from "../context/CurrencyProvider";
+import axios from "axios";
 
 export default function Postlist() {
+  const {
+
+    fromcurrency,
+    setFromCurrency,
+    tocurrency,
+    setToCurrency,
+  }=useContext(CurrencyContext)
+  const [rate,setRate]=useState(0)
+  const [amount,setAmount]=useState(0)
+  const convert=amount * rate;
+  const [converts,setConvert]=useState(convert)
+  console.log(tocurrency)
+  console.log(rate)
+  console.log(amount)
+  console.log(convert)
+
   const Public_ID="027E5F9358C12A83F0112513252F02344E0C7F1925613252F15F672A65F23182178 "
   const display=Public_ID.slice(0,9)
     const [visible,setVisible]=useState(false);
     const [open,setOpen]=useState(false);
     const [item,setItem]=useState(false)
     const[copy,setCopied]=useState(false)
-
-
     
-
+    
+    
     const handleModalOpen = () =>{
       setVisible(true)
     }
     const handlOpen = () =>{
         setOpen(true)
       }
-    
+      
     const { Postlist, RemovePost } = useContext(PostContext)
     console.log(Postlist)
+    useEffect(()=>{
+    if(Postlist){
+
+      Postlist.map((item)=>{
+        setAmount(item.price)
+      }) 
+
+    }
+      
+
+    },[Postlist ])
+    
+    useEffect(()=>{
+      axios("https://api.freecurrencyapi.com/v1/latest",{
+             params: {
+                 apikey:"wyYOvYBYFnvzXN5vqfzlvpBOuWsTQbmCezQvqwir",
+                 base_currency:"USD",
+                 currencies:tocurrency.split(" ")[1],
+             }
+         }).then((response)=>{
+             console.log(response.data.data[tocurrency])
+             setRate(response.data.data[tocurrency.split(" ")[1]])
+         }).catch(err=>{
+             console.log(err)
+         })
+ 
+        })
+
     return (    
         <div className="flex flex-col md:ml-[80px] md:w-[1400px] md:overflow-auto h-60 mt-[60px] mb-[80px]">
             {
@@ -52,7 +94,15 @@ export default function Postlist() {
                             {/* details */}
                             <div  className="de">
                               <div className="details">
-                                <h3 className="font-bold text-gray-500 ">Price:  {postlist.price}</h3>
+                                <h3 className="font-bold text-gray-500 ">Price:
+                               
+<span> 
+
+                                  {convert.toFixed(2)}-{tocurrency.split(" ")[1]} 
+                                </span> 
+
+                               
+                                  </h3>
                                 <div >
                                   <input type="checkbox" onChange={(e)=>setItem(e.target.checked)}   checked={item}/>
                                      <span className="font-bold text-gray-500 ml-2">Select</span>

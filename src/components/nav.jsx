@@ -4,7 +4,7 @@ import { BsCurrencyBitcoin,BsCurrencyDollar,BsCurrencyPound,BsCurrencyYen ,BsCur
 import { AiOutlinePlus,AiOutlineFundView,AiOutlineMinus,AiOutlineCopy,AiOutlineMenu ,AiOutlineClose,AiOutlineLock} from "react-icons/ai";
 import {BiEdit} from "react-icons/bi"
 import Button from "./button";
-import { useState ,useEffect} from "react";
+import { useState ,useEffect,useContext} from "react";
 import NavSearch from "./Navseearch";
 import {MdOutlineStoreMallDirectory} from "react-icons/md"
 import { Link,useLocation } from "react-router-dom";
@@ -12,7 +12,16 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Modal } from "flowbite-react";
 import Search from "./search";
 import useAxios from "../hooks/useAxios"
+import { CurrencyContext } from "../context/CurrencyProvider";
+import { PostContext } from "./PostContext";
+
 export default function Nav(){
+  const {
+    tocurrency,
+    setToCurrency
+  }=useContext(CurrencyContext)
+  console.log(tocurrency)
+  const {Postlist}=useContext(PostContext)
   const[values,setValue]=useState(null)
     const [data]=useAxios("https://restcountries.com/v3.1/all");
 
@@ -20,7 +29,7 @@ export default function Nav(){
     const dataCountries=filteredData.map((item)=>{
         return `${item.flag} ${Object.keys(item.currencies)[0]}`
     })  
-  console.log(dataCountries)
+  
     
     
   
@@ -45,6 +54,8 @@ export default function Nav(){
       
       const handleModalOpen = () =>{
         setVisible(true)
+         
+        
       }
       // const handleOpen = () =>{
       //     setOpen(true)
@@ -66,8 +77,12 @@ export default function Nav(){
           setActiveTab("LockPage");
         }
       }, [location]);
+
+      const handleSet=(e)=>{
+         setToCurrency(e.target.value)
+      }
     return(
-        <div className="shadow-md w-full sticky top-0 left-0 mb-10 z-[20]">
+        <div className="shadow-md w-full sticky top-0 left-0  z-[20]">
           <div className="border-b bg-white">
           
                   <Link to ="/">
@@ -113,11 +128,18 @@ export default function Nav(){
                  </button>
                  
                  <div className={`  sm:flex ${open ?"hidden":"block"} bg-white shadow text-center px-4  mt-2  font-bold text-sm rounded-full  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 `}>
-                        <select className=" bg-white border-none focus:border-none" onChange={(e)=>setCurrency(e.target.value)}>
-                        {dataCountries.slice(0,11).map((ctr)=>(
+                        <select className=" bg-white border-none focus:border-none" onChange={handleSet}>
+                          <option value={tocurrency}>{tocurrency}</option>
+                        {dataCountries.slice(0,101).map((ctr)=>(
                 <option value={ctr} key={ctr}>{ctr}</option>
             ))          
+            
         }                        
+      
+  
+        {/* <option value="EUR">EUR</option>
+        <option value="IDR">IDR</option> */}
+
                           </select>
                         </div>
                         <div className={`  sm:flex ${open ?"hidden":"block"} bg-white shadow text-center px-4  mt-2  font-bold text-sm rounded-full  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 `}>
@@ -141,7 +163,7 @@ export default function Nav(){
                         </li>
                 
                     </Link>
-                     <Link to="/AddPost">
+                     <Link to="/AddPost" onClick={()=>setOpen(true)}>
 
                         <li  className={` ${activeTab == "AddPost" ? "bg-blue-500" :""} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  `}>
                             <a href="#" className={`text-blue-600 ${activeTab =="AddPost" ? "text-white" :""} hover:text-white duration-500 `}>
@@ -150,7 +172,7 @@ export default function Nav(){
                         </li>
                 
                     </Link>
-                    <Link to="/RemovePost">
+                    <Link to="/RemovePost" onClick={()=>setOpen(true)}>
 
                         <li  className={`${ activeTab =="RemovePost" ? "bg-blue-500" :""} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  `}>
                             <a href="#" className={`text-blue-600 ${ activeTab =="RemovePost" ? "text-white":""} hover:text-white duration-500 `}>
@@ -160,7 +182,7 @@ export default function Nav(){
                 
                     </Link>
                     
-                    <Link to="/EditPost">
+                    <Link to="/EditPost" >
 
                         <li  className={`${activeTab =="EditPost" ? "bg-blue-500":""} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  `}>
                             <a href="#" className={`text-blue-600 ${activeTab=="EditPost" ? "text-white" :""} hover:text-white duration-500 `}>
@@ -170,7 +192,7 @@ export default function Nav(){
                 
                     </Link>
                     
-                    <Link to="/LockPage">
+                    <Link to="/LockPage" >
 
                         <li  className={`${ activeTab=="LockPage" ? "bg-blue-500":""} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]`}>
                             <a href="#" className={`${activeTab=="LockPage" ? "text-white" :""} text-blue-600 hover:text-white duration-500 `}>
