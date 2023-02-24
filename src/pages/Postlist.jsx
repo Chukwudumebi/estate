@@ -112,6 +112,14 @@ export default function Postlist() {
                               </div>
                                <h3 className="font-bold text-xl m-1 text-gray-500">Delivery Cost <span>$80</span></h3> 
 
+
+
+
+
+
+
+
+
                                <div className="">
 
                    <div  className="font-bold flex justify-between items-center text-blue-500 mr-4" >
@@ -135,18 +143,14 @@ export default function Postlist() {
                         <AiFillStar className="text-blue-500 text-2xl"/>
                         <AiFillStar className="text-blue-500 text-2xl"/>
                         <AiFillStar className="text-blue-500 text-2xl"/>
-                        
-
                   </div>
                             </div>
-
                           {/* //buttons */}
                           <div className="flex flex-col">
                           <button className="py-2 px-2 m-2 bg-blue-500 font-bold text-white shadow-md rounded">BUY</button>
                           {/* <button
                           className="py-2 px-2 m-2 bg-blue-500 font-bold text-white shadow-md rounded"
-                          >  Make Offer</button> */}
-                  
+                          >  Make Offer</button> */}                 
              <Dialog.Root>
       <Dialog.Trigger asChild>
         <button
@@ -191,15 +195,59 @@ export default function Postlist() {
       </Dialog.Portal>
     </Dialog.Root>
 
+    <Dialog.Root>
+      <Dialog.Trigger asChild>
+        <button
+          type="button"
+          className="py-2 px-2 m-2 bg-blue-500 font-bold text-white shadow-md rounded"
+      
+        >
+          Contact Seller
+        </button>
+      </Dialog.Trigger>
+      <Dialog.Portal>
+        <Dialog.Overlay className="data-[state=open]:animate-overlayShow fixed inset-0 z-50 bg-neutral-900/20" />
+        <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] z-[100] max-h-[85vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-white p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none">
+          <div>
+            <div className="text-center p-[60px]">
+
+              <h1 className="font-bold text-center">contact seller</h1>
+            </div>
+            {/* <div className="flex h-24 flex-col overflow-y-scroll">
+             
+            </div> */}
+            
+
+            <div className="flex items-center justify-around border-t p-2 py-8">
+              <Dialog.Close asChild>
+                <button
+                  type="button"
+                  className="rounded border-none bg-red-600 px-2 py-2 text-white shadow-md duration-300 hover:bg-red-500 hover:shadow-lg hover:transition-all"
+                >
+                  cancel
+                </button>
+              </Dialog.Close>
+              <button
+                type="button"
+                className=" rounded border-none bg-blue-500 px-4 py-2 text-white shadow-sm duration-300 hover:bg-blue-400 hover:shadow-lg hover:transition-all"
+              >
+                send message
+              </button>
+            </div>
+          </div>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
+
 
 
 
 
 
     
-                          <button
+                          {/* <button
                           className="py-2 px-2 m-2 bg-blue-500 font-bold text-white shadow-md rounded"
-                          >Contact Seller</button>
+                          >Contact Seller</button> */}
                           </div>  
 
 
