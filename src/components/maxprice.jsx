@@ -10,7 +10,7 @@ export default function Maxprice(){
                         <select className=" bg-white border-none focus:border-none" onChange={(e)=>setMaxprice(e.target.value)}>
                           <option value="public">
                             Max Price </option>                         
-                            <option value="NGN">NGN</option>                      
+                                                 
                           </select>
                         </div>
         </div>

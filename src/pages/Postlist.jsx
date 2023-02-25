@@ -76,7 +76,7 @@ export default function Postlist() {
       console.log(Postlist)
     return (  
       <>
-     { Postlist.length > 0 ?<div className="flex flex-col  md:mt-[120px] mt-[280px] rounded-md bg-white shadow-lg md:ml-[70px] md:w-[1400px] md:overflow-auto h-80 mt-[60px] ">
+     { Postlist.length > 0 ?<div className="flex flex-col    rounded-md bg-white shadow-lg md:ml-[70px] md:w-[1400px] md:overflow-auto h-80 mt-[60px] ">
             {
                 Postlist.slice(0,4).map((post) => (
                   //image
