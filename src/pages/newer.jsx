@@ -8,7 +8,7 @@ export default function Newer(){
        <div>
         {
             Postlist.map((post)=>(
-                <div key={post.id} className="border border-b ">
+                <div key={post.id} className="border border-b py-5 bg-slate-200 ">
                     <p>{post.id}</p>
                     <p>{post.price}</p>
                     <img src={post.image} alt=""/>

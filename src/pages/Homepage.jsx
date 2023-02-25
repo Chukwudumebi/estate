@@ -21,7 +21,7 @@ export default function Homepage(){
  
     return(
       <>
-        <div className=" fixed md:bottom-[550px]   w-full">
+        <div>
             <div className="md:flex items-center justify-between bg-white py-3 md:px-10 px-7">
          
           <Region country={country} states={states} provinces={provinces}/>
