@@ -26,6 +26,7 @@ import Search from "./components/search";
 import Currency from "./components/currenct";
 import Dialogs from "./components/dialog";
 import Table from "./pages/table";
+import Newer from "./pages/newer";
 function App() {
   const [open, setOpen] = useState(true);
   const [visible, setVisible] = useState(false);
@@ -49,7 +50,7 @@ function App() {
             <Route path="/AddPost" element={<AddPost />} />
             <Route path="/RemovePost" element={<RemovePost />} />
             <Route path="/stores" element={<Stores />} />
-            <Route path="/EditPost" element={<EditPost />} />
+            <Route path="/EditPost" element={<Newer />} />
             <Route path="/LockPage" element={<LockPage />} />
             <Route path="/Category/Services" element={<Services />} />
             <Route path="/Category/Goods" element={<Goods />} />
@@ -57,9 +58,8 @@ function App() {
             <Route path="/Category/Recreational" element={<Recreational />} />
             <Route path="/Category/Electronics" element={<Electronics />} />
             <Route path="/Category/Construction" element={<Construction />} />
-            <Route path="/multiple" element={<Image />} />
+            <Route path="/new" element={<Newer />} />
           </Routes>
-        
         </Router>
       </div>
     </Provider>
