@@ -19,14 +19,13 @@ export default function Postlist() {
     tocurrency,
     setToCurrency,
   }=useContext(CurrencyContext)
-  const [rate,setRate]=useState(0)
+  const [rate,setRate]=useState(1)
   const [amount,setAmount]=useState(0)
   const convert=amount * rate;
   const [converts,setConvert]=useState(convert)
-  console.log(tocurrency)
   console.log(rate)
-  console.log(amount)
-  console.log(convert)
+
+ 
 
   const Public_ID="027E5F9358C12A83F0112513252F02344E0C7F1925613252F15F672A65F23182178 "
   const display=Public_ID.slice(0,9)
@@ -46,18 +45,15 @@ export default function Postlist() {
       
     const { Postlist, RemovePost } = useContext(PostContext)
     
-    useEffect(()=>{
-    if(Postlist){
+    // useEffect(()=>{
+    // if(Postlist){
 
-      Postlist.map((item)=>{
-        setAmount(item.price)
-      }) 
-
-    }
-      
-
-    },[Postlist ])
-    
+    //   Postlist.map((item)=>{
+    //     setAmount(item.price)
+    //   }) 
+    // }
+    // },[Postlist]);
+  
     useEffect(()=>{
       axios("https://api.freecurrencyapi.com/v1/latest",{
              params: {
@@ -71,43 +67,45 @@ export default function Postlist() {
          }).catch(err=>{
              console.log(err)
          })
+        },[Postlist]);
  
-        })
-      console.log(Postlist)
+  
+
     return (  
       <>
-     { Postlist.length > 0 ?<div className="flex flex-col    rounded-md bg-white shadow-lg md:ml-[70px] md:w-[1400px] md:overflow-auto h-80 mt-[60px] ">
+     { Postlist.length > 0 ?<div className="flex flex-col  rounded-md bg-white shadow-lg md:ml-[70px] md:w-[1400px] md:overflow-auto h-80 mt-[60px] ">
             {
-                Postlist.slice(0,4).map((post) => (
-                  //image
+                Postlist.map((post) => (
                     <div key={post.id} className="Desc border-b border-gray-200  hover:bg-slate-100 hover:text-white hover:shadow-xl" >
+                          {/* image */}
                         <div className="mr-6 mt-1" onClick={handlOpen}>
                             <img src={post.image} alt="item" className=" object-cover  w-[100px] shadow rounded mb-2" />
                         </div>
                           {/* // description */}
-
                         <div className=" px-2 md:px-8">
                             <p className="font-bold  text-gray-500">{post.description}</p>
                             <p className="font-bold  text-gray-500"> Category: {post.category}</p>
                             <p className="font-bold  text-gray-500">Region: {post.region}</p>
                             <p className="font-bold text-gray-500"> Time Posted: {post.time}</p>
                             <p className="font-bold text-gray-500"> Date Posted: {post.date}</p>
-                        </div>
-                            
-                            {/* details */}
+                        </div>                           
+                            {/* details */}                                                                          
                             <div  className="de">
                               <div className="details">
                                 <p className="font-bold text-gray-500 ">Price:
-                                  {convert.toFixed(2)}-{tocurrency.split(" ")[1]}                              
+                                  {/* {convert.toFixed(2)}-
+                                  {tocurrency.split(" ")[1]}
+                                   */}
+
+                                  { post.price*rate} - {tocurrency.split(" ")[1]}
                                   </p>
                                 <div >
-                                  <input type="checkbox" onChange={(e)=>setItem(e.target.checked)}   checked={item}/>
+                                  <input type="checkbox"  />
                                      <span className="font-bold text-gray-500 ml-2">Select</span>
                                   </div>
                               </div>
                                <p className="font-bold  text-gray-500">Delivery Cost <span>$80</span></p>
                                <div className="">
-
                    <div  className="font-bold flex justify-between items-center text-blue-500 mr-4" >
                     <span>Public_ID:</span>
                      <p className={`font-bold text-sm text-gray-600 ${copy ? "text-black":""}`}>{`${Public_ID.slice(0,7)}...${Public_ID.slice(-5)}`}
@@ -133,7 +131,7 @@ export default function Postlist() {
                             </div>
                           {/* //buttons */}
                           <div className="flex flex-col">
-                          <button className="py-2 px-2 m-2 bg-blue-500 font-bold text-white shadow-md rounded">BUY</button>
+                          <button className="p-[5px] m-2 bg-blue-500 font-bold text-white shadow-md rounded">BUY</button>
                           {/* <button
                           className="py-2 px-2 m-2 bg-blue-500 font-bold text-white shadow-md rounded"
                           >  Make Offer</button> */}                 
@@ -141,7 +139,7 @@ export default function Postlist() {
       <Dialog.Trigger asChild>
         <button
           type="button"
-          className="py-2 px-2 m-2 bg-blue-500 font-bold text-white shadow-md rounded"
+          className=" p-[5px] m-2 bg-blue-500 font-bold text-white shadow-md rounded"
       
         >
           Make Offer
@@ -185,7 +183,7 @@ export default function Postlist() {
       <Dialog.Trigger asChild>
         <button
           type="button"
-          className="py-2 px-2 m-2 bg-blue-500 font-bold text-white shadow-md rounded"
+          className="p-[5px] m-2 bg-blue-500 font-bold text-white shadow-md rounded"
           
         >
           Contact Seller
@@ -274,9 +272,8 @@ export default function Postlist() {
     size="sm"
     popup={true}
     onClick={()=>setOpen(false)}
-    
   > 
-    <Modal.Body className="p-2 mt-[200px]   flex justify-center items-center  md:mt-0" >
+    <Modal.Body className="p-2 mt-[200px] flex justify-center items-center  md:mt-0" >
       <img src={post.image} alt="item" className=" object-cover rounded-lg mt-4 w-[600px]  " />       
     </Modal.Body>
   </Modal>
