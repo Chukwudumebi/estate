@@ -80,7 +80,7 @@ export default function Postlist() {
       <>
      { Postlist.length > 0 ?<div className="flex flex-col  rounded-md bg-white shadow-lg md:ml-[70px] md:w-[1400px] md:overflow-auto h-80 mt-[60px] ">
             {
-                Postlist.map((post) => (
+                Postlist.slice(0,4).map((post) => (
                     <div key={post.id} className="Desc border-b border-gray-200  hover:bg-slate-100 hover:text-white hover:shadow-xl" >
                           {/* image */}
                         <div className="mr-6 mt-1" onClick={()=>handlOpen(post.id)}>
@@ -109,7 +109,10 @@ export default function Postlist() {
                                      <span className="font-bold text-gray-500 ml-2">Select</span>
                                   </div>
                               </div>
-                               <p className="font-bold  text-gray-500">Delivery Cost <span>$80</span></p>
+                               <p className="font-bold  text-gray-500">Delivery Cost :
+                               
+                               {(post.shipping * rate ).toFixed(2)} -{tocurrency.split(" ")[1]}
+                               </p>
                                <div className="">
                    <div  className="font-bold flex justify-between items-center text-blue-500 mr-4" >
                     <span>Public_ID:</span>
