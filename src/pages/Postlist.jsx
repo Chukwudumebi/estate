@@ -33,6 +33,7 @@ export default function Postlist() {
     const [open,setOpen]=useState(false);
     const [item,setItem]=useState(false)
     const[copy,setCopied]=useState(false)
+    const[selectedImages,setSelectedImages]=useState([])
     
     
     
@@ -40,8 +41,10 @@ export default function Postlist() {
       setVisible(true)
     }
     const handlOpen = (id)=>{
-     const t= Postlist.filter((item)=> item.id ==id)
+      console.log(id)
+     const t= Postlist.filter((item)=> item.id ===id)
      console.log(t)
+     setSelectedImages(t)
         setOpen(true)
       }
       
@@ -276,8 +279,10 @@ export default function Postlist() {
     onClick={()=>setOpen(false)}
   > 
     <Modal.Body className="p-2 mt-[200px] flex justify-center items-center  md:mt-0" >
-     
-      <img src={post.image} alt="item" className=" object-cover rounded-lg mt-4 w-[600px]  " />       
+     {selectedImages.map((item)=>(
+
+      <img src={item.image} alt="item" className=" object-cover rounded-lg mt-4 w-[600px]  " />       
+     ))}
     </Modal.Body>
   </Modal>
   </div>
