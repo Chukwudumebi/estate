@@ -39,7 +39,9 @@ export default function Postlist() {
     const handleModalOpen = () =>{
       setVisible(true)
     }
-    const handlOpen = () =>{
+    const handlOpen = (post.id) =>{
+     const t= Postlist.filter((item)=> item.id ==id)
+     console.log(t)
         setOpen(true)
       }
       
@@ -78,7 +80,7 @@ export default function Postlist() {
                 Postlist.map((post) => (
                     <div key={post.id} className="Desc border-b border-gray-200  hover:bg-slate-100 hover:text-white hover:shadow-xl" >
                           {/* image */}
-                        <div className="mr-6 mt-1" onClick={handlOpen}>
+                        <div className="mr-6 mt-1" onClick={handlOpen(post.id)}>
                             <img src={post.image} alt="item" className=" object-cover  w-[100px] shadow rounded mb-2" />
                         </div>
                           {/* // description */}
@@ -97,7 +99,7 @@ export default function Postlist() {
                                   {tocurrency.split(" ")[1]}
                                    */}
 
-                                  { post.price*rate} - {tocurrency.split(" ")[1]}
+                                  { (post.price*rate).toFixed(2)} - {tocurrency.split(" ")[1]}
                                   </p>
                                 <div >
                                   <input type="checkbox"  />
@@ -274,6 +276,7 @@ export default function Postlist() {
     onClick={()=>setOpen(false)}
   > 
     <Modal.Body className="p-2 mt-[200px] flex justify-center items-center  md:mt-0" >
+     
       <img src={post.image} alt="item" className=" object-cover rounded-lg mt-4 w-[600px]  " />       
     </Modal.Body>
   </Modal>

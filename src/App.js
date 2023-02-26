@@ -50,7 +50,7 @@ function App() {
             <Route path="/AddPost" element={<AddPost />} />
             <Route path="/RemovePost" element={<RemovePost />} />
             <Route path="/stores" element={<Stores />} />
-            <Route path="/EditPost" element={<Newer />} />
+            <Route path="/EditPost" element={<EditPost />} />
             <Route path="/LockPage" element={<LockPage />} />
             <Route path="/Category/Services" element={<Services />} />
             <Route path="/Category/Goods" element={<Goods />} />
