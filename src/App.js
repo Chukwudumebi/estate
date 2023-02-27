@@ -61,7 +61,6 @@ function App() {
             <Route path="/Category/Construction" element={<Construction />} />
             <Route path="/new" element={<Newer />} />
           </Routes>
-          <Imageupload />
         </Router>
       </div>
     </Provider>
