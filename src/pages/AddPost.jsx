@@ -38,31 +38,36 @@ export default function AddPost(){
     return(
         <div className="flex justify-center items-center">
       <div className="w-full max-w-xs">
-       <form  className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-    <div className="mb-4">
-      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
-        description
+       <form  className="flex w-full flex-col gap-4 p-4 shadow">
+    <div className="grid grid-flow-row gap-2 text-sm" >
+      <label className="block text-gray-500 text-sm font-bold mb-2" htmlFor="username">
+        Description
       </label>
       <textarea 
       value={description}
       onChange={(e)=>setDescription(e.target.value)}
-      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="description..."  required/>
+      className="h-10 w-full rounded bg-slate-100 px-2" rows={8}
+       id="description" type="text" placeholder="description..."  required/>
     </div>
     <div className="mb-4">
-      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="price">
-        price
+      <label className="block text-gray-500 text-sm font-bold mb-2" htmlFor="price">
+        Price
       </label>
       <input
       value={price}
-      onChange={(e)=>setPrice(e.target.value)}  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="$" required/>
+      onChange={(e)=>setPrice(e.target.value)} 
+      className="h-10 w-full rounded bg-slate-100 px-2"
+       id="username" type="text" placeholder="$" required/>
     </div>
     <div className="mb-4">
-      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="price">
+      <label className="block text-gray-500 text-sm font-bold mb-2" htmlFor="price">
         Shipping Cost
       </label>
       <input
       value={shipping}
-      onChange={(e)=>setShipping(e.target.value)}  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Shipping Cost-USD" required/>
+      onChange={(e)=>setShipping(e.target.value)} 
+      className="h-10 w-full rounded bg-slate-100 px-2"
+        id="username" type="text" placeholder="Shipping Cost-USD" required/>
     </div>
     <div className="bg-white shadow appearance-none border text-center w-full py-2 px-3 mb-4 font-bold text-sm rounded-md  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
     
@@ -76,12 +81,12 @@ export default function AddPost(){
         
     </select>
     </div>
-    <div className="mb-4">
+    <div className="grid grid-flow-row gap-2 text-sm">
       <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
         Time left
       </label>
       <input 
-      onChange={(e)=>setTimeleft(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter in Number of Days " required/>
+      onChange={(e)=>setTimeleft(e.target.value)} className="h-10 w-full rounded bg-slate-100 px-2" id="username" type="text" placeholder="Enter in Number of Days " required/>
     </div>
     <div className="mb-4">
       <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="image">
