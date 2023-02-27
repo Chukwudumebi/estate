@@ -27,6 +27,7 @@ import Currency from "./components/currenct";
 import Dialogs from "./components/dialog";
 import Table from "./pages/table";
 import Newer from "./pages/newer";
+import Imageupload from "./pages/uploadimage";
 function App() {
   const [open, setOpen] = useState(true);
   const [visible, setVisible] = useState(false);
@@ -60,6 +61,7 @@ function App() {
             <Route path="/Category/Construction" element={<Construction />} />
             <Route path="/new" element={<Newer />} />
           </Routes>
+          <Imageupload />
         </Router>
       </div>
     </Provider>
