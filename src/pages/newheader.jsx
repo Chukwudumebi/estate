@@ -29,7 +29,7 @@ export default function Header(){
         return `${item.flag} ${Object.keys(item.currencies)[0]}`
     })  
     const style={
-        fontSize:"18px",
+        fontSize:"17px",
     
       }
       
@@ -61,7 +61,9 @@ export default function Header(){
     return(
         <div className="relative mx-auto grid w-full max-w-3xl grid-flow-dense mt-3  grid-cols-2 grid-rows-auto-1fr justify-center gap-2 rounded-xl bg-gradient-to-br from-blue-900 to-sky-600 p-3 px-4 text-center text-white">
         <h1 className="self-center justify-self-start text-lg font-semibold">Hi, @ HTP02886</h1>
-        <div className="col-start-1 flex flex-col md:justify-between md:flex items-start">
+        <div className="flex md:flex md:justify-between md:gap-[360px] ">
+
+        <div className="col-start-1 flex flex-col  items-start">
         <div
           className="rounded-full bg-white px-1 py-1 text-sm text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
             
@@ -94,20 +96,20 @@ export default function Header(){
               currency: currency.code,
               currencyDisplay: 'narrowSymbol',
             }).format(total)}
-          </h1>  */}
+        </h1>  */}
         </div>
-        <div className="w-max self-center justify-self-end">
+        <div className="w-max self-center justify-self-end ml-2">
          
         <ul className={` flex  justify-evenly items-center py-4 md:flex md:items-center top-20 gap-2`}>
                     <Link to="/stores">
 
                         <li  
                          onClick={() => setActiveTab("stores")}
-                      
-                        className={` ${activeTab== "stores" ? "bg-blue-500":"bg-white"} 
+                         
+                         className={` ${activeTab== "stores" ? "bg-blue-500":"bg-white"} 
                         
-                        group grid aspect-square grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal shadow-sm hover:bg-sky-700 hover:text-neutral
-                        `}>
+                         group grid aspect-square grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal shadow-sm hover:bg-sky-700 hover:text-neutral
+                         `}>
                             <a href="#" className={`text-blue-600 ${activeTab== "stores" ? "text-white":""} hover:text-white duration-500`} >
                             <MdOutlineStoreMallDirectory style={style}/>
                             </a>
@@ -144,7 +146,7 @@ export default function Header(){
 
                         <li  className={`${activeTab =="EditPost" ? "bg-blue-500":"bg-white"}
                                group grid aspect-square grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal shadow-sm hover:bg-sky-700 hover:text-neutral
-                          `}>
+                               `}>
                             <a href="#" className={`text-blue-600 ${activeTab=="EditPost" ? "text-white" :""} hover:text-white duration-500 `}>
                             <BiEdit style={style}/>
                             </a>
@@ -156,7 +158,7 @@ export default function Header(){
 
                         <li  className={`${ activeTab=="LockPage" ? "bg-blue-500":"bg-white"} 
                               group grid aspect-square grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal shadow-sm hover:bg-sky-700 hover:text-neutral
-                        `}>
+                              `}>
                             <a href="#" className={`${activeTab=="LockPage" ? "text-white" :""} text-blue-600 hover:text-white duration-500 `}>
                             <AiOutlineLock style={style}/>
                             </a>
@@ -176,6 +178,7 @@ export default function Header(){
                     </Link>
                 </ul>
         </div>
+              </div>
   
         <div className="col-start-2 row-start-1 flex flex-row  items-center gap-1 justify-self-end">
           <h1 className="text-sm font-bold uppercase"> {`${Public_ID.slice(0,5)}...${Public_ID.slice(-5)}`}</h1>
