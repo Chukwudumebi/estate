@@ -29,7 +29,7 @@ export default function Header(){
         return `${item.flag} ${Object.keys(item.currencies)[0]}`
     })  
     const style={
-        fontSize:"17px",
+        fontSize:"15px",
     
       }
       
@@ -59,6 +59,8 @@ export default function Header(){
         setToCurrency(e.target.value)
      }
     return(
+        <div className="">
+
         <div className="relative fixed  top-0 mx-auto grid  md:w-full max-w-3xl grid-flow-dense  grid-cols-2 grid-rows-auto-1fr justify-center gap-2 rounded-xl bg-gradient-to-br from-blue-900 to-sky-600 p-3 px-4 text-center text-white">
 
         <h1 className="self-center justify-self-start text-lg font-semibold">Hi, @ HTP02886</h1>
@@ -85,7 +87,7 @@ export default function Header(){
                  {dataCountries.slice(0,101).map((ctr)=>(
                <option value={ctr} key={ctr}>{ctr}</option>
           ))          
-            
+          
         }                        
       
              </select>
@@ -93,9 +95,9 @@ export default function Header(){
            {/* <span className="text-sm">Total Asset</span> */}
           {/* <h1 className="text-xl font-bold">
             {new Intl.NumberFormat('en-US', {
-              style: 'currency',
-              currency: currency.code,
-              currencyDisplay: 'narrowSymbol',
+                style: 'currency',
+                currency: currency.code,
+                currencyDisplay: 'narrowSymbol',
             }).format(total)}
         </h1>  */}
         </div>
@@ -108,7 +110,7 @@ export default function Header(){
                          onClick={() => setActiveTab("stores")}
                          
                          className={` ${activeTab== "stores" ? "bg-blue-500":"bg-white"} 
-                        
+                         
                          group grid aspect-square grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal shadow-sm hover:bg-sky-700 hover:text-neutral
                          `}>
                             <a href="#" className={`text-blue-600 ${activeTab== "stores" ? "text-white":""} hover:text-white duration-500`} >
@@ -135,7 +137,7 @@ export default function Header(){
 
                         <li  className={`${ activeTab =="RemovePost" ? "bg-blue-500" :"bg-white"} 
                           group grid aspect-square grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal shadow-sm hover:bg-sky-700 hover:text-neutral 
-                        `}>
+                          `}>
                             <a href="#" className={`text-blue-600 ${ activeTab =="RemovePost" ? "text-white":""} hover:text-white duration-500 `}>
                             <AiOutlineMinus style={style}/>
                             </a>
@@ -195,7 +197,7 @@ export default function Header(){
           type="button"
           onClick={handleModalOpen}
           className="rounded-full bg-white px-3 py-1 text-sm text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
-        >
+          >
           Send
         </button>
     
@@ -212,5 +214,6 @@ export default function Header(){
             </Modal.Body>
           </Modal>
       </div>
+            </div>
     )
 }
