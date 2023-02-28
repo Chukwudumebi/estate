@@ -78,7 +78,7 @@ export default function Header(){
 
         <div className="relative fixed  mx-auto grid  md:w-full max-w-3xl grid-flow-dense  grid-cols-2 grid-rows-auto-1fr justify-center gap-2 rounded-xl bg-gradient-to-br from-blue-900 to-sky-600 p-3 px-4 text-center text-white">
 
-        <h2 className="self-center justify-self-start text-lg font-bold">Hi,@ {username}</h2>
+        <h4 className="self-center justify-self-start text-sm font-bold font-[10px]">Hi,@{username}</h4>
         <div className="flex md:flex md:justify-between md:gap-[360px] ">
 
         <div className="col-start-1 flex flex-col  items-start">
