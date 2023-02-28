@@ -29,7 +29,7 @@ export default function Header(){
         return `${item.flag} ${Object.keys(item.currencies)[0]}`
     })  
     const style={
-        fontSize:"11px",
+        fontSize:"12px",
     
       }
       
@@ -114,7 +114,7 @@ export default function Header(){
                          group grid aspect-square grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal shadow-sm hover:bg-sky-700 hover:text-neutral
                          `}>
                             <a href="#" className={`text-blue-600 ${activeTab== "stores" ? "text-white":""} hover:text-white duration-500`} >
-                            <MdOutlineStoreMallDirectory className="font-[11px] md:font-[30px]"/>
+                            <MdOutlineStoreMallDirectory style={style}/>
                             </a>
                         </li>
                 
@@ -128,7 +128,7 @@ export default function Header(){
       group grid aspect-square grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal shadow-sm hover:bg-sky-700 hover:text-neutral
       `}>
                             <a href="#" className={`text-blue-600 ${activeTab =="AddPost" ? "text-white" :""} hover:text-white duration-500 `}>
-                            <AiOutlinePlus className="font-[11px] md:font-[30px]"/>
+                            <AiOutlinePlus style={style}/>
                             </a>
                         </li>
                 
@@ -139,7 +139,7 @@ export default function Header(){
                           group grid aspect-square grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal shadow-sm hover:bg-sky-700 hover:text-neutral 
                           `}>
                             <a href="#" className={`text-blue-600 ${ activeTab =="RemovePost" ? "text-white":""} hover:text-white duration-500 `}>
-                            <AiOutlineMinus className="font-[11px] md:font-[30px]"/>
+                            <AiOutlineMinus style={style}/>
                             </a>
                         </li>
                 
@@ -151,7 +151,7 @@ export default function Header(){
                                group grid aspect-square grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal shadow-sm hover:bg-sky-700 hover:text-neutral
                                `}>
                             <a href="#" className={`text-blue-600 ${activeTab=="EditPost" ? "text-white" :""} hover:text-white duration-500 `}>
-                            <BiEdit className="font-[11px] md:font-[30px]"/>
+                            <BiEdit style={style}/>
                             </a>
                         </li>
                 
@@ -163,7 +163,7 @@ export default function Header(){
                               group grid aspect-square grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal shadow-sm hover:bg-sky-700 hover:text-neutral
                               `}>
                             <a href="#" className={`${activeTab=="LockPage" ? "text-white" :""} text-blue-600 hover:text-white duration-500 `}>
-                            <AiOutlineLock className="font-[11px] md:font-[30px]"/>
+                            <AiOutlineLock style={style}/>
                             </a>
                         </li>
                 
@@ -175,7 +175,7 @@ export default function Header(){
                         `}>
                             <a href="#" className={`${activeTab=="home" ? "text-white" :""} text-blue-600 hover:text-white duration-500 `}>
                           
-                            <AiOutlineFundView className="font-[11px] md:font-[30px]"/>
+                            <AiOutlineFundView style={style}/>
                             </a>
                         </li>               
                     </Link>
