@@ -28,6 +28,8 @@ import Dialogs from "./components/dialog";
 import Table from "./pages/table";
 import Newer from "./pages/newer";
 import Imageupload from "./pages/uploadimage";
+import Header from "./pages/newheader";
+
 function App() {
   const [open, setOpen] = useState(true);
   const [visible, setVisible] = useState(false);
@@ -44,8 +46,7 @@ function App() {
     <Provider>
       <div className="App">
         <Router>
-          <Nav handleOpen={handleOpen} />
-
+          <Nav />
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/AddPost" element={<AddPost />} />

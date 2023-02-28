@@ -39,7 +39,7 @@ export default function AddPost(){
     }
     
     return(
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center mt-3">
       <div className="w-full max-w-xs">
        <form  className="flex w-full flex-col gap-4 p-4 shadow">
     {/* <div className="grid grid-flow-row gap-2 text-sm" >
@@ -57,7 +57,7 @@ export default function AddPost(){
                         <textarea 
                         value= {description}
                         onChange={(e)=>setDescription(e.target.value)}
-                        name="description" id="description" rows={8} className="w-full rounded bg-slate-100 p-2"/>
+                        name="description" id="description" rows={6} className="w-full rounded bg-slate-100 p-2"/>
                     </div>
     <div className="mb-4">
       <label className="block text-gray-500 text-sm font-bold mb-2" htmlFor="price">
@@ -129,7 +129,8 @@ export default function AddPost(){
                       
       <button 
       onClick={()=>{
-        AddPost(price,timeLeft,productImg,selected,description,region,shipping);
+        console.log(images)
+        AddPost(price,timeLeft,selected,description,region,shipping,images);
         navigate("/")
         console.log("added")
       }} className="bg-blue-500 ml-[40px] hover:bg-blue-700 m-6 w-[200px] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">

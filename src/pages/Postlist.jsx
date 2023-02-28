@@ -74,7 +74,7 @@ export default function Postlist() {
          })
         },[Postlist]);
  
-  
+  console.log(Postlist)
 
     return (  
       <>
@@ -83,9 +83,10 @@ export default function Postlist() {
                 Postlist.slice(0,4).map((post) => (
                     <div key={post.id} className="Desc border-b border-gray-200  hover:bg-slate-100 hover:text-white hover:shadow-xl" >
                           {/* image */}
-                        <div className="mr-6 mt-1" onClick={()=>handlOpen(post.id)}>
-                            <img src={post.image} alt="item" className=" object-cover  w-[100px] shadow rounded mb-2" />
-                        </div>
+                        {/* <div className="mr-6 mt-1" onClick={()=>handlOpen(post.id)}>
+                            <img src={post.images} alt="item" className=" object-cover  w-[100px] shadow rounded mb-2" />
+                        </div> */}
+                
                           {/* // description */}
                         <div className=" px-2 md:px-8">
                             <p className="font-bold  text-gray-500">{post.description}</p>

@@ -10,6 +10,8 @@ import Search from "../components/search";
 import NavSearch from "../components/Navseearch";
 import Maxprice from "../components/maxprice";
 import Privateseller from "../components/privateseller";
+import Header from "./newheader";
+import Nav from "../components/nav";
 
 export default function Homepage(){  
   const [country,setCountries]=useState([]);
@@ -21,6 +23,9 @@ export default function Homepage(){
  
     return(
       <>
+      
+      <Header/>
+    
         <div>
             <div className="md:flex items-center justify-between bg-white py-3 md:px-10 px-7">
          
