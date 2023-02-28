@@ -29,7 +29,7 @@ export default function Header(){
         return `${item.flag} ${Object.keys(item.currencies)[0]}`
     })  
     const style={
-        fontSize:"15px",
+        fontSize:"11px",
     
       }
       
