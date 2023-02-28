@@ -59,7 +59,7 @@ export default function Header(){
         setToCurrency(e.target.value)
      }
     return(
-        <div className="relative fixed mt-[95px] top-0 mx-auto grid w-[400px] md:w-full max-w-3xl grid-flow-dense  grid-cols-2 grid-rows-auto-1fr justify-center gap-2 rounded-xl bg-gradient-to-br from-blue-900 to-sky-600 p-3 px-4 text-center text-white">
+        <div className="relative fixed  top-0 mx-auto grid  md:w-full max-w-3xl grid-flow-dense  grid-cols-2 grid-rows-auto-1fr justify-center gap-2 rounded-xl bg-gradient-to-br from-blue-900 to-sky-600 p-3 px-4 text-center text-white">
 
         <h1 className="self-center justify-self-start text-lg font-semibold">Hi, @ HTP02886</h1>
         <div className="flex md:flex md:justify-between md:gap-[360px] ">

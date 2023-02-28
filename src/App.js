@@ -45,7 +45,7 @@ function App() {
 
   return (
     <Provider>
-      <div className="App">
+      <div className="h-screen p-4 pt-24">
         <Router>
           <Nav />
           <Routes>
@@ -63,7 +63,6 @@ function App() {
             <Route path="/Category/Construction" element={<Construction />} />
             <Route path="/new" element={<Newer />} />
           </Routes>
-          <Margin />
         </Router>
       </div>
     </Provider>
