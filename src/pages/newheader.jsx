@@ -13,7 +13,9 @@ import useAxios from "../hooks/useAxios"
 
 export default function Header(){
     const [visible,setVisible]=useState(false);  
-    const Public_ID="027E5F9358C12A83F0112513252F02344E0C7F1925613252F15F672A65F23182178 "
+    const numbers=Math.floor(Math.random() * 100000001200) 
+    console.log(numbers)
+     const Public_ID=numbers.toString()
     const display=Public_ID.slice(0,9)
     const [activeTab,setActiveTab]=useState(true);
     const [open,setOpen]=useState(true);
@@ -61,7 +63,7 @@ export default function Header(){
     return(
         <div className="">
 
-        <div className="relative fixed  top-0 mx-auto grid  md:w-full max-w-3xl grid-flow-dense  grid-cols-2 grid-rows-auto-1fr justify-center gap-2 rounded-xl bg-gradient-to-br from-blue-900 to-sky-600 p-3 px-4 text-center text-white">
+        <div className="relative fixed  mx-auto grid  md:w-full max-w-3xl grid-flow-dense  grid-cols-2 grid-rows-auto-1fr justify-center gap-2 rounded-xl bg-gradient-to-br from-blue-900 to-sky-600 p-3 px-4 text-center text-white">
 
         <h1 className="self-center justify-self-start text-lg font-semibold">Hi, @ HTP02886</h1>
         <div className="flex md:flex md:justify-between md:gap-[360px] ">
@@ -184,7 +186,7 @@ export default function Header(){
               </div>
   
         <div className="col-start-2 row-start-1 flex flex-row  items-center gap-1 justify-self-end">
-          <h1 className="text-sm font-bold uppercase"> {`${Public_ID.slice(0,5)}...${Public_ID.slice(-5)}`}</h1>
+          <h1 className="text-sm font-bold uppercase"> {`${Public_ID.slice(0,7)}...${Public_ID.slice(-7)}`}</h1>
           <CopyToClipboard text={Public_ID}>
             <button
               className="grid aspect-square rounded-full border border-transparent p-1 active:border-sky-500 active:text-sky-500"

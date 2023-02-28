@@ -57,7 +57,7 @@ export default function AddPost(){
                         <textarea 
                         value= {description}
                         onChange={(e)=>setDescription(e.target.value)}
-                        name="description" id="description" rows={6} className="w-full rounded bg-slate-100 p-2"/>
+                        name="description" id="description" rows={4} className="w-full rounded bg-slate-100 p-2"/>
                     </div>
     <div className="mb-4">
       <label className="block text-gray-500 text-sm font-bold mb-2" htmlFor="price">
@@ -91,14 +91,7 @@ export default function AddPost(){
         
     </select>
     </div>
-    <div className="grid grid-flow-row gap-2 text-sm">
-      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
-        Time left
-      </label>
-      <input 
-      onChange={(e)=>setTimeleft(e.target.value)} className="h-10 w-full rounded bg-slate-100 px-2" id="username" type="text" placeholder="Enter in Number of Days " required/>
-    </div>
-
+   
     <div className="grid grid-flow-row gap-2 text-sm ">
                         <UploadImage name="images" onChange={setImages}/>
       </div>

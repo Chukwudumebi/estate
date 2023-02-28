@@ -36,14 +36,14 @@ export default function Nav(){
   
   
     return (
-        <div div className="shadow-md w-full fixed top-0 left-0  z-[20]">
-          <div className="border-b bg-white">
+        < div className="shadow-md w-full bg-white flex items-center fixed top-0 left-0  z-[20]">
+          
           
                   <Link to ="/">
                   <img src={logo} alt="logo" className="md:ml-[35px]"/>
                   </Link>  
-                  
-          </div>
+          
+                  <h1 className="font-bold text-blue font-[30px] ml-14 md:ml-[440px]" style={{font:"35px"}}>SQE MarketApp.</h1>
           </div>
 
            

@@ -60,27 +60,31 @@ export default function Postlist() {
     // },[Postlist]);
   
     useEffect(()=>{
-      axios("https://api.freecurrencyapi.com/v1/latest",{
-             params: {
-                 apikey:"wyYOvYBYFnvzXN5vqfzlvpBOuWsTQbmCezQvqwir",
-                 base_currency:"USD",
-                 currencies:tocurrency.split(" ")[1],
-             }
-         }).then((response)=>{
-             console.log(response.data.data[tocurrency])
-             setRate(response.data.data[tocurrency.split(" ")[1]])
-         }).catch(err=>{
-             console.log(err)
-         })
+  
+
+       axios("https://api.freecurrencyapi.com/v1/latest",{
+               params: {
+                   apikey:"wyYOvYBYFnvzXN5vqfzlvpBOuWsTQbmCezQvqwir",
+                   base_currency:"USD",
+                   currencies:tocurrency.split(" ")[1], 
+               }
+           }).then((response)=>{
+               console.log(response.data.data[tocurrency])
+               setRate(response.data.data[tocurrency.split(" ")[1]])
+           }).catch(err=>{
+               console.log(err)
+           })
+      
+      
         },[Postlist]);
  
   console.log(Postlist)
 
     return (  
       <>
-     { Postlist.length > 0 ?<div className="flex flex-col  rounded-md bg-white shadow-lg md:ml-[70px] md:w-[1400px] md:overflow-auto h-80 mt-[60px] ">
+     { Postlist.length > 0 ?<div className="flex flex-col  rounded-md bg-white shadow-lg md:mx-auto md:w-[1400px] md:overflow-auto h-full ">
             {
-                Postlist.slice(0,4).map((post) => (
+                Postlist.slice(0,5).map((post) => (
                     <div key={post.id} className="Desc border-b border-gray-200  hover:bg-slate-100 hover:text-white hover:shadow-xl" >
                           {/* image */}
                         {/* <div className="mr-6 mt-1" onClick={()=>handlOpen(post.id)}>
