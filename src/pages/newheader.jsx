@@ -29,7 +29,7 @@ export default function Header(){
         return `${item.flag} ${Object.keys(item.currencies)[0]}`
     })  
     const style={
-        fontSize:"28px",
+        fontSize:"18px",
     
       }
       
@@ -75,7 +75,7 @@ export default function Header(){
 
 
                        <div 
-          className="rounded-full bg-white px-1 py-1 text-sm  text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
+          className="rounded-full bg-white px-1 py-1 text-sm mt-3  text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
           >
                    <select className=" bg-white border-none focus:border-none rounded-full" onChange={handleSet}>
                       <option value={tocurrency}>{tocurrency}</option>
@@ -104,7 +104,10 @@ export default function Header(){
                         <li  
                          onClick={() => setActiveTab("stores")}
                       
-                        className={` ${activeTab== "stores" ? "bg-blue-500":"bg-white"} shadow-md p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  `}>
+                        className={` ${activeTab== "stores" ? "bg-blue-500":"bg-white"} 
+                        
+                        group grid aspect-square grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal shadow-sm hover:bg-sky-700 hover:text-neutral
+                        `}>
                             <a href="#" className={`text-blue-600 ${activeTab== "stores" ? "text-white":""} hover:text-white duration-500`} >
                             <MdOutlineStoreMallDirectory style={style}/>
                             </a>
@@ -113,7 +116,12 @@ export default function Header(){
                     </Link>
                      <Link to="/AddPost" onClick={()=>setOpen(true)}>
 
-                        <li  className={` ${activeTab == "AddPost" ? "bg-blue-500" :"bg-white"} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  `}>
+                        <li  className={` ${activeTab == "AddPost" ? "bg-blue-500" :"bg-white"}  
+                        
+                        
+                        
+      group grid aspect-square grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal shadow-sm hover:bg-sky-700 hover:text-neutral
+      `}>
                             <a href="#" className={`text-blue-600 ${activeTab =="AddPost" ? "text-white" :""} hover:text-white duration-500 `}>
                             <AiOutlinePlus style={style}/>
                             </a>
@@ -122,7 +130,9 @@ export default function Header(){
                     </Link>
                     <Link to="/RemovePost" onClick={()=>setOpen(true)}>
 
-                        <li  className={`${ activeTab =="RemovePost" ? "bg-blue-500" :"bg-white"} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  `}>
+                        <li  className={`${ activeTab =="RemovePost" ? "bg-blue-500" :"bg-white"} 
+                          group grid aspect-square grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal shadow-sm hover:bg-sky-700 hover:text-neutral 
+                        `}>
                             <a href="#" className={`text-blue-600 ${ activeTab =="RemovePost" ? "text-white":""} hover:text-white duration-500 `}>
                             <AiOutlineMinus style={style}/>
                             </a>
@@ -132,7 +142,9 @@ export default function Header(){
                     
                     <Link to="/EditPost" >
 
-                        <li  className={`${activeTab =="EditPost" ? "bg-blue-500":"bg-white"} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]  `}>
+                        <li  className={`${activeTab =="EditPost" ? "bg-blue-500":"bg-white"}
+                               group grid aspect-square grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal shadow-sm hover:bg-sky-700 hover:text-neutral
+                          `}>
                             <a href="#" className={`text-blue-600 ${activeTab=="EditPost" ? "text-white" :""} hover:text-white duration-500 `}>
                             <BiEdit style={style}/>
                             </a>
@@ -142,7 +154,9 @@ export default function Header(){
                     
                     <Link to="/LockPage" >
 
-                        <li  className={`${ activeTab=="LockPage" ? "bg-blue-500":"bg-white"} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]`}>
+                        <li  className={`${ activeTab=="LockPage" ? "bg-blue-500":"bg-white"} 
+                              group grid aspect-square grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal shadow-sm hover:bg-sky-700 hover:text-neutral
+                        `}>
                             <a href="#" className={`${activeTab=="LockPage" ? "text-white" :""} text-blue-600 hover:text-white duration-500 `}>
                             <AiOutlineLock style={style}/>
                             </a>
@@ -150,7 +164,10 @@ export default function Header(){
                 
                     </Link>
                     <Link to="/">
-                        <li  className={`${ activeTab=="home" ? "bg-blue-500":"bg-white"} shadow-lg p-2 rounded md:ml-8 text-xl border-gray-500 hover:bg-[dodgerblue]`}>
+                        <li  className={`${ activeTab=="home" ? "bg-blue-500":"bg-white"}
+                        
+                        group grid aspect-square grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal shadow-sm hover:bg-sky-700 hover:text-neutral
+                        `}>
                             <a href="#" className={`${activeTab=="home" ? "text-white" :""} text-blue-600 hover:text-white duration-500 `}>
                           
                             <AiOutlineFundView style={style}/>
