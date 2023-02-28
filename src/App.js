@@ -29,6 +29,7 @@ import Table from "./pages/table";
 import Newer from "./pages/newer";
 import Imageupload from "./pages/uploadimage";
 import Header from "./pages/newheader";
+import Margin from "./pages/margin";
 
 function App() {
   const [open, setOpen] = useState(true);
@@ -62,6 +63,7 @@ function App() {
             <Route path="/Category/Construction" element={<Construction />} />
             <Route path="/new" element={<Newer />} />
           </Routes>
+          <Margin />
         </Router>
       </div>
     </Provider>

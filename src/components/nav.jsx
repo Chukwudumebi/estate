@@ -36,7 +36,7 @@ export default function Nav(){
   
   
     return (
-        <div div className="shadow-md w-full sticky top-0 left-0  z-[20]">
+        <div div className="shadow-md w-full fixed top-0 left-0  z-[20]">
           <div className="border-b bg-white">
           
                   <Link to ="/">
