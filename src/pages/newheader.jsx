@@ -13,9 +13,22 @@ import useAxios from "../hooks/useAxios"
 
 export default function Header(){
     const [visible,setVisible]=useState(false);  
+
+    const [username,setUsername]=useState("HTP02886")
     const numbers=Math.floor(Math.random() * 100000001200) 
     console.log(numbers)
-     const Public_ID=numbers.toString()
+    const characters="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+    function generateString(length){
+      let result=" ";
+      const characterslength=characters.length
+      for(let i=0;i < length ;i++){
+        result +=characters.charAt(Math.floor(Math.random() * characterslength))
+
+      }
+      return result
+    }
+    
+     const Public_ID=generateString(256)
     const display=Public_ID.slice(0,9)
     const [activeTab,setActiveTab]=useState(true);
     const [open,setOpen]=useState(true);
@@ -65,7 +78,7 @@ export default function Header(){
 
         <div className="relative fixed  mx-auto grid  md:w-full max-w-3xl grid-flow-dense  grid-cols-2 grid-rows-auto-1fr justify-center gap-2 rounded-xl bg-gradient-to-br from-blue-900 to-sky-600 p-3 px-4 text-center text-white">
 
-        <h1 className="self-center justify-self-start text-lg font-semibold">Hi, @ HTP02886</h1>
+        <h2 className="self-center justify-self-start text-lg font-bold">Hi,@ {username}</h2>
         <div className="flex md:flex md:justify-between md:gap-[360px] ">
 
         <div className="col-start-1 flex flex-col  items-start">
@@ -186,7 +199,7 @@ export default function Header(){
               </div>
   
         <div className="col-start-2 row-start-1 flex flex-row  items-center gap-1 justify-self-end">
-          <h1 className="text-sm font-bold uppercase"> {`${Public_ID.slice(0,7)}...${Public_ID.slice(-7)}`}</h1>
+          <h3 className="text-sm font-bold uppercase"> {`${Public_ID.slice(0,7)}...${Public_ID.slice(-7)}`}</h3>
           <CopyToClipboard text={Public_ID}>
             <button
               className="grid aspect-square rounded-full border border-transparent p-1 active:border-sky-500 active:text-sky-500"
