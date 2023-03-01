@@ -92,7 +92,7 @@ export default function Postlist({Public_ID}) {
             {
                 items.slice(0,5).map((post) => (
                     <div key={post.id} className="Desc border-b border-gray-200  hover:bg-slate-100 hover:text-white hover:shadow-xl" >
-                         <div className=" grid h-40 grid-cols-2 grid-rows-2 gap-2 sm:h-44">
+                         <div className=" grid h-40 grid-cols-2 mt-3 grid-rows-2 gap-1 sm:h-44">
                 {post.images.slice(0,4).map((preview,index)=>(
                     <div key={preview } className="relative h-[60px] w-[60px] overflow-hidden rounded shadow">
                       <img src={preview} alt="hello" className="h-full w-full overflow-hidden object-cover"/>

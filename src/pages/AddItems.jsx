@@ -29,7 +29,7 @@ export default function AddItems(){
         console.log(formRef)
     const formData=new FormData(formRef.current)
     console.log(formData)
-    const prevImages=images.map((image)=>URL.createObjectURL(image))
+    const prevImages=images.map((image,id)=>URL.createObjectURL(image,id))
     console.log(prevImages)
     const data=Object.fromEntries(formData.entries())
     const item={
