@@ -187,7 +187,7 @@ export default function Header({Public_ID}){
               </div>
   
         <div className="col-start-2 row-start-1 flex flex-row  items-center gap-1 justify-self-end">
-          <h3 className="text-sm font-bold uppercase"> {`${Public_ID.slice(0,7)}...${Public_ID.slice(-7)}`}</h3>
+          <h3 className="text-sm font-bold uppercase"> {`${Public_ID.slice(0,7)}...${Public_ID.slice(-6)}`}</h3>
           <CopyToClipboard text={Public_ID}>
             <button
               className="grid aspect-square rounded-full border border-transparent p-1 active:border-sky-500 active:text-sky-500"

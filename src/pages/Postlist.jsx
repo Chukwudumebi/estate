@@ -15,6 +15,10 @@ export default function Postlist({Public_ID}) {
 
   const {items}=useItems()
   console.log(items)
+  const [a,b,] = items
+  // console.log(images)
+  // const obj={...images}
+  // console.log(obj)
   const {
 
     fromcurrency,
@@ -80,7 +84,7 @@ export default function Postlist({Public_ID}) {
       
         },[Postlist]);
  
-  console.log(Postlist)
+  console.log()
 
     return (  
       <>
