@@ -16,7 +16,18 @@ import Nav from "../components/nav";
 export default function Homepage(){  
   const [country,setCountries]=useState([]);
   const [post,setPost]=useState(false)
+  const characters="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+  function generateString(length){
+    let result=" ";
+    const characterslength=characters.length
+    for(let i=0;i < length ;i++){
+      result +=characters.charAt(Math.floor(Math.random() * characterslength))
 
+    }
+    return result
+  }
+  
+   const Public_ID=generateString(256)
   useEffect(()=>{
     setCountries(countries)
   },[])
@@ -24,7 +35,7 @@ export default function Homepage(){
     return(
       <>
       
-      <Header/>
+      <Header Public_ID={Public_ID}/>
     
         <div>
             <div className="md:flex items-center justify-between bg-white py-3 md:px-10 px-7">
@@ -45,7 +56,7 @@ export default function Homepage(){
       </div>
         
 
-        <Postlist/>
+        <Postlist Public_ID={Public_ID}/>
         
       </>
         

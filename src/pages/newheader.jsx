@@ -11,24 +11,12 @@ import {MdOutlineStoreMallDirectory} from "react-icons/md"
 import {BiEdit} from "react-icons/bi"
 import useAxios from "../hooks/useAxios"
 
-export default function Header(){
+export default function Header({Public_ID}){
     const [visible,setVisible]=useState(false);  
 
     const [username,setUsername]=useState("HTP02886")
-    const numbers=Math.floor(Math.random() * 100000001200) 
-    console.log(numbers)
-    const characters="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-    function generateString(length){
-      let result=" ";
-      const characterslength=characters.length
-      for(let i=0;i < length ;i++){
-        result +=characters.charAt(Math.floor(Math.random() * characterslength))
-
-      }
-      return result
-    }
     
-     const Public_ID=generateString(256)
+    
     const display=Public_ID.slice(0,9)
     const [activeTab,setActiveTab]=useState(true);
     const [open,setOpen]=useState(true);

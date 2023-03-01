@@ -9,9 +9,12 @@ import {HiOutlineExclamationCircle} from "react-icons/hi"
 import { CurrencyContext } from "../context/CurrencyProvider";
 import axios from "axios";
 import * as Dialog from '@radix-ui/react-dialog';
+import { useItems } from "../context/ItemsContext";
 
+export default function Postlist({Public_ID}) {
 
-export default function Postlist() {
+  const {items}=useItems()
+  console.log(items)
   const {
 
     fromcurrency,
@@ -27,8 +30,7 @@ export default function Postlist() {
 
  
 
-  const Public_ID="027E5F9358C12A83F0112513252F02344E0C7F1925613252F15F672A65F23182178 "
-  const display=Public_ID.slice(0,9)
+ 
     const [visible,setVisible]=useState(false);
     const [open,setOpen]=useState(false);
     const [item,setItem]=useState(false)
@@ -82,15 +84,19 @@ export default function Postlist() {
 
     return (  
       <>
-     { Postlist.length > 0 ?<div className="flex flex-col  rounded-md bg-white shadow-lg md:mx-auto md:w-[1400px] md:overflow-auto h-full ">
+     { items.length > 0 ?<div className="flex flex-col  rounded-md bg-white shadow-lg md:mx-auto md:w-[1400px] md:overflow-auto h-full ">
             {
-                Postlist.slice(0,5).map((post) => (
+                items.slice(0,5).map((post) => (
                     <div key={post.id} className="Desc border-b border-gray-200  hover:bg-slate-100 hover:text-white hover:shadow-xl" >
-                          {/* image */}
-                        {/* <div className="mr-6 mt-1" onClick={()=>handlOpen(post.id)}>
-                            <img src={post.images} alt="item" className=" object-cover  w-[100px] shadow rounded mb-2" />
-                        </div> */}
-                
+                         <div className=" grid h-40 grid-cols-2 grid-rows-2 gap-2 sm:h-44">
+                {post.images.slice(0,4).map((preview,index)=>(
+                    <div key={preview } className="relative h-[60px] w-[60px] overflow-hidden rounded shadow">
+                      <img src={preview} alt="hello" className="h-full w-full overflow-hidden object-cover"/>
+
+                    </div>
+                )
+                )}
+            </div>
                           {/* // description */}
                         <div className=" px-2 md:px-8">
                             <p className="font-bold  text-gray-500">{post.description}</p>
@@ -98,61 +104,74 @@ export default function Postlist() {
                             <p className="font-bold  text-gray-500">Region: {post.region}</p>
                             <p className="font-bold text-gray-500"> Time Posted: {post.time}</p>
                             <p className="font-bold text-gray-500"> Date Posted: {post.date}</p>
-                        </div>                           
-                            {/* details */}                                                                          
-                            <div  className="de">
-                              <div className="details">
-                                <p className="font-bold text-gray-500 ">Price:
-                                  {/* {convert.toFixed(2)}-
-                                  {tocurrency.split(" ")[1]}
-                                   */}
+                        </div>      
 
+
+
+
+
+                            {/* details */}
+                            <div className="adjust">
+                            <div >
+                              {/* details */}
+                              <div className="details">
+                                   {/* price */}
+                                <p className="font-bold text-gray-500 ">Price:
                                   { (post.price*rate).toFixed(2)} - {tocurrency.split(" ")[1]}
                                   </p>
+
+                                  {/* input */}
                                 <div >
                                   <input type="checkbox"  />
                                      <span className="font-bold text-gray-500 ml-2">Select</span>
                                   </div>
                               </div>
+
+
                                <p className="font-bold  text-gray-500">Delivery Cost :
                                
-                               {(post.shipping * rate ).toFixed(2)} -{tocurrency.split(" ")[1]}
+                               {(post.shippingCost * rate ).toFixed(2)} -{tocurrency.split(" ")[1]}
                                </p>
                                <div className="">
-                   <div  className="font-bold flex justify-between items-center text-blue-500 mr-4" >
-                    <span>Public_ID:</span>
-                     <p className={`font-bold text-sm text-gray-600 ${copy ? "text-black":""}`}>{`${Public_ID.slice(0,7)}...${Public_ID.slice(-5)}`}
-                     </p> 
-                     <CopyToClipboard text={Public_ID}
-                    onCopy={()=>setCopied(true)}>
+                                          <div  className="font-bold flex justify-between items-center text-blue-500 mr-4" >
+                                          <span>Public_ID:</span>
+                                           <p className={`font-bold text-sm text-gray-600 ${copy ? "text-black":""}`}>{`${Public_ID.slice(0,7)}...${Public_ID.slice(-5)}`}
+                                           </p> 
+                                           <CopyToClipboard text={Public_ID}
+                                            onCopy={()=>setCopied(true)}>                                        
+                                           <AiOutlineCopy className={`text-2xl ${copy ? "text-blue-600":""} hover:text-blue-700 hover: cursor-pointer`}/>
+                                          
+                                             </CopyToClipboard>
+                                             </div>
+                                      </div>
+                                        <div className="flex justify-center items-center gap-5">
+                                          <p className="font-bold  text-gray-500">Seller's Rating 
+                                              </p>
+                                              <AiFillStar className="text-blue-500 "/>
+                                              <AiFillStar className="text-blue-500 "/>
+                                               <AiFillStar className="text-blue-500 "/>
+                                               <AiFillStar className="text-blue-500 "/>
+                                          </div>
+                  {/* details ends */}
+                  {/* buttons start */}
                   
-                        
-                    <AiOutlineCopy className={`text-2xl ${copy ? "text-blue-600":""} hover:text-blue-700 hover: cursor-pointer`}/>
-                  
-                    </CopyToClipboard></div>
-                    
-                  </div>
-                  <div className="flex justify-center items-center gap-5">
+                          {/* buttons end */}
 
-                      <p className="font-bold  text-gray-500">Seller's Rating 
-                        </p>
-                        <AiFillStar className="text-blue-500 "/>
-                        <AiFillStar className="text-blue-500 "/>
-                        <AiFillStar className="text-blue-500 "/>
-                        <AiFillStar className="text-blue-500 "/>
+
+
+
                   </div>
-                            </div>
-                          {/* //buttons */}
+                         {/* buttons */}
+
+                                                        
                           <div className="flex flex-col">
-                          <button className="p-[5px] m-2 bg-blue-500 font-bold text-white shadow-md rounded">BUY</button>
-                          {/* <button
-                          className="py-2 px-2 m-2 bg-blue-500 font-bold text-white shadow-md rounded"
-                          >  Make Offer</button> */}                 
+                          <button className="p-[2px] m-2 bg-blue-500 font-bold text-white shadow-lg rounded-lg">BUY</button>
+                                       
              <Dialog.Root>
       <Dialog.Trigger asChild>
         <button
           type="button"
-          className=" p-[5px] m-2 bg-blue-500 font-bold text-white shadow-md rounded"
+          className=" p-[2px] m-2 bg-blue-500 font-bold text-white shadow-lg rounded-lg"
       
         >
           Make Offer
@@ -196,7 +215,7 @@ export default function Postlist() {
       <Dialog.Trigger asChild>
         <button
           type="button"
-          className="p-[5px] m-2 bg-blue-500 font-bold text-white shadow-md rounded"
+          className="p-[2px] m-2 bg-blue-500 font-bold text-white shadow-lg rounded-lg"
           
         >
           Contact Seller
@@ -208,13 +227,9 @@ export default function Postlist() {
           <div>
             <div className="text-center p-[60px]">
 
-              <h1 className="font-bold text-center">contact seller</h1>
+              <h1 className="font-bold text-center font-[10px]">contact seller</h1>
             </div>
-            {/* <div className="flex h-24 flex-col overflow-y-scroll">
-             
-            </div> */}
-            
-
+           
             <div className="flex items-center justify-around border-t p-2 py-8">
               <Dialog.Close asChild>
                 <button
@@ -235,17 +250,13 @@ export default function Postlist() {
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
-
-
-
-
-
-
-    
-                          {/* <button
-                          className="py-2 px-2 m-2 bg-blue-500 font-bold text-white shadow-md rounded"
-                          >Contact Seller</button> */}
                           </div>  
+
+
+
+                          </div>                                                                          
+
+
 
 
                               <Modal

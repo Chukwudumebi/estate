@@ -1,0 +1,33 @@
+[
+
+
+    {
+      "id":1,
+      "description":"hello kingsley",
+      "price":200,
+      "shippingCost":500,
+      "region":"Nigeria",
+      "category":"Services",
+      "images":[]   
+    },
+    
+    {
+        "id":2,
+        "description":"hello blessing",
+        "price":200,
+        "shippingCost":400,
+        "region":"India",
+        "category":"Goods",
+        "images":[]   
+      },
+      
+    {
+        "id":3,
+        "description":"hello Ehichoya",
+        "price":300,
+        "shippingCost":20,
+        "region":"Russia",
+        "category":"Services",
+        "images":[]   
+    }
+]

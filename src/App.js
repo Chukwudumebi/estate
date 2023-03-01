@@ -30,6 +30,7 @@ import Newer from "./pages/newer";
 import Imageupload from "./pages/uploadimage";
 import Header from "./pages/newheader";
 import Margin from "./pages/margin";
+import AddItems from "./pages/AddItems";
 
 function App() {
   const [open, setOpen] = useState(true);
@@ -50,7 +51,7 @@ function App() {
           <Nav />
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/AddPost" element={<AddPost />} />
+            <Route path="/AddPost" element={<AddItems />} />
             <Route path="/RemovePost" element={<RemovePost />} />
             <Route path="/stores" element={<Stores />} />
             <Route path="/EditPost" element={<EditPost />} />
