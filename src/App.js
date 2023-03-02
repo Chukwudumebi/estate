@@ -31,6 +31,7 @@ import Imageupload from "./pages/uploadimage";
 import Header from "./pages/newheader";
 import Margin from "./pages/margin";
 import AddItems from "./pages/AddItems";
+import Design from "./pages/redesign";
 
 function App() {
   const [open, setOpen] = useState(true);
@@ -49,6 +50,7 @@ function App() {
       <div className="h-screen p-4 pt-24 ">
         <Router>
           <Nav />
+
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/AddPost" element={<AddItems />} />

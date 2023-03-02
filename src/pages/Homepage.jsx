@@ -12,6 +12,7 @@ import Maxprice from "../components/maxprice";
 import Privateseller from "../components/privateseller";
 import Header from "./newheader";
 import Nav from "../components/nav";
+import Design from "./redesign";
 
 export default function Homepage(){  
   const [country,setCountries]=useState([]);
@@ -36,14 +37,16 @@ export default function Homepage(){
       <>
       
       <Header Public_ID={Public_ID}/>
+      <Design/>
     
-        <div>
+        {/* <div>
             <div className="md:flex items-center justify-between bg-white py-3 md:px-10 px-7">
          
           <Region country={country} states={states} provinces={provinces}/>
           <Category/>
           <Privateseller/>
           <Maxprice/>
+          
           <div className="flex justify-center items-center mb-2">
                           <input type="checkbox"
                           onChange={(e)=>setPost(e.target.checked)}
@@ -54,7 +57,7 @@ export default function Homepage(){
           <NavSearch/>
         </div>
       </div>
-        
+         */}
 
         <Postlist Public_ID={Public_ID}/>
         
