@@ -7,9 +7,9 @@ export default function Privateseller(){
 
 
 <div
-          className="rounded-full bg-white px-0 py-1 ml-5 text-sm text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
+          className="rounded-full bg-white px-2 shadow-md font-bold py-2 mb-1 text-sm text-center text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
             
-        > 
+        >
                         <select className=" bg-white border rounded-lg border-none focus:border-none focus:border" onChange={(e)=>setMaxprice(e.target.value)}>
                           <option value="Private Seller">
                             Private Seller </option>                         

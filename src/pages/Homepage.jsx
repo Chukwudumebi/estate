@@ -37,9 +37,9 @@ export default function Homepage(){
       <>
       
       <Header Public_ID={Public_ID}/>
-      <Design/>
+  
     
-        {/* <div>
+        <div>
             <div className="md:flex items-center justify-between bg-white py-3 md:px-10 px-7">
          
           <Region country={country} states={states} provinces={provinces}/>
@@ -57,7 +57,7 @@ export default function Homepage(){
           <NavSearch/>
         </div>
       </div>
-         */}
+        
 
         <Postlist Public_ID={Public_ID}/>
         
