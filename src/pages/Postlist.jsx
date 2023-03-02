@@ -318,8 +318,8 @@ export default function Postlist({Public_ID}) {
     popup={true}
     onClick={()=>setOpen(false)}
   > 
-    <Modal.Body className="p-2 mt-[200px] flex justify-center items-center  md:mt-0" >
-    <img src={selectedImages} alt="hello" className="h-full mt-5 w-full overflow-hidden object-cover"/>
+    <Modal.Body className=" mt-[200px] flex justify-center items-center  md:mt-0" >
+    <img src={selectedImages} alt="hello" className="h-60 mt-5 w-60  object-cover"/>
     </Modal.Body>
   </Modal>
   </div>
