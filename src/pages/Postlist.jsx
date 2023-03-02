@@ -12,13 +12,25 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { useItems } from "../context/ItemsContext";
 
 export default function Postlist({Public_ID}) {
-
   const {items}=useItems()
-  console.log(items)
-  const [a,b,] = items
+// if(items){
+//   console.log(items)
+//   const [a] = items
+//   console.log(a.images)
+//   a.images.
+//   // const {images}=a
+//   // console.log(images)
+
+// }
+  // console.log(images)
+  // const images=a
+  // console.log(images[0])
+  // const {images}=image
   // console.log(images)
   // const obj={...images}
   // console.log(obj)
+  // console.log(Object.keys(obj))
+   
   const {
 
     fromcurrency,
@@ -30,7 +42,7 @@ export default function Postlist({Public_ID}) {
   const [amount,setAmount]=useState(0)
   const convert=amount * rate;
   const [converts,setConvert]=useState(convert)
-  console.log(rate)
+  
 
  
 
@@ -39,7 +51,7 @@ export default function Postlist({Public_ID}) {
     const [open,setOpen]=useState(false);
     const [item,setItem]=useState(false)
     const[copy,setCopied]=useState(false)
-    const[selectedImages,setSelectedImages]=useState([])
+    const[selectedImages,setSelectedImages]=useState("")
     
     
     
@@ -47,10 +59,9 @@ export default function Postlist({Public_ID}) {
       setVisible(true)
     }
     const handlOpen = (id)=>{
-      console.log(id)
-     const t= Postlist.filter((item)=> item.id ===id)
-     console.log(t)
-     setSelectedImages(t)
+     
+    
+     setSelectedImages(id)
         setOpen(true)
       }
       
@@ -75,7 +86,7 @@ export default function Postlist({Public_ID}) {
                    currencies:tocurrency.split(" ")[1], 
                }
            }).then((response)=>{
-               console.log(response.data.data[tocurrency])
+              
                setRate(response.data.data[tocurrency.split(" ")[1]])
            }).catch(err=>{
                console.log(err)
@@ -84,8 +95,14 @@ export default function Postlist({Public_ID}) {
       
         },[Postlist]);
  
-  console.log()
 
+    const handleSelect=(id)=>{
+      console.log(id)
+    
+      
+
+
+    }
     return (  
       <>
      { items.length > 0 ?<div className="flex flex-col  rounded-md bg-white shadow-lg md:mx-auto md:w-[1400px] md:overflow-auto h-full ">
@@ -94,7 +111,10 @@ export default function Postlist({Public_ID}) {
                     <div key={post.id} className="Desc border-b border-gray-200  hover:bg-slate-100 hover:text-white hover:shadow-xl" >
                          <div className=" grid h-40 grid-cols-2 mt-3 grid-rows-2 gap-1 sm:h-44">
                 {post.images.slice(0,4).map((preview,index)=>(
-                    <div key={preview } className="relative h-[60px] w-[60px] overflow-hidden rounded shadow">
+                    <div key={preview }
+                       onClick={()=>handlOpen(preview)}
+                    
+                    className="relative h-[60px] w-[60px] overflow-hidden rounded shadow">
                       <img src={preview} alt="hello" className="h-full w-full overflow-hidden object-cover"/>
 
                     </div>
@@ -104,10 +124,7 @@ export default function Postlist({Public_ID}) {
                           {/* // description */}
                         <div className=" px-2 md:px-8">
                             <p className="font-bold  text-gray-500">{post.description}</p>
-                            <p className="font-bold  text-gray-500"> Category: {post.category}</p>
-                            <p className="font-bold  text-gray-500">Region: {post.region}</p>
-                            <p className="font-bold text-gray-500"> Time Posted: {post.time}</p>
-                            <p className="font-bold text-gray-500"> Date Posted: {post.date}</p>
+                           
                         </div>      
 
 
@@ -302,10 +319,7 @@ export default function Postlist({Public_ID}) {
     onClick={()=>setOpen(false)}
   > 
     <Modal.Body className="p-2 mt-[200px] flex justify-center items-center  md:mt-0" >
-     {selectedImages.map((item)=>(
-
-      <img src={item.image} alt="item" className=" object-cover rounded-lg mt-4 w-[600px]  " />       
-     ))}
+    <img src={selectedImages} alt="hello" className="h-full mt-5 w-full overflow-hidden object-cover"/>
     </Modal.Body>
   </Modal>
   </div>

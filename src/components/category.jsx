@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom"
 export default function Category(){
     const Navigate=useNavigate()
     const [selected,setSelected]=useState("")
-    console.log(selected)
+    
     useEffect(()=>{
         if(selected=="services"){
 

@@ -46,7 +46,7 @@ function App() {
 
   return (
     <Provider>
-      <div className="h-screen p-4 pt-24">
+      <div className="h-screen p-4 pt-24 ">
         <Router>
           <Nav />
           <Routes>

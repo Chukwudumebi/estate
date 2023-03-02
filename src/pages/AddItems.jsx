@@ -5,31 +5,17 @@ import {BsArrowLeftCircle} from "react-icons/bs";
 import UploadImage from "./ImageUpload";
 import { useItems } from "../context/ItemsContext";
 export default function AddItems(){
-
     const navigate=useNavigate()
-    // const[productImg,setProductImage]=useState("");
-    const [selected,setSelected]=useState("");
-    const [timeLeft,setTimeleft]=useState("");
-    const [description,setDescription]=useState("");
-    const [price,setPrice]=useState(" ");
-    const [region,setRegion]=useState("")
-    const [shipping,setShipping]=useState(" ")
-
-
     const [images,setImages]=useState([]);
     const formRef=useRef(null)
     const {dispatch}=useItems()
-
-
-
     const handleSubmit=(e)=>{
-
         e.preventDefault();
         // get form Data
         console.log(formRef)
     const formData=new FormData(formRef.current)
     console.log(formData)
-    const prevImages=images.map((image,id)=>URL.createObjectURL(image,id))
+    const prevImages=images.map((image)=>URL.createObjectURL(image))
     console.log(prevImages)
     const data=Object.fromEntries(formData.entries())
     const item={
@@ -122,7 +108,7 @@ export default function AddItems(){
     <select id="countries" className="bg-white rounded" 
      name="category"
       >
-   <option value={selected}
+   <option 
   >Choose a Category</option>
   <option value="Goods">Goods</option>
   <option value="services">Services</option>

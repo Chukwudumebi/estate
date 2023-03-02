@@ -21,7 +21,7 @@ export default function Nav(){
     tocurrency,
     setToCurrency
   }=useContext(CurrencyContext)
-  console.log(tocurrency)
+
   const {Postlist}=useContext(PostContext)
   const[values,setValue]=useState(null)
     const [data]=useAxios("https://restcountries.com/v3.1/all");

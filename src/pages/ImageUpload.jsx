@@ -6,6 +6,7 @@ export default function UploadImage({name,maxFiles=4,maxSizes=5,onChange}){
     const [previews,setPreviews]=useState([]);
     const [isDragging,setIsDragging]=useState(false);
     const [fileList,setFileList]=useState([]);
+    
     console.log(fileList)
 
 useEffect(()=>{
@@ -19,6 +20,7 @@ const handleImageChange=(e)=>{
         setFileList((prev)=>{
         // check if the file size is too big 
         const newFiles=Array.from(e.target.files || []).filter((file)=>file.type.includes("image"))
+        
         return [...newFiles,...prev]
         })
     }

@@ -2,9 +2,6 @@ import { useState } from "react";
 import UploadImage from "./ImageUpload";
 export default function Imageupload(){
    const [images,setImages]=useState([]);
-
-   console.log(images)
-
     return(
         <div className="min-h-screen p-4 ">
             <div className="m-2 mx-auto h-full max-w-md rounded-md bg-white">
