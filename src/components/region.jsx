@@ -26,8 +26,8 @@ export default function Region({country,states,provinces}){
 
     return(
       <div className="flex flex-col justify-center items-center">
-          <div
-          className="rounded-full bg-white px-2 shadow-md font-bold py-2 mb-1 text-sm text-center text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
+       <div
+          className="rounded-full bg-white shadow-md font-bold p-1 mb-1 text-sm text-center text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
             
         >
     
@@ -44,10 +44,11 @@ export default function Region({country,states,provinces}){
     } 
 </select>
 </div>
- {state.length > 1 &&  <div
-          className="rounded-full bg-white px-2 shadow-md font-bold py-2 mb-1 text-sm text-center text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
-            
-        >
+ {state.length > 1 && 
+  <div
+  className="rounded-full bg-white shadow-md font-bold p-1 text-sm text-center text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
+    
+>
   <select className="bg-white border-none  focus:border-none" onChange={(e)=>handleState(e.target.value)}>
   <option value="0">select state</option>
     {
@@ -64,9 +65,9 @@ export default function Region({country,states,provinces}){
 {province.length > 1 && 
 
 <div
-className="rounded-full bg-white  shadow-md font-bold  text-sm text-center text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
-  
->
+          className="rounded-full bg-white shadow-md font-bold p-1 mt-1 text-sm text-center text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
+            
+        >
  <select className="bg-white border-none focus:border-none">
   <option value="0">select province</option>
     {

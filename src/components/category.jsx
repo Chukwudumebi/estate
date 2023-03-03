@@ -29,7 +29,7 @@ export default function Category(){
         <div className="flex justify-center">
 
 <div
-          className="rounded-full bg-white shadow-md font-bold  text-sm text-center text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
+          className="rounded-full bg-white shadow-md font-bold p-1 text-sm text-center text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
             
         >
      <link to={`/Category/${selected}`}></link>

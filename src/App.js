@@ -47,25 +47,27 @@ function App() {
 
   return (
     <Provider>
-      <div className="h-screen p-4 pt-24 ">
-        <Router>
-          <Nav />
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/AddPost" element={<AddItems />} />
-            <Route path="/RemovePost" element={<RemovePost />} />
-            <Route path="/stores" element={<Stores />} />
-            <Route path="/EditPost" element={<EditPost />} />
-            <Route path="/LockPage" element={<LockPage />} />
-            <Route path="/Category/Services" element={<Services />} />
-            <Route path="/Category/Goods" element={<Goods />} />
-            <Route path="/Category/Automotives" element={<Automotives />} />
-            <Route path="/Category/Recreational" element={<Recreational />} />
-            <Route path="/Category/Electronics" element={<Electronics />} />
-            <Route path="/Category/Construction" element={<Construction />} />
-            <Route path="/new" element={<Newer />} />
-          </Routes>
-        </Router>
+      <div className="h-screen p-4 pt-24 pb-20 md:pb-10 ">
+        <div className="grid h-full grid-rows-auto-1fr gap-6">
+          <Router>
+            <Nav />
+            <Routes>
+              <Route path="/" element={<Homepage />} />
+              <Route path="/AddPost" element={<AddItems />} />
+              <Route path="/RemovePost" element={<RemovePost />} />
+              <Route path="/stores" element={<Stores />} />
+              <Route path="/EditPost" element={<EditPost />} />
+              <Route path="/LockPage" element={<LockPage />} />
+              <Route path="/Category/Services" element={<Services />} />
+              <Route path="/Category/Goods" element={<Goods />} />
+              <Route path="/Category/Automotives" element={<Automotives />} />
+              <Route path="/Category/Recreational" element={<Recreational />} />
+              <Route path="/Category/Electronics" element={<Electronics />} />
+              <Route path="/Category/Construction" element={<Construction />} />
+              <Route path="/new" element={<Newer />} />
+            </Routes>
+          </Router>
+        </div>
       </div>
     </Provider>
   );
