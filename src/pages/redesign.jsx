@@ -20,7 +20,7 @@ export default function Design() {
           
           
         <div className=" relative mx-auto  w-full mt-1 md:mt-1  md:m-auto md:w-full max-w-3xl grid-flow-dense  grid-cols-2 grid-rows-auto-1fr justify-center gap-2 rounded-xl bg-gradient-to-br from-blue-900 to-sky-600 p-3 px-4 text-center text-white">
-                   <div className="flex justify-between items-center gap-1">
+                   <div className="grid grid-cols-3 gap-1">
 
                     <Region  country={country} states={states}  provinces={provinces}/>
                     <Category />
