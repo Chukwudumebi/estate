@@ -7,7 +7,7 @@ export default function Maxprice(){
 
         
 <div
-          className="rounded-full bg-white px-2 shadow-md font-bold py-2 mb-1 text-sm text-center text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
+          className="rounded-full bg-white  shadow-md font-bold   text-sm text-center text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
             
         >
     

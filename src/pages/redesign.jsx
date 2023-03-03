@@ -12,7 +12,7 @@ export default function Design() {
         
           
 
-          <div className="relative fixed  mx-auto mt-1 md:w-full max-w-3xl  justify-center rounded-xl bg-gradient-to-br from-blue-900 to-sky-600 p-3 px-4 text-center text-white">
+          <div className="relative fixed mr-6 md:m-auto mt-1 md:mt-1 mx-auto mt-1 md:w-full max-w-3xl  justify-center rounded-xl bg-gradient-to-br from-blue-900 to-sky-600 p-3 px-4 text-center text-white">
                    <div className="grid grid-cols-3 grid-flow-dense grid-rows-auto-1fr gap-4 mr-3 ">
 
                     <Region />
@@ -32,20 +32,6 @@ export default function Design() {
                     </div>
                     </div>
                     <NavSearch />
-        
-        
-
-
-
-            
-        
-
-
-
-
-
-
-
         </div>
     )
 }

@@ -36,9 +36,10 @@ export default function Nav(){
   
   
     return (
+      
+
+
         < div className="shadow-md w-full bg-white flex items-center fixed top-0 left-0  z-[20]">
-          
-          
                   <Link to ="/">
                   <img src={logo} alt="logo" className="md:ml-[35px]"/>
                   </Link>  
@@ -47,6 +48,7 @@ export default function Nav(){
           </div>
 
            
+  
     )
 }
 

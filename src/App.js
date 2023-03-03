@@ -50,7 +50,6 @@ function App() {
       <div className="h-screen p-4 pt-24 ">
         <Router>
           <Nav />
-
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/AddPost" element={<AddItems />} />
