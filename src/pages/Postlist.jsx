@@ -10,26 +10,13 @@ import { CurrencyContext } from "../context/CurrencyProvider";
 import axios from "axios";
 import * as Dialog from '@radix-ui/react-dialog';
 import { useItems } from "../context/ItemsContext";
+import ImageDialog from "../components/imageDialog";
 
 export default function Postlist({Public_ID}) {
   const {items}=useItems()
-// if(items){
-//   console.log(items)
-//   const [a] = items
-//   console.log(a.images)
-//   a.images.
-//   // const {images}=a
-//   // console.log(images)
-
-// }
-  // console.log(images)
-  // const images=a
-  // console.log(images[0])
-  // const {images}=image
-  // console.log(images)
-  // const obj={...images}
-  // console.log(obj)
-  // console.log(Object.keys(obj))
+  // const [a] = items
+  // const image=a.images
+ 
    
   const {
 
@@ -110,16 +97,17 @@ export default function Postlist({Public_ID}) {
                 items.slice(0,5).map((post) => (
                     <div key={post.id} className="Desc border-b border-gray-200  hover:bg-slate-100 hover:text-white hover:shadow-xl" >
                          <div className=" grid h-40 grid-cols-2 mt-3 grid-rows-2 gap-1 sm:h-44">
-                {post.images.slice(0,4).map((preview,index)=>(
-                    <div key={preview }
-                       onClick={()=>handlOpen(preview)}
+                           <ImageDialog image={post.images}/>
+                {/* {post.images.slice(0,4).map((images,index)=>(
+                    // <div key={preview }
+                    //    onClick={()=>handlOpen(preview)}
                     
-                    className="relative h-[60px] w-[60px] overflow-hidden rounded shadow">
-                      <img src={preview} alt="hello" className="h-full w-full overflow-hidden object-cover"/>
+                    // className="relative h-[60px] w-[60px] overflow-hidden rounded shadow">
+                    //   <img src={preview} alt="hello" className="h-full w-full overflow-hidden object-cover"/>
 
-                    </div>
+                    // </div>
                 )
-                )}
+                )} */}
             </div>
                           {/* // description */}
                         <div className=" px-2 md:px-8">

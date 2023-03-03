@@ -63,7 +63,7 @@ export default function Header({Public_ID}){
         setToCurrency(e.target.value)
      }
     return(
-        <div className="fixed top-18 w-full ">
+        <div className="fixed top-18 w-full left-0 right-0 ">
           {/* header */}
         <div className="  mx-auto grid  mr-6 md:m-auto md:w-full max-w-3xl grid-flow-dense  grid-cols-2 grid-rows-auto-1fr justify-center gap-2 rounded-xl bg-gradient-to-br from-blue-900 to-sky-600 p-3 px-4 text-center text-white">
 
