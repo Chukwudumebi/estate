@@ -112,6 +112,8 @@ export default function Postlist({Public_ID}) {
                           {/* // description */}
                         <div className=" px-2 md:px-8">
                             <p className="font-bold  text-gray-500">{post.description}</p>
+                            <p className="font-bold  text-gray-500">{post.category}</p>
+
                            
                         </div>      
 

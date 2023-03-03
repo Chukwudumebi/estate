@@ -11,7 +11,7 @@ export default function ImageDialog({image}) {
   return (
     <Dialog.Root>
       {image.length === 1 && (
-        <Dialog.Trigger className="aspect-square h-10 sm:h-20">
+        <Dialog.Trigger className="aspect-square h-20 sm:h-40">
           <button type="button" className="h-full w-full" onClick={() => setSelectedImage(image[0])}>
             <img src={image[0]} alt={name} className="h-full w-full rounded object-cover" />
           </button>
