@@ -31,7 +31,7 @@ export default function Design() {
             
 
                     <Maxprice />
-                    <div className="flex justify-center items-center mb-2">
+                    <div className="flex justify-between items-center mb-2">
                         <input type="checkbox"
                              />
                         <span className="font-bold ml-2 ">New Post</span>

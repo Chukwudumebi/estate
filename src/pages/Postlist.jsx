@@ -16,6 +16,7 @@ export default function Postlist({Public_ID}) {
   const {items}=useItems()
   // const [a] = items
   // const image=a.images
+  console.log(items)
  
    
   const {
@@ -95,7 +96,7 @@ export default function Postlist({Public_ID}) {
      { items.length > 0 ?<div className="flex flex-col  rounded-md bg-white shadow-lg md:mx-auto md:w-[1400px] md:overflow-auto h-full ">
             {
                 items.slice(0,5).map((post) => (
-                    <div key={post.id} className="Desc border-b border-gray-200  hover:bg-slate-100 hover:text-white hover:shadow-xl" >
+                    <div key={post.id} className="Des border-b border-gray-200  hover:bg-slate-100 hover:text-white hover:shadow-xl" >
                          <div className=" grid h-40 grid-cols-2 mt-3 grid-rows-2 gap-1 sm:h-44">
                            <ImageDialog image={post.images}/>
                 {/* {post.images.slice(0,4).map((images,index)=>(

@@ -27,6 +27,14 @@ body{
      color:black;
     
 }
+.Des{
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+     color:black;
+    
+}
 .details{
     display: flex;
     justify-content: space-between;
@@ -91,6 +99,10 @@ body{
         text-align: center;
     }
     .Desc{
+        display: flex;
+       flex-direction: column;
+    }
+    .Des{
         display: flex;
        flex-direction: column;
     }
