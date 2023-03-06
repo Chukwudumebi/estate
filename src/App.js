@@ -53,7 +53,7 @@ function App() {
         <div>
           <Router>
             <Nav />
-
+           
             <Routes>
               <Route path="/" element={<Homepage />} />
               <Route path="/AddPost" element={<AddItems />} />

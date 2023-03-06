@@ -15,6 +15,7 @@ import Nav from "../components/nav";
 import Design from "./redesign";
 import Headers from "./header";
 import Actions from "./Actions";
+import Display from "./display";
 
 export default function Homepage(){  
   const [country,setCountries]=useState([]);
@@ -38,7 +39,8 @@ export default function Homepage(){
     return(
       <>
       <Headers Public_ID={Public_ID}/>
-      <Actions/>
+      
+      <Display Public_ID={Public_ID}/>
   
     
         {/* <div>
