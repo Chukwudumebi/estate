@@ -32,6 +32,8 @@ import Header from "./pages/newheader";
 import Margin from "./pages/margin";
 import AddItems from "./pages/AddItems";
 import Design from "./pages/redesign";
+import Headers from "./pages/header";
+import Actions from "./pages/Actions";
 
 function App() {
   const [open, setOpen] = useState(true);
@@ -51,6 +53,7 @@ function App() {
         <div>
           <Router>
             <Nav />
+
             <Routes>
               <Route path="/" element={<Homepage />} />
               <Route path="/AddPost" element={<AddItems />} />

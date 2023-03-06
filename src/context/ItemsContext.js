@@ -5,7 +5,8 @@ const initialState = data.map((items) => ({
   selected: false,
 }));
 
-const Action = { type: "CREATE_ITEM", Payload: "items" };
+
+// const Action = { type: "CREATE_ITEM", Payload: "items" };
 
 const reducer = (state, action) => {
   switch (action.type) {

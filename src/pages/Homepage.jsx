@@ -13,6 +13,8 @@ import Privateseller from "../components/privateseller";
 import Header from "./newheader";
 import Nav from "../components/nav";
 import Design from "./redesign";
+import Headers from "./header";
+import Actions from "./Actions";
 
 export default function Homepage(){  
   const [country,setCountries]=useState([]);
@@ -35,8 +37,8 @@ export default function Homepage(){
  
     return(
       <>
-      
-      <Header Public_ID={Public_ID}/>
+      <Headers Public_ID={Public_ID}/>
+      <Actions/>
   
     
         {/* <div>
