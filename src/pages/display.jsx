@@ -146,7 +146,15 @@ function Display({Public_ID} ){
                                             </p>
                                             
 
-            <div  className="font-bold flex justify-between items-center text-blue-500 mr-4" >
+                <div className="flex justify-center items-center gap-5 m-1 ">
+                                          <p className="font-bold  text-gray-500">Seller's Rating 
+                                              </p>
+                                              <AiFillStar className="text-sky-600 "/>
+                                              <AiFillStar className="text-sky-600 "/>
+                                               <AiFillStar className="text-sky-600 "/>
+                                               <AiFillStar className="text-sky-600 "/>
+                                          </div>
+            <div  className="font-bold flex justify-between items-center text-sky-600 mr-4 mb-1" >
                                           <span>Public_ID:</span>
                                            <p className={`font-bold text-sm uppercase text-gray-600 ${copy ? "text-black":""}`}>{`${Public_ID.slice(0,7)}...${Public_ID.slice(-5)}`}
                                            </p> 
@@ -156,19 +164,55 @@ function Display({Public_ID} ){
                                           
                                              </CopyToClipboard>
                                              </div>
-                <div className="flex justify-center items-center gap-5 m-4 ">
-                                          <p className="font-bold  text-gray-500">Seller's Rating 
-                                              </p>
-                                              <AiFillStar className="text-blue-500 "/>
-                                              <AiFillStar className="text-blue-500 "/>
-                                               <AiFillStar className="text-blue-500 "/>
-                                               <AiFillStar className="text-blue-500 "/>
-                                          </div>
 
             </div>
             <div className='flex justify-around items-center border-t p-2'>
+            <Dialog.Root>
+      <Dialog.Trigger asChild>
+        <button
+          type="button"
+          className='rounded bg-sky-600 text-white p-1 '
+      
+        >
+          Make Offer
+        </button>
+      </Dialog.Trigger>
+      <Dialog.Portal>
+        <Dialog.Overlay className="data-[state=open]:animate-overlayShow fixed inset-0 z-50 bg-neutral-900/20" />
+        <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] z-[100] max-h-[85vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-white p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none">
+          <div> 
+            <div className="text-center p-[60px]">
+
+              <h1 className="font-bold text-center">make an offer</h1>
+            </div>
+            {/* <div className="flex h-24 flex-col overflow-y-scroll">
+             
+            </div> */}
+            
+
+            <div className="flex items-center justify-around border-t p-2 py-8">
+              <Dialog.Close asChild>
+                <button
+                  type="button"
+                  className="rounded border-none bg-red-600 px-2 py-2 text-white shadow-md duration-300 hover:bg-red-500 hover:shadow-lg hover:transition-all"
+                >
+                  cancel
+                </button>
+              </Dialog.Close>
+              <button
+                type="button"
+                className=" rounded border-none bg-blue-500 px-4 py-2 text-white shadow-sm duration-300 hover:bg-blue-400 hover:shadow-lg hover:transition-all"
+                >
+                send
+              </button>
+            </div>
+          </div>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
+
                 <button className='rounded bg-sky-600 text-white p-1 '>buy</button>
-                <button className='rounded bg-sky-600 text-white p-1 ' >make offer</button>
+                
                 <button className='rounded bg-sky-600 text-white p-1 '>contact seller</button>
 
             </div>
