@@ -132,9 +132,9 @@ function Display({Public_ID} ){
         <Dialog.Overlay className="data-[state=open]:animate-overlayShow fixed inset-0 z-50 bg-neutral-900/20" />
         <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] z-[100] max-h-[85vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-white p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none">
           <div className='p-0'>
-            <h1 className='text-center border-b '>Product details</h1>
+            <h1 className='text-center border-b font-bold capitalize '>Product details</h1>
 
-            <div className='text-center mt-3'>
+            <div className='text-center font-bold text-gray-500 mt-3'>
                                            <p>
                              Delivery Cost:  {(post.shippingCost * rate ).toFixed(2)} -{tocurrency.split(" ")[1]}
 

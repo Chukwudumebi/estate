@@ -36,7 +36,7 @@ function Actions() {
   return (
     <div className="sticky top-0 z-10 grid w-full items-center gap-2 border-b border-neutral-100 bg-white px-4 py-2 sm:grid-cols-auto-1fr md:px-8">
       <div className="hidden  font-grotesk font-semibold  ">sqe MarketApp.</div>
-      <div className="justify-self-end">
+      <div className="justify-self-start">
       <ul className={` flex  justify-evenly items-center py-4 md:flex md:items-center top-20 gap-2`}>
                     <Link to="/stores">
 

@@ -16,6 +16,8 @@ import Design from "./redesign";
 import Headers from "./header";
 import Actions from "./Actions";
 import Display from "./display";
+import Public from "./public";
+import Para from "./para";
 
 export default function Homepage(){  
   const [country,setCountries]=useState([]);
@@ -38,17 +40,20 @@ export default function Homepage(){
  
     return(
       <>
+      <h1 className="text-center font-bold m-2">SQE MARKETPLACE</h1>
       <Headers Public_ID={Public_ID}/>
       
-      <Display Public_ID={Public_ID}/>
+      {/* <Display Public_ID={Public_ID}/> */}
   
-    
-        {/* <div>
+  
+         <div  className="rounded-lg shadow-md p-3 m-3">        
             <div className="md:flex items-center justify-between bg-white py-3 md:px-10 px-7">
          
-          <Region country={country} states={states} provinces={provinces}/>
+          <Region country={country} />
           <Category/>
+          <Public/>
           <Privateseller/>
+
           <Maxprice/>
           
           <div className="flex justify-center items-center mb-2">
@@ -60,12 +65,11 @@ export default function Homepage(){
          
           <NavSearch/>
         </div>
-      </div> */}
-        
+      </div> 
 
-        {/* <Postlist Public_ID={Public_ID}/> */}
+        <Postlist Public_ID={Public_ID}/>
     
-
+         <Para/>
         
       </>
         

@@ -9,6 +9,8 @@ export default function ImageDialog({image}) {
   const [selectedImage, setSelectedImage] = useState(image[0]);
   const name="images"
   return (
+    <div className='mt-6'>
+
     <Dialog.Root>
       {image.length === 1 && (
         <Dialog.Trigger className="aspect-square h-20 sm:h-40">
@@ -86,5 +88,6 @@ export default function ImageDialog({image}) {
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
+              </div>
   );
                 }

@@ -71,35 +71,8 @@ export default function Header({Public_ID}){
         <div className="flex md:flex md:justify-between md:gap-[360px] ">
 
         <div className="col-start-1 flex flex-col  items-start">
-        <div
-          className="rounded-full bg-white px-1 py-1 text-sm text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
-            
-        >
-                       <select className=" bg-white border-none focus:border-none rounded-full">
-                          <option value="Public">
-                            Public </option>
-                        <option value="Personal">Personal</option>                                          
-                           </select>
-                       </div>
-
-        </div>
-
-        <div 
-          className="rounded-full bg-white px-1 py-1 text-sm mt-3  text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
-          >
-                   <select className=" bg-white border-none focus:border-none rounded-full" onChange={handleSet}>
-                      <option value={tocurrency}>{tocurrency}</option>
-                 {dataCountries.slice(0,101).map((ctr)=>(
-               <option value={ctr} key={ctr}>{ctr}</option>
-          ))          
-          
-        }                        
-      
-             </select>
-             </div>
-        {/* <div className="w-max self-center justify-self-end ml-2">
-         
-        <ul className={` flex  justify-evenly items-center py-4 md:flex md:items-center top-20 gap-2`}>
+        <div className="justify-self-start">
+      <ul className={` flex  justify-evenly items-center py-4 md:flex md:items-center top-20 gap-2`}>
                     <Link to="/stores">
 
                         <li  
@@ -176,7 +149,20 @@ export default function Header({Public_ID}){
                         </li>               
                     </Link>
                 </ul>
-        </div> */}
+      </div>
+
+        <div 
+          className="rounded-full bg-white px-1 py-1 text-sm mt-3  text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
+          >
+                   <select className=" bg-white border-none focus:border-none rounded-full" onChange={handleSet}>
+                      <option value={tocurrency}>{tocurrency}</option>
+                 {dataCountries.slice(0,101).map((ctr)=>(
+               <option value={ctr} key={ctr}>{ctr}</option>
+          ))          
+          
+        }                        
+             </select>
+             </div>
               </div>
   
         <div className="col-start-2 row-start-1 flex flex-row  items-center gap-1 justify-self-end">
@@ -215,6 +201,7 @@ export default function Header({Public_ID}){
       {/* third bar */}
 
       <Design/>
+            </div>
             </div>
     )
 }

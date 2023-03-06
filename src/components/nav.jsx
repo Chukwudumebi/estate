@@ -44,7 +44,6 @@ export default function Nav(){
                   <img src={logo} alt="logo" className="md:ml-[35px]"/>
                   </Link>  
           
-                  <h1 className="font-bold text-blue font-[30px] ml-10 md:ml-[440px]" style={{font:"35px"}}>SQE Marketplace.</h1>
           </div>
 
            

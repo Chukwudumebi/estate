@@ -93,45 +93,10 @@ export default function Postlist({Public_ID}) {
     }
     return (  
       <>
-     { items.length > 0 ?<div className="flex flex-col  rounded-md bg-white shadow-lg md:mx-auto md:w-[1400px] md:overflow-auto h-full ">
+     { items.length > 0 ?<div className="flex flex-col  rounded-md  p-2 shadow-lg md:mx-auto md:w-[1400px] md:overflow-auto h-full ">
             {
-                items.slice(0,5).map((post) => (
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  
-
-                    <div key={post.id} className="Des border-b border-gray-200  hover:bg-slate-100 hover:text-white hover:shadow-xl" >
+                items.map((post) => (
+                    <div key={post.id} className="Des border-b rounded shadow border-gray-200  hover:bg-slate-100 hover:text-white hover:shadow-xl" >
                          <div className=" grid h-40 grid-cols-2 mt-3 grid-rows-2 gap-1 sm:h-44">
                            <ImageDialog image={post.images}/>
                 {/* {post.images.slice(0,4).map((images,index)=>(
@@ -146,11 +111,10 @@ export default function Postlist({Public_ID}) {
                 )} */}
             </div>
                           {/* // description */}
-                        <div className=" px-2 md:px-8">
-                            <p className="font-bold  text-gray-500">{post.description}</p>
-                            <p className="font-bold  text-gray-500">{post.category}</p>
-
-                           
+                        <div  className="break-words text-gray-500 font-bold text-justify w-[200px]">
+                          
+                          {post.description}
+                             
                         </div>      
 
 
@@ -182,7 +146,7 @@ export default function Postlist({Public_ID}) {
                                <div className="">
                                           <div  className="font-bold flex justify-between items-center text-blue-500 mr-4" >
                                           <span>Public_ID:</span>
-                                           <p className={`font-bold text-sm text-gray-600 ${copy ? "text-black":""}`}>{`${Public_ID.slice(0,7)}...${Public_ID.slice(-5)}`}
+                                           <p className={`font-bold text-sm uppercase text-gray-600 ${copy ? "text-black":""}`}>{`${Public_ID.slice(0,7)}...${Public_ID.slice(-5)}`}
                                            </p> 
                                            <CopyToClipboard text={Public_ID}
                                             onCopy={()=>setCopied(true)}>                                        
@@ -212,13 +176,13 @@ export default function Postlist({Public_ID}) {
 
                                                         
                           <div className="flex flex-col">
-                          <button className="p-[2px] m-2 bg-blue-500 font-bold text-white shadow-lg rounded-lg">BUY</button>
+                          <button className="p-[1px]  bg-blue-500 font-bold text-white shadow-lg rounded-lg">BUY</button>
                                        
              <Dialog.Root>
       <Dialog.Trigger asChild>
         <button
           type="button"
-          className=" p-[2px] m-2 bg-blue-500 font-bold text-white shadow-lg rounded-lg"
+          className=" p-[2px] m-1 bg-blue-500 font-bold text-white shadow-lg rounded-lg"
       
         >
           Make Offer
@@ -262,7 +226,7 @@ export default function Postlist({Public_ID}) {
       <Dialog.Trigger asChild>
         <button
           type="button"
-          className="p-[2px] m-2 bg-blue-500 font-bold text-white shadow-lg rounded-lg"
+          className="p-[2px] m-1 bg-blue-500 font-bold text-white shadow-lg rounded-lg"
           
         >
           Contact Seller
