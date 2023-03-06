@@ -8,8 +8,14 @@ import ImageDialog from "../components/imageDialog";
 import Actions from './Actions';
 import { CurrencyContext } from "../context/CurrencyProvider";
 import axios from "axios";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+
+import { AiFillStar, AiOutlinePlus,AiOutlineFundView,AiOutlineMinus,AiOutlineCopy,AiOutlineMenu ,AiOutlineClose,AiOutlineLock} from "react-icons/ai";
+
 import { useState,useEffect,useContext } from 'react';
-function Display( ){
+function Display({Public_ID} ){
+    const[copy,setCopied]=useState(false)
+
   const {items}=useItems()
   console.log(items)
   const name="images"
@@ -18,6 +24,8 @@ function Display( ){
   const [amount,setAmount]=useState(0)
   const convert=amount * rate;
   const [converts,setConvert]=useState(convert)
+  const[filter,setFiltered]=useState({})
+  
   const {
 
     fromcurrency,
@@ -46,6 +54,13 @@ function Display( ){
    
      },[items]);
 
+     const HandleDetails=(id)=>{
+        const filtered=items.filter((item)=>item.id===id)
+        console.log(filtered[0])
+        
+        setFiltered(filtered[0])
+        
+     }
 
   return (
     <div className="mx-auto grid max-h-full w-full max-w-3xl grid-rows-auto-2fr overflow-y-hidden rounded-lg">
@@ -98,8 +113,12 @@ function Display( ){
       <div className="table-cell max-h-24 border-b border-b-slate-100 px-[2px] pr-2 text-end align-middle md:px-8">
       
         
-        
-        <button type="button" className=" mt-1 p-[2px] w-full rounded border border-transparent items-end bg-sky-600 cursor-pointer text-white font-bold ">
+       
+        <Dialog.Root>
+      <Dialog.Trigger asChild>
+      <button type="button"
+        onClick={()=>HandleDetails(post.id)}
+         className=" mt-1 p-[2px] w-full rounded border border-transparent items-end bg-sky-600 cursor-pointer text-white font-bold ">
           {/* <Link
             to="activity"
             className="w-max cursor-pointer justify-self-end rounded border border-transparent bg-sky-600 px-[2px] py-[2px] text-xs text-white hover:border-sky-500 hover:bg-white hover:text-sky-600"
@@ -107,6 +126,56 @@ function Display( ){
             details
     
         </button>
+       
+      </Dialog.Trigger>
+      <Dialog.Portal>
+        <Dialog.Overlay className="data-[state=open]:animate-overlayShow fixed inset-0 z-50 bg-neutral-900/20" />
+        <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] z-[100] max-h-[85vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-white p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none">
+          <div className='p-0'>
+            <h1 className='text-center border-b '>Product details</h1>
+
+            <div className='text-center mt-3'>
+                                           <p>
+                             Delivery Cost:  {(post.shippingCost * rate ).toFixed(2)} -{tocurrency.split(" ")[1]}
+
+                                           </p>
+                                           
+                                           <p>
+                                            
+                                          Price:  { (post.price*rate).toFixed(2)} - {tocurrency.split(" ")[1]}
+                                            </p>
+                                            
+
+            <div  className="font-bold flex justify-between items-center text-blue-500 mr-4" >
+                                          <span>Public_ID:</span>
+                                           <p className={`font-bold text-sm uppercase text-gray-600 ${copy ? "text-black":""}`}>{`${Public_ID.slice(0,7)}...${Public_ID.slice(-5)}`}
+                                           </p> 
+                                           <CopyToClipboard text={Public_ID}
+                                            onCopy={()=>setCopied(true)}>                                        
+                                           <AiOutlineCopy className={`text-2xl ${copy ? "text-blue-600":""} hover:text-blue-700 hover: cursor-pointer`}/>
+                                          
+                                             </CopyToClipboard>
+                                             </div>
+                <div className="flex justify-center items-center gap-5 m-4 ">
+                                          <p className="font-bold  text-gray-500">Seller's Rating 
+                                              </p>
+                                              <AiFillStar className="text-blue-500 "/>
+                                              <AiFillStar className="text-blue-500 "/>
+                                               <AiFillStar className="text-blue-500 "/>
+                                               <AiFillStar className="text-blue-500 "/>
+                                          </div>
+
+            </div>
+            <div className='flex justify-around items-center border-t p-2'>
+                <button className='rounded bg-sky-600 text-white p-1 '>buy</button>
+                <button className='rounded bg-sky-600 text-white p-1 ' >make offer</button>
+                <button className='rounded bg-sky-600 text-white p-1 '>contact seller</button>
+
+            </div>
+           </div>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
        
       </div>
     </div>
