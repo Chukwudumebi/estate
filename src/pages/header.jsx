@@ -144,9 +144,6 @@ export default function Headers({Public_ID}){
 
       
       <div className="w-max self-center justify-self-end">
-
-       
-
       <div 
           className="rounded-full bg-white px-1 py-1 text-sm mt-2 text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
           >
@@ -156,8 +153,7 @@ export default function Headers({Public_ID}){
                <option value={ctr} key={ctr}>{ctr}</option>
           ))          
           
-        }                        
-      
+        }                             
              </select>
              </div>
       </div>

@@ -93,50 +93,30 @@ export default function Postlist({Public_ID}) {
     }
     return (  
       <>
-     { items.length > 0 ?<div className="flex flex-col  rounded-md  p-2 shadow-lg md:mx-auto md:w-[1400px] md:overflow-auto h-full ">
+     { items.length > 0 ?<div className="flex flex-col  rounded-md  p-2 shadow-lg md:mx-auto  md:w-[1400px] md:overflow-auto h-[500px]">
             {
                 items.map((post) => (
                     <div key={post.id} className="Des border-b rounded shadow border-gray-200  hover:bg-slate-100 hover:text-white hover:shadow-xl" >
-                         <div className=" grid h-40 grid-cols-2 mt-3 grid-rows-2 gap-1 sm:h-44">
+                      <div className="flex justify-around items-center gap-6">
+
+                    <input type="checkbox"/>
+                    <div>
+
+                    <div className=" grid h-40 grid-cols-2 mt-8 grid-rows-2 gap-1 sm:h-40">
                            <ImageDialog image={post.images}/>
-                {/* {post.images.slice(0,4).map((images,index)=>(
-                    // <div key={preview }
-                    //    onClick={()=>handlOpen(preview)}
-                    
-                    // className="relative h-[60px] w-[60px] overflow-hidden rounded shadow">
-                    //   <img src={preview} alt="hello" className="h-full w-full overflow-hidden object-cover"/>
-
-                    // </div>
-                )
-                )} */}
-            </div>
+                   </div>
+                    </div>
+                      </div>
                           {/* // description */}
-                        <div  className="break-words text-gray-500 font-bold text-justify w-[200px]">
-                          
-                          {post.description}
-                             
-                        </div>      
-
-
-
-
-
-                            {/* details */}
-                            <div className="adjust">
+                    <div  className="break-words text-gray-500 font-bold text-justify w-[200px]">    
+                          {post.description}                     
+                    </div>      
+                         {/* details */}
+                      <div className="adjust">
                             <div >
-                              {/* details */}
-                              <div className="details">
-                                   {/* price */}
                                 <p className="font-bold text-gray-500 ">Price:
                                   { (post.price*rate).toFixed(2)} - {tocurrency.split(" ")[1]}
                                   </p>
-
-                                  {/* input */}
-                                <div >
-                                  <input type="checkbox"  />
-                                     <span className="font-bold text-gray-500 ml-2">Select</span>
-                                  </div>
-                              </div>
 
 
                                <p className="font-bold  text-gray-500">Delivery Cost :

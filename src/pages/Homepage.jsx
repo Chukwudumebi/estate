@@ -18,6 +18,7 @@ import Actions from "./Actions";
 import Display from "./display";
 import Public from "./public";
 import Para from "./para";
+import Tables from "./tables";
 
 export default function Homepage(){  
   const [country,setCountries]=useState([]);
@@ -46,7 +47,7 @@ export default function Homepage(){
       {/* <Display Public_ID={Public_ID}/> */}
   
   
-         <div  className="rounded-lg shadow-md p-3 m-3">        
+         <div  className="rounded-lg shadow-md p-3 m-3  bg-white">        
             <div className="md:flex items-center justify-between bg-white py-3 md:px-10 px-7">
          
           <Region country={country} />
@@ -66,10 +67,10 @@ export default function Homepage(){
           <NavSearch/>
         </div>
       </div> 
-
+         <Tables/>
         <Postlist Public_ID={Public_ID}/>
     
-         <Para/>
+         
         
       </>
         

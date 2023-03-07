@@ -25,7 +25,7 @@ import Postlist from "./pages/Postlist";
 import Search from "./components/search";
 import Currency from "./components/currenct";
 import Dialogs from "./components/dialog";
-import Table from "./pages/table";
+import Tables from "./pages/tables";
 import Newer from "./pages/newer";
 import Imageupload from "./pages/uploadimage";
 import Header from "./pages/newheader";
@@ -53,7 +53,7 @@ function App() {
         <div>
           <Router>
             <Nav />
-           
+
             <Routes>
               <Route path="/" element={<Homepage />} />
               <Route path="/AddPost" element={<AddItems />} />
