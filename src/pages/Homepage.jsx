@@ -41,13 +41,13 @@ export default function Homepage(){
  
     return(
       <>
-      <h1 className="text-center font-bold m-2">SQE MARKETPLACE</h1>
+      <h1 className="text-center font-bold mt-2">SQE MARKETPLACE</h1>
       <Headers Public_ID={Public_ID}/>
       
       {/* <Display Public_ID={Public_ID}/> */}
   
   
-         <div  className="rounded-lg shadow-md p-3 m-3  bg-white">        
+         <div  className="rounded-lg shadow-md p-3 m-1  bg-white">        
             <div className="md:flex items-center justify-between bg-white py-3 md:px-10 px-7">
          
           <Region country={country} />
