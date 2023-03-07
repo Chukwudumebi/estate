@@ -19,7 +19,7 @@ export default function Headers({Public_ID}){
     const location = useLocation();
     const [open,setOpen]=useState(true);
     const style={
-        fontSize:"12px",
+        fontSize:"11px",
     
       }
 
@@ -62,7 +62,7 @@ export default function Headers({Public_ID}){
       <div className="col-start-1 flex flex-col  items-start">
       
       <div className="justify-self-start">
-      <ul className={` flex  justify-evenly items-center py-4 md:flex md:items-center top-20 gap-2`}>
+      <ul className={` flex  justify-evenly items-center py-4 mt-1 md:flex md:items-center top-20 gap-2`}>
                     <Link to="/stores">
 
                         <li  
@@ -148,7 +148,7 @@ export default function Headers({Public_ID}){
        
 
       <div 
-          className="rounded-full bg-white px-1 py-1 text-sm mt-3  text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
+          className="rounded-full bg-white px-1 py-1 text-sm mt-2 text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
           >
                    <select className=" bg-white border-none focus:border-none rounded-full" onChange={handleSet}>
                       <option value={tocurrency}>{tocurrency}</option>
