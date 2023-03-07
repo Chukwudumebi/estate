@@ -7,17 +7,13 @@ export default function Table(){
 
 
     return(
-        <div className="mx-auto grid max-h-full w-full max-w-3xl grid-rows-auto-1fr overflow-y-hidden rounded-lg">
+        <div className="mx-auto grid max-h-full w-full shadow-md rounded max-w-3xl grid-rows-auto-1fr overflow-y-hidden rounded-lg">
     
         <div className="inner-scroll grid max-h-full overflow-y-auto">
           <div className="relative table h-max w-full table-auto border-collapse rounded-lg bg-white font-grotesk text-sm shadow">
             <div className="sticky top-0 table-header-group  w-full border-b-2 border-slate-100 bg-white">
               <div className="table-row font-bold text-neutral-800">
-                <div className="table-cell px-2 py-3 text-left " aria-label="select" />
-                <div className="table-cell px-2 py-3 text-left">Image</div>
-                <div className="table-cell px-2 py-3 text-left text-neutral-800">Description</div>
-                <div className="table-cell px-2 py-3 text-left text-neutral-800">Value</div>
-                <div className="table-cell px-2 py-3 text-left text-neutral-800" aria-label="details" />
+                
               </div>
             </div>
   
@@ -41,16 +37,7 @@ export default function Table(){
       <div className="table-cell border-b border-b-slate-100 px-[2px] align-middle text-xs md:text-sm">
        currency
       </div>
-      <div className="table-cell max-h-24 border-b border-b-slate-100 px-[2px] pr-2 text-end align-middle md:px-8">
-        <button type="button" className="grid w-full items-end">
-          <Link
-            to="activity"
-            className="w-max cursor-pointer justify-self-end rounded border border-transparent bg-sky-600 px-[2px] py-[2px] text-xs text-white hover:border-sky-500 hover:bg-white hover:text-sky-600"
-          >
-            Details
-          </Link>
-        </button>
-      </div>
+     
     </div>
 
 
@@ -77,16 +64,7 @@ export default function Table(){
       <div className="table-cell border-b border-b-slate-100 px-[2px] align-middle text-xs md:text-sm">
        currency
       </div>
-      <div className="table-cell max-h-24 border-b border-b-slate-100 px-[2px] pr-2 text-end align-middle md:px-8">
-        <button type="button" className="grid w-full items-end">
-          <Link
-            to="activity"
-            className="w-max cursor-pointer justify-self-end rounded border border-transparent bg-sky-600 px-[2px] py-[2px] text-xs text-white hover:border-sky-500 hover:bg-white hover:text-sky-600"
-          >
-            Details
-          </Link>
-        </button>
-      </div>
+     
     </div>
 
 
@@ -115,16 +93,7 @@ export default function Table(){
       <div className="table-cell border-b border-b-slate-100 px-[2px] align-middle text-xs md:text-sm">
        currency
       </div>
-      <div className="table-cell max-h-24 border-b border-b-slate-100 px-[2px] pr-2 text-end align-middle md:px-8">
-        <button type="button" className="grid w-full items-end">
-          <Link
-            to="activity"
-            className="w-max cursor-pointer justify-self-end rounded border border-transparent bg-sky-600 px-[2px] py-[2px] text-xs text-white hover:border-sky-500 hover:bg-white hover:text-sky-600"
-          >
-            Details
-          </Link>
-        </button>
-      </div>
+     
     </div>
 
 
@@ -152,16 +121,7 @@ export default function Table(){
       <div className="table-cell border-b border-b-slate-100 px-[2px] align-middle text-xs md:text-sm">
        currency
       </div>
-      <div className="table-cell max-h-24 border-b border-b-slate-100 px-[2px] pr-2 text-end align-middle md:px-8">
-        <button type="button" className="grid w-full items-end">
-          <Link
-            to="activity"
-            className="w-max cursor-pointer justify-self-end rounded border border-transparent bg-sky-600 px-[2px] py-[2px] text-xs text-white hover:border-sky-500 hover:bg-white hover:text-sky-600"
-          >
-            Details
-          </Link>
-        </button>
-      </div>
+     
     </div>
 
 
@@ -189,16 +149,8 @@ export default function Table(){
       <div className="table-cell border-b border-b-slate-100 px-[2px] align-middle text-xs md:text-sm">
         currency
       </div>
-      <div className="table-cell max-h-24 border-b border-b-slate-100 px-[2px] pr-2 text-end align-middle md:px-8">
-        <button type="button" className="grid w-full items-end">
-          <Link
-            to="activity"
-            className="w-max cursor-pointer justify-self-end rounded border border-transparent bg-sky-600 px-[2px] py-[2px] text-xs text-white hover:border-sky-500 hover:bg-white hover:text-sky-600"
-          >
-            Details
-          </Link>
-        </button>
-      </div>
+     
+     
     </div>
 
 
@@ -224,16 +176,7 @@ export default function Table(){
       <div className="table-cell border-b border-b-slate-100 px-[2px] align-middle text-xs md:text-sm">
        currency
       </div>
-      <div className="table-cell max-h-24 border-b border-b-slate-100 px-[2px] pr-2 text-end align-middle md:px-8">
-        <button type="button" className="grid w-full items-end">
-          <Link
-            to="activity"
-            className="w-max cursor-pointer justify-self-end rounded border border-transparent bg-sky-600 px-[2px] py-[2px] text-xs text-white hover:border-sky-500 hover:bg-white hover:text-sky-600"
-          >
-            Details
-          </Link>
-        </button>
-      </div>
+      
     </div>
 
 
@@ -256,16 +199,6 @@ export default function Table(){
       </div>
       <div className="table-cell border-b border-b-slate-100 px-[2px] align-middle text-xs md:text-sm">
         currency
-      </div>
-      <div className="table-cell max-h-24 border-b border-b-slate-100 px-[2px] pr-2 text-end align-middle md:px-8">
-        <button type="button" className="grid w-full items-end">
-          <Link
-            to="activity"
-            className="w-max cursor-pointer justify-self-end rounded border border-transparent bg-sky-600 px-[2px] py-[2px] text-xs text-white hover:border-sky-500 hover:bg-white hover:text-sky-600"
-          >
-            Details
-          </Link>
-        </button>
       </div>
     </div>
 
