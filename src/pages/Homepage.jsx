@@ -67,8 +67,8 @@ export default function Homepage(){
           <NavSearch/>
         </div>
       </div> 
-         <Tables/>
-        <Postlist Public_ID={Public_ID}/>
+         <Tables Public_ID={Public_ID}/>
+        
     
          
         

@@ -112,6 +112,10 @@ export default function Postlist({Public_ID}) {
                           {post.description}                     
                     </div>      
                          {/* details */}
+
+
+
+
                       <div className="adjust">
                             <div >
                                 <p className="font-bold text-gray-500 ">Price:
@@ -143,14 +147,6 @@ export default function Postlist({Public_ID}) {
                                                <AiFillStar className="text-blue-500 "/>
                                                <AiFillStar className="text-blue-500 "/>
                                           </div>
-                  {/* details ends */}
-                  {/* buttons start */}
-                  
-                          {/* buttons end */}
-
-
-
-
                   </div>
                          {/* buttons */}
 
@@ -241,15 +237,8 @@ export default function Postlist({Public_ID}) {
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
-                          </div>  
-
-
-
-                          </div>                                                                          
-
-
-
-
+    </div>
+  </div>                                                                          
                               <Modal
                              show={visible}
                               size="sm"
