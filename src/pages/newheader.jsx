@@ -33,7 +33,7 @@ export default function Header({Public_ID}){
         return `${item.flag} ${Object.keys(item.currencies)[0]}`
     })  
     const style={
-        fontSize:"12px",
+        fontSize:"10px",
     
       }
       

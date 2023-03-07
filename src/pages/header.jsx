@@ -19,7 +19,7 @@ export default function Headers({Public_ID}){
     const location = useLocation();
     const [open,setOpen]=useState(true);
     const style={
-        fontSize:"18px",
+        fontSize:"12px",
     
       }
 
