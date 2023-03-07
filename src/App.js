@@ -49,7 +49,7 @@ function App() {
 
   return (
     <Provider>
-      <div className="h-screen p-5 pt-20 md:pb-8 ">
+      <div className="h-screen p-4 pt-20 md:pb-8 ">
         <div className="grid h-full grid-rows-auto-1fr gap-2">
           <Router>
             <Nav />
