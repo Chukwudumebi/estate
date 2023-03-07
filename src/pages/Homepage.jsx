@@ -69,8 +69,8 @@ export default function Homepage(){
         </div>
       </div> 
         
-         <Postlist Public_ID={Public_ID}/>
-         {/* <Tables Public_ID={Public_ID}/> */}
+         {/* <Postlist Public_ID={Public_ID}/> */}
+         <Tables Public_ID={Public_ID}/>
         
     
          
