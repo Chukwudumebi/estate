@@ -19,6 +19,7 @@ import Display from "./display";
 import Public from "./public";
 import Para from "./para";
 import Tables from "./tables";
+import Tabs from "./tab";
 
 export default function Homepage(){  
   const [country,setCountries]=useState([]);
@@ -67,7 +68,9 @@ export default function Homepage(){
           <NavSearch/>
         </div>
       </div> 
-         <Tables Public_ID={Public_ID}/>
+        
+         <Postlist Public_ID={Public_ID}/>
+         {/* <Tables Public_ID={Public_ID}/> */}
         
     
          

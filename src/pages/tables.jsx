@@ -179,7 +179,7 @@ export default function Table({Public_ID}){
     </div>
    
            {items.map((post)=>(
-            <div className="table-row max-h-24 w-full cursor-pointer py-4 hover:bg-slate-300">
+            <div className="table-row max-h-24 w-fu ll cursor-pointer py-4 hover:bg-slate-300">
       <div className="table-cell h-24 w-max border-b border-b-slate-100 px-2 py-4 text-center align-middle">
         <input
           type="checkbox"
@@ -198,24 +198,24 @@ export default function Table({Public_ID}){
                           {post.description}                     
                     </div> 
       </div>
-      <div className="table-cell border-b border-b-slate-100 px-[2px] align-middle text-xs md:text-sm">
+      <div className="table-cell border-b border-b-slate-100  align-middle text-xs md:text-sm">
         
     
       <div className="adjust">
                             <div >
-                                <p className="font-bold text-gray-500 ">Price:
+                                <p className="font-bold text-gray-500 text-xs">Price:
                                   { (post.price*rate).toFixed(2)} - {tocurrency.split(" ")[1]}
                                   </p>
 
 
-                               <p className="font-bold  text-gray-500">Delivery Cost :
+                               <p className="font-bold text-xs text-gray-500">Delivery Cost :
                                
                                {(post.shippingCost * rate ).toFixed(2)} -{tocurrency.split(" ")[1]}
                                </p>
                                <div className="">
-                                          <div  className="font-bold flex justify-between items-center text-blue-500 mr-4" >
+                                          <div  className="font-bold flex text-xs justify-between items-center text-blue-500 mr-4" >
                                           <span>Public_ID:</span>
-                                           <p className={`font-bold text-sm uppercase text-gray-600 ${copy ? "text-black":""}`}>{`${Public_ID.slice(0,7)}...${Public_ID.slice(-5)}`}
+                                           <p className={`font-bold text-xs uppercase text-gray-600 ${copy ? "text-black":""}`}>{`${Public_ID.slice(0,7)}...${Public_ID.slice(-5)}`}
                                            </p> 
                                            <CopyToClipboard text={Public_ID}
                                             onCopy={()=>setCopied(true)}>                                        
@@ -224,10 +224,10 @@ export default function Table({Public_ID}){
                                              </CopyToClipboard>
                                              </div>
                                       </div>
-                                        <div className="flex justify-center items-center gap-5">
-                                          <p className="font-bold  font-[10px] text-gray-500">Seller's Rating 
+                                        <div className="flex text-xs justify-center items-center gap-5">
+                                          <p className="font-bold text-xs text-gray-500">Seller's Rating 
                                               </p>
-                                              <AiFillStar className="text-blue-500 "/>
+                                              <AiFillStar className="text-blue-500 text-xs "/>
                                               <AiFillStar className="text-blue-500 "/>
                                                <AiFillStar className="text-blue-500 "/>
                                                <AiFillStar className="text-blue-500 "/>
@@ -243,7 +243,7 @@ export default function Table({Public_ID}){
       <Dialog.Trigger asChild>
         <button
           type="button"
-          className=" p-[2px] m-1 bg-blue-500 font-bold text-white shadow-lg rounded-lg"
+          className=" m-1 bg-blue-500 font-bold text-white shadow-lg rounded-lg"
       
         >
           Make Offer
@@ -287,7 +287,7 @@ export default function Table({Public_ID}){
       <Dialog.Trigger asChild>
         <button
           type="button"
-          className="p-[2px] m-1 bg-blue-500 font-bold text-white shadow-lg rounded-lg"
+          className="bg-blue-500 font-bold text-white shadow-lg rounded-lg"
           
         >
           Contact Seller
@@ -297,7 +297,7 @@ export default function Table({Public_ID}){
         <Dialog.Overlay className="data-[state=open]:animate-overlayShow fixed inset-0 z-50 bg-neutral-900/20" />
         <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] z-[100] max-h-[85vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-white p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none">
           <div>
-            <div className="text-center">
+            <div className="text-center ">
 
               <h1 className="font-bold text-center text-sm">contact seller</h1>
             </div>
