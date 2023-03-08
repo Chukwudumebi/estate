@@ -13,7 +13,8 @@ import { AiOutlinePlus,AiOutlineFundView,AiOutlineMinus,AiOutlineCopy,AiOutlineM
 import {MdOutlineStoreMallDirectory} from "react-icons/md"
 import {BiEdit} from "react-icons/bi"
 
-export default function Headers({Public_ID}){
+export default function Headers(){
+    const Public_ID="12356373gv333v"
     const [visible,setVisible]=useState(false);  
     const [activeTab,setActiveTab]=useState(true);
     const location = useLocation();
@@ -27,19 +28,19 @@ export default function Headers({Public_ID}){
     const handleModalOpen = () =>{
         setVisible(true)    
       }
-      const handleSet=(e)=>{
-        setToCurrency(e.target.value)
-     }
-     const {
-        tocurrency,
-        setToCurrency
-      }=useContext(CurrencyContext)
-    const [data]=useAxios("https://restcountries.com/v3.1/all");
+    //   const handleSet=(e)=>{
+    //     setToCurrency(e.target.value)
+    //  }
+    //  const {
+    //     tocurrency,
+    //     setToCurrency
+    //   }=useContext(CurrencyContext)
+    // const [data]=useAxios("https://restcountries.com/v3.1/all");
       
-      const filteredData=data.filter(item=> "currencies" in item)
-    const dataCountries=filteredData.map((item)=>{
-        return `${item.flag} ${Object.keys(item.currencies)[0]}`
-    }) 
+    //   const filteredData=data.filter(item=> "currencies" in item)
+    // const dataCountries=filteredData.map((item)=>{
+    //     return `${item.flag} ${Object.keys(item.currencies)[0]}`
+    // }) 
     useEffect(() => {
       if (location.pathname === "/") {
         setActiveTab("home");
@@ -147,14 +148,7 @@ export default function Headers({Public_ID}){
       <div 
           className="rounded-full bg-white px-1 py-1 text-sm mt-2 text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
           >
-                   <select className=" bg-white border-none focus:border-none rounded-full" onChange={handleSet}>
-                      <option value={tocurrency}>{tocurrency}</option>
-                 {dataCountries.slice(0,101).map((ctr)=>(
-               <option value={ctr} key={ctr}>{ctr}</option>
-          ))          
-          
-        }                             
-             </select>
+              
              </div>
       </div>
 

@@ -27,13 +27,7 @@ export default function Table({Public_ID}){
   console.log(items)
  
    
-  const {
-
-    fromcurrency,
-    setFromCurrency,
-    tocurrency,
-    setToCurrency,
-  }=useContext(CurrencyContext)
+  
   const [rate,setRate]=useState(1)
   const [amount,setAmount]=useState(0)
   const convert=amount * rate;
@@ -72,24 +66,7 @@ export default function Table({Public_ID}){
     // }
     // },[Postlist]);
   
-    useEffect(()=>{
-  
-
-       axios("https://api.freecurrencyapi.com/v1/latest",{
-               params: {
-                   apikey:"wyYOvYBYFnvzXN5vqfzlvpBOuWsTQbmCezQvqwir",
-                   base_currency:"USD",
-                   currencies:tocurrency.split(" ")[1], 
-               }
-           }).then((response)=>{
-              
-               setRate(response.data.data[tocurrency.split(" ")[1]])
-           }).catch(err=>{
-               console.log(err)
-           })
-      
-      
-        },[Postlist]);
+   
  
 
     const handleSelect=(id)=>{
@@ -204,13 +181,13 @@ export default function Table({Public_ID}){
       <div className="adjust">
                             <div >
                                 <p className="font-bold text-gray-500 text-xs">Price:
-                                  { (post.price*rate).toFixed(2)} - {tocurrency.split(" ")[1]}
+                                  {/* { (post.price*rate).toFixed(2)} - {tocurrency.split(" ")[1]} */}
                                   </p>
 
 
                                <p className="font-bold text-xs text-gray-500">Delivery Cost :
                                
-                               {(post.shippingCost * rate ).toFixed(2)} -{tocurrency.split(" ")[1]}
+                               {/* {(post.shippingCost * rate ).toFixed(2)} -{tocurrency.split(" ")[1]} */}
                                </p>
                                <div className="">
                                           <div  className="font-bold flex text-xs justify-between items-center text-blue-500 mr-4" >

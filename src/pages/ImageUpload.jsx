@@ -41,7 +41,7 @@ const handleDrop=()=>{
              onDragLeave={handleDragLeave}
              onDrop={handleDrop}
           >
-            <div className="aspect-square w-20 bg-[url('/image-upload.png')] bg-cover"/>
+            <div className="aspect-square w-20 bg-[url('/public/image-upload.png')] bg-cover"/>
             <p className="cursor-pointer text-center font-grotesk text-xs">
                 click to upload or <br/> drag and drop
             </p>

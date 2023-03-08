@@ -20,6 +20,7 @@ import Public from "./public";
 import Para from "./para";
 import Tables from "./tables";
 import Tabs from "./tab";
+import CurrencySelect from "../components/currencies";
 
 export default function Homepage(){  
   const [country,setCountries]=useState([]);
@@ -70,7 +71,8 @@ export default function Homepage(){
       </div> 
         
          {/* <Postlist Public_ID={Public_ID}/> */}
-         <Tables Public_ID={Public_ID}/>
+         {/* <Tables Public_ID={Public_ID}/> */}
+         {/* <CurrencySelect/> */}
         
     
          

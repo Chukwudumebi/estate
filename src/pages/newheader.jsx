@@ -12,7 +12,9 @@ import {BiEdit} from "react-icons/bi"
 import useAxios from "../hooks/useAxios"
 import Design from "./redesign";
 
-export default function Header({Public_ID}){
+export default function Header(){
+
+  const Public_ID="ah4h5g6d789d9f"
     const [visible,setVisible]=useState(false);  
 
     const [username,setUsername]=useState("HTP02886")
@@ -22,16 +24,7 @@ export default function Header({Public_ID}){
     const [activeTab,setActiveTab]=useState(true);
     const [open,setOpen]=useState(true);
     const location = useLocation();
-    const {
-        tocurrency,
-        setToCurrency
-      }=useContext(CurrencyContext)
-    const [data]=useAxios("https://restcountries.com/v3.1/all");
-      
-      const filteredData=data.filter(item=> "currencies" in item)
-    const dataCountries=filteredData.map((item)=>{
-        return `${item.flag} ${Object.keys(item.currencies)[0]}`
-    })  
+   
     const style={
         fontSize:"10px",
     
@@ -59,9 +52,9 @@ export default function Header({Public_ID}){
     const handleModalOpen = () =>{
         setVisible(true)    
       }
-      const handleSet=(e)=>{
-        setToCurrency(e.target.value)
-     }
+    //   const handleSet=(e)=>{
+    //     setToCurrency(e.target.value)
+    //  }
     return(
         <div >
           {/* header */}
@@ -154,14 +147,14 @@ export default function Header({Public_ID}){
         <div 
           className="rounded-full bg-white px-1 py-1 text-sm mt-3  text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
           >
-                   <select className=" bg-white border-none focus:border-none rounded-full" onChange={handleSet}>
+                   {/* <select className=" bg-white border-none focus:border-none rounded-full" onChange={handleSet}>
                       <option value={tocurrency}>{tocurrency}</option>
                  {dataCountries.slice(0,101).map((ctr)=>(
                <option value={ctr} key={ctr}>{ctr}</option>
-          ))          
-          
+                     ))          
+            
         }                        
-             </select>
+             </select> */}
              </div>
               </div>
   
@@ -200,7 +193,7 @@ export default function Header({Public_ID}){
 
       {/* third bar */}
 
-      <Design/>
+      {/* <Design/> */}
             </div>
             </div>
     )
