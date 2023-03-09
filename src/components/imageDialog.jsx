@@ -4,24 +4,24 @@ import { FaTimes } from 'react-icons/fa';
 
 
 
-export default function ImageDialog({image}) {
-    console.log(image)
-  const [selectedImage, setSelectedImage] = useState(image[0]);
+export default function ImageDialog({images}) {
+  console.log(images)
+  const [selectedImage, setSelectedImage] = useState(images[0]);
   const name="images"
   return (
     <div className='mt-6'>
 
     <Dialog.Root>
-      {image.length === 1 && (
+      {images.length === 1 && (
         <Dialog.Trigger className="aspect-square h-20 sm:h-40">
-          <button type="button" className="h-full w-full" onClick={() => setSelectedImage(image[0])}>
-            <img src={image[0]} alt={name} className="h-[80px] w-[80px] mb-12 rounded object-cover" />
+          <button type="button" className="h-full w-full" onClick={() => setSelectedImage(images[0])}>
+            <img src={images[0]} alt={name} className="h-[80px] w-[80px] mb-12 rounded object-cover" />
           </button>
         </Dialog.Trigger>
       )}
-      {image.length === 2 && (
+      {images.length === 2 && (
         <div className="grid aspect-square h-10 grid-cols-2 gap-[3px] sm:h-20">
-          {image.map((image) => (
+          {images.map((image) => (
             <Dialog.Trigger key={image}>
               <button type="button" className="h-full w-full" onClick={() => setSelectedImage(image)}>
                 <img src={image} alt={name} className="h-full w-full rounded object-cover" />
@@ -30,9 +30,9 @@ export default function ImageDialog({image}) {
           ))}
         </div>
       )}
-      {image.length === 3 && (
+      {images.length === 3 && (
         <div className="grid aspect-square h-10 grid-cols-2 grid-rows-2 gap-[3px] sm:h-20">
-          {image.map((image, index) => (
+          {images.map((image, index) => (
             <Dialog.Trigger key={image} className={`${index === 0 ? 'row-span-2' : ''}`}>
               <button type="button" className="h-full w-full" onClick={() => setSelectedImage(image)}>
                 <img src={image} alt={name} className="h-full w-full rounded object-cover" />
@@ -41,9 +41,9 @@ export default function ImageDialog({image}) {
           ))}
         </div>
       )}
-      {image.length > 3 && (
+      {images.length > 3 && (
         <div className="grid aspect-square h-10 grid-cols-2 grid-rows-2 gap-[3px] sm:h-20">
-          {image.slice(0, 4).map((image) => (
+          {images.slice(0, 4).map((image) => (
             <Dialog.Trigger key={image} className="h-full w-full">
               <button type="button" className="h-full w-full" onClick={() => setSelectedImage(image)}>
                 <img src={image} alt={name} className="h-full w-full rounded object-cover" />
@@ -60,7 +60,7 @@ export default function ImageDialog({image}) {
               <img src={selectedImage} alt="" className="h-full w-full object-cover" />
             </div>
             <div className="flex flex-row items-center justify-center gap-4">
-              {image.slice(0, 4).map((image) => (
+              {images.slice(0, 4).map((image) => (
                 <div className="aspect-square w-10 overflow-hidden rounded sm:w-16" key={image}>
                   <button
                     className="h-full w-full"

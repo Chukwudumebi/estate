@@ -20,7 +20,7 @@ export default function useExchangeRate(currency) {
         `https://api.freecurrencyapi.com/v1/latest?&currencies=${currency}`,
         {
           headers: {
-            apikey: import.meta.env.VITE_FREE_CURRENCY_API_KEY,
+            apikey: "wyYOvYBYFnvzXN5vqfzlvpBOuWsTQbmCezQvqwir",
           },
         }
       );

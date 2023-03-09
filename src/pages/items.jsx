@@ -3,6 +3,7 @@ import * as ScrollArea from '@radix-ui/react-scroll-area';
 
 import { useItems } from '../context/ItemsContext';
 import Action from './Action';
+import Item from './item';
 // import { useAssets } from '../../contexts/AssetsContext';
 function Items() {
   const {items}= useItems()
@@ -28,8 +29,8 @@ function Items() {
 
           <div className="table-row-group">
             {items?.map(({ id }) => (
-                <></>
-            //   <Asset key={id} id={id} />
+            
+              <Item key={id} id={id} />
             ))}
           </div>
         </div>
