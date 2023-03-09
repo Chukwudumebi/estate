@@ -53,7 +53,7 @@ export default function AddItems(){
     // }
     
     return(
-        <div className="flex justify-center items-center mt-3">
+        <div className="flex justify-center items-center mt-[90px]">
       <div className="w-full max-w-xs">
        <form  className="flex w-full flex-col gap-4 p-4 shadow" ref={formRef} onSubmit={handleSubmit}>
      <div className="grid grid-flow-row gap-2 text-sm ">

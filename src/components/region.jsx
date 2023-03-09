@@ -25,13 +25,10 @@ export default function Region({country,states,provinces}){
   }
 
     return(
-      <div className="flex flex-col justify-center items-center">
-       <div
-          className="rounded-full bg-white shadow-md font-bold p-1 mb-1 text-sm text-center text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
-            
-        >
+      
+      
     
-<select className="bg-white border-none border rounded-lg focus:border-none" onChange={(e)=>handleCountry(e.target.value)}>
+<select className="bg-white rounded-lg focus:border-none" onChange={(e)=>handleCountry(e.target.value)}>
   <option value="0">Region</option>
     {
       country && country !== undefined ? country.map((ctr,index)=>{
@@ -43,44 +40,54 @@ export default function Region({country,states,provinces}){
        ):"No Region"
     } 
 </select>
-</div>
- {state.length > 1 && 
-  <div
-  className="rounded-full bg-white shadow-md font-bold p-1 text-sm text-center text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
-    
->
-  <select className="bg-white border-none  focus:border-none" onChange={(e)=>handleState(e.target.value)}>
-  <option value="0">select state</option>
-    {
-      state && state !== undefined ? state.map((st,index)=>{
-        return(
-          <option key={index} value={st.id}>{st.name}</option>
-        )
-      }
 
-      ):"No Region"
-    } 
-</select>
-</div>}
-{province.length > 1 && 
 
-<div
-          className="rounded-full bg-white shadow-md font-bold p-1 mt-1 text-sm text-center text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
-            
-        >
- <select className="bg-white border-none focus:border-none">
-  <option value="0">select province</option>
-    {
-      province && province !== undefined ? province.map((pv,index)=>{
-        return(
-          <option key={index} value={pv.id}>{pv.name}</option>
-        )
-      }
 
-      ):"No Province"
-    }
-</select>
- </div>}
- </div>
     )
 }
+
+
+
+
+
+
+
+//  /* {state.length > 1 && 
+//   <div
+//   className="rounded-full bg-white shadow-md font-bold p-1 text-sm text-center text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
+    
+// >
+//   <select className="bg-white border-none  focus:border-none" onChange={(e)=>handleState(e.target.value)}>
+//   <option value="0">select state</option>
+//     {
+//       state && state !== undefined ? state.map((st,index)=>{
+//         return(
+//           <option key={index} value={st.id}>{st.name}</option>
+//         )
+//       }
+
+//       ):"No Region"
+//     } 
+// </select>
+// </div>
+
+
+// {province.length > 1 && 
+
+//   <div
+//             className="rounded-full bg-white shadow-md font-bold p-1 mt-1 text-sm text-center text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
+              
+//           >
+//    <select className="bg-white border-none focus:border-none">
+//     <option value="0">select province</option>
+//       {
+//         province && province !== undefined ? province.map((pv,index)=>{
+//           return(
+//             <option key={index} value={pv.id}>{pv.name}</option>
+//           )
+//         }
+  
+//         ):"No Province"
+//       }
+//   </select>
+//    </div>}

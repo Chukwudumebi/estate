@@ -26,16 +26,14 @@ export default function Category(){
 
 
     return(
-        <div className="flex justify-center">
+        
+<>
 
-<div
-          className="rounded-full bg-white shadow-md font-bold p-1 text-sm text-center text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
-            
-        >
      <link to={`/Category/${selected}`}></link>
-       <select id="countries" class="bg-white border border-none rounded-lg" 
-       onClick={(e)=>setSelected(e.target.value)}>
-  <option selected 
+     
+     <select className="bg-white  rounded-lg focus:border-none" >
+
+<option selected 
   >Category</option>
   <option value="goods">Goods</option>
   <option value="services">Services</option>
@@ -43,9 +41,12 @@ export default function Category(){
   <option value="electronics">Electronics</option>
   <option value="recreational">Recreational</option>
   <option value="automotives">Automotives</option>
-
+  
+   
 </select>
-        </div>
-        </div>
+
+</>
+    
     )
 }
+

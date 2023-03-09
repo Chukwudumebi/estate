@@ -6,6 +6,9 @@ import { AiOutlineFundView} from "react-icons/ai";
 import {BsFilter} from "react-icons/bs"
 import * as Popover from '@radix-ui/react-popover';
 import NavSearch from '../components/Navseearch';
+import Region from '../components/region';
+import Category from '../components/category';
+import Public from './public';
 
 
 function Action() {
@@ -25,6 +28,7 @@ function Action() {
   return (
     <div className="sticky top-0 z-10 grid w-full items-center gap-2 border-b border-neutral-100 bg-white px-4 py-2 sm:grid-cols-auto-1fr md:px-8">
       <NavSearch/>
+      
       <div className="justify-self-end">
         <div className="flex items-center space-x-3">
 
@@ -38,33 +42,23 @@ function Action() {
     <Popover.Portal>
       <Popover.Content className="PopoverContent" sideOffset={5}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }} className="  bg-white rounded-md p-2 shadow-md">
-          <p className="Text" style={{ marginBottom: 10 }}>
-            Dimensions
-          </p>
-          <fieldset className="Fieldset">
-            <label className="Label" htmlFor="width">
-              Width
-            </label>
-            <input className="Input" id="width" defaultValue="100%" />
-          </fieldset>
-          <fieldset className="Fieldset">
+        <div className="flex justify-center items-center mb-2 border-b p-2">
+                          <input type="checkbox"
+                        //   onChange={(e)=>setPost(e.target.checked)}
+                        //    checked={post}
+                           />
+                           <span className="font-bold ml-2 ">New Post</span>                           
+                        </div>
+         
+          <fieldset className="Flex justify-between border-b p-1 text-center items-center gap-2">
             <label className="Label" htmlFor="maxWidth">
-              Max. width
+              Max Price :
             </label>
-            <input className="Input" id="maxWidth" defaultValue="300px" />
+            <input className=" w-14 ml-2 px-2 rounded" id="maxWidth"  defaultValue="300"  />
           </fieldset>
-          <fieldset className="Fieldset">
-            <label className="Label" htmlFor="height">
-              Height
-            </label>
-            <input className="Input" id="height" defaultValue="25px" />
-          </fieldset>
-          <fieldset className="Fieldset">
-            <label className="Label" htmlFor="maxHeight">
-              Max. height
-            </label>
-            <input className="Input" id="maxHeight" defaultValue="none" />
-          </fieldset>
+         <Region/>
+         <Category/>
+         <Public/>
         </div>
        
         <Popover.Arrow className="PopoverArrow" />
@@ -79,7 +73,7 @@ function Action() {
             <MdOutlineStoreMallDirectory className="text-sky-700 group-hover:text-neutral-100" />
           </Link>
           <Link
-            to="create-asset"
+            to="AddItem"
             className="group aspect-square rounded-md border border-neutral-300 p-2 font-normal hover:bg-sky-700 hover:text-neutral-100"
           >
             <FaPlus className="text-sky-700 group-hover:text-neutral-100" />
