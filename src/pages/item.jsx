@@ -50,7 +50,7 @@ function Item({ id }) {
         <ImageDialog images={images} name={name} />
       </div>
       <div className="overflow-hidde table-cell h-24 border-b border-b-slate-100 px-4 align-middle text-xs">
-        <p className="line-clamp-3 break-words ">{description}</p>
+        <p className="line-clamp-3">{description}</p>
       </div>
      
       
