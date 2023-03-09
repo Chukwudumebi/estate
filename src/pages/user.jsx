@@ -26,7 +26,7 @@ function User() {
 
   return (
     <div className="relative mx-auto grid w-full max-w-3xl grid-flow-dense  grid-cols-2 grid-rows-auto-1fr justify-center gap-2 rounded-xl bg-gradient-to-br from-blue-900 to-sky-600 p-3 px-4 text-center text-white">
-      <h1 className="self-center justify-self-start text-lg font-semibold">Hi, @{user.user_name}</h1>
+      <h1 className="self-center justify-self-start text-md font-semibold">Hi, @{user.user_name}</h1>
       <div className="col-start-1 flex flex-col items-start">
         {/* <span className="text-sm">Total Asset</span>
         <h1 className="text-xl font-bold">
