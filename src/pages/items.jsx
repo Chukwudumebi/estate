@@ -5,7 +5,8 @@ import { useItems } from '../context/ItemsContext';
 import Action from './Action';
 // import { useAssets } from '../../contexts/AssetsContext';
 function Items() {
-  const {Items}= useItems()
+  const {items}= useItems()
+  console.log(items)
   return (
     <ScrollArea.Root
       className="mx-auto max-h-full w-full max-w-3xl overflow-hidden rounded-lg bg-white shadow-lg"
@@ -26,7 +27,7 @@ function Items() {
           </div> */}
 
           <div className="table-row-group">
-            {Items?.map(({ id }) => (
+            {items?.map(({ id }) => (
                 <></>
             //   <Asset key={id} id={id} />
             ))}

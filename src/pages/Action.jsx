@@ -41,7 +41,7 @@ function Action() {
     </Popover.Trigger>
     <Popover.Portal>
       <Popover.Content className="PopoverContent" sideOffset={5}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }} className="  bg-white rounded-md p-2 shadow-md">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }} className="  bg-white ml-5 rounded-md p-2 shadow-md">
         <div className="flex justify-center items-center mb-2 border-b p-2">
                           <input type="checkbox"
                         //   onChange={(e)=>setPost(e.target.checked)}
