@@ -1,3 +1,4 @@
+import {useState} from "react"
 import { Link } from 'react-router-dom';
 import { useCurrency } from '../../context/currencyContext';
 import useExchangeRate from '../../hooks/useExchangeRate';
@@ -5,9 +6,9 @@ import { useItems } from '../../context/ItemsContext';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { IoCopyOutline } from 'react-icons/io5';
 import ImageDialog from './ImageDialog';
-
 function Item({ id }) {
   const { currency } = useCurrency();
+  const[enable,setEnable]=useState(false)
   const { data: exchangeRate } = useExchangeRate(currency);
   console.log(exchangeRate);
   const { items, dispatch } = useItems();
@@ -17,6 +18,7 @@ function Item({ id }) {
   }
   const { images, description, price, selected, shipping_cost, user } = item;
   const shortId = `${user.id.slice(0, 6)}...${user.id.slice(-6)}`;
+
   return (
     <div className="table-row w-full max-h-24 cursor-pointer py-4 hover:bg-slate-300">
       <div className="table-cell h-24 w-10 border-b border-b-slate-100 px-2 py-4 text-center align-middle">

@@ -41,6 +41,7 @@ export default function AddItems() {
           className="flex w-full flex-col gap-4 p-4 bg-white shadow"
           ref={formRef}
           onSubmit={handleSubmit}
+          autoComplete="off"
         >
           <div className="grid grid-flow-row gap-2 text-sm ">
             <label htmlFor="description">Description</label>

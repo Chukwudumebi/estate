@@ -5,10 +5,12 @@ import { MdOutlineStoreMallDirectory } from 'react-icons/md';
 import { AiOutlineFundView } from 'react-icons/ai';
 import Filters from '../Filters/Index';
 import SearchBar from './SearchBar';
-
+import {useState} from "react"
 function Action() {
   const { assets, dispatch } = useItems();
   const selectedAssets = assets?.filter((asset) => asset.selected);
+  const [enable,setEnable]=useState(false)
+
   // delete assets
   const handleDelete = () => {
     selectedAssets?.forEach((asset) => {
