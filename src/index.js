@@ -1,61 +1,44 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from "./routes/root";
-import IndexPage from "./routes/index/pages";
-import IndexLoader from "./routes/index/loader";
-import { CurrencyProvider } from "./context/currencyContext";
-import "./index.css";
-import Homie from "./pages/homie";
-import AddItems from "./pages/AddItems";
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Root from './routes/root';
+import IndexPage from './routes/index/page';
+import IndexLoader from './routes/index/loader';
+import { CurrencyProvider } from './context/currencyContext';
+import { ItemsProvider } from './context/ItemsContext';
+import './index.css';
+import AddItems from './routes/AddItems';
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Root />,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <IndexPage />,
         loader: IndexLoader(queryClient),
       },
 
       {
-        path: "/AddItem",
+        path: '/add-item',
         element: <AddItems />,
       },
     ],
   },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <CurrencyProvider>
-      <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
-      </QueryClientProvider>
+      <ItemsProvider>
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider router={router} />
+        </QueryClientProvider>
+      </ItemsProvider>
     </CurrencyProvider>
   </React.StrictMode>
 );
-
-// import React from "react";
-// import ReactDOM from "react-dom/client";
-// import "./index.css";
-// import App from "./App";
-// // import CurrencyProvider from "./context/currencyContext";
-// import { ItemsProvider } from "./context/ItemsContext";
-// import { CurrencyProvider } from "./context/currencyContext";
-
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(
-//   <ItemsProvider>
-//     <CurrencyProvider>
-//       <React.StrictMode>
-//         <App />
-//       </React.StrictMode>
-//     </CurrencyProvider>
-//   </ItemsProvider>
-// );

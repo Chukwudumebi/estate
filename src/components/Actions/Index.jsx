@@ -1,15 +1,10 @@
 import { Link } from 'react-router-dom';
 import { FaRegEdit, FaPlus, FaMinus, FaLock } from 'react-icons/fa';
-import { useItems } from '../context/ItemsContext';
-import {MdOutlineStoreMallDirectory} from "react-icons/md"
-import { AiOutlineFundView} from "react-icons/ai";
-import {BsFilter} from "react-icons/bs"
-import * as Popover from '@radix-ui/react-popover';
-import NavSearch from '../components/Navseearch';
-import Region from '../components/region';
-import Category from '../components/category';
-import Public from './public';
-
+import { useItems } from '../../context/ItemsContext';
+import { MdOutlineStoreMallDirectory } from 'react-icons/md';
+import { AiOutlineFundView } from 'react-icons/ai';
+import Filters from '../Filters/Index';
+import SearchBar from './SearchBar';
 
 function Action() {
   const { assets, dispatch } = useItems();
@@ -27,53 +22,19 @@ function Action() {
   }`;
   return (
     <div className="sticky top-0 z-10 grid w-full items-center gap-2 border-b border-neutral-100 bg-white px-4 py-2 sm:grid-cols-auto-1fr md:px-8">
-      <NavSearch/>
-      
+      <span className="font-semibold">SQE MARKETPLACE</span>
       <div className="justify-self-end">
         <div className="flex items-center space-x-3">
-
-
-        <Popover.Root>
-    <Popover.Trigger asChild>
-          <button type="button" className='group grid aspect-square grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal shadow-sm hover:bg-sky-700 hover:text-neutral-100 hover:border-sky-700 relative' >
-            <BsFilter className="text-sky-700 cursor-pointer group-hover:text-neutral-100" />
-          </button>
-    </Popover.Trigger>
-    <Popover.Portal>
-      <Popover.Content className="PopoverContent" sideOffset={5}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }} className="  bg-white ml-5 rounded-md p-2 shadow-md">
-        <div className="flex justify-center items-center mb-2 border-b p-2">
-                          <input type="checkbox"
-                        //   onChange={(e)=>setPost(e.target.checked)}
-                        //    checked={post}
-                           />
-                           <span className="font-bold ml-2 ">New Post</span>                           
-                        </div>
-         
-          <fieldset className="Flex justify-between border-b p-1 text-center items-center gap-2">
-            <label className="Label" htmlFor="maxWidth">
-              Max Price :
-            </label>
-            <input className=" w-14 ml-2 px-2 rounded" id="maxWidth"  defaultValue="300"  />
-          </fieldset>
-         <Region/>
-         <Category/>
-         <Public/>
-        </div>
-       
-        <Popover.Arrow className="PopoverArrow" />
-      </Popover.Content>
-    </Popover.Portal>
-  </Popover.Root>
-        <Link
+          <SearchBar />
+          <Filters />
+          <Link
             to="create-asset"
             className="group aspect-square rounded-md border border-neutral-300 p-2 font-normal hover:bg-sky-700 hover:text-neutral-100"
           >
-            
             <MdOutlineStoreMallDirectory className="text-sky-700 group-hover:text-neutral-100" />
           </Link>
           <Link
-            to="AddItem"
+            to="add-item"
             className="group aspect-square rounded-md border border-neutral-300 p-2 font-normal hover:bg-sky-700 hover:text-neutral-100"
           >
             <FaPlus className="text-sky-700 group-hover:text-neutral-100" />
@@ -103,10 +64,8 @@ function Action() {
             }`}
           >
             <AiOutlineFundView className="text-sky-700 group-hover:text-neutral-100" />
-          </Link>   
- 
+          </Link>
         </div>
-
       </div>
     </div>
   );

@@ -1,5 +1,4 @@
 import { z } from 'zod';
-import { QueryClient } from '@tanstack/react-query';
 
 const currencySchema = z.object({
   symbol: z.string().min(1).max(3),
@@ -11,7 +10,6 @@ const currencySchema = z.object({
   name_plural: z.string().min(1).max(50),
 });
 
-
 const currenciesSchema = z
   .object({
     data: z.record(currencySchema),
@@ -21,7 +19,7 @@ const currenciesSchema = z
 // define your query
 export const currencyQuery = {
   queryKey: ['currency'],
-  queryFn: async ()=> {
+  queryFn: async () => {
     const response = await fetch(
       'https://api.freecurrencyapi.com/v1/currencies?apikey=wyYOvYBYFnvzXN5vqfzlvpBOuWsTQbmCezQvqwir'
     );

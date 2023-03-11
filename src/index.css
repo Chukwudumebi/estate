@@ -1,108 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body{
 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Space Grotesk',sans-serif;
-}
-.active{
-    background-color: dodgerblue;
-}
-.homepage{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.Desc{
-    display:flex;
-    align-items: center;
-    justify-content: space-around;
-     gap: 20px;
-     color:black;
-    
-}
-.Des{
-    display:flex;
-    align-items: center;
-    justify-content: space-evenly;
-    
-     color:black;
-    
-}
-.details{
-    display: flex;
-    justify-content: space-between;
-    
-}
-.price{
-    padding:40px;
-}
-.footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    bottom: 15px;
-    width: 100%;
-    z-index: 2;
-    background-color: white;
-    
-}
-.footer1{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap:130px;
-}
-.mb{
-    padding: 40px;
-    margin-bottom: 20px;
-    background-color: white;
-}
 .whatsss {
-    position: fixed;
-   
-    left: 33px;
-    bottom: 10px;
-    color: #fff;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 40px;
-    z-index:2;
-  }
- .image{
+  position: fixed;
 
-   width: 100%;
-   object-fit: cover;
-    height: auto;
-
- }
-
- .adjust{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 6px;
- }
- 
-@media(max-width:768px){
-    .homepage{
-        display: flex;
-        flex-direction: column;
-        margin-right: 30px;
-    }
-    .container{
-        text-align: center;
-    }
-    .Desc{
-        display: flex;
-       flex-direction: column;
-    }
-    .Des{
-        display: flex;
-       flex-direction: column;
-    }
+  left: 33px;
+  bottom: 10px;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 40px;
+  z-index: 2;
 }

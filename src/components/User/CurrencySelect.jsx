@@ -1,11 +1,8 @@
-
 import { useQuery } from '@tanstack/react-query';
 import { useLoaderData } from 'react-router-dom';
-import Select, { components, OptionProps } from 'react-select';
-import loader,{Currency ,currencyQuery} from '../routes/index/loader';
-import { useCurrency } from '../context/currencyContext';
-// import { useCurrency } from '../../contexts/CurrencyContext';
-
+import Select, { components } from 'react-select';
+import { currencyQuery } from '../../routes/index/loader';
+import { useCurrency } from '../../context/currencyContext';
 
 // custom option component to display flag
 
@@ -25,12 +22,15 @@ function Option(props) {
   );
 }
 
- function CurrencySelect() {
+function CurrencySelect() {
   const { currency, setCurrency } = useCurrency();
   // fetch initial data from loader
-  const initialData = useLoaderData() ;
+  const initialData = useLoaderData();
   // fetch data from query
-  const { data, error, isLoading } = useQuery({ ...currencyQuery, initialData });
+  const { data, error, isLoading } = useQuery({
+    ...currencyQuery,
+    initialData,
+  });
   const options = data.map((curr) => ({
     label: curr.code,
     value: curr.code,
@@ -46,7 +46,9 @@ function Option(props) {
       name="currency"
       options={options}
       isMulti={false}
-      defaultValue={options.find((option) => option.value === currency) || options[0]}
+      defaultValue={
+        options.find((option) => option.value === currency) || options[0]
+      }
       components={{ Option }}
       onChange={handleChange}
       styles={{
@@ -80,7 +82,8 @@ function Option(props) {
             height: '25px',
             width: '25px',
             borderRadius: '20px',
-            boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+            boxShadow:
+              '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
             background: `url("https://wise.com/public-resources/assets/flags/rectangle/${currency.toLowerCase()}.png") center/cover no-repeat`,
           },
         }),
