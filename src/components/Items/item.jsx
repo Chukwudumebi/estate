@@ -16,8 +16,36 @@ function Item({ id }) {
   if (!item) {
     throw new Error('Asset not found');
   }
-  const { images, description, price, selected, shipping_cost, user } = item;
+  
+  const { images, description,  selected, shipping_cost, user } = item;
+  let price="";
+  let shippingCost="";
+  try{
+    price=new Intl.NumberFormat('en-US',{
+      style:"currency",
+      currency,
+      currencyDisplay:'narrowSymbol'
+    }).format(item.price * (exchangeRate || 0));
+  }catch (error){
+    price=`${currency} ${new Intl.NumberFormat('en-US',{
+      style:'decimal',
+      maximumFractionDigits:2
+    }).format(item.price * (exchangeRate || 0))}`
+  }
+  try{
+    shippingCost=new Intl.NumberFormat('en-US',{
+      style:"currency",
+      currency,
+      currencyDisplay:'narrowSymbol'
+    }).format(item.shipping_cost * (exchangeRate || 0));
+  }catch (error){
+    shippingCost=`${currency} ${new Intl.NumberFormat('en-US',{
+      style:'decimal',
+      maximumFractionDigits:2
+    }).format(item.shipping_cost * (exchangeRate || 0))}`
+  }
   const shortId = `${user.id.slice(0, 6)}...${user.id.slice(-6)}`;
+
 
   return (
     <div className="table-row w-full max-h-24 cursor-pointer py-4 hover:bg-slate-300">
@@ -42,21 +70,17 @@ function Item({ id }) {
       <div className="table-cell border-b border-b-slate-100 px-2 align-middle text-xs md:text-base w-max">
         <div className="flex flex-col w-max text-xs">
           <span>
-            Price:{' '}
+            {/* Price:{' '}
             {new Intl.NumberFormat('en-US', {
               style: 'currency',
               currency,
               currencyDisplay: 'narrowSymbol',
-            }).format(price * (exchangeRate || 0))}
+            }).format(price * (exchangeRate || 0))} */}
+            {price}
           </span>
 
           <span>
-            Shipping cost:{' '}
-            {new Intl.NumberFormat('en-US', {
-              style: 'currency',
-              currency,
-              currencyDisplay: 'narrowSymbol',
-            }).format(shipping_cost * (exchangeRate || 0))}
+           {shippingCost}
           </span>
           <div className="flex flex-row gap-1 items-center">
             <span>Public id: {shortId.toUpperCase()}</span>

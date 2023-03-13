@@ -3,16 +3,19 @@ import { useLoaderData } from 'react-router-dom';
 import Select, { components } from 'react-select';
 import { currencyQuery } from '../../routes/index/loader';
 import { useCurrency } from '../../context/currencyContext';
-
+import quec from '../../assets/quec.png'
+import logo from "../../assets/logo512.png"
 // custom option component to display flag
 
 function Option(props) {
   const { data } = props;
+
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
     <components.Option {...props}>
       <img
-        src={`https://wise.com/public-resources/assets/flags/rectangle/${data.value.toLowerCase()}.png`}
+        src={  data.value === 'QUEC' ? quec:
+           `https://wise.com/public-resources/assets/flags/rectangle/${data.value.toLowerCase()}.png`}
         alt={data.label}
         className="aspect-square w-[25px] rounded-full object-cover"
       />

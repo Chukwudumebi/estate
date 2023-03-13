@@ -6,7 +6,7 @@ const CurrencyContext = createContext();
 function CurrencyProvider({ children }) {
   // fetch currency from local storage
 
-  const [currency, setCurrency] = useState("USD");
+  const [currency, setCurrency] = useState("QUEC");
   // memoize value with useMemo hook
   const value = useMemo(
     () => ({

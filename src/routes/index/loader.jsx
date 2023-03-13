@@ -14,7 +14,22 @@ const currenciesSchema = z
   .object({
     data: z.record(currencySchema),
   })
-  .transform((val) => Object.keys(val.data).map((key) => val.data[key]));
+  .transform((val) =>{
+
+   const res= Object.keys(val.data).map((key) => val.data[key]);
+   res.unshift({
+    symbol:'QUEC',
+    name:'Quecoin',
+    symbol_native:'QUE',
+    decimal_digits:2,
+    rounding:2,
+    code:'QUEC',
+    name_plural:"Quecoins"
+   });
+   return res;
+
+  
+  })
 
 // define your query
 export const currencyQuery = {

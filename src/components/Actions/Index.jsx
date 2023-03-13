@@ -7,18 +7,18 @@ import Filters from '../Filters/Index';
 import SearchBar from './SearchBar';
 import {useState} from "react"
 function Action() {
-  const { assets, dispatch } = useItems();
-  const selectedAssets = assets?.filter((asset) => asset.selected);
-  const [enable,setEnable]=useState(false)
+  const { items, dispatch } = useItems();
+  const selectedItems = items?.filter((item) => item.selected);
+  
 
   // delete assets
   const handleDelete = () => {
-    selectedAssets?.forEach((asset) => {
-      dispatch({ type: 'DELETE_ASSET', payload: asset.id });
+    selectedItems?.forEach((item) => {
+      dispatch({ type: 'DELETE_ITEM', payload: item.id });
     });
   };
   const className = `${
-    selectedAssets?.length > 0
+    selectedItems?.length > 0
       ? 'group grid aspect-square grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal shadow-sm hover:bg-sky-700 hover:text-neutral-100 hover:border-sky-700 relative'
       : 'group grid aspect-square grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal relative before:absolute pointer-events-none before:aspect-square before:w-full before:left-0 before:bg-white/70 before:rounded'
   }`;
@@ -42,9 +42,9 @@ function Action() {
             <FaPlus className="text-sky-700 group-hover:text-neutral-100" />
           </Link>
           <Link
-            // to={`edit-asset/${selectedAssets[0]?.id}`}
+            to={`edit-item/${selectedItems[0]?.id}`}
             className={`${
-              selectedAssets?.length === 1
+              selectedItems?.length === 1
                 ? 'border-grey-600 group relative grid aspect-square grid-flow-col items-center justify-center rounded border px-2 py-1 font-normal shadow-sm hover:border-sky-700 hover:bg-sky-700 hover:text-neutral-100'
                 : 'border-grey-600 group pointer-events-none relative grid aspect-square grid-flow-col items-center justify-center rounded border px-2 py-1 font-normal before:absolute before:left-0 before:aspect-square before:w-full before:rounded before:bg-white/70'
             }`}
@@ -58,9 +58,9 @@ function Action() {
             <FaLock className="text-sky-700 group-hover:text-neutral-100" />
           </button>
           <Link
-            // to={`edit-asset/${selectedAssets[0]?.id}`}
+            to={`edit-item/${selectedItems[0]?.id}`}
             className={`${
-              selectedAssets?.length === 1
+              selectedItems?.length === 1
                 ? 'border-grey-600 group relative grid aspect-square grid-flow-col items-center justify-center rounded border px-2 py-1 font-normal shadow-sm hover:border-sky-700 hover:bg-sky-700 hover:text-neutral-100'
                 : 'border-grey-600 group pointer-events-none relative grid aspect-square grid-flow-col items-center justify-center rounded border px-2 py-1 font-normal before:absolute before:left-0 before:aspect-square before:w-full before:rounded before:bg-white/70'
             }`}

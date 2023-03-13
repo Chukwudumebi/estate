@@ -16,6 +16,9 @@ export default function useExchangeRate(currency) {
   const exchangeRateQuery = {
     queryKey: ["exchangeRate", currency],
     queryFn: async () => {
+      if (currency === "QUEC") {
+        return 1;
+      }
       const response = await fetch(
         `https://api.freecurrencyapi.com/v1/latest?&currencies=${currency}`,
         {
