@@ -87,7 +87,9 @@ function CurrencySelect() {
             borderRadius: '20px',
             boxShadow:
               '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
-            background: `url("https://wise.com/public-resources/assets/flags/rectangle/${currency.toLowerCase()}.png") center/cover no-repeat`,
+            background: 
+            currency === 'QUEC'? `url(${quec})center/cover no-repeat `:
+            `url("https://wise.com/public-resources/assets/flags/rectangle/${currency.toLowerCase()}.png") center/cover no-repeat`,
           },
         }),
         option: (baseStyles) => ({
