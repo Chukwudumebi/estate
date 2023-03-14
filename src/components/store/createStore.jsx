@@ -6,7 +6,7 @@ import RegionFilter from '../components/Filters/Region';
 import CategoryFilter from '../components/Filters/Category';
 import { useItems } from '../context/ItemsContext';
 import user from '../data/user.json';
-export default function AddItems() {
+export default function CreateStore() {
   const navigate = useNavigate();
   const [images, setImages] = useState([]);
   const formRef = useRef(null);
@@ -42,7 +42,7 @@ export default function AddItems() {
           ref={formRef}
           onSubmit={handleSubmit}
           autoComplete="off"
-        > 
+        >
           <div className="grid grid-flow-row gap-2 text-sm ">
             <label htmlFor="description">Description</label>
             <textarea

@@ -10,6 +10,8 @@ import { ItemsProvider } from "./context/ItemsContext";
 import "./index.css";
 import AddItems from "./routes/AddItems";
 import EditItems from "./routes/EditItem";
+import MainForm from "./form/main";
+import { FormProvider } from "./form/formContext/formContext";
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
@@ -31,6 +33,10 @@ const router = createBrowserRouter([
         path: "/edit-item/:id",
         element: <EditItems />,
       },
+      {
+        path: "/create-store",
+        element: <MainForm />,
+      },
     ],
   },
 ]);
@@ -38,12 +44,14 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <CurrencyProvider>
-      <ItemsProvider>
-        <QueryClientProvider client={queryClient}>
-          <RouterProvider router={router} />
-        </QueryClientProvider>
-      </ItemsProvider>
-    </CurrencyProvider>
+    <FormProvider>
+      <CurrencyProvider>
+        <ItemsProvider>
+          <QueryClientProvider client={queryClient}>
+            <RouterProvider router={router} />
+          </QueryClientProvider>
+        </ItemsProvider>
+      </CurrencyProvider>
+    </FormProvider>
   </React.StrictMode>
 );
