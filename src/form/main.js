@@ -20,6 +20,7 @@ export default function MainForm() {
   };
   const decrease = () => {
     setPage((page) => page - 1);
+    setProgress(50);
   };
 
   return (
