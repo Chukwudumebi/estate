@@ -29,7 +29,7 @@ const reducer = (state, action) => {
   }
 };
 
-const StoresContext = createContext();
+export const StoresContext = createContext();
 const StoreProvider = ({ children }) => {
   const [stores, dispatch] = useReducer(reducer, initialState);
   const value = useMemo(() => ({ stores, dispatch }), [stores, dispatch]);

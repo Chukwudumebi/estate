@@ -6,8 +6,10 @@ import { BsArrowLeftCircle } from "react-icons/bs";
 import { useState, useContext } from "react";
 import { FormContext } from "./formContext/formContext";
 import { Link, useNavigate } from "react-router-dom";
+import { useStores } from "../context/storeContext";
 
 export default function Page2({ decrease, setProgress }) {
+  const { dispatch } = useStores();
   const {
     storename,
     category,
@@ -39,8 +41,8 @@ export default function Page2({ decrease, setProgress }) {
       logo: fileList,
       address: address,
     };
+    dispatch({ type: "CREATE_ITEM", payload: store });
 
-    console.log(store);
     navigate("/");
   };
   return (

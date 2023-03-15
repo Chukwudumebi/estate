@@ -31,7 +31,7 @@ export default function AddItems() {
       user,
     };
     dispatch({ type: 'CREATE_ITEM', payload: item });
-    navigate('/');
+    navigate('/store');
   };
 
   return (

@@ -7,10 +7,13 @@ import { AiOutlineFundView } from 'react-icons/ai';
 // import Filters from '../Filters/Index';
 // import SearchBar from './SearchBar';
 
-import {useState} from "react"
+import {useState,useContext} from "react"
 import SearchBar from '../../Actions/SearchBar';
 import { useItems } from '../../../context/ItemsContext';
+import { StoresContext } from '../../../context/storeContext';
 function StoreAction() {
+  const { stores}=useContext(StoresContext)
+  console.log(stores)
   const { items, dispatch } = useItems();
   const selectedItems = items?.filter((item) => item.selected);
   
@@ -33,7 +36,7 @@ function StoreAction() {
 
       <div className="justify-self-end">
         <div className="flex items-center space-x-3">
-      <span className="font-semibold">SQE STORE</span>
+      <span className="font-semibold">SQE STORE MANAGEMENT</span>
           <SearchBar />
         
           <Link

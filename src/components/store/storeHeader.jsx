@@ -1,7 +1,8 @@
 import { FaCopy } from 'react-icons/fa';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Search from '../../pages/search';
-import CurrencySelect from '../User/CurrencySelect';
+import CurrencySelect from '../User/CurrencySelect'
+
 
 
 export default function StoreHeader(){

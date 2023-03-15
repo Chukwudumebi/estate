@@ -5,12 +5,14 @@ import useExchangeRate from '../../hooks/useExchangeRate';
 import { useItems } from '../../context/ItemsContext';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { IoCopyOutline } from 'react-icons/io5';
-import ImageDialog from './ImageDialog';
-function Item({ id }) {
+import ImageDialogs from "./imageDialog";
+
+
+function Items({ id }) {
   const { currency } = useCurrency();
   const[enable,setEnable]=useState(false)
   const { data: exchangeRate } = useExchangeRate(currency);
-  console.log(exchangeRate);
+  
   const { items, dispatch } = useItems();
   const item = items.find((data) => data.id === id);
   if (!item) {
@@ -62,7 +64,7 @@ function Item({ id }) {
         />
       </div>
       <div className=" table-cell border-b border-b-slate-100 align-middle pr-2">
-        <ImageDialog images={images} />
+        <ImageDialogs images={images} />
       </div>
       <div className="overflow-hidde table-cell h-24 border-b border-b-slate-100 px-2 align-middle text-xs">
         <p className="line-clamp-3">{description}</p>
@@ -76,15 +78,15 @@ function Item({ id }) {
               currency,
               currencyDisplay: 'narrowSymbol',
             }).format(price * (exchangeRate || 0))} */}
-           {price}
+          Price: {price}
           </span>
 
           <span>
         
-           {shippingCost}
+          Shipping Cost: {shippingCost}
           </span>
-          {/* <span>Available Quantity :1</span>
-          <span>Profit Margin : 1%</span> */}
+          <span>Available Quantity :1</span>
+          <span>Profit Margin : 1%</span>
           <div className="flex flex-row gap-1 items-center">
             <span>Public id: {shortId.toUpperCase()}</span>
             <CopyToClipboard text={user.id}>
@@ -101,7 +103,7 @@ function Item({ id }) {
 
       <div className="table-cell max-h-24 border-b border-b-slate-100 pl-2 pr-4 text-end align-bottom pb-5">
         <div className="flex gap-2">
-          <button type="button" className="grid w-full items-end">
+          {/* <button type="button" className="grid w-full items-end">
             <Link
               to={`buy/${id}`}
               className="w-max cursor-pointer justify-self-end rounded border border-transparent bg-sky-600 px-1 py-[3px] text-xs text-white hover:border-sky-500 hover:bg-white hover:text-sky-600"
@@ -124,9 +126,9 @@ function Item({ id }) {
             >
               contact seller
             </Link>
-          </button>
+          </button> */}
 
-          {/* <div className="mt-1">
+          <div className="mt-1">
           
                <div className="flex gap-2 items-center">
 
@@ -162,11 +164,11 @@ function Item({ id }) {
                 </div>
 
           
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-export default Item;
+export default Items;
