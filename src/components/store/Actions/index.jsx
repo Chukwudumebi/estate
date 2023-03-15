@@ -1,12 +1,16 @@
 import { Link } from 'react-router-dom';
 import { FaRegEdit, FaPlus, FaMinus, FaLock } from 'react-icons/fa';
-import { useItems } from '../../context/ItemsContext';
+// import { useItems } from '../../context/ItemsContext';
+import {RiMailAddLine} from "react-icons/ri"
 import { MdOutlineStoreMallDirectory } from 'react-icons/md';
 import { AiOutlineFundView } from 'react-icons/ai';
-import Filters from '../Filters/Index';
-import SearchBar from './SearchBar';
+// import Filters from '../Filters/Index';
+// import SearchBar from './SearchBar';
+
 import {useState} from "react"
-function Action() {
+import SearchBar from '../../Actions/SearchBar';
+import { useItems } from '../../../context/ItemsContext';
+function StoreAction() {
   const { items, dispatch } = useItems();
   const selectedItems = items?.filter((item) => item.selected);
   
@@ -25,12 +29,15 @@ function Action() {
   return (
     <div className="sticky top-0 z-10 grid w-full items-center gap-2 border-b border-neutral-100 bg-white px-4 py-2 sm:grid-cols-auto-1fr md:px-8">
       <span className="font-semibold">SQE MARKETPLACE</span>
+      
+
       <div className="justify-self-end">
         <div className="flex items-center space-x-3">
+      <span className="font-semibold">SQE STORE</span>
           <SearchBar />
-          <Filters />
+        
           <Link
-            to="store"
+            to="create-store"
             className="group aspect-square rounded-md border border-neutral-300 p-2 font-normal hover:bg-sky-700 hover:text-neutral-100"
           >
             <MdOutlineStoreMallDirectory className="text-sky-700 group-hover:text-neutral-100" />
@@ -54,23 +61,15 @@ function Action() {
           <button type="button" className={className} onClick={handleDelete}>
             <FaMinus className="text-sky-700 group-hover:text-neutral-100" />
           </button>
-          <button type="button" className={className}>
-            <FaLock className="text-sky-700 group-hover:text-neutral-100" />
+         
+        
+          <button type="button" className={className} onClick={handleDelete}>
+            <RiMailAddLine className="text-sky-700 group-hover:text-neutral-100" />
           </button>
-          <Link
-            to={`edit-item/${selectedItems[0]?.id}`}
-            className={`${
-              selectedItems?.length === 1
-                ? 'border-grey-600 group relative grid aspect-square grid-flow-col items-center justify-center rounded border px-2 py-1 font-normal shadow-sm hover:border-sky-700 hover:bg-sky-700 hover:text-neutral-100'
-                : 'border-grey-600 group pointer-events-none relative grid aspect-square grid-flow-col items-center justify-center rounded border px-2 py-1 font-normal before:absolute before:left-0 before:aspect-square before:w-full before:rounded before:bg-white/70'
-            }`}
-          >
-            <AiOutlineFundView className="text-sky-700 group-hover:text-neutral-100" />
-          </Link>
         </div>
       </div>
     </div>
   );
 }
 
-export default Action;
+export default StoreAction;

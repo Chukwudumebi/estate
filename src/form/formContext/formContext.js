@@ -8,6 +8,8 @@ export const FormProvider = ({ children }) => {
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [fileList, setFileList] = useState([]);
+  const [isPhysicallyLocated, setisPhysicallyLocated] = useState(false);
+  const [agreement, setAgreement] = useState(false);
 
   return (
     <FormContext.Provider
@@ -19,6 +21,10 @@ export const FormProvider = ({ children }) => {
         email,
         address,
         fileList,
+        agreement,
+        isPhysicallyLocated,
+        setAgreement,
+        setisPhysicallyLocated,
         setFileList,
         setAddress,
         setPhone,

@@ -76,12 +76,15 @@ function Item({ id }) {
               currency,
               currencyDisplay: 'narrowSymbol',
             }).format(price * (exchangeRate || 0))} */}
-            {price}
+           Price: {price}
           </span>
 
           <span>
+            Shipping Cost:
            {shippingCost}
           </span>
+          <span>Available Quantity :1</span>
+          <span>Profit Margin : 1%</span>
           <div className="flex flex-row gap-1 items-center">
             <span>Public id: {shortId.toUpperCase()}</span>
             <CopyToClipboard text={user.id}>
@@ -98,7 +101,7 @@ function Item({ id }) {
 
       <div className="table-cell max-h-24 border-b border-b-slate-100 pl-2 pr-4 text-end align-bottom pb-5">
         <div className="flex gap-2">
-          <button type="button" className="grid w-full items-end">
+          {/* <button type="button" className="grid w-full items-end">
             <Link
               to={`buy/${id}`}
               className="w-max cursor-pointer justify-self-end rounded border border-transparent bg-sky-600 px-1 py-[3px] text-xs text-white hover:border-sky-500 hover:bg-white hover:text-sky-600"
@@ -121,7 +124,44 @@ function Item({ id }) {
             >
               contact seller
             </Link>
-          </button>
+          </button> */}
+          <div className="mt-1">
+          
+               <div className="flex gap-2 items-center">
+
+              <input type="checkbox"/>
+        
+                <span>
+                  Add to mailing list
+                  </span>
+               </div>
+               <div className="flex gap-2 items-center">
+
+<input type="checkbox"/>
+
+  <span>
+    Place item on sale
+    </span>
+ </div>
+
+  
+              
+            <div className="flex justify-between gap-2 items-center">
+
+          <input type="radio"/>New
+          <input type="radio"/>Refurbished
+            </div>
+
+                <div className="flex  items-center gap-2">
+                <label className="Label" htmlFor="maxWidth">
+              Discount
+            </label>
+            <input className="Input" id="maxWidth" defaultValue="10%" className="w-10"/>
+
+                </div>
+
+          
+          </div>
         </div>
       </div>
     </div>

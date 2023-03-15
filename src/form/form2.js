@@ -16,7 +16,10 @@ export default function Page2({ decrease, setProgress }) {
     email,
     setEmail,
     setPhone,
+    agreement,
+    isPhysicallyLocated,
     phone,
+    fileList,
     address,
     setAddress,
   } = useContext(FormContext);
@@ -29,7 +32,12 @@ export default function Page2({ decrease, setProgress }) {
       id: Math.floor(Math.random() * 1000),
       storename: storename,
       category: category,
-      policy: policy,
+      isPhysicallyLocated: isPhysicallyLocated,
+      agreement: agreement,
+      email: email,
+      phone: phone,
+      logo: fileList,
+      address: address,
     };
 
     console.log(store);

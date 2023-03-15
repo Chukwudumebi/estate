@@ -12,6 +12,7 @@ import AddItems from "./routes/AddItems";
 import EditItems from "./routes/EditItem";
 import MainForm from "./form/main";
 import { FormProvider } from "./form/formContext/formContext";
+import Store from "./components/store";
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
@@ -34,8 +35,12 @@ const router = createBrowserRouter([
         element: <EditItems />,
       },
       {
-        path: "/create-store",
+        path: "/store/create-store",
         element: <MainForm />,
+      },
+      {
+        path: "/store",
+        element: <Store />,
       },
     ],
   },

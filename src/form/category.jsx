@@ -20,7 +20,7 @@ function Storecategory() {
         placeholder="categories..."
         options={options}
         name="category"
-      
+
       ></Selects>
     </div>
   );

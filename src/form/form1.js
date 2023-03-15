@@ -9,8 +9,17 @@ import FormUpload from "./formImage";
 export default function Page1({ increase }) {
   const [progress, setProgress] = useState(50);
 
-  const { storename, setStoreName, category, setCategory } =
-    useContext(FormContext);
+  const {
+    storename,
+    setStoreName,
+    category,
+    setCategory,
+    agreement,
+    setAgreement,
+    isPhysicallyLocated,
+    setisPhysicallyLocated,
+  } = useContext(FormContext);
+
   return (
     <form
       className="flex w-full flex-col gap-4 p-4 bg-white "
@@ -31,9 +40,34 @@ export default function Page1({ increase }) {
           onChange={(e) => setStoreName(e.target.value)}
         />
       </div>
+      <div className="mb-4 flex items-center gap-2">
+        <input
+          name="physical location"
+          id="storename"
+          type="radio"
+          // value={isPhysicallyLocated}
+          checked={isPhysicallyLocated}
+          onClick={() => setisPhysicallyLocated((prev) => !prev)}
+        />
+        <span className="font-semibold text-sky-600">Physically Located?</span>
+      </div>
 
-      <Storecategory category={category} />
+      <Storecategory />
+
       <FormUpload />
+      <div className="mb-4 flex items-center gap-2">
+        <input
+          name="physical location"
+          id="storename"
+          type="checkbox"
+          // value={isPhysicallyLocated}
+          checked={agreement}
+          onClick={() => setAgreement((prev) => !prev)}
+        />
+        <p className="font-semibold text-sky-600 text-sm">
+          I agree not to misuse this site for illegal activities.
+        </p>
+      </div>
       <button
         className="flex-initial rounded-md border border-transparent bg-sky-600 px-3 py-2 text-white hover:border-neutral-700 hover:bg-white hover:text-neutral-700"
         onClick={increase}

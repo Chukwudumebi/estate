@@ -1,10 +1,8 @@
-
 import { createContext, useReducer, useContext, useMemo } from "react";
 import data from "../data/store.json";
 const initialState = data.map((store) => ({
   ...store,
 }));
-console.log(initialState);
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -50,4 +48,3 @@ function useStores() {
 }
 
 export { StoreProvider, useStores };
-

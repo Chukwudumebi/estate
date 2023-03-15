@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import * as Select from '@radix-ui/react-select';
 import classnames from 'classnames';
 import {
@@ -28,6 +28,7 @@ const SelectItem = React.forwardRef(
 );
 
 const Selects = ({ options, placeholder, name }) => (
+  
   <Select.Root name={name}>
     <Select.Trigger
       className="grid grid-cols-auto-1fr items-center rounded px-[15px] text-[13px] leading-none h-[35px] gap-[5px] bg-white text-violet11 border border-neutral-200 hover:bg-mauve3 focus:border-neutral-900 data-[placeholder]:text-violet9 outline-none"
@@ -45,7 +46,7 @@ const Selects = ({ options, placeholder, name }) => (
         </Select.ScrollUpButton>
         <Select.Viewport className="p-[5px]">
           {options.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
+            <SelectItem key={option.value} value={option.value} >
               {option.label}
             </SelectItem>
           ))}
