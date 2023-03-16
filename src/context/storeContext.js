@@ -2,6 +2,7 @@ import { createContext, useReducer, useContext, useMemo } from "react";
 import data from "../data/store.json";
 const initialState = data.map((store) => ({
   ...store,
+  items: [],
 }));
 console.log(initialState);
 

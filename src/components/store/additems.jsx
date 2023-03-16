@@ -1,16 +1,26 @@
-import React, { useState, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { BsArrowLeftCircle } from 'react-icons/bs';
-import UploadImage from '../components/ImageUpload';
-import RegionFilter from '../components/Filters/Region';
-import CategoryFilter from '../components/Filters/Category';
-import { useItems } from '../context/ItemsContext';
-import user from '../data/user.json';
-export default function AddItems() {
+import { useParams } from "react-router-dom";
+import { useState,useContext ,useEffect,useRef} from "react";
+import { StoresContext } from "../../context/storeContext";
+import {Link,useNavigate} from "react-router-dom"
+import RegionFilter from "../Filters/Region";
+import CategoryFilter from "../Filters/Category"
+
+
+export default function AddStoreItem(){
+    const {id}=useParams()
+    const [searchedStore,setSearch]=useState([])
+    const [store,setStore]=useState(searchedStore)
+    const{stores}=useContext(StoresContext)
+    console.log(stores)
+  useEffect(()=>{
+     const store=stores.filter(store=>store.id===Number(id))
+     setSearch(store[0]?.items)
+  },[])
+ 
   const navigate = useNavigate();
   const [images, setImages] = useState([]);
   const formRef = useRef(null);
-  const { dispatch } = useItems();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // get form Data
@@ -28,15 +38,17 @@ export default function AddItems() {
       shipping_cost: data.shipping,
       images: prevImages,
       selected: false,
-      user,
     };
-    dispatch({ type: 'CREATE_ITEM', payload: item });
-    navigate('/');
+    setStore([...store,item])
+    navigate('/store');
   };
 
-  return (
-    <div className="min-h-screen w-screen overflow-x-hidden overflow-y-scroll p-4 pt-24 pb-20">
-      <div className="m-2 mx-auto h-full max-w-md rounded-md overflow-hidden bg-white">
+  
+
+    return(
+    <div className="h-screen p-4 pt-24 pb-20 md:pb-10">
+
+<div className="m-2 mx-auto h-full max-w-md rounded-md overflow-hidden bg-white">
         <form
           className="flex w-full flex-col gap-4 p-4 bg-white shadow"
           ref={formRef}
@@ -88,7 +100,7 @@ export default function AddItems() {
           <CategoryFilter />
 
           <div className="grid grid-flow-row gap-2 text-sm ">
-            <UploadImage name="images" onChange={setImages} />
+            {/* <UploadImage name="images" onChange={setImages} /> */}
           </div>
 
           <div className="flex flex-row gap-3 py-4 text-sm">
@@ -110,9 +122,10 @@ export default function AddItems() {
       </div>
       <div className="whatsss rounded-full bg-sky-600 flex justify-center items-center shadow-xl w-[60px] h-[60px] hover:text-black">
         <Link to="/" className=" ">
-          <BsArrowLeftCircle />
+          {/* <BsArrowLeftCircle /> */}
         </Link>
       </div>
-    </div>
-  );
+        </div>
+    )
 }
+

@@ -37,8 +37,7 @@ function StoreAction() {
       <div className="justify-self-end">
         <div className="flex items-center space-x-3">
       <span className="font-semibold">SQE STORE MANAGEMENT</span>
-          <SearchBar />
-        
+          <SearchBar /> 
           <Link
             to="create-store"
             className="group aspect-square rounded-md border border-neutral-300 p-2 font-normal hover:bg-sky-700 hover:text-neutral-100"

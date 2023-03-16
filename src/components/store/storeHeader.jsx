@@ -20,13 +20,13 @@ export default function StoreHeader({store}){
           Hi, @{user.user_name}
         </h1>
         <div className="col-start-1 flex flex-col items-start">
-          <h1>Store Name :{store.storename}</h1>
+          <h1 className='uppercase font-bold'>Store Name :{store.storename}</h1>
         </div>
         <div className="grid w-max grid-cols-1 items-center gap-2 self-center justify-self-end sm:grid-cols-2">
           <span className="w-full self-center justify-self-end text-end text-sm sm:text-base">
             Currency
           </span>
-          {/* <CurrencySelect /> */}
+          <CurrencySelect />
         </div>
   
         <div className="col-start-2 row-start-1 flex flex-row  items-center gap-1 justify-self-end">

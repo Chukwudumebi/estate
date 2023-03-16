@@ -40,7 +40,9 @@ export default function Page2({ decrease, setProgress }) {
       phone: phone,
       logo: fileList,
       address: address,
+      items: [],
     };
+    console.log(store);
     dispatch({ type: "CREATE_STORE", payload: store });
     navigate("/store");
   };

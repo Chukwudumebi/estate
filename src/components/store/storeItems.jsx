@@ -9,8 +9,9 @@ import ActionsBar from '../Actions/Index';
 import StoreAction from './Actions';
 import StoreItem from './Items';
 // import Items from './Items';
-function  StoreItems() {
+function  StoreItems({store}) {
   const { StoreItems } = useStoreItems();
+  // console.log(store.items)
   
   return (
     <ScrollArea.Root
@@ -18,10 +19,16 @@ function  StoreItems() {
       type="auto"
     >
       <ScrollArea.Viewport className="grid h-full w-full">
-        <StoreAction/>
+        <StoreAction store={store}/>
 
         <div className="relative table h-full w-full table-auto border-collapse bg-white font-grotesk text-sm">
           <div className="table-row-group">
+            {/* {store.items?.map((item)=>{
+              <div key={item.id}>
+                <h1>{item.description}</h1>
+              </div>
+            })} */}
+            
             {StoreItems?.map(({ id }) => (
               <StoreItem key={id} id={id} />
             ))}
