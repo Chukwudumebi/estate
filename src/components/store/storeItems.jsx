@@ -1,15 +1,16 @@
 import * as ScrollArea from '@radix-ui/react-scroll-area';
+import { useStoreItems } from '../../context/storeItemContext';
 // import Asset from './Asset';
 
 // import { useItems } from '../../context/ItemsContext';
 import ActionsBar from '../Actions/Index';
-import { useItems } from '../../context/ItemsContext';
+// import { useItems } from '../../context/ItemsContext';
 // import Item from '../Items/item';
 import StoreAction from './Actions';
-import Items from './Items';
-
+import StoreItem from './Items';
+// import Items from './Items';
 function  StoreItems() {
-  const { items } = useItems();
+  const { StoreItems } = useStoreItems();
   
   return (
     <ScrollArea.Root
@@ -21,8 +22,8 @@ function  StoreItems() {
 
         <div className="relative table h-full w-full table-auto border-collapse bg-white font-grotesk text-sm">
           <div className="table-row-group">
-            {items?.map(({ id }) => (
-              <Items key={id} id={id} />
+            {StoreItems?.map(({ id }) => (
+              <StoreItem key={id} id={id} />
             ))}
           </div>
         </div>

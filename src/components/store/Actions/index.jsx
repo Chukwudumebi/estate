@@ -46,7 +46,7 @@ function StoreAction() {
             <MdOutlineStoreMallDirectory className="text-sky-700 group-hover:text-neutral-100" />
           </Link>
           <Link
-            to="add-item"
+            to="add-store-item"
             className="group aspect-square rounded-md border border-neutral-300 p-2 font-normal hover:bg-sky-700 hover:text-neutral-100"
           >
             <FaPlus className="text-sky-700 group-hover:text-neutral-100" />

@@ -14,6 +14,8 @@ import MainForm from "./form/main";
 import { FormProvider } from "./form/formContext/formContext";
 import Store from "./components/store";
 import { StoreProvider } from "./context/storeContext";
+import AddStoreItems from "./routes/AddStoreItem";
+import { StoreItemsProvider } from "./context/storeItemContext";
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
@@ -36,12 +38,16 @@ const router = createBrowserRouter([
         element: <EditItems />,
       },
       {
-        path: "/store/create-store",
+        path: "/create-store",
         element: <MainForm />,
       },
       {
         path: "/store",
         element: <Store />,
+      },
+      {
+        path: "/store/add-store-item",
+        element: <AddStoreItems />,
       },
     ],
   },
@@ -50,16 +56,18 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <StoreProvider>
-      <FormProvider>
-        <CurrencyProvider>
-          <ItemsProvider>
-            <QueryClientProvider client={queryClient}>
-              <RouterProvider router={router} />
-            </QueryClientProvider>
-          </ItemsProvider>
-        </CurrencyProvider>
-      </FormProvider>
-    </StoreProvider>
+    <StoreItemsProvider>
+      <StoreProvider>
+        <FormProvider>
+          <CurrencyProvider>
+            <ItemsProvider>
+              <QueryClientProvider client={queryClient}>
+                <RouterProvider router={router} />
+              </QueryClientProvider>
+            </ItemsProvider>
+          </CurrencyProvider>
+        </FormProvider>
+      </StoreProvider>
+    </StoreItemsProvider>
   </React.StrictMode>
 );

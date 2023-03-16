@@ -1,19 +1,4 @@
 [
-  {
-      "id": 1,
-      "name": "Black Shelby",  
-      "logo":"https://images.unsplash.com/photo-1600712244180-7ef5e5c82cb5?ixid=Mnw0MTAyNjd8MHwxfGFsbHx8fHx8fHx8fDE2Nzc3ODIxMjc&ixlib=rb-4.0.3&q=80&w=500",
-      "category":"",
-      "location":"",
-    
-      "phone":"",
-      "Email":"",
-      "Address":"",
-      "user": {
-        "id": "9a829f23a67f91431d1f6b1daa19424917f8c5e80952fc439f3f345dccfec668a6e4dc5d4cdd4fb2ef676c5e1af7e107d8bc0ec1614ba945f5b9cbad0b67077bc199abf76458c69ddad87c707c31f775d68418a8da797d8fdb6de9e863d558bb11b98d1af1a3ea02eedf2796b3073df7a0bf0aa4ea1f7f31d9c8ac496d3585cf",
-        "rating": 4
-      },
-      "items":[]
-    }
+ 
   ]
   

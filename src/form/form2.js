@@ -25,7 +25,7 @@ export default function Page2({ decrease, setProgress }) {
     address,
     setAddress,
   } = useContext(FormContext);
-  console.log(storename, category);
+
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -41,9 +41,8 @@ export default function Page2({ decrease, setProgress }) {
       logo: fileList,
       address: address,
     };
-    dispatch({ type: "CREATE_ITEM", payload: store });
-
-    navigate("/");
+    dispatch({ type: "CREATE_STORE", payload: store });
+    navigate("/store");
   };
   return (
     <form

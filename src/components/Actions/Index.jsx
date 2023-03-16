@@ -30,7 +30,7 @@ function Action() {
           <SearchBar />
           <Filters />
           <Link
-            to="store"
+            to="create-store"
             className="group aspect-square rounded-md border border-neutral-300 p-2 font-normal hover:bg-sky-700 hover:text-neutral-100"
           >
             <MdOutlineStoreMallDirectory className="text-sky-700 group-hover:text-neutral-100" />

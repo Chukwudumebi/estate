@@ -4,7 +4,6 @@ const initialState = data.map((items) => ({
   ...items,
   selected: false,
 }));
-console.log(initialState);
 
 const reducer = (state, action) => {
   switch (action.type) {

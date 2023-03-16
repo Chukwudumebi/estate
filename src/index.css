@@ -15,3 +15,13 @@
   font-size: 40px;
   z-index: 2;
 }
+.whatssss {
+  position: fixed;
+  right: 33px;
+  bottom: 10px;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 40px;
+  z-index: 2;
+}

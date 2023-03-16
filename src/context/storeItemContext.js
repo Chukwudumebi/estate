@@ -1,14 +1,13 @@
 import { createContext, useReducer, useContext, useMemo } from "react";
-import data from "../data/store.json";
-const initialState = data.map((store) => ({
-  ...store,
+import data from "../data/storeitems.json";
+const initialState = data.map((items) => ({
+  ...items,
+  selected: false,
 }));
-console.log(initialState);
 
 const reducer = (state, action) => {
-  console.log(action);
   switch (action.type) {
-    case "CREATE_STORE":
+    case "CREATE_ITEM":
       return [...state, action.payload];
     case "TOGGLE_ITEM":
       return state.reduce((acc, item) => {
@@ -31,22 +30,27 @@ const reducer = (state, action) => {
   }
 };
 
-export const StoresContext = createContext();
-const StoreProvider = ({ children }) => {
-  const [stores, dispatch] = useReducer(reducer, initialState);
-  const value = useMemo(() => ({ stores, dispatch }), [stores, dispatch]);
+const StoreItemsContext = createContext();
+const StoreItemsProvider = ({ children }) => {
+  const [StoreItems, dispatch] = useReducer(reducer, initialState);
+  const value = useMemo(
+    () => ({ StoreItems, dispatch }),
+    [StoreItems, dispatch]
+  );
 
   return (
-    <StoresContext.Provider value={value}>{children}</StoresContext.Provider>
+    <StoreItemsContext.Provider value={value}>
+      {children}
+    </StoreItemsContext.Provider>
   );
 };
 
-function useStores() {
-  const context = useContext(StoresContext);
+function useStoreItems() {
+  const context = useContext(StoreItemsContext);
   if (context === undefined) {
-    throw new Error("stores must be used within a store Provider");
+    throw new Error("useStoreItems must be used within a Item Provider");
   }
   return context;
 }
 
-export { StoreProvider, useStores };
+export { StoreItemsProvider, useStoreItems };

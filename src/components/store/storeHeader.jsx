@@ -5,7 +5,7 @@ import CurrencySelect from '../User/CurrencySelect'
 
 
 
-export default function StoreHeader(){
+export default function StoreHeader({store}){
     const user = {
         id: '496d359a829f23a67f91431d1f6b1daa19424917f8676c5e1af7e107d8bc0ec1614ba9458bb11b98d1af1a3ea02eedf2796b3073df7a0bf0aa4ea1f7f31d9c8ac5f5b9cbad0b67077bc199abf7d8fdb6de9e863d585cf76458c69ddad87c707c31f775d68418a8da79c5e80952fc439f3f345dccfec668a6e4dc5d4cdd4fb2ef',
         name: 'Kingsley Aigbojie',
@@ -20,7 +20,7 @@ export default function StoreHeader(){
           Hi, @{user.user_name}
         </h1>
         <div className="col-start-1 flex flex-col items-start">
-          {/* sqe marketplace */}
+          <h1>Store Name :{store.storename}</h1>
         </div>
         <div className="grid w-max grid-cols-1 items-center gap-2 self-center justify-self-end sm:grid-cols-2">
           <span className="w-full self-center justify-self-end text-end text-sm sm:text-base">
@@ -41,6 +41,7 @@ export default function StoreHeader(){
           </CopyToClipboard>
           <Search />
         </div>
+    
       </div>
     )
 }
