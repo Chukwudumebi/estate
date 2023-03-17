@@ -20,7 +20,7 @@ export default function StoreHeader({store}){
           Hi, @{user.user_name}
         </h1>
         <div className="col-start-1 flex flex-col mt-8 items-start">
-          <p className='capitalize font-bold text-sm'>Store Name :{store.storename}</p>
+          <p className='capitalize font-bold text-sm md:uppercase'>Store Name :{store.storename}</p>
         </div>
         <div className="grid w-max grid-cols-1 items-center gap-2 self-center justify-self-end sm:grid-cols-2">
           <span className="w-full self-center justify-self-end text-end text-sm sm:text-base">
