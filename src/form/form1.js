@@ -40,16 +40,26 @@ export default function Page1({ increase }) {
           onChange={(e) => setStoreName(e.target.value)}
         />
       </div>
-      <div className="mb-4 flex items-center gap-2">
+      <div className="mb-4 grid items-center gap-2">
+        <span className="font-semibold text-sky-600">Physically Located?</span>
         <input
           name="physical location"
           id="storename"
           type="radio"
           // value={isPhysicallyLocated}
-          checked={isPhysicallyLocated}
+
           onClick={() => setisPhysicallyLocated((prev) => !prev)}
         />
-        <span className="font-semibold text-sky-600">Physically Located?</span>
+        Yes
+        <input
+          name="physical location"
+          id="storename"
+          type="radio"
+          // value={isPhysicallyLocated}
+
+          onClick={() => setisPhysicallyLocated((prev) => !prev)}
+        />
+        No
       </div>
 
       <Storecategory />

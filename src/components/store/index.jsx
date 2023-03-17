@@ -28,7 +28,7 @@ function Store() {
         <StoreHeader store={store} />
         <StoreItems store={store}/>
      
-        <div className="whatsss rounded-full bg-sky-600 flex justify-center items-center shadow-xl w-[60px] h-[60px] hover:text-black">
+        <div className="whatsss rounded-full bg-sky-600 flex justify-center  items-center shadow-xl w-[60px] h-[60px] hover:text-black">
           <Link to="/" className=" ">
             <BsArrowLeftCircle />
           </Link>
