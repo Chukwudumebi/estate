@@ -78,7 +78,7 @@ function ImageUpload({ name, maxFiles = 4, maxSize = 5, onChange, images }) {
             multiple
           />
         </div>
-        <div className="grid h-40 grid-cols-2 grid-rows-2 gap-2 sm:h-44">
+        <div className="grid h-25 grid-cols-2 grid-rows-2 gap-2 sm:h-30">
           {previews.slice(0, 4).map((preview, index) => (
             <div key={preview} className="relative h-full w-full overflow-hidden rounded shadow">
               <img src={preview} alt="" className="h-full w-full overflow-hidden object-cover" />
