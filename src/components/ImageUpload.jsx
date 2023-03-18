@@ -51,23 +51,22 @@ function ImageUpload({ name, maxFiles = 4, maxSize = 5, onChange, images }) {
     setIsDragging(false);
   };
   return (
-    <>
+    <div>
       <label htmlFor={name} className="">
         {name}
       </label>
       <div className="grid w-full auto-rows-fr grid-cols-2 gap-4">
         <div
-          className={`hover:bg-sky200/20 relative flex h-full w-full flex-col items-center justify-center rounded border-2 border-dashed p-4 hover:border-gray-600 ${
+          className={`hover:bg-sky200/20 relative flex h-20 w-30  flex-col items-center justify-center rounded border-2 border-dashed p-4 hover:border-gray-600 ${
             isDragging ? 'border-gray-600 bg-sky-200/20' : 'border-sky-400 bg-white'
           } `}
           onDragEnter={handleDragEnter}
           onDragLeave={handleDragLeave}
           onDrop={handleDrop}
         >
-          <div className="aspect-square w-20 bg-[url('/public/image-upload.png')] bg-cover" />
-
-          <p className="cursor-pointer text-center font-grotesk text-xs">
-            click to upload or <br /> drag and drop
+          <div className="aspect-square w-6 bg-[url('/public/image-upload.png')] bg-cover" />
+          <p className="cursor-pointer text-center font-grotesk font-[10px]">
+            click to upload or drag and drop.
           </p>
           <input
             type="file"
@@ -101,7 +100,7 @@ function ImageUpload({ name, maxFiles = 4, maxSize = 5, onChange, images }) {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

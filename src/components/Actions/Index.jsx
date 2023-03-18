@@ -58,7 +58,7 @@ function Action() {
             <FaLock className="text-sky-700 group-hover:text-neutral-100" />
           </button>
           <Link
-            to={`edit-item/${selectedItems[0]?.id}`}
+            to="store"
             className={`${
               selectedItems?.length === 1
                 ? 'border-grey-600 group relative grid aspect-square grid-flow-col items-center justify-center rounded border px-2 py-1 font-normal shadow-sm hover:border-sky-700 hover:bg-sky-700 hover:text-neutral-100'

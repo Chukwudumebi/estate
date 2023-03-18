@@ -17,6 +17,7 @@ import { StoreProvider } from "./context/storeContext";
 import AddStoreItems from "./routes/AddStoreItem";
 import { StoreItemsProvider } from "./context/storeItemContext";
 import AddStoreItem from "./components/store/additems";
+import CreateStore from "./components/store/create-store";
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/create-store",
-        element: <MainForm />,
+        element: <CreateStore />,
       },
       {
         path: "/store",
