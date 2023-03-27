@@ -2,8 +2,6 @@
 import { useState, useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
 
-
-
 function ImageUpload({ name, maxFiles = 4, maxSize = 5, onChange, images }) {
   const [previews, setPreviews] = useState([]);
   const [isDragging, setIsDragging] = useState(false);
@@ -35,7 +33,9 @@ function ImageUpload({ name, maxFiles = 4, maxSize = 5, onChange, images }) {
     if (e.target.files && e.target.files.length > 0) {
       setFileList((prev) => {
         // TODO: check if file size is too big
-        const newFiles = Array.from(e.target.files || []).filter((file) => file.type.includes('image'));
+        const newFiles = Array.from(e.target.files || []).filter((file) =>
+          file.type.includes('image')
+        );
         return [...newFiles, ...prev];
       });
     }
@@ -51,22 +51,25 @@ function ImageUpload({ name, maxFiles = 4, maxSize = 5, onChange, images }) {
     setIsDragging(false);
   };
   return (
-    <div>
+    <>
       <label htmlFor={name} className="">
         {name}
       </label>
       <div className="grid w-full auto-rows-fr grid-cols-2 gap-4">
         <div
-          className={`hover:bg-sky200/20 relative flex h-20 w-30  flex-col items-center justify-center rounded border-2 border-dashed p-4 hover:border-gray-600 ${
-            isDragging ? 'border-gray-600 bg-sky-200/20' : 'border-sky-400 bg-white'
+          className={`hover:bg-sky200/20 relative flex h-full w-full flex-col items-center justify-center rounded border-2 border-dashed p-4 hover:border-gray-600 ${
+            isDragging
+              ? 'border-gray-600 bg-sky-200/20'
+              : 'border-sky-400 bg-white'
           } `}
           onDragEnter={handleDragEnter}
           onDragLeave={handleDragLeave}
           onDrop={handleDrop}
         >
-          <div className="aspect-square w-6 bg-[url('/public/image-upload.png')] bg-cover" />
-          <p className="cursor-pointer text-center font-grotesk font-[10px]">
-            click to upload or drag and drop.
+          <div className="aspect-square w-20 bg-[url('/image-upload.png')] bg-cover" />
+
+          <p className="cursor-pointer text-center font-grotesk text-xs">
+            click to upload or <br /> drag and drop
           </p>
           <input
             type="file"
@@ -78,10 +81,17 @@ function ImageUpload({ name, maxFiles = 4, maxSize = 5, onChange, images }) {
             multiple
           />
         </div>
-        <div className="grid h-25 grid-cols-2 grid-rows-2 gap-2 sm:h-30">
+        <div className="grid h-40 grid-cols-2 grid-rows-2 gap-2 sm:h-44">
           {previews.slice(0, 4).map((preview, index) => (
-            <div key={preview} className="relative h-full w-full overflow-hidden rounded shadow">
-              <img src={preview} alt="" className="h-full w-full overflow-hidden object-cover" />
+            <div
+              key={preview}
+              className="relative h-full w-full overflow-hidden rounded shadow"
+            >
+              <img
+                src={preview}
+                alt=""
+                className="h-full w-full overflow-hidden object-cover"
+              />
               <button
                 type="button"
                 className="absolute top-[2px] left-[2px] rounded-full bg-sky-500/20 p-[3px] text-blue-700 active:shadow-[0_0_0_2px] active:shadow-blue-600"
@@ -100,7 +110,7 @@ function ImageUpload({ name, maxFiles = 4, maxSize = 5, onChange, images }) {
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

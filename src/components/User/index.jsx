@@ -1,6 +1,6 @@
 import { FaCopy } from 'react-icons/fa';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import Search from '../../pages/search';
+import Search from './search';
 import CurrencySelect from './CurrencySelect';
 
 function User() {
