@@ -1,8 +1,9 @@
 /* eslint-disable react/require-default-props */
 import { useState, useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
+import PropTypes from 'prop-types';
 
-function ImageUpload({ name, maxFiles = 4, maxSize = 5, onChange, images }) {
+function ImageUpload({ name, maxFiles, maxSize, onChange, images }) {
   const [previews, setPreviews] = useState([]);
   const [isDragging, setIsDragging] = useState(false);
   const [fileList, setFileList] = useState([]);
@@ -33,9 +34,7 @@ function ImageUpload({ name, maxFiles = 4, maxSize = 5, onChange, images }) {
     if (e.target.files && e.target.files.length > 0) {
       setFileList((prev) => {
         // TODO: check if file size is too big
-        const newFiles = Array.from(e.target.files || []).filter((file) =>
-          file.type.includes('image')
-        );
+        const newFiles = Array.from(e.target.files || []).filter((file) => file.type.includes('image'));
         return [...newFiles, ...prev];
       });
     }
@@ -58,9 +57,7 @@ function ImageUpload({ name, maxFiles = 4, maxSize = 5, onChange, images }) {
       <div className="grid w-full auto-rows-fr grid-cols-2 gap-4">
         <div
           className={`hover:bg-sky200/20 relative flex h-full w-full flex-col items-center justify-center rounded border-2 border-dashed p-4 hover:border-gray-600 ${
-            isDragging
-              ? 'border-gray-600 bg-sky-200/20'
-              : 'border-sky-400 bg-white'
+            isDragging ? 'border-gray-600 bg-sky-200/20' : 'border-sky-400 bg-white'
           } `}
           onDragEnter={handleDragEnter}
           onDragLeave={handleDragLeave}
@@ -83,15 +80,8 @@ function ImageUpload({ name, maxFiles = 4, maxSize = 5, onChange, images }) {
         </div>
         <div className="grid h-40 grid-cols-2 grid-rows-2 gap-2 sm:h-44">
           {previews.slice(0, 4).map((preview, index) => (
-            <div
-              key={preview}
-              className="relative h-full w-full overflow-hidden rounded shadow"
-            >
-              <img
-                src={preview}
-                alt=""
-                className="h-full w-full overflow-hidden object-cover"
-              />
+            <div key={preview} className="relative h-full w-full overflow-hidden rounded shadow">
+              <img src={preview} alt="" className="h-full w-full overflow-hidden object-cover" />
               <button
                 type="button"
                 className="absolute top-[2px] left-[2px] rounded-full bg-sky-500/20 p-[3px] text-blue-700 active:shadow-[0_0_0_2px] active:shadow-blue-600"
@@ -113,5 +103,20 @@ function ImageUpload({ name, maxFiles = 4, maxSize = 5, onChange, images }) {
     </>
   );
 }
+
+ImageUpload.propTypes = {
+  name: PropTypes.string.isRequired,
+  maxFiles: PropTypes.number,
+  maxSize: PropTypes.number,
+  onChange: PropTypes.func,
+  images: PropTypes.arrayOf(PropTypes.string),
+};
+
+ImageUpload.defaultProps = {
+  maxFiles: 4,
+  maxSize: 5 * 1024 * 1024,
+  onChange: null,
+  images: [],
+};
 
 export default ImageUpload;

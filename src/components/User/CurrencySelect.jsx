@@ -3,8 +3,8 @@ import { useLoaderData } from 'react-router-dom';
 import Select, { components } from 'react-select';
 import { currencyQuery } from '../../routes/index/loader';
 import { useCurrency } from '../../context/currencyContext';
-import quec from '../../assets/quec.png'
-import logo from "../../assets/logo512.png"
+import quec from '../../assets/quec.png';
+import logo from '../../assets/logo512.png';
 // custom option component to display flag
 
 function Option(props) {
@@ -14,8 +14,11 @@ function Option(props) {
     // eslint-disable-next-line react/jsx-props-no-spreading
     <components.Option {...props}>
       <img
-        src={  data.value === 'QUEC' ? quec:
-           `https://wise.com/public-resources/assets/flags/rectangle/${data.value.toLowerCase()}.png`}
+        src={
+          data.value === 'QUEC'
+            ? quec
+            : `https://wise.com/public-resources/assets/flags/rectangle/${data.value.toLowerCase()}.png`
+        }
         alt={data.label}
         className="aspect-square w-[25px] rounded-full object-cover"
       />
@@ -49,9 +52,7 @@ function CurrencySelect() {
       name="currency"
       options={options}
       isMulti={false}
-      defaultValue={
-        options.find((option) => option.value === currency) || options[0]
-      }
+      defaultValue={options.find((option) => option.value === currency) || options[0]}
       components={{ Option }}
       onChange={handleChange}
       styles={{
@@ -85,11 +86,11 @@ function CurrencySelect() {
             height: '25px',
             width: '25px',
             borderRadius: '20px',
-            boxShadow:
-              '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
-            background: 
-            currency === 'QUEC'? `url(${quec})center/cover no-repeat `:
-            `url("https://wise.com/public-resources/assets/flags/rectangle/${currency.toLowerCase()}.png") center/cover no-repeat`,
+            boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+            background:
+              currency === 'QUEC'
+                ? `url(${quec})center/cover no-repeat `
+                : `url("https://wise.com/public-resources/assets/flags/rectangle/${currency.toLowerCase()}.png") center/cover no-repeat`,
           },
         }),
         option: (baseStyles) => ({
