@@ -1,5 +1,6 @@
 import{useState} from "react"
 import useAxios from "../hooks/useAxios";
+
 export default function Region({country,states,provinces}){
   const[state,setState]=useState([]);
   // console.log(state.split(" ")[1].toLowerCase())
@@ -8,9 +9,7 @@ export default function Region({country,states,provinces}){
   const [data]=useAxios("https://restcountries.com/v3.1/all");
 
   const filteredData=data.filter(item=> "currencies" in item)
-  const dataCountries=filteredData.map((item)=>{
-      return `${item.flag} ${Object.keys(item.currencies)[0]}`
-  })  
+  const dataCountries=filteredData.map((item)=>`${item.flag} ${Object.keys(item.currencies)[0]}`)  
 
 
   const handleCountry=(id)=>{
@@ -31,11 +30,9 @@ export default function Region({country,states,provinces}){
 <select className="bg-white rounded-lg focus:border-none" onChange={(e)=>handleCountry(e.target.value)}>
   <option value="0">Region</option>
     {
-      country && country !== undefined ? country.map((ctr,index)=>{
-        return(
+      country && country !== undefined ? country.map((ctr,index)=>(
           <option key={index} value={ctr.id}>{ctr.name}</option>
-        )
-      } 
+        ) 
        
        ):"No Region"
     } 

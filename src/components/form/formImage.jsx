@@ -53,7 +53,7 @@ function FormUpload({ name, maxFiles = 4, maxSize = 5, onChange, images }) {
   };
   return (
     <>
-      <label htmlFor={'logo'} className="">
+      <label htmlFor="logo" className="">
         Store logo
       </label>
       <div className="grid w-full auto-rows-fr grid-cols-2 gap-4">

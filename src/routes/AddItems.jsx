@@ -6,6 +6,7 @@ import RegionFilter from '../components/Filters/Region';
 import CategoryFilter from '../components/Filters/Category';
 import { useItems } from '../context/ItemsContext';
 import user from '../data/user.json';
+
 export default function AddItems() {
   const navigate = useNavigate();
   const [images, setImages] = useState([]);

@@ -1,11 +1,11 @@
 // import { useContext } from "react";
+import { BsArrowLeftCircle } from "react-icons/bs";
+import { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import UploadImage from "../components/ImageUpload";
 import CategoryFilter from "../components/Filters/Category";
-import { BsArrowLeftCircle } from "react-icons/bs";
 
-import { useState, useContext } from "react";
 import { FormContext } from "./formContext/formContext";
-import { Link, useNavigate } from "react-router-dom";
 import { useStores } from "../context/storeContext";
 
 export default function Page2({ decrease, setProgress }) {
@@ -32,14 +32,14 @@ export default function Page2({ decrease, setProgress }) {
     e.preventDefault();
     const store = {
       id: Math.floor(Math.random() * 1000),
-      storename: storename,
-      category: category,
-      isPhysicallyLocated: isPhysicallyLocated,
-      agreement: agreement,
-      email: email,
-      phone: phone,
+      storename,
+      category,
+      isPhysicallyLocated,
+      agreement,
+      email,
+      phone,
       logo: fileList,
-      address: address,
+      address,
       items: [],
     };
     console.log(store);

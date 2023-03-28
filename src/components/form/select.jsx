@@ -8,8 +8,7 @@ import {
 } from '@radix-ui/react-icons';
 
 const SelectItem = React.forwardRef(
-  ({ children, className, ...props }, forwardedRef) => {
-    return (
+  ({ children, className, ...props }, forwardedRef) => (
       <Select.Item
         className={classnames(
           'text-[13px] leading-none text-neutral-900 rounded-[3px] flex items-center h-[25px] pr-[35px] pl-[25px] relative select-none data-[disabled]:text-neutral-300 data-[disabled]:pointer-events-none data-[highlighted]:outline-none data-[highlighted]:bg-blue-500 data-[highlighted]:text-neutral-900',
@@ -23,13 +22,11 @@ const SelectItem = React.forwardRef(
           <CheckIcon />
         </Select.ItemIndicator>
       </Select.Item>
-    );
-  }
+    )
 );
 
-const Selects = ({ options, placeholder, name }) => (
-  
-  <Select.Root name={name}>
+function Selects({ options, placeholder, name }) {
+  return <Select.Root name={name}>
     <Select.Trigger
       className="grid grid-cols-auto-1fr items-center rounded px-[15px] text-[13px] leading-none h-[35px] gap-[5px] bg-white text-violet11 border border-neutral-200 hover:bg-mauve3 focus:border-neutral-900 data-[placeholder]:text-violet9 outline-none"
       aria-label="Food"
@@ -57,6 +54,6 @@ const Selects = ({ options, placeholder, name }) => (
       </Select.Content>
     </Select.Portal>
   </Select.Root>
-);
+}
 
 export default Selects;

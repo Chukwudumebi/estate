@@ -1,5 +1,6 @@
 import { createContext, useReducer, useContext, useMemo } from "react";
 import data from "../data/Items.json";
+
 const initialState = data.map((items) => ({
   ...items,
   selected: false,
@@ -31,14 +32,14 @@ const reducer = (state, action) => {
 };
 
 const ItemsContext = createContext();
-const ItemsProvider = ({ children }) => {
+function ItemsProvider({ children }) {
   const [items, dispatch] = useReducer(reducer, initialState);
   const value = useMemo(() => ({ items, dispatch }), [items, dispatch]);
 
   return (
     <ItemsContext.Provider value={value}>{children}</ItemsContext.Provider>
   );
-};
+}
 
 function useItems() {
   const context = useContext(ItemsContext);

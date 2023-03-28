@@ -4,7 +4,7 @@ import React, { useState} from "react";
 
 
 
-export const Progress = ({progress}) => {
+export function Progress({progress}) {
   
 
  
@@ -19,5 +19,5 @@ export const Progress = ({progress}) => {
       />
     </ProgressPrimitive.Root>
   );
-};
+}
 

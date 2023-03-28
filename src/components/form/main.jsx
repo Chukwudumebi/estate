@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 // import Progress from "./progress";
 
-import Page1 from "./form1";
-import Page2 from "./form2";
 import { BsArrowLeftCircle } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 import * as ProgressPrimitive from "@radix-ui/react-progress";
+import Page2 from "./form2";
+import Page1 from "./form1";
 import { Progress } from "./progress";
 
 export default function MainForm() {

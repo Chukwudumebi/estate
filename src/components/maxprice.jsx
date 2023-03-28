@@ -6,7 +6,7 @@ export default function Maxprice(){
         <div className="flex justify-center border-b items-center">
 
           <span>Max Price:</span>
-          <input type={"text"}/>
+          <input type="text"/>
 
         </div>
     )

@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import { FaRegEdit, FaPlus, FaMinus, FaLock } from 'react-icons/fa';
-import { useItems } from '../../context/ItemsContext';
 import { MdOutlineStoreMallDirectory } from 'react-icons/md';
 import { AiOutlineFundView } from 'react-icons/ai';
+import {useState} from "react"
+import { useItems } from '../../context/ItemsContext';
 import Filters from '../Filters/Index';
 import SearchBar from './SearchBar';
-import {useState} from "react"
+
 function Action() {
   const { items, dispatch } = useItems();
   const selectedItems = items?.filter((item) => item.selected);

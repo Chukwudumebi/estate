@@ -1,5 +1,6 @@
 import { createContext, useReducer, useContext, useMemo } from "react";
 import data from "../data/store.json";
+
 const initialState = data.map((store) => ({
   ...store,
   items: [],
@@ -33,14 +34,14 @@ const reducer = (state, action) => {
 };
 
 export const StoresContext = createContext();
-const StoreProvider = ({ children }) => {
+function StoreProvider({ children }) {
   const [stores, dispatch] = useReducer(reducer, initialState);
   const value = useMemo(() => ({ stores, dispatch }), [stores, dispatch]);
 
   return (
     <StoresContext.Provider value={value}>{children}</StoresContext.Provider>
   );
-};
+}
 
 function useStores() {
   const context = useContext(StoresContext);

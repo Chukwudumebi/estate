@@ -1,11 +1,11 @@
 import {useState} from "react"
 import { Link } from 'react-router-dom';
 
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { IoCopyOutline } from 'react-icons/io5';
 import { useCurrency } from '../../context/currencyContext';
 import useExchangeRate from '../../hooks/useExchangeRate';
 // import { useItems } from '../../context/ItemsContext';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { IoCopyOutline } from 'react-icons/io5';
 import ImageDialogs from "./imageDialog";
 import { useStoreItems } from "../../context/storeItemContext";
 

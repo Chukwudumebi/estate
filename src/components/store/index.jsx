@@ -1,11 +1,12 @@
 import { FaPlus } from "react-icons/fa";
 import { BsArrowLeftCircle } from "react-icons/bs";
 // import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 import StoreHeader from './storeHeader';
 import StoreItems from './storeItems';
 import { StoresContext } from "../../context/storeContext";
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+
 function Store() {
  const {stores} =useContext(StoresContext)
  console.log(stores)

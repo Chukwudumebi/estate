@@ -21,7 +21,7 @@ function Storecategory() {
         options={options}
         name="category"
 
-      ></Selects>
+       />
     </div>
   );
 }

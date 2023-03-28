@@ -35,14 +35,14 @@ export default function CreateStore() {
     e.preventDefault();
     const store = {
       id: Math.floor(Math.random() * 1000),
-      storename: storename,
-      category: category,
-      isPhysicallyLocated: isPhysicallyLocated,
-      agreement: agreement,
-      email: email,
-      phone: phone,
+      storename,
+      category,
+      isPhysicallyLocated,
+      agreement,
+      email,
+      phone,
       logo: fileList,
-      address: address,
+      address,
       items: [],
     };
     console.log(store);

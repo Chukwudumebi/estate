@@ -11,6 +11,7 @@ import {useState,useContext} from "react"
 import SearchBar from '../../Actions/SearchBar';
 import { useItems } from '../../../context/ItemsContext';
 import { StoresContext } from '../../../context/storeContext';
+
 function StoreAction() {
   const { stores}=useContext(StoresContext)
   console.log(stores)

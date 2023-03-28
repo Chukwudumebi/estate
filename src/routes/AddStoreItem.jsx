@@ -8,6 +8,7 @@ import CategoryFilter from '../components/Filters/Category';
 import user from '../data/user.json';
 import { useItems } from '../context/ItemsContext';
 import { useStoreItems } from '../context/storeItemContext';
+
 export default function AddStoreItems() {
   const navigate = useNavigate();
   const [images, setImages] = useState([]);

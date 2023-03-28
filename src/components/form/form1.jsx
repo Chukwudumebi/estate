@@ -1,8 +1,8 @@
 import { useState, useContext } from "react";
+import * as ProgressPrimitive from "@radix-ui/react-progress";
 import UploadImage from "../components/ImageUpload";
 import CategoryFilter from "../components/Filters/Category";
 import { FormContext } from "./formContext/formContext";
-import * as ProgressPrimitive from "@radix-ui/react-progress";
 import Storecategory from "./category";
 import FormUpload from "./formImage";
 

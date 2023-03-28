@@ -55,12 +55,12 @@ const PostReducer = (state, action) => {
   }
 };
 
-export const Provider = ({ children }) => {
+export function Provider({ children }) {
   const [state, dispatch] = useReducer(PostReducer, initialState);
   const value = {
     Postlist: state.Postlist,
     AddPost: (price,timeLeft,selected,description,region,shipping,) => {
-      dispatch({ type: Actions.Add_post, price: price,time:timeLeft,category:selected,region:region,description:description,shipping:shipping});
+      dispatch({ type: Actions.Add_post, price,time:timeLeft,category:selected,region,description,shipping});
     },
     RemovePost: (postId) => {
       dispatch({ type: Actions.Remove_post, payload: postId });
@@ -68,4 +68,4 @@ export const Provider = ({ children }) => {
     
   };
   return <PostContext.Provider value={value}>{children}</PostContext.Provider>;
-};
+}

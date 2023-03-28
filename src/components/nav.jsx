@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+
 function Navbar() {
   return (
     <header className="oveflow-x-hidden fixed top-0 z-50 h-20 w-screen border-b border-b-neutral-200 bg-white shadow-sm">

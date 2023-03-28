@@ -1,6 +1,7 @@
 import { useState, createContext } from "react";
+
 export const FormContext = createContext();
-export const FormProvider = ({ children }) => {
+export function FormProvider({ children }) {
   const [storename, setStoreName] = useState("");
   const [category, setCategory] = useState("");
   const [policy, setPolicy] = useState("");
@@ -37,4 +38,4 @@ export const FormProvider = ({ children }) => {
       {children}
     </FormContext.Provider>
   );
-};
+}

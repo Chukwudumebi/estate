@@ -1,7 +1,6 @@
-import { useParams } from "react-router-dom";
+import { useParams ,Link,useNavigate} from "react-router-dom";
 import { useState,useContext ,useEffect,useRef} from "react";
 import { StoresContext } from "../../context/storeContext";
-import {Link,useNavigate} from "react-router-dom"
 import RegionFilter from "../Filters/Region";
 import CategoryFilter from "../Filters/Category"
 

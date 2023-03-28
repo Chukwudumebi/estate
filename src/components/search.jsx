@@ -1,16 +1,13 @@
 import { useState } from "react"
-import { Users } from "../data/users"
 import{AiOutlineSearch} from "react-icons/ai"
+import { Users } from "../data/users"
 
 export default function Search({setVisible}){
     const [username,setUsername]=useState("HTPO2886")
     const [search,setSearch]=useState("")
     
 
-    const searcher=(data)=>{
-        return data.filter(item=>item.username.includes(search.toUpperCase()))
-
-    }
+    const searcher=(data)=>data.filter(item=>item.username.includes(search.toUpperCase()))
     const result =searcher(Users)
 
     return(

@@ -19,7 +19,7 @@ function Category() {
         placeholder="categories..."
         options={options}
         name="category"
-      ></Select>
+       />
     </div>
   );
 }
