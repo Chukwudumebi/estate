@@ -12,20 +12,20 @@ function Filters() {
       <Popover.Trigger asChild>
         <button
           type="button"
-          className="group grid grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal shadow-sm hover:bg-sky-700 hover:text-neutral-100 hover:border-sky-700 relative"
+          className="border-grey-600 group relative grid grid-flow-col items-center justify-center rounded border px-2 py-1 font-normal shadow-sm hover:border-sky-700 hover:bg-sky-700 hover:text-neutral-100"
         >
           <span className="text-xs">Filter</span>
-          <BsFilter className="text-sky-700 cursor-pointer group-hover:text-neutral-100 ml-1 text-2xl" />
+          <BsFilter className="ml-1 cursor-pointer text-2xl text-sky-700 group-hover:text-neutral-100" />
         </button>
       </Popover.Trigger>
       <Popover.Portal>
         <Popover.Content
-          className="rounded w-[320px] bg-white shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2)] focus:shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2),0_0_0_2px_hsla(206,22%,7%,.45))] will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade z-50"
+          className="focus:shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2),0_0_0_2px_hsla(206,22%,7%,.45))] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade z-50 w-[320px] rounded bg-white shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2)] will-change-[transform,opacity]"
           sideOffset={5}
         >
-          <ScrollArea.Root className="w-full h-[300px] rounded overflow-hidden bg-white px-8">
-            <ScrollArea.Viewport className="w-full h-full rounded">
-              <div className="flex w-full flex-col gap-3 my-5">
+          <ScrollArea.Root className="h-[360px] w-full  overflow-auto rounded bg-white px-8 md:overflow-hidden">
+            <ScrollArea.Viewport className="h-full w-full rounded">
+              <div className="my-5 flex w-full flex-col gap-3">
                 <CategoryFilter />
                 <TypeFilter />
                 <RegionFilter />

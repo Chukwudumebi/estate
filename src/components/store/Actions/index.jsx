@@ -1,23 +1,22 @@
 import { Link } from 'react-router-dom';
 import { FaRegEdit, FaPlus, FaMinus, FaLock } from 'react-icons/fa';
 // import { useItems } from '../../context/ItemsContext';
-import {RiMailAddLine} from "react-icons/ri"
+import { RiMailAddLine } from 'react-icons/ri';
 import { MdOutlineStoreMallDirectory } from 'react-icons/md';
 import { AiOutlineFundView } from 'react-icons/ai';
 // import Filters from '../Filters/Index';
 // import SearchBar from './SearchBar';
 
-import {useState,useContext} from "react"
+import { useState, useContext } from 'react';
 import SearchBar from '../../Actions/SearchBar';
 import { useItems } from '../../../context/ItemsContext';
 import { StoresContext } from '../../../context/storeContext';
 
 function StoreAction() {
-  const { stores}=useContext(StoresContext)
-  console.log(stores)
+  const { stores } = useContext(StoresContext);
+  console.log(stores);
   const { items, dispatch } = useItems();
   const selectedItems = items?.filter((item) => item.selected);
-  
 
   // delete assets
   const handleDelete = () => {
@@ -32,13 +31,12 @@ function StoreAction() {
   }`;
   return (
     <div className="sticky top-0 z-10 grid w-full items-center gap-2 border-b border-neutral-100 bg-white px-4 py-2 sm:grid-cols-auto-1fr md:px-8">
-      <span className="font-semibold">SQE MARKETPLACE</span>
-      
+      {/* <span className=" font-semibold">SQE MARKETPLACE</span> */}
 
-      <div className="justify-self-end">
+      <div>
         <div className="flex items-center space-x-3">
-      <span className="font-semibold">SQE STORE MANAGEMENT</span>
-          <SearchBar /> 
+          {/* <span className=" font-semibold">SQE STORE MANAGEMENT</span> */}
+
           <Link
             to="create-store"
             className="group aspect-square rounded-md border border-neutral-300 p-2 font-normal hover:bg-sky-700 hover:text-neutral-100"
@@ -64,8 +62,7 @@ function StoreAction() {
           <button type="button" className={className} onClick={handleDelete}>
             <FaMinus className="text-sky-700 group-hover:text-neutral-100" />
           </button>
-         
-        
+
           <button type="button" className={className} onClick={handleDelete}>
             <RiMailAddLine className="text-sky-700 group-hover:text-neutral-100" />
           </button>

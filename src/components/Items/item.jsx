@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import PropTypes from 'prop-types';
 import { IoCopyOutline } from 'react-icons/io5';
+import { IoMdPaperPlane } from 'react-icons/io';
 import { useCurrency } from '../../context/currencyContext';
 import useExchangeRate from '../../hooks/useExchangeRate';
 import { useItems } from '../../context/ItemsContext';
+
 import ImageDialog from './ImageDialog';
+import Itemsearch from './itemsearch';
 
 function Item({ id }) {
   const { currency } = useCurrency();
@@ -75,14 +78,15 @@ function Item({ id }) {
           <span>{shippingCost}</span>
           <div className="flex flex-row items-center gap-1">
             <span>Public id: {shortId.toUpperCase()}</span>
-            <CopyToClipboard text={user.id}>
+            {/* <CopyToClipboard text={user.id}>
               <button
                 className="grid aspect-square rounded-full border border-transparent p-1 active:border-sky-500 active:text-sky-500"
                 type="button"
               >
                 <IoCopyOutline className="text-xl" />
               </button>
-            </CopyToClipboard>
+            </CopyToClipboard> */}
+            <Itemsearch />
           </div>
         </div>
       </div>
