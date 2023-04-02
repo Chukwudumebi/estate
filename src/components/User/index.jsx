@@ -1,7 +1,10 @@
 import { FaCopy } from 'react-icons/fa';
+import { useContext } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Search from './search';
 import CurrencySelect from './CurrencySelect';
+
+import { StoresContext } from '../../context/storeContext';
 
 function User() {
   const user = {
@@ -12,17 +15,13 @@ function User() {
   const shortID = `${user.id.slice(0, 6)}...${user.id.slice(-6)}`;
 
   return (
-    <div className="relative mx-auto grid w-full max-w-4xl grid-flow-dense  grid-cols-2 grid-rows-auto-1fr justify-center gap-2 rounded-xl bg-gradient-to-br from-blue-900 to-sky-600 p-3 px-4 text-center text-white">
-      <h1 className="self-center justify-self-start text-md font-semibold">
-        Hi, @{user.user_name}
-      </h1>
-      <div className="col-start-1 flex flex-col items-start">
-        {/* sqe marketplace */}
+    <div className="relative mx-auto grid w-full max-w-3xl grid-flow-dense  grid-cols-2 grid-rows-auto-1fr justify-center gap-2 rounded-xl bg-gradient-to-br from-blue-900 to-sky-600 p-3 px-4 text-center text-white">
+      <h1 className="text-md self-center justify-self-start font-semibold">Hi, @{user.user_name}</h1>
+      <div className="col-start-1 flex flex-col items-start self-end">
+        <h2 className="text-base font-bold md:text-xl">SQE MARKETPLACE</h2>
       </div>
       <div className="grid w-max grid-cols-1 items-center gap-2 self-center justify-self-end sm:grid-cols-2">
-        <span className="w-full self-center justify-self-end text-end text-sm sm:text-base">
-          Currency
-        </span>
+        <span className="w-full self-center justify-self-end text-end text-sm sm:text-base">Currency</span>
         <CurrencySelect />
       </div>
 

@@ -10,17 +10,15 @@ function Items() {
 
   return (
     <ScrollArea.Root
-      className="mx-auto max-h-full w-full max-w-4xl overflow-hidden rounded-lg bg-white shadow-lg"
+      className="mx-auto max-h-full w-full max-w-3xl overflow-hidden rounded-lg bg-white shadow-lg"
       type="auto"
     >
       <ScrollArea.Viewport className="grid h-full w-full">
         <ActionsBar />
-        <div className="relative table h-full w-full table-auto border-collapse bg-white font-grotesk text-sm">
-          <div className="table-row-group">
-            {items?.map(({ id }) => (
-              <Item key={id} id={id} />
-            ))}
-          </div>
+        <div className="relative h-full w-full border-collapse bg-white font-grotesk text-sm">
+          {items?.map(({ id }) => (
+            <Item key={id} id={id} />
+          ))}
         </div>
       </ScrollArea.Viewport>
       <ScrollArea.Scrollbar

@@ -5,28 +5,16 @@ import ImageUpload from '../ImageUpload';
 import { useStores } from '../../context/storeContext';
 import CategoryFilter from '../Filters/Category';
 
-import { FormContext } from '../form/formContext/formContext';
-
 export default function CreateStore() {
-  const {
-    storename,
-    category,
-    setPolicy,
-    policy,
-    email,
-    setEmail,
-    setPhone,
-    agreement,
-    isPhysicallyLocated,
-    phone,
-    fileList,
-    setFileList,
-    address,
-    setAddress,
-    setStoreName,
-    setisPhysicallyLocated,
-    setAgreement,
-  } = useContext(FormContext);
+  const [storename, setStoreName] = useState('');
+  const [category, setCategory] = useState('');
+  const [policy, setPolicy] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [address, setAddress] = useState('');
+  const [fileList, setFileList] = useState([]);
+  const [isPhysicallyLocated, setisPhysicallyLocated] = useState(false);
+  const [agreement, setAgreement] = useState(false);
 
   const navigate = useNavigate();
   const [images, setImages] = useState([]);
@@ -51,16 +39,12 @@ export default function CreateStore() {
   };
   return (
     <div className="min-h-screen w-screen overflow-x-hidden overflow-y-scroll p-4 pt-24 pb-20">
-      <div className="m-2 mx-auto h-full max-w-md rounded-md overflow-hidden bg-white">
-        <form
-          className="flex w-full flex-col gap-4 p-4 bg-white shadow"
-          onSubmit={handleSubmit}
-          autoComplete="off"
-        >
+      <div className="m-2 mx-auto h-full max-w-md overflow-hidden rounded-md bg-white">
+        <form className="flex w-full flex-col gap-4 bg-white p-4 shadow" onSubmit={handleSubmit} autoComplete="off">
           <h2 className="font-bold text-sky-500 ">Store Details</h2>
 
           <div>
-            <label className="text-sm ring-0 outline-none" htmlFor="storename">
+            <label className="text-sm outline-none ring-0" htmlFor="storename">
               Store Name
             </label>
             <input
@@ -76,9 +60,7 @@ export default function CreateStore() {
           <CategoryFilter />
           <ImageUpload name="Store Logo" onChange={setFileList} />
           <div>
-            <span className="font-semibold text-sky-500">
-              Physically Located?
-            </span>
+            <span className="font-semibold text-sky-500">Physically Located?</span>
 
             <div className="flex items-center gap-2">
               <input
@@ -98,12 +80,10 @@ export default function CreateStore() {
             </div>
           </div>
 
-          <h2 className="font-bold text-sky-500 ">
-            Customer Contact Information
-          </h2>
+          <h2 className="font-bold text-sky-500 ">Customer Contact Information</h2>
 
           <div>
-            <label className="text-sm ring-0 outline-none" htmlFor="price">
+            <label className="text-sm outline-none ring-0" htmlFor="price">
               Email
             </label>
             <input
@@ -117,7 +97,7 @@ export default function CreateStore() {
             />
           </div>
           <div>
-            <label className="text-sm ring-0 outline-none" htmlFor="contact">
+            <label className="text-sm outline-none ring-0" htmlFor="contact">
               Contact
             </label>
             <input
@@ -131,10 +111,7 @@ export default function CreateStore() {
             />
           </div>
           <div>
-            <label
-              className="text-sm ring-0 outline-none"
-              htmlFor="description"
-            >
+            <label className="text-sm outline-none ring-0" htmlFor="description">
               Address
             </label>
             <textarea
@@ -155,7 +132,7 @@ export default function CreateStore() {
               checked={agreement}
               onClick={() => setAgreement((prev) => !prev)}
             />
-            <p className="font-semibold text-sky-600 text-sm">
+            <p className="text-sm font-semibold text-sky-600">
               I agree not to misuse this site for illegal activities.
             </p>
           </div>
@@ -177,7 +154,7 @@ export default function CreateStore() {
           </div>
         </form>
       </div>
-      <div className="whatsss rounded-full bg-sky-600 flex justify-center items-center shadow-xl w-[60px] h-[60px] hover:text-black">
+      <div className="whatsss flex h-[60px] w-[60px] items-center justify-center rounded-full bg-sky-600 shadow-xl hover:text-black">
         <Link to="/" className=" ">
           <BsArrowLeftCircle />
         </Link>

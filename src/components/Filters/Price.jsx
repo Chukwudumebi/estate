@@ -10,7 +10,7 @@ function PriceFilter() {
     setMax(value[1]);
   };
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-1">
       <span className="text-sm">Price </span>
       <Slider.Root
         className="relative flex h-5 w-full touch-none select-none items-center"
@@ -23,7 +23,7 @@ function PriceFilter() {
         minStepsBetweenThumbs={1}
         aria-label="Volume"
       >
-        <Slider.Track className="relative h-[3px] grow rounded-full bg-slate-200">
+        <Slider.Track className="relative h-[2px] grow rounded-full bg-slate-200">
           <Slider.Range className="absolute h-full rounded-full bg-blue-700" />
         </Slider.Track>
         <Slider.Thumb className="block h-5 w-5 rounded-[10px] bg-blue-600 shadow-lg hover:bg-sky-700 focus:outline-none" />
@@ -38,7 +38,7 @@ function PriceFilter() {
             type="text"
             name="min"
             id="min"
-            className="h-8 w-20 justify-self-start rounded focus:border-2 focus:border-neutral-900 focus:outline-none focus:ring-0"
+            className="h-8 w-20 justify-self-start rounded border border-neutral-300 px-2 focus:border-2 focus:border-neutral-900 focus:outline-none focus:ring-0"
             value={min}
             onChange={(e) => setMin(e.target.value)}
           />
@@ -51,7 +51,7 @@ function PriceFilter() {
             type="text"
             name="max"
             id="max"
-            className="h-8 w-20 justify-self-end rounded focus:border-2 focus:border-neutral-900 focus:outline-none focus:ring-0"
+            className="h-8 w-20 justify-self-end rounded border border-neutral-300 px-2 focus:border-2 focus:border-neutral-900 focus:outline-none focus:ring-0"
             value={max}
             onChange={(e) => setMax(e.target.value)}
           />

@@ -10,7 +10,6 @@ import { ItemsProvider } from './context/ItemsContext';
 import './index.css';
 import AddItems from './routes/AddItems';
 import EditItems from './routes/EditItem';
-import { FormProvider } from './components/form/formContext/formContext';
 import HomePage from './routes/index/home/page';
 import Store from './components/store';
 import { StoreProvider } from './context/storeContext';
@@ -70,8 +69,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <StoreItemsProvider>
-      <StoreProvider>
-        <FormProvider>
+      <StoreProvider>     
           <CurrencyProvider>
             <ItemsProvider>
               <QueryClientProvider client={queryClient}>
@@ -79,7 +77,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               </QueryClientProvider>
             </ItemsProvider>
           </CurrencyProvider>
-        </FormProvider>
       </StoreProvider>
     </StoreItemsProvider>
   </React.StrictMode>

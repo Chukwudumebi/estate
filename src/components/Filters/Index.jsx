@@ -12,40 +12,27 @@ function Filters() {
       <Popover.Trigger asChild>
         <button
           type="button"
-          className="group grid grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal shadow-sm hover:bg-sky-700 hover:text-neutral-100 hover:border-sky-700 relative"
+          className="border-grey-600 group relative grid grid-flow-col items-center justify-center rounded border px-2 py-1 font-normal shadow-sm hover:border-sky-700 hover:bg-sky-700 hover:text-neutral-100"
         >
           <span className="text-xs">Filter</span>
-          <BsFilter className="text-sky-700 cursor-pointer group-hover:text-neutral-100 ml-1 text-2xl" />
+          <BsFilter className="ml-1 cursor-pointer text-2xl text-sky-700 group-hover:text-neutral-100" />
         </button>
       </Popover.Trigger>
       <Popover.Portal>
         <Popover.Content
-          className="rounded w-[320px] bg-white shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2)] focus:shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2),0_0_0_2px_hsla(206,22%,7%,.45))] will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade z-50"
+          className="focus:shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2),0_0_0_2px_hsla(206,22%,7%,.45))] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade z-50 w-[320px] rounded bg-white shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2)] will-change-[transform,opacity]"
           sideOffset={5}
+          side="bottom"
+          align="start"
+          collisionPadding={{ top: 20, left: 20 }}
+          collisionBoundary={document.body}
         >
-          <ScrollArea.Root className="w-full h-[300px] rounded overflow-hidden bg-white px-8">
-            <ScrollArea.Viewport className="w-full h-full rounded">
-              <div className="flex w-full flex-col gap-3 my-5">
-                <CategoryFilter />
-                <TypeFilter />
-                <RegionFilter />
-                <PriceFilter />
-              </div>
-            </ScrollArea.Viewport>
-            <ScrollArea.Scrollbar
-              className="flex touch-none select-none rounded-[12px] bg-neutral-200 p-0.5 transition-colors duration-[160ms] ease-out hover:bg-neutral-200 data-[orientation=horizontal]:h-2.5 data-[orientation=vertical]:w-2.5 data-[orientation=horizontal]:flex-col"
-              orientation="horizontal"
-            >
-              <ScrollArea.Thumb className="relative flex-1 rounded-[10px] bg-gray-500 before:absolute before:top-1/2 before:left-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-['']" />
-            </ScrollArea.Scrollbar>
-            <ScrollArea.Scrollbar
-              className="z-20 flex touch-none select-none rounded-[12px] bg-neutral-200 p-0.5 transition-colors duration-[160ms] ease-out hover:bg-neutral-300 data-[orientation=horizontal]:h-2.5 data-[orientation=vertical]:w-2.5 data-[orientation=horizontal]:flex-col"
-              orientation="vertical"
-            >
-              <ScrollArea.Thumb className="relative flex-1 rounded-[10px] bg-gray-500 before:absolute before:top-1/2 before:left-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-['']" />
-            </ScrollArea.Scrollbar>
-            <ScrollArea.Corner className="bg-blackA8" />
-          </ScrollArea.Root>
+          <div className="flex h-fit w-full flex-col gap-2 rounded bg-white p-6 px-6">
+            <CategoryFilter />
+            <TypeFilter />
+            <RegionFilter />
+            <PriceFilter />
+          </div>
 
           <Popover.Arrow className="PopoverArrow" />
         </Popover.Content>
