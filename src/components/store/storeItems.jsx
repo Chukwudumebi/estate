@@ -8,7 +8,7 @@ function StoreItems({ store }) {
 
   return (
     <ScrollArea.Root
-      className="mx-auto max-h-full w-full max-w-4xl overflow-hidden rounded-lg bg-white shadow-lg"
+      className="mx-auto max-h-full w-full max-w-3xl overflow-hidden rounded-lg bg-white shadow-lg"
       type="auto"
     >
       <ScrollArea.Viewport className="grid h-full w-full">

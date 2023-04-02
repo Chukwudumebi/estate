@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { AiOutlineSearch } from 'react-icons/ai';
-import { IoMdPaperPlane } from 'react-icons/io';
+import { MdContentCopy } from 'react-icons/md';
 
 export default function Itemsearch() {
   const users = [
@@ -26,11 +26,8 @@ export default function Itemsearch() {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <button
-          type="button"
-          className="rounded-full bg-white px-3 py-1 text-sm text-blue-500 text-neutral-900 active:bg-sky-500 active:text-white active:shadow-none "
-        >
-          <IoMdPaperPlane />
+        <button type="button" className="rounded text-lg text-neutral-900 active:shadow-none ">
+          <MdContentCopy />
         </button>
       </Dialog.Trigger>
       <Dialog.Portal>

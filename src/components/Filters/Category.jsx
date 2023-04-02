@@ -11,15 +11,11 @@ const options = [
 
 function Category() {
   return (
-    <div className="grid gap-2">
-      <label htmlFor="categories" className="text-sm ring-0 outline-none">
+    <div className="grid gap-1">
+      <label htmlFor="categories" className="text-sm outline-none ring-0">
         Category
       </label>
-      <Select
-        placeholder="categories..."
-        options={options}
-        name="category"
-       />
+      <Select placeholder="categories..." options={options} name="category" />
     </div>
   );
 }

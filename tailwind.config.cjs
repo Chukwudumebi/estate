@@ -1,7 +1,6 @@
 // use tailwindcss presets with flowbite
 module.exports = {
   content: ['./src/**/*.jsx'],
-  presets: [require('tailwindcss/defaultConfig.js')],
   theme: {
     extend: {
       fontFamily: {
@@ -10,6 +9,7 @@ module.exports = {
       gridTemplateColumns: {
         'auto-1fr': 'auto 1fr',
         '1fr-auto': '1fr auto',
+        'auto-1fr-auto': 'auto 1fr auto',
         preview: 'repeat(2, 80px)',
       },
       gridTemplateRows: {
@@ -20,5 +20,5 @@ module.exports = {
     },
   },
 
-  plugins: [require('flowbite/plugin'), require('@tailwindcss/line-clamp')],
+  plugins: [require('@tailwindcss/line-clamp')],
 };

@@ -31,9 +31,9 @@ function StoreAction() {
   }`;
   return (
     <div className="sticky top-0 z-10 grid w-full items-center gap-2 border-b border-neutral-100 bg-white px-4 py-2 sm:grid-cols-auto-1fr md:px-8">
-      {/* <span className=" font-semibold">SQE MARKETPLACE</span> */}
+      <span className=" font-semibold">{stores[0].storename}</span>
 
-      <div>
+      <div className="justify-self-end">
         <div className="flex items-center space-x-3">
           {/* <span className=" font-semibold">SQE STORE MANAGEMENT</span> */}
 

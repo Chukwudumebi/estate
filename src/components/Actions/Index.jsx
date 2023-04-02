@@ -22,11 +22,10 @@ function Action() {
       : 'group grid aspect-square grid-flow-col items-center justify-center rounded border border-grey-600 px-2 py-1 font-normal relative before:absolute pointer-events-none before:aspect-square before:w-full before:left-0 before:bg-white/70 before:rounded'
   }`;
   return (
-    <div className="sticky top-0 z-10 grid w-full items-center gap-2 border-b border-neutral-100 bg-white px-4 py-2 sm:grid-cols-auto-1fr md:px-8">
-      <span className="font-semibold">SQE MARKETPLACE</span>
+    <div className="sticky top-0 z-10 grid w-full items-center gap-2 border-b border-neutral-100 bg-white px-4 py-2 sm:grid-cols-auto-1fr">
+      <SearchBar />
       <div className="justify-self-end">
         <div className="flex items-center space-x-3">
-          <SearchBar />
           <Filters />
           <Link
             to="create-store"

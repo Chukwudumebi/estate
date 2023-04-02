@@ -15,7 +15,6 @@ function Item({ id }) {
   const { currency } = useCurrency();
   const [enable, setEnable] = useState(false);
   const { data: exchangeRate } = useExchangeRate(currency);
-  console.log(exchangeRate);
   const { items, dispatch } = useItems();
   const item = items.find((data) => data.id === id);
   if (!item) {
@@ -52,8 +51,8 @@ function Item({ id }) {
   const shortId = `${user.id.slice(0, 6)}...${user.id.slice(-6)}`;
 
   return (
-    <div className="table-row max-h-24 w-full cursor-pointer py-4 hover:bg-slate-300">
-      <div className="table-cell h-24 w-10 border-b border-b-slate-100 px-2 py-4 text-center align-middle">
+    <div className="grid w-full cursor-pointer grid-cols-auto-1fr-auto gap-4 border-b border-b-slate-200 p-4 hover:bg-slate-300">
+      <div className="justify-content-center grid grid-cols-auto-1fr items-center gap-3">
         <input
           type="checkbox"
           name="select"
@@ -64,59 +63,43 @@ function Item({ id }) {
           id=""
           className="flex h-6 w-6 cursor-pointer appearance-none items-center justify-center rounded-md border border-slate-700 bg-slate-200 outline-none after:hidden after:aspect-square  after:h-6 after:rounded-md after:font-['Font_Awesome_5_Free'] after:text-xs after:font-bold after:text-white after:content-['\f00c'] checked:border-transparent checked:after:grid checked:after:items-center checked:after:justify-center after:checked:bg-sky-500 focus:ring-0"
         />
-      </div>
-      <div className=" table-cell border-b border-b-slate-100 pr-2 align-middle">
+
         <ImageDialog images={images} />
       </div>
-      <div className="overflow-hidde table-cell h-24 border-b border-b-slate-100 px-2 align-middle text-xs">
-        <p className="line-clamp-3">{description}</p>
+      <div className="self-center">
+        <p className="text-xs line-clamp-3">{description}</p>
       </div>
-      <div className="table-cell w-max border-b border-b-slate-100 px-2 align-middle text-xs md:text-base">
-        <div className="flex w-max flex-col text-xs">
-          <span>{price}</span>
-
-          <span>{shippingCost}</span>
-          <div className="flex flex-row items-center gap-1">
-            <span>Public id: {shortId.toUpperCase()}</span>
-            {/* <CopyToClipboard text={user.id}>
-              <button
-                className="grid aspect-square rounded-full border border-transparent p-1 active:border-sky-500 active:text-sky-500"
-                type="button"
-              >
-                <IoCopyOutline className="text-xl" />
-              </button>
-            </CopyToClipboard> */}
+      <div className="grid grid-cols-1fr-auto content-center gap-4">
+        <div className="flex flex-col">
+          <span className="font-semibold">{price}</span>
+          <span>shipping: {shippingCost}</span>
+          <div className="flex flex-row items-end gap-1">
+            <span>{shortId.toUpperCase()}</span>
             <Itemsearch />
           </div>
         </div>
-      </div>
 
-      <div className="table-cell max-h-24 border-b border-b-slate-100 pl-2 pr-4 pb-5 text-end align-bottom">
-        <div className="flex gap-2">
-          <button type="button" className="grid w-full items-end">
-            <Link
-              to={`buy/${id}`}
-              className="w-max cursor-pointer justify-self-end rounded border border-transparent bg-sky-600 px-1 py-[3px] text-xs text-white hover:border-sky-500 hover:bg-white hover:text-sky-600"
-            >
-              Buy
-            </Link>
-          </button>
-          <button type="button" className="grid w-full items-end">
-            <Link
-              to={`buy/${id}`}
-              className="w-max cursor-pointer justify-self-end rounded border border-transparent bg-sky-600 px-1 py-[3px] text-xs text-white hover:border-sky-500 hover:bg-white hover:text-sky-600"
-            >
-              Make offer
-            </Link>
-          </button>
-          <button type="button" className="grid w-full items-end">
-            <Link
-              to={`buy/${id}`}
-              className="w-max cursor-pointer justify-self-end rounded border border-transparent bg-sky-600 px-1 py-[3px] text-xs text-white hover:border-sky-500 hover:bg-white hover:text-sky-600"
-            >
-              contact seller
-            </Link>
-          </button>
+        <div className="flex flex-row items-center gap-2">
+          <Link
+            to={`buy/${id}`}
+            className="h-fit w-max cursor-pointer rounded border border-transparent bg-sky-600 px-1 py-1 text-xs text-white hover:border-sky-500 hover:bg-white hover:text-sky-600"
+          >
+            Buy
+          </Link>
+
+          <Link
+            to={`buy/${id}`}
+            className="h-fit w-max cursor-pointer rounded border border-transparent bg-sky-600 px-1 py-1 text-xs text-white hover:border-sky-500 hover:bg-white hover:text-sky-600"
+          >
+            Make offer
+          </Link>
+
+          <Link
+            to={`buy/${id}`}
+            className="h-fit w-max cursor-pointer rounded border border-transparent bg-sky-600 px-1 py-1 text-xs text-white hover:border-sky-500 hover:bg-white hover:text-sky-600"
+          >
+            contact seller
+          </Link>
         </div>
       </div>
     </div>

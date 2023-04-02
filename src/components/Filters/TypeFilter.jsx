@@ -7,7 +7,7 @@ const options = [
 
 function TypeFilter() {
   return (
-    <div className="grid gap-2">
+    <div className="grid gap-1">
       <label htmlFor="categories" className="text-sm">
         Type
       </label>
