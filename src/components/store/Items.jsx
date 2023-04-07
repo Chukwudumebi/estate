@@ -11,7 +11,6 @@ import { useStoreItems } from '../../context/storeItemContext';
 
 function StoreItem({ id }) {
   const { currency } = useCurrency();
-  const [enable, setEnable] = useState(false);
   const { data: exchangeRate } = useExchangeRate(currency);
 
   const { StoreItems, dispatch } = useStoreItems();
@@ -71,7 +70,7 @@ function StoreItem({ id }) {
       </div>
       <div className="table-cell w-max border-b border-b-slate-100 px-2 align-middle text-xs md:text-base">
         <div className="flex w-max flex-col text-xs">
-          <span>
+          <span className="font-bold">
             {/* Price:{' '}
             {new Intl.NumberFormat('en-US', {
               style: 'currency',
@@ -81,11 +80,11 @@ function StoreItem({ id }) {
             Price: {price}
           </span>
 
-          <span>Shipping Cost: {shippingCost}</span>
+          <span className="font-bold">Shipping Cost: {shippingCost}</span>
           <span>Available Quantity :1</span>
           <span>Profit Margin : 1%</span>
           <div className="flex flex-row items-center gap-1">
-            <span>Public id: {shortId.toUpperCase()}</span>
+            <span className="font-bold"> {shortId.toUpperCase()}</span>
             <CopyToClipboard text={user.id}>
               <button
                 className="grid aspect-square rounded-full border border-transparent p-1 active:border-sky-500 active:text-sky-500"

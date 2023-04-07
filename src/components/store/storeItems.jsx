@@ -4,7 +4,7 @@ import StoreAction from './Actions';
 import StoreItem from './Items';
 
 function StoreItems({ store }) {
-  const { items } = useStoreItems();
+  const { StoreItems } = useStoreItems();
 
   return (
     <ScrollArea.Root
@@ -13,13 +13,11 @@ function StoreItems({ store }) {
     >
       <ScrollArea.Viewport className="grid h-full w-full">
         <StoreAction store={store} />
-
+        {/* <div className="relative h-full w-full border-collapse bg-white font-grotesk text-sm"> */}
         <div className="relative table h-full w-full table-auto border-collapse bg-white font-grotesk text-sm">
-          <div className="table-row-group">
-            {items?.map(({ id }) => (
-              <StoreItem key={id} id={id} />
-            ))}
-          </div>
+          {StoreItems?.map(({ id }) => (
+            <StoreItem key={id} id={id} />
+          ))}
         </div>
       </ScrollArea.Viewport>
       <ScrollArea.Scrollbar

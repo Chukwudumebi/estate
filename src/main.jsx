@@ -1,5 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
+import * as Tooltip from '@radix-ui/react-tooltip';
+
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Root from './routes/root';
@@ -17,6 +19,9 @@ import AddStoreItems from './routes/AddStoreItem';
 import { StoreItemsProvider } from './context/storeItemContext';
 import AddStoreItem from './components/store/additems';
 import CreateStore from './components/store/create-store';
+import StoreDetails from './components/store/storedetails';
+import EditStoreItems from './routes/EditStoreItem';
+import EditStore from './routes/EditStore';
 
 const queryClient = new QueryClient();
 
@@ -38,6 +43,10 @@ const router = createBrowserRouter([
             path: '/store',
             element: <Store />,
           },
+          {
+            path: '/store/:id',
+            element: <StoreDetails />,
+          },
         ],
       },
 
@@ -53,14 +62,23 @@ const router = createBrowserRouter([
         path: '/edit-item/:id',
         element: <EditItems />,
       },
+
       {
         path: '/create-store',
         element: <CreateStore />,
+      },
+      {
+        path: '/Edit-Store/:id',
+        element: <EditStore />,
       },
 
       {
         path: '/store/add-store-item',
         element: <AddStoreItems />,
+      },
+      {
+        path: '/store/edit-store-item/:id',
+        element: <EditStoreItems />,
       },
     ],
   },
@@ -68,8 +86,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <StoreItemsProvider>
-      <StoreProvider>     
+    <Tooltip.Provider>
+      <StoreItemsProvider>
+        <StoreProvider>
           <CurrencyProvider>
             <ItemsProvider>
               <QueryClientProvider client={queryClient}>
@@ -77,7 +96,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               </QueryClientProvider>
             </ItemsProvider>
           </CurrencyProvider>
-      </StoreProvider>
-    </StoreItemsProvider>
+        </StoreProvider>
+      </StoreItemsProvider>
+    </Tooltip.Provider>
   </React.StrictMode>
 );

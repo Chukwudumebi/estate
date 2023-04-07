@@ -15,32 +15,40 @@ export default function CreateStore() {
   const [fileList, setFileList] = useState([]);
   const [isPhysicallyLocated, setisPhysicallyLocated] = useState(false);
   const [agreement, setAgreement] = useState(false);
+  const formRef = useRef(null);
 
   const navigate = useNavigate();
   const [images, setImages] = useState([]);
   const { dispatch } = useStores();
   const handleSubmit = (e) => {
     e.preventDefault();
+    const formData = new FormData(formRef.current);
+    const prevImages = images.map((image) => URL.createObjectURL(image));
+    const data = Object.fromEntries(formData.entries());
     const store = {
       id: Math.floor(Math.random() * 1000),
-      storename,
-      category,
-      isPhysicallyLocated,
-      agreement,
-      email,
-      phone,
-      logo: fileList,
-      address,
+      storename: data.storename,
+      category: data.category,
+      isPhysicallyLocated: data.location,
+      agreement: data.agreement,
+      email: data.email,
+      phone: data.phone,
+      logo: prevImages,
+      address: data.address,
       items: [],
     };
-    console.log(store);
     dispatch({ type: 'CREATE_STORE', payload: store });
     navigate('/store');
   };
   return (
     <div className="min-h-screen w-screen overflow-x-hidden overflow-y-scroll p-4 pt-24 pb-20">
       <div className="m-2 mx-auto h-full max-w-md overflow-hidden rounded-md bg-white">
-        <form className="flex w-full flex-col gap-4 bg-white p-4 shadow" onSubmit={handleSubmit} autoComplete="off">
+        <form
+          className="flex w-full flex-col gap-4 bg-white p-4 shadow"
+          ref={formRef}
+          onSubmit={handleSubmit}
+          autoComplete="off"
+        >
           <h2 className="font-bold text-sky-500 ">Store Details</h2>
 
           <div>
@@ -52,30 +60,19 @@ export default function CreateStore() {
               className="h-10 w-full rounded bg-slate-100 px-2"
               id="price"
               type="text"
-              onChange={(e) => setStoreName(e.target.value)}
               placeholder="Enter Store Name"
               required
             />
           </div>
           <CategoryFilter />
-          <ImageUpload name="Store Logo" onChange={setFileList} />
+          <ImageUpload name="Store Logo" onChange={setImages} />
           <div>
             <span className="font-semibold text-sky-500">Physically Located?</span>
 
             <div className="flex items-center gap-2">
-              <input
-                name="location"
-                id="location"
-                type="radio"
-                onClick={() => setisPhysicallyLocated((prev) => !prev)}
-              />
+              <input name="location" id="location" type="radio" />
               Yes
-              <input
-                name="location"
-                id="location"
-                type="radio"
-                onClick={() => setisPhysicallyLocated((prev) => !prev)}
-              />
+              <input name="location" id="location" type="radio" />
               No
             </div>
           </div>
@@ -87,13 +84,12 @@ export default function CreateStore() {
               Email
             </label>
             <input
-              name="Email"
+              name="email"
               className="h-10 w-full rounded bg-slate-100 px-2"
-              id="shipping"
+              id="email"
               type="text"
               placeholder="Enter Email"
               required
-              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div>
@@ -101,12 +97,11 @@ export default function CreateStore() {
               Contact
             </label>
             <input
-              name="contact"
+              name="phone"
               className="h-10 w-full rounded bg-slate-100 px-2"
-              id="shipping"
+              id="phone"
               type="text"
               placeholder="Enter Contact"
-              onChange={(e) => setPhone(e.target.value)}
               required
             />
           </div>
@@ -114,23 +109,16 @@ export default function CreateStore() {
             <label className="text-sm outline-none ring-0" htmlFor="description">
               Address
             </label>
-            <textarea
-              name="description"
-              id="description"
-              value={address}
-              rows={2}
-              onChange={(e) => setAddress(e.target.value)}
-              className="w-full rounded bg-slate-100 p-2"
-            />
+            <textarea name="address" id="address" rows={2} className="w-full rounded bg-slate-100 p-2" />
           </div>
           <div className=" flex items-center gap-2">
             <input
-              name="physical location"
+              name="agreement"
               id="storename"
               type="checkbox"
               // value={isPhysicallyLocated}
-              checked={agreement}
-              onClick={() => setAgreement((prev) => !prev)}
+              // checked={false}
+              // onClick={() => setAgreement((prev) => !prev)}
             />
             <p className="text-sm font-semibold text-sky-600">
               I agree not to misuse this site for illegal activities.

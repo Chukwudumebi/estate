@@ -29,7 +29,7 @@ const reducer = (state, action) => {
     default:
       return state;
   }
-};
+};  
 
 const ItemsContext = createContext();
 function ItemsProvider({ children }) {
