@@ -1,45 +1,48 @@
 import React, { useState, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { BsArrowLeftCircle } from 'react-icons/bs';
-import UploadImage from '../components/ImageUpload';
+import UploadImage from '../components/Inputs/ImageUpload';
+import TextField from '../components/Inputs/TextField';
 import RegionFilter from '../components/Filters/Region';
+import RadioGroup from '../components/Inputs/RadioGroup';
 import CategoryFilter from '../components/Filters/Category';
-// import { useItems } from '../context/ItemsContext';
 import user from '../data/user.json';
-import { useItems } from '../context/ItemsContext';
-import { useStoreItems } from '../context/storeItemContext';
+import { useStoreItems } from '../context/storeItemsContext';
 
 export default function AddStoreItems() {
   const navigate = useNavigate();
+  const { id: storeId } = useParams();
   const [images, setImages] = useState([]);
   const formRef = useRef(null);
   const { dispatch } = useStoreItems();
   const handleSubmit = (e) => {
     e.preventDefault();
     // get form Data
-    console.log(formRef);
     const formData = new FormData(formRef.current);
-    console.log(formData);
     const prevImages = images.map((image) => URL.createObjectURL(image));
-
     const data = Object.fromEntries(formData.entries());
-
     const item = {
-      id: Math.floor(Math.random() * 1000),
+      id: Math.random().toString(36).substring(2, 9),
+      storeId,
       description: data.description,
       price: data.price,
+      quantity: data.quantity,
+      margin: data.margin,
+      discount: data.discount,
       shipping_cost: data.shipping,
+      type: data.type,
       images: prevImages,
       selected: false,
+      isOnSale: false,
       user,
     };
     dispatch({ type: 'CREATE_ITEM', payload: item });
-    navigate('/store');
+    navigate(`/store/${storeId}`);
   };
 
   return (
     <div className="min-h-screen w-screen overflow-x-hidden overflow-y-scroll p-4 pt-24 pb-20">
-      <div className="m-2 mx-auto h-full max-w-md overflow-hidden rounded-md bg-white">
+      <div className="mx-auto h-full max-w-md overflow-hidden rounded-md bg-white">
         <form
           className="flex w-full flex-col gap-4 bg-white p-4 shadow"
           ref={formRef}
@@ -50,34 +53,24 @@ export default function AddStoreItems() {
             <label htmlFor="description">Description</label>
             <textarea name="description" id="description" rows={4} className="w-full rounded bg-slate-100 p-2" />
           </div>
-          <div className="mb-4">
-            <label className="mb-2 block text-sm font-bold text-gray-500" htmlFor="price">
-              Price
-            </label>
-            <input
-              name="price"
-              className="h-10 w-full rounded bg-slate-100 px-2"
-              id="price"
-              type="text"
-              placeholder="$"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="mb-2 block text-sm font-bold text-gray-500" htmlFor="price">
-              Shipping Cost
-            </label>
-            <input
-              name="shipping"
-              className="h-10 w-full rounded bg-slate-100 px-2"
-              id="shipping"
-              type="text"
-              placeholder="Shipping Cost-USD"
-              required
-            />
-          </div>
+          <TextField label="Price" name="price" placeholder="$" type="number" />
+          <TextField label="Shipping Cost" name="shipping" placeholder="$" type="number" />
+          <TextField label="Quantity" name="quantity" placeholder="Enter Quantity" type="number" />
+          <TextField label="Profit Margin" name="margin" placeholder="%" type="number" />
+          <TextField label="Discount" name="discount" placeholder="%" type="number" />
           <RegionFilter />
           <CategoryFilter />
+          <div>
+            <span className="pb-2 text-sm">New or Refurbished?</span>
+            <RadioGroup
+              items={[
+                { value: 'new', label: 'New' },
+                { label: 'Refurbished', value: 'refurbished' },
+              ]}
+              name="type"
+              label="New or Refurbished?"
+            />
+          </div>
 
           <div className="grid grid-flow-row gap-2 text-sm ">
             <UploadImage name="images" onChange={setImages} />

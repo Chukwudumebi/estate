@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
 import * as Tooltip from '@radix-ui/react-tooltip';
-
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Root from './routes/root';
@@ -13,13 +12,11 @@ import './index.css';
 import AddItems from './routes/AddItems';
 import EditItems from './routes/EditItem';
 import HomePage from './routes/index/home/page';
-import Store from './components/store';
+import Store from './components/Store/Index';
 import { StoreProvider } from './context/storeContext';
-import AddStoreItems from './routes/AddStoreItem';
-import { StoreItemsProvider } from './context/storeItemContext';
-import AddStoreItem from './components/store/additems';
-import CreateStore from './components/store/create-store';
-import StoreDetails from './components/store/storedetails';
+import { StoreItemsProvider } from './context/storeItemsContext';
+import AddStoreItem from './routes/AddStoreItem';
+import CreateStore from './components/Store/create-store';
 import EditStoreItems from './routes/EditStoreItem';
 import EditStore from './routes/EditStore';
 
@@ -40,12 +37,8 @@ const router = createBrowserRouter([
             element: <HomePage />,
           },
           {
-            path: '/store',
-            element: <Store />,
-          },
-          {
             path: '/store/:id',
-            element: <StoreDetails />,
+            element: <Store />,
           },
         ],
       },
@@ -55,7 +48,7 @@ const router = createBrowserRouter([
         element: <AddItems />,
       },
       {
-        path: '/store/add-store-item/:id',
+        path: '/store/:id/add-item',
         element: <AddStoreItem />,
       },
       {
@@ -68,16 +61,16 @@ const router = createBrowserRouter([
         element: <CreateStore />,
       },
       {
-        path: '/Edit-Store/:id',
+        path: '/edit-Store/:id',
         element: <EditStore />,
       },
 
       {
         path: '/store/add-store-item',
-        element: <AddStoreItems />,
+        element: <AddStoreItem />,
       },
       {
-        path: '/store/edit-store-item/:id',
+        path: '/store/:storeId/edit-item/:itemId',
         element: <EditStoreItems />,
       },
     ],
@@ -87,8 +80,8 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Tooltip.Provider>
-      <StoreItemsProvider>
-        <StoreProvider>
+      <StoreProvider>
+        <StoreItemsProvider>
           <CurrencyProvider>
             <ItemsProvider>
               <QueryClientProvider client={queryClient}>
@@ -96,8 +89,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               </QueryClientProvider>
             </ItemsProvider>
           </CurrencyProvider>
-        </StoreProvider>
-      </StoreItemsProvider>
+        </StoreItemsProvider>
+      </StoreProvider>
     </Tooltip.Provider>
   </React.StrictMode>
 );

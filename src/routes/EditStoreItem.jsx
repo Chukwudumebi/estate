@@ -1,17 +1,16 @@
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import React, { useState, useRef } from 'react';
-import ImageUpload from '../components/ImageUpload';
-import { useItems } from '../context/ItemsContext';
-import { useStoreItems } from '../context/storeItemContext';
+import TextField from '../components/Inputs/TextField';
+import RadioGroup from '../components/Inputs/RadioGroup';
+import ImageUpload from '../components/Inputs/ImageUpload';
+import { useStoreItems } from '../context/storeItemsContext';
+
 function EditStoreItems() {
   const formRef = useRef(null);
   const navigate = useNavigate();
-  const { id } = useParams();
-  const { StoreItems, dispatch } = useStoreItems();
-  const [item, setItem] = useState(() => StoreItems.find((curr) => curr.id === Number(id)));
-  if (!item) {
-    throw new Error('Item  not found');
-  }
+  const { storeId, itemId } = useParams();
+  const { storeItems, dispatch } = useStoreItems();
+  const [item, setItem] = useState(storeItems.find((item) => item.id === itemId));
   const [images, setImages] = useState([]);
 
   const handleSubmit = (e) => {
@@ -21,7 +20,7 @@ function EditStoreItems() {
     const previewImages = images.map((image) => URL.createObjectURL(image));
     const updatedItem = { ...item, images: previewImages };
     dispatch({ type: 'EDIT_ITEM', payload: updatedItem });
-    navigate('/store');
+    navigate(`/store/${storeId}`);
   };
   return (
     <div className="min-h-screen w-screen overflow-x-hidden overflow-y-scroll p-4 pt-24 pb-20">
@@ -39,35 +38,60 @@ function EditStoreItems() {
             />
           </div>
 
-          <div className="relative grid grid-flow-row gap-1 text-sm">
-            <label htmlFor="Amount">Price</label>
-            <div className="relative h-full">
-              <input
-                type="number"
-                name="price"
-                id="price"
-                className="text-grotesk h-10 w-full rounded-md bg-slate-100 p-2 pl-[17px]"
-                value={item.price}
-                onChange={(e) => setItem({ ...item, price: parseFloat(e.target.value) })}
-              />
-              <span className="absolute top-[50%] left-2 translate-y-[-50%]">$</span>
-            </div>
-          </div>
-          <div className="relative grid grid-flow-row gap-1 text-sm">
-            <label htmlFor="Amount">Shipping Cost</label>
-            <div className="relative h-full">
-              <input
-                type="number"
-                name="price"
-                id="price"
-                className="text-grotesk h-10 w-full rounded-md bg-slate-100 p-2 pl-[17px]"
-                value={item.shipping_cost}
-                onChange={(e) => setItem({ ...item, shipping_cost: parseFloat(e.target.value) })}
-              />
-              <span className="absolute top-[50%] left-2 translate-y-[-50%]">$</span>
-            </div>
-          </div>
+          <TextField
+            label="Price"
+            name="price"
+            placeholder="$"
+            type="number"
+            initialValue={item.price}
+            onChange={(val) => setItem({ ...item, price: parseFloat(val) })}
+          />
+          <TextField
+            label="Shipping Cost"
+            name="shipping_cost"
+            placeholder="$"
+            type="number"
+            initialValue={item.shipping_cost}
+            onChange={(val) => setItem({ ...item, shipping_cost: parseFloat(val) })}
+          />
 
+          <TextField
+            label="Quantity"
+            name="quantity"
+            placeholder="Enter Quantity"
+            type="number"
+            initialValue={item.quantity}
+            onChange={(val) => setItem({ ...item, quantity: parseInt(val, 10) })}
+          />
+          <TextField
+            label="Profit Margin"
+            name="margin"
+            placeholder="%"
+            type="number"
+            initialValue={item.margin}
+            onChange={(val) => setItem({ ...item, margin: parseFloat(val) })}
+          />
+          <TextField
+            label="Discount"
+            name="discount"
+            placeholder="%"
+            type="number"
+            initialValue={item.discount}
+            onChange={(val) => setItem({ ...item, discount: parseFloat(val) })}
+          />
+          <div>
+            <span className="pb-2 text-sm">New or Refurbished?</span>
+            <RadioGroup
+              items={[
+                { value: 'new', label: 'New' },
+                { label: 'Refurbished', value: 'refurbished' },
+              ]}
+              initialChecked={item.type}
+              name="type"
+              label="New or Refurbished?"
+              onChange={(val) => setItem({ ...item, type: val })}
+            />
+          </div>
           <div className="grid grid-flow-row gap-2 text-sm">
             <ImageUpload name="images" onChange={setImages} images={item.images} />
           </div>

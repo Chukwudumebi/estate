@@ -1,0 +1,278 @@
+[
+  {
+    "endpoint": "/user/",
+    "method": "GET",
+    "description": "Get current authenticated user",
+    "cert": "12345",
+    "response": {
+      "payload": {
+        "id": "496d359a829f23a67f91431d1f6b1daa19424917f8676c5e1af7e107d8bc0ec1614ba9458bb11b98d1af1a3ea02eedf2796b3073df7a0bf0aa4ea1f7f31d9c8ac5f5b9cbad0b67077bc199abf7d8fdb6de9e863d585cf76458c69ddad87c707c31f775d68418a8da79c5e80952fc439f3f345dccfec668a6e4dc5d4cdd4fb2ef",
+        "name": "John Doe",
+        "username": "johndoe",
+        "total_asset": "70000",
+        "createdAt": "2023-02-28T13:32:37.955Z",
+        "updatedAt": "2023-02-28T13:32:37.955Z"
+      }
+    }
+  },
+  {
+    "endpoint": "/users/",
+    "method": "GET",
+    "description": "Get a list of users filtered by query parameters",
+    "cert": "12345",
+    "id": "496d359a829f23a67f91431d1f6b1daa19424917f8676c5e1af7e107d8bc0ec1614ba9458bb11b98d1af1a3ea02eedf2796b3073df7a0bf0aa4ea1f7f31d9c8ac5f5b9cbad0b67077bc199abf7d8fdb6de9e863d585cf76458c69ddad87c707c31f775d68418a8da79c5e80952fc439f3f345dccfec668a6e4dc5d4cdd4fb2ef",
+    "params": [
+      {
+        "name": "filter",
+        "type": "string",
+        "description": "pattern used for filtering users. results are case insensitive and can be partial matches. users whose name or username match the filter string are returned."
+      }
+    ],
+    "response": {
+      "count": 10,
+      "payload": [
+        {
+          "id": "f96d359a829f23a67f91431d85cf76458c69ddad87c707c31f775d68418a8da79c5e809521f6b1daa19424917f8676c5e1af7e107d8bc0ec1614ba9458bb11b98d1af1a3ea02eedf2796b3073df7a0bf0aa4ea1f7f31d9c8ac5f5b9cbad0b67077bc199abf7d8fdb6de9e863d5fc439f3f345dccfec668a6e4dc5d4cdd4fb2ef",
+          "name": "John Doe",
+          "username": "johndoe",
+          "createdAt": "2023-02-28T13:32:37.955Z",
+          "updatedAt": "2023-02-28T13:32:37.955Z"
+        },
+        {
+          "id": "a96d359a829f23a67f911a3ea02eedf2796b3073df7a0bf0aa4ea1f7f31d9c8ac5f5b9cbad0b67077bc199abf7d8fdb6de9e863d5431d1f6b1daa19424917f8676c5e1af7e107d8bc0ec1614ba9458bb11b98d1af85cf76458c69ddad87c707c31f775d68418a8da79c5e80952fc439f3f345dccfec668a6e4dc5d4cdd4fb2ef",
+          "name": "Jane Doe",
+          "username": "janedoe",
+          "createdAt": "2023-02-28T13:32:37.955Z",
+          "updatedAt": "2023-02-28T13:32:37.955Z"
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "/currencies/",
+    "method": "GET",
+    "description": "Get a list of supported currencies",
+    "cert": "12345",
+    "response": {
+      "count": 120,
+      "payload": [
+        {
+          "symbol": "QUEC",
+          "name": "Quecoin",
+          "symbol_native": "QUE",
+          "decimal_digits": 2,
+          "rounding": 2,
+          "code": "QUEC",
+          "name_plural": "Quecoins"
+        },
+        {
+          "symbol": "€",
+          "name": "Euro",
+          "symbol_native": "€",
+          "decimal_digits": 2,
+          "rounding": 0,
+          "code": "EUR",
+          "name_plural": "Euros"
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "/rates/",
+    "method": "GET",
+    "description": "Get latest exchange rates",
+    "cert": "12345",
+    "id": "496d359a829f23a67f91431d1f6b1daa19424917f8676c5e1af7e107d8bc0ec1614ba9458bb11b98d1af1a3ea02eedf2796b3073df7a0bf0aa4ea1f7f31d9c8ac5f5b9cbad0b67077bc199abf7d8fdb6de9e863d585cf76458c69ddad87c707c31f775d68418a8da79c5e80952fc439f3f345dccfec668a6e4dc5d4cdd4fb2ef",
+    "params": [
+      {
+        "name": "base",
+        "type": "string",
+        "description": "Base currency (default: USD)"
+      },
+      {
+        "name": "currencies",
+        "type": "string",
+        "description": "Comma-separated list of quote currencies"
+      }
+    ],
+    "response": {
+      "meta": {
+        "last_updated_at": "2022-01-01T23:59:59Z"
+      },
+      "payload": {
+        "USD": 1,
+        "EUR": 0.8925
+      }
+    }
+  },
+  {
+    "endpoint": "/users/:id/store",
+    "description": "get user's store",
+    "method": "GET",
+    "cert": "12345",
+    "id": "496d359a829f23a67f91431d1f6b1daa19424917f8676c5e1af7e107d8bc0ec1614ba9458bb11b98d1af1a3ea02eedf2796b3073df7a0bf0aa4ea1f7f31d9c8ac5f5b9cbad0b67077bc199abf7d8fdb6de9e863d585cf76458c69ddad87c707c31f775d68418a8da79c5e80952fc439f3f345dccfec668a6e4dc5d4cdd4fb2ef",
+    "params": [
+      {
+        "name": "id",
+        "type": "string",
+        "description": "User ID"
+      }
+    ],
+    "response": {
+      "payload": [
+        {
+          "id": "ef496d359a829f23a67f91431d1f6b1daa19424917f8676c5e1af7e107d8bc0ec1614ba9458bb11b98d1d585cf76458c69ddad87c707c31f775d68418a8da79c5e80952fc439f3f345dccfec668a6e4dc5d4cdd4faf1a3ea02eedf2796b3073df7a0bf0aa4ea1f7f31d9c8ac5f5b9cbad0b67077bc199abf7d8fdb6de9e863b2",
+          "logo": "https://images.unsplash.com/photo-1580273916550-e323be2ae537?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MTAyNjd8MHwxfGFsbHx8fHx8fHx8fDE2NzYzNDM3MDQ&ixlib=rb-4.0.3&q=80w=500",
+          "name": "John's place",
+          "category": "goods",
+          "email": "john@gmail.com",
+          "phone": "123456789",
+          "address": "123 Main St",
+          "physical": true
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "/stores/:id/items",
+    "method": "GET",
+    "description": "get all items that belong to a store",
+    "params": [
+      {
+        "name": "id",
+        "type": "string",
+        "description": "store ID"
+      }
+    ],
+    "cert": "12345",
+    "id": "496d359a829f23a67f91431d1f6b1daa19424917f8676c5e1af7e107d8bc0ec1614ba9458bb11b98d1af1a3ea02eedf2796b3073df7a0bf0aa4ea1f7f31d9c8ac5f5b9cbad0b67077bc199abf7d8fdb6de9e863d585cf76458c69ddad87c707c31f775d68418a8da79c5e80952fc439f3f345dccfec668a6e4dc5d4cdd4fb2ef",
+    "response": {
+      "payload": [
+        {
+          "id": "ef496d359a829f23a67f91431d1f6b1daa19424917f8676c5e1af7e107d8bc0ec1614ba9458bb11b98d1d585cf76458c69ddad87c707c31f775d68418a8da79c5e80952fc439f3f345dccfec668a6e4dc5d4cdd4faf1a3ea02eedf2796b3073df7a0bf0aa4ea1f7f31d9c8ac5f5b9cbad0b67077bc199abf7d8fdb6de9e863b2",
+          "description": "A cool t-shirt",
+          "price": 10,
+          "shipping": 5,
+          "profitMargin": 0.1,
+          "discount": 2,
+          "region": "asia",
+          "category": "goods",
+          "type": "new",
+          "image": [
+            "https://images.unsplash.com/photo-1580273916550-e323be2ae537?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MTAyNjd8MHwxfGFsbHx8fHx8fHx8fDE2NzYzNDM3MDQ&ixlib=rb-4.0.3&q=80w=500"
+          ],
+          "quantity": 10,
+          "...": "..."
+        },
+        {
+          "description": "A cool pair of sneakers",
+          "price": 100,
+          "shipping": 10,
+          "profitMargin": 0.1,
+          "discount": 2,
+          "region": "asia",
+          "category": "goods",
+          "type": "new",
+          "image": [
+            "https://images.unsplash.com/photo-1580273916550-e323be2ae537?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MTAyNjd8MHwxfGFsbHx8fHx8fHx8fDE2NzYzNDM3MDQ&ixlib=rb-4.0.3&q=80w=500"
+          ],
+          "quantity": 10,
+          "...": "..."
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "/items/:id",
+    "method": "GET",
+    "description": "get an item by id",
+    "params": [
+      {
+        "name": "id",
+        "type": "string",
+        "description": "Asset ID"
+      }
+    ],
+    "cert": "12345",
+    "id": "496d359a829f23a67f91431d1f6b1daa19424917f8676c5e1af7e107d8bc0ec1614ba9458bb11b98d1af1a3ea02eedf2796b3073df7a0bf0aa4ea1f7f31d9c8ac5f5b9cbad0b67077bc199abf7d8fdb6de9e863d585cf76458c69ddad87c707c31f775d68418a8da79c5e80952fc439f3f345dccfec668a6e4dc5d4cdd4fb2ef",
+    "request": {
+      "payload": {
+        "images": [
+          "https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?ixid=Mnw0MTAyNjd8MHwxfGFsbHx8fHx8fHx8fDE2Nzc3ODIwMDQ&ixlib=rb-4.0.3&q=80&w=500",
+          "https://images.unsplash.com/photo-1600712244180-7ef5e5c82cb5?ixid=Mnw0MTAyNjd8MHwxfGFsbHx8fHx8fHx8fDE2Nzc3ODIxMjc&ixlib=rb-4.0.3&q=80&w=500"
+        ],
+        "description": "A cool pair of sneakers",
+        "price": 100,
+        "shipping": 10,
+        "profitMargin": 0.1,
+        "discount": 2,
+        "region": "asia",
+        "category": "goods",
+        "type": "new",
+        "quantity": 10,
+        "...": "..."
+      }
+    }
+  },
+  {
+    "endpoint": "/items/:id",
+    "method": "PUT",
+    "description": "update a store item",
+    "params": [
+      {
+        "name": "id",
+        "type": "string",
+        "description": "Item ID"
+      }
+    ],
+    "cert": "12345",
+    "id": "496d359a829f23a67f91431d1f6b1daa19424917f8676c5e1af7e107d8bc0ec1614ba9458bb11b98d1af1a3ea02eedf2796b3073df7a0bf0aa4ea1f7f31d9c8ac5f5b9cbad0b67077bc199abf7d8fdb6de9e863d585cf76458c69ddad87c707c31f775d68418a8da79c5e80952fc439f3f345dccfec668a6e4dc5d4cdd4fb2ef",
+    "request": {
+      "payload": {
+        "images": [
+          "https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?ixid=Mnw0MTAyNjd8MHwxfGFsbHx8fHx8fHx8fDE2Nzc3ODIwMDQ&ixlib=rb-4.0.3&q=80&w=500",
+          "https://images.unsplash.com/photo-1600712244180-7ef5e5c82cb5?ixid=Mnw0MTAyNjd8MHwxfGFsbHx8fHx8fHx8fDE2Nzc3ODIxMjc&ixlib=rb-4.0.3&q=80&w=500"
+        ],
+        "description": "A cool pair of sneakers",
+        "price": 100,
+        "shipping": 10,
+        "profitMargin": 0.1,
+        "discount": 2,
+        "region": "asia",
+        "category": "goods",
+        "type": "new",
+        "quantity": 10,
+        "...": "..."
+      }
+    }
+  },
+  {
+    "endpoint": "/items",
+    "method": "POST",
+    "description": "create a new item for the current authenticated user",
+    "type": "multipart/formdata",
+    "cert": "12345",
+    "id": "496d359a829f23a67f91431d1f6b1daa19424917f8676c5e1af7e107d8bc0ec1614ba9458bb11b98d1af1a3ea02eedf2796b3073df7a0bf0aa4ea1f7f31d9c8ac5f5b9cbad0b67077bc199abf7d8fdb6de9e863d585cf76458c69ddad87c707c31f775d68418a8da79c5e80952fc439f3f345dccfec668a6e4dc5d4cdd4fb2ef",
+    "request": {
+      "payload": {
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. Odio morbi quis commodo odio aenean sed adipiscing diam donec. Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus.",
+        "images": [
+          "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MTAyNjd8MHwxfGFsbHx8fHx8fHx8fDE2NzYzNDM1Njk&ixlib=rb-4.0.3&q=80&w=500"
+        ],
+        "price": 2000
+      }
+    }
+  },
+  {
+    "endpoint": "market-app/items",
+    "method": "POST",
+    "description": "place asset on market app for sale. this makes a request to the market app api to create a new item using the asset data",
+    "cert": "12345",
+    "id": "496d359a829f23a67f91431d1f6b1daa19424917f8676c5e1af7e107d8bc0ec1614ba9458bb11b98d1af1a3ea02eedf2796b3073df7a0bf0aa4ea1f7f31d9c8ac5f5b9cbad0b67077bc199abf7d8fdb6de9e863d585cf76458c69ddad87c707c31f775d68418a8da79c5e80952fc439f3f345dccfec668a6e4dc5d4cdd4fb2ef",
+    "request": {
+      "payload": {
+        "id": "daa19424917f8676c5e1af7e107d8b496d359a829f23a67f91431d1f6b1c0ec1614ba9458bb11b98d1af1a3ea02eedf2796b3073df7a0bf0aa4ea12fc439f3f345dccfec668a6e4dc5d4cdd4f7f31d9c8ac5f5b9cbad0b67077bc199abf7d8fdb6de9e863d585cf76458c69ddad87c707c31f775d68418a8da79c5e8095fb2ef"
+      }
+    }
+  }
+]

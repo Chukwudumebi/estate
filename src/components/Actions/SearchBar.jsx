@@ -1,10 +1,6 @@
 import { AiOutlineSearch } from 'react-icons/ai';
-import { useStoreItems } from '../../context/storeItemContext';
 
 export default function SearchBar() {
-  const { StoreItems } = useStoreItems();
-  console.log(StoreItems);
-
   return (
     <form className="mr-3 flex items-center justify-center ">
       <label className="sr-only" htmlFor="search">

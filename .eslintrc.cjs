@@ -23,5 +23,6 @@ module.exports = {
         depth: 25,
       },
     ],
+    'no-shadow': 'off',
   },
 };

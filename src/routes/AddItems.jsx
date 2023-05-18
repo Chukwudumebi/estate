@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { BsArrowLeftCircle } from 'react-icons/bs';
-import UploadImage from '../components/ImageUpload';
+import UploadImage from '../components/Inputs/ImageUpload';
 import RegionFilter from '../components/Filters/Region';
 import CategoryFilter from '../components/Filters/Category';
 import { useItems } from '../context/ItemsContext';

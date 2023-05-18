@@ -1,44 +1,38 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { BsArrowLeftCircle } from 'react-icons/bs';
-import ImageUpload from '../ImageUpload';
+import ImageUpload from '../Inputs/ImageUpload';
+import TextField from '../Inputs/TextField';
+import RadioGroup from '../Inputs/RadioGroup';
+import Checkbox from '../Inputs/Checkbox';
 import { useStores } from '../../context/storeContext';
 import CategoryFilter from '../Filters/Category';
 
 export default function CreateStore() {
-  const [storename, setStoreName] = useState('');
-  const [category, setCategory] = useState('');
-  const [policy, setPolicy] = useState('');
-  const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
-  const [address, setAddress] = useState('');
-  const [fileList, setFileList] = useState([]);
-  const [isPhysicallyLocated, setisPhysicallyLocated] = useState(false);
-  const [agreement, setAgreement] = useState(false);
   const formRef = useRef(null);
-
   const navigate = useNavigate();
   const [images, setImages] = useState([]);
   const { dispatch } = useStores();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(formRef.current);
     const prevImages = images.map((image) => URL.createObjectURL(image));
     const data = Object.fromEntries(formData.entries());
     const store = {
-      id: Math.floor(Math.random() * 1000),
-      storename: data.storename,
+      id: Math.random().toString(36).substring(2, 9),
+      name: data.storename,
       category: data.category,
       isPhysicallyLocated: data.location,
       agreement: data.agreement,
       email: data.email,
       phone: data.phone,
-      logo: prevImages,
+      images: prevImages,
       address: data.address,
       items: [],
     };
     dispatch({ type: 'CREATE_STORE', payload: store });
-    navigate('/store');
+    navigate(`/store/${store.id}`);
   };
   return (
     <div className="min-h-screen w-screen overflow-x-hidden overflow-y-scroll p-4 pt-24 pb-20">
@@ -50,80 +44,36 @@ export default function CreateStore() {
           autoComplete="off"
         >
           <h2 className="font-bold text-sky-500 ">Store Details</h2>
-
-          <div>
-            <label className="text-sm outline-none ring-0" htmlFor="storename">
-              Store Name
-            </label>
-            <input
-              name="storename"
-              className="h-10 w-full rounded bg-slate-100 px-2"
-              id="price"
-              type="text"
-              placeholder="Enter Store Name"
-              required
-            />
-          </div>
+          <TextField label="Store Name" name="storename" placeholder="Enter Store Name" />
           <CategoryFilter />
           <ImageUpload name="Store Logo" onChange={setImages} />
           <div>
             <span className="font-semibold text-sky-500">Physically Located?</span>
-
-            <div className="flex items-center gap-2">
-              <input name="location" id="location" type="radio" />
-              Yes
-              <input name="location" id="location" type="radio" />
-              No
-            </div>
+            <RadioGroup
+              items={[
+                { value: true, label: 'Yes' },
+                { label: 'No', value: false },
+              ]}
+              name="location"
+              label="physically located?"
+            />
           </div>
 
           <h2 className="font-bold text-sky-500 ">Customer Contact Information</h2>
-
-          <div>
-            <label className="text-sm outline-none ring-0" htmlFor="price">
-              Email
-            </label>
-            <input
-              name="email"
-              className="h-10 w-full rounded bg-slate-100 px-2"
-              id="email"
-              type="text"
-              placeholder="Enter Email"
-              required
-            />
-          </div>
-          <div>
-            <label className="text-sm outline-none ring-0" htmlFor="contact">
-              Contact
-            </label>
-            <input
-              name="phone"
-              className="h-10 w-full rounded bg-slate-100 px-2"
-              id="phone"
-              type="text"
-              placeholder="Enter Contact"
-              required
-            />
-          </div>
+          <TextField name="email" placeholder="Enter Email" type="email" label="Email" />
+          <TextField name="phone" placeholder="Enter Contact" type="text" label="Contact" />
           <div>
             <label className="text-sm outline-none ring-0" htmlFor="description">
               Address
             </label>
             <textarea name="address" id="address" rows={2} className="w-full rounded bg-slate-100 p-2" />
           </div>
-          <div className=" flex items-center gap-2">
-            <input
-              name="agreement"
-              id="storename"
-              type="checkbox"
-              // value={isPhysicallyLocated}
-              // checked={false}
-              // onClick={() => setAgreement((prev) => !prev)}
-            />
+
+          <Checkbox name="agreement" required label="I agree not to misuse this site for illegal activities">
             <p className="text-sm font-semibold text-sky-600">
               I agree not to misuse this site for illegal activities.
             </p>
-          </div>
+          </Checkbox>
 
           <div className="flex flex-row gap-3 py-4 text-sm">
             <Link

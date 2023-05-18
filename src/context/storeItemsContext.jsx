@@ -1,10 +1,7 @@
 import { createContext, useReducer, useContext, useMemo } from 'react';
-import data from '../data/storeitems.json';
+import PropTypes from 'prop-types';
 
-const initialState = data.map((items) => ({
-  ...items,
-  selected: false,
-}));
+const initialState = [];
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -20,7 +17,7 @@ const reducer = (state, action) => {
     case 'EDIT_ITEM':
       return state.reduce((acc, item) => {
         if (item.id === action.payload.id) {
-          return [...acc, action.payload];
+          return [...acc, { ...item, ...action.payload }];
         }
         return [...acc, item];
       }, []);
@@ -33,17 +30,20 @@ const reducer = (state, action) => {
 
 const StoreItemsContext = createContext();
 function StoreItemsProvider({ children }) {
-  const [StoreItems, dispatch] = useReducer(reducer, initialState);
-
-  const value = useMemo(() => ({ StoreItems, dispatch }), [StoreItems, dispatch]);
+  const [storeItems, dispatch] = useReducer(reducer, initialState);
+  const value = useMemo(() => ({ storeItems, dispatch }), [storeItems, dispatch]);
 
   return <StoreItemsContext.Provider value={value}>{children}</StoreItemsContext.Provider>;
 }
 
+StoreItemsProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 function useStoreItems() {
   const context = useContext(StoreItemsContext);
   if (context === undefined) {
-    throw new Error('useStoreItems must be used within a Item Provider');
+    throw new Error('useItems must be used within a Item Provider');
   }
   return context;
 }

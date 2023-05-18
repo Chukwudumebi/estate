@@ -1,10 +1,7 @@
 import { FaCopy } from 'react-icons/fa';
-import { useContext } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Search from './search';
 import CurrencySelect from './CurrencySelect';
-
-import { StoresContext } from '../../context/storeContext';
 
 function User() {
   const user = {

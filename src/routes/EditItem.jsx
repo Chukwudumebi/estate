@@ -1,8 +1,7 @@
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import React, { useState, useRef } from 'react';
-import ImageUpload from '../components/ImageUpload';
-import {useItems } from '../context/ItemsContext';
-
+import ImageUpload from '../components/Inputs/ImageUpload';
+import { useItems } from '../context/ItemsContext';
 
 function EditItems() {
   const formRef = useRef(null);
