@@ -54,13 +54,13 @@ export default function AddStoreItems() {
             <textarea name="description" id="description" rows={4} className="w-full rounded bg-slate-100 p-2" />
           </div>
           <TextField label="Price" name="price" placeholder="$" type="number" />
-          <TextField label="Shipping Cost" name="shipping" placeholder="$" type="number" />
-          <TextField label="Quantity" name="quantity" placeholder="Enter Quantity" type="number" />
-          <TextField label="Profit Margin" name="margin" placeholder="%" type="number" />
-          <TextField label="Discount" name="discount" placeholder="%" type="number" />
+          {/* <TextField label="Shipping Cost" name="shipping" placeholder="$" type="number" /> */}
+          {/* <TextField label="Quantity" name="quantity" placeholder="Enter Quantity" type="number" /> */}
+          {/* <TextField label="Profit Margin" name="margin" placeholder="%" type="number" /> */}
+          {/* <TextField label="Discount" name="discount" placeholder="%" type="number" /> */}
           <RegionFilter />
           <CategoryFilter />
-          <div>
+          {/* <div>
             <span className="pb-2 text-sm">New or Refurbished?</span>
             <RadioGroup
               items={[
@@ -70,7 +70,7 @@ export default function AddStoreItems() {
               name="type"
               label="New or Refurbished?"
             />
-          </div>
+          </div> */}
 
           <div className="grid grid-flow-row gap-2 text-sm ">
             <UploadImage name="images" onChange={setImages} />
@@ -88,7 +88,7 @@ export default function AddStoreItems() {
               type="submit"
               className="flex-initial rounded-md border border-transparent bg-sky-600 px-3 py-2 text-white hover:border-neutral-700 hover:bg-white hover:text-neutral-700"
             >
-              Add Item
+              Add Property
             </button>
           </div>
         </form>

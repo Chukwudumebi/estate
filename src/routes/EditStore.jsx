@@ -88,7 +88,7 @@ function EditStore() {
               type="submit"
               className="flex-initial rounded-md border border-transparent bg-sky-600 px-3 py-2 text-white hover:border-neutral-700 hover:bg-white hover:text-neutral-700"
             >
-              Edit Store
+              Edit Property
             </button>
           </div>
         </form>

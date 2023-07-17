@@ -41,7 +41,7 @@ function StoreAction({ storeId }) {
             <FaEdit className="text-sky-700 group-hover:text-neutral-100" />
           </Action>
           <Action
-            tooltip="Add item"
+            tooltip="Add Property"
             onClick={() => {
               navigate(`/store/${store.id}/add-item`);
             }}
@@ -57,7 +57,7 @@ function StoreAction({ storeId }) {
           >
             <FaRegEdit className="text-sky-700 group-hover:text-neutral-100" />
           </Action>
-          <Action tooltip="Remove Items" isDisabled={selectedItems.length < 1} onClick={handleDelete}>
+          <Action tooltip="Remove properties" isDisabled={selectedItems.length < 1} onClick={handleDelete}>
             <FaMinus className="text-sky-700 group-hover:text-neutral-100" />
           </Action>
           <Action tooltip="Add to Mailing List" isDisabled>
