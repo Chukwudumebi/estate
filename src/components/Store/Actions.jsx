@@ -33,7 +33,7 @@ function StoreAction({ storeId }) {
       <div className="justify-self-end">
         <div className="flex items-center space-x-3">
           <Action
-            tooltip="Edit Store"
+            tooltip="Edit Listing"
             onClick={() => {
               navigate(`/edit-store/${store.id}`);
             }}
@@ -49,7 +49,7 @@ function StoreAction({ storeId }) {
             <FaPlus className="text-sky-700 group-hover:text-neutral-100" />
           </Action>
           <Action
-            tooltip="Edit Item"
+            tooltip="Edit Property"
             isDisabled={selectedItems.length !== 1}
             onClick={() => {
               navigate(`/store/${store.id}/edit-item/${selectedItems[0]?.id}`);
