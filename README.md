@@ -1,8 +1,8 @@
-# SQE Digital Wallet App
+# SQE Real Estate App
 
 ## About
 
-The repository for SQE Asset Marketplace application
+The repository for SQE Real Estate application
 
 ## Technologies
 
@@ -24,22 +24,22 @@ Make sure you have the following installed on your local machine before getting 
 
 ### steps
 
-1. clone the repository
+1. Clone repository
 
 - using ssh
 
   ```sh
-  git clone git@github.com:htpgithub/SQE-Digital_Wallet.git
+  git clone git@github.com:htpgithub/SQE_realstate_webapp.git
   ```
 
 - or using https
   ```sh
-    git clone https://github.com/htpgithub/SQE-Digital_Wallet.git
+    git clone https://github.com/htpgithub/SQE_realstate_webapp.git
   ```
 
 2. cd into project directory
    ```sh
-    cd SQE-Digital_Wallet
+    cd SQE_realstate_webapp
    ```
 3. install dependencies
    ```sh
@@ -47,12 +47,6 @@ Make sure you have the following installed on your local machine before getting 
    ```
 4. start application developement server
    ```sh
-    npm run dev
+    npm start
    ```
 5. open your browser and navigate to [http://localhost:5173](http://localhost:5173)
-
-## Deployment on Vercel
-
-1. Ensure you have a vercel account. If not, sign up for one [here](https://vercel.com/).
-
-2. import the project from github and deploy
