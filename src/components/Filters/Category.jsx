@@ -5,8 +5,6 @@ const options = [
   { label: 'Family Home', value: 'family home' },
   { label: 'Resort Villas', value: 'resort villas' },
   { label: 'Office Building', value: 'office building' },
-  { label: 'Recreational', value: 'recreational' },
-  { label: 'Automotives', value: 'automotives' },
 ];
 
 function Category() {

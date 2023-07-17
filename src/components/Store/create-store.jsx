@@ -43,8 +43,8 @@ export default function CreateStore() {
           onSubmit={handleSubmit}
           autoComplete="off"
         >
-          <h2 className="font-bold text-sky-500 ">List Details</h2>
-          <TextField label="Store Name" name="storename" placeholder="Enter Store Name" />
+          <h2 className="font-bold text-sky-500 ">Property Profile</h2>
+          <TextField label="Property name" name="storename" placeholder="Enter Property Name" />
           <CategoryFilter />
           <ImageUpload name="Store Logo" onChange={setImages} />
           {/* <div>
@@ -87,7 +87,7 @@ export default function CreateStore() {
               type="submit"
               className="flex-initial rounded-md border border-transparent bg-sky-600 px-3 py-2 text-white hover:border-neutral-700 hover:bg-white hover:text-neutral-700"
             >
-              Create Store
+              Create Profile
             </button>
           </div>
         </form>
