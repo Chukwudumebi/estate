@@ -44,7 +44,7 @@ function Actions() {
             <FaPlus className="text-sky-700 group-hover:text-neutral-100" />
           </Action>
           <Action
-            tooltip="Edit item"
+            tooltip="Edit Property"
             isDisabled={selectedItems?.length !== 1}
             onClick={() => {
               navigate(`edit-item/${selectedItems[0]?.id}`);
@@ -52,7 +52,7 @@ function Actions() {
           >
             <FaRegEdit className="text-sky-700 group-hover:text-neutral-100" />
           </Action>
-          <Action tooltip="Remove Item" isDisabled={selectedItems.length < 1} onClick={handleDelete}>
+          <Action tooltip="Remove Property" isDisabled={selectedItems.length < 1} onClick={handleDelete}>
             <FaMinus className="text-sky-700 group-hover:text-neutral-100" />
           </Action>
 
@@ -61,7 +61,7 @@ function Actions() {
           </Action>
           <Action
             isDisabled={stores.length !== 1}
-            tooltip="View Store"
+            tooltip="View Property"
             onClick={() => {
               navigate(`store/${stores[0]?.id}`);
             }}
