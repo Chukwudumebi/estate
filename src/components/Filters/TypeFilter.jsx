@@ -11,7 +11,7 @@ function TypeFilter() {
       <label htmlFor="categories" className="text-sm">
         Type
       </label>
-      <Select placeholder="Item type..." options={options} />
+      <Select placeholder="Item property..." options={options} />
     </div>
   );
 }

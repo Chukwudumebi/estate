@@ -57,7 +57,7 @@ export default function AddItems() {
               required
             />
           </div>
-          <div className="mb-4">
+          {/* <div className="mb-4">
             <label className="mb-2 block text-sm font-bold text-gray-500" htmlFor="price">
               Shipping Cost
             </label>
@@ -69,7 +69,7 @@ export default function AddItems() {
               placeholder="Shipping Cost-USD"
               required
             />
-          </div>
+          </div> */}
           <RegionFilter />
           <CategoryFilter />
 
@@ -89,7 +89,7 @@ export default function AddItems() {
               type="submit"
               className="flex-initial rounded-md border border-transparent bg-sky-600 px-3 py-2 text-white hover:border-neutral-700 hover:bg-white hover:text-neutral-700"
             >
-              Add Item
+              Add Property
             </button>
           </div>
         </form>
