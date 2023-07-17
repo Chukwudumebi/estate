@@ -1,10 +1,10 @@
 import Select from './Select';
 
 const options = [
-  { label: 'Goods', value: 'goods' },
-  { label: 'Services', value: 'services' },
-  { label: 'Construction', value: 'construction' },
-  { label: 'Electronics', value: 'electronics' },
+  { label: 'Apartment for rent', value: 'apartment for rent' },
+  { label: 'Family Home', value: 'family home' },
+  { label: 'Resort Villas', value: 'resort villas' },
+  { label: 'Office Building', value: 'office building' },
   { label: 'Recreational', value: 'recreational' },
   { label: 'Automotives', value: 'automotives' },
 ];

@@ -84,21 +84,21 @@ function Item({ id }) {
             to={`buy/${id}`}
             className="h-fit w-max cursor-pointer rounded border border-transparent bg-sky-600 px-1 py-1 text-xs text-white hover:border-sky-500 hover:bg-white hover:text-sky-600"
           >
-            Buy
+            Buy 
           </Link>
 
           <Link
             to={`buy/${id}`}
             className="h-fit w-max cursor-pointer rounded border border-transparent bg-sky-600 px-1 py-1 text-xs text-white hover:border-sky-500 hover:bg-white hover:text-sky-600"
           >
-            Make offer
+            Rent
           </Link>
 
           <Link
             to={`buy/${id}`}
             className="h-fit w-max cursor-pointer rounded border border-transparent bg-sky-600 px-1 py-1 text-xs text-white hover:border-sky-500 hover:bg-white hover:text-sky-600"
           >
-            contact seller
+            Contact Agent
           </Link>
         </div>
       </div>

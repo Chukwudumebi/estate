@@ -43,11 +43,11 @@ export default function CreateStore() {
           onSubmit={handleSubmit}
           autoComplete="off"
         >
-          <h2 className="font-bold text-sky-500 ">Store Details</h2>
+          <h2 className="font-bold text-sky-500 ">List Details</h2>
           <TextField label="Store Name" name="storename" placeholder="Enter Store Name" />
           <CategoryFilter />
           <ImageUpload name="Store Logo" onChange={setImages} />
-          <div>
+          {/* <div>
             <span className="font-semibold text-sky-500">Physically Located?</span>
             <RadioGroup
               items={[
@@ -57,7 +57,7 @@ export default function CreateStore() {
               name="location"
               label="physically located?"
             />
-          </div>
+          </div> */}
 
           <h2 className="font-bold text-sky-500 ">Customer Contact Information</h2>
           <TextField name="email" placeholder="Enter Email" type="email" label="Email" />

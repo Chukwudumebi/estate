@@ -9,7 +9,7 @@ export default function SearchBar() {
 
       <input
         type="text"
-        placeholder="Search Items..."
+        placeholder="Search properties..."
         className="text-grotesk w-md peer h-10 rounded-l-md border border-neutral-400 bg-slate-50 p-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-0"
         id="search"
       />

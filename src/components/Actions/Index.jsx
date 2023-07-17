@@ -27,7 +27,7 @@ function Actions() {
         <div className="flex items-center space-x-3">
           <Filters />
           <Action
-            tooltip="create store"
+            tooltip="List property"
             isDisabled={stores.length > 0}
             onClick={() => {
               navigate('/create-store');
@@ -36,7 +36,7 @@ function Actions() {
             <MdOutlineStoreMallDirectory className="text-sky-700 group-hover:text-neutral-100" />
           </Action>
           <Action
-            tooltip="Add item"
+            tooltip="Add Property"
             onClick={() => {
               navigate('/add-item');
             }}
