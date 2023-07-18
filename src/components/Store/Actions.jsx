@@ -60,9 +60,9 @@ function StoreAction({ storeId }) {
           <Action tooltip="Remove properties" isDisabled={selectedItems.length < 1} onClick={handleDelete}>
             <FaMinus className="text-sky-700 group-hover:text-neutral-100" />
           </Action>
-          <Action tooltip="Add to Mailing List" isDisabled>
+          {/* <Action tooltip="Add to Mailing List" isDisabled>
             <RiMailAddLine className="text-sky-700 group-hover:text-neutral-100" />
-          </Action>
+          </Action> */}
           <Action
             tooltip="Home"
             onClick={() => {

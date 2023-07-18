@@ -46,31 +46,31 @@ function EditStoreItems() {
             initialValue={item.price}
             onChange={(val) => setItem({ ...item, price: parseFloat(val) })}
           />
-          <TextField
+          {/* <TextField
             label="Shipping Cost"
             name="shipping_cost"
             placeholder="$"
             type="number"
             initialValue={item.shipping_cost}
             onChange={(val) => setItem({ ...item, shipping_cost: parseFloat(val) })}
-          />
+          /> */}
 
-          <TextField
+          {/* <TextField
             label="Quantity"
             name="quantity"
             placeholder="Enter Quantity"
             type="number"
             initialValue={item.quantity}
             onChange={(val) => setItem({ ...item, quantity: parseInt(val, 10) })}
-          />
-          <TextField
+          /> */}
+          {/* <TextField
             label="Profit Margin"
             name="margin"
             placeholder="%"
             type="number"
             initialValue={item.margin}
             onChange={(val) => setItem({ ...item, margin: parseFloat(val) })}
-          />
+          /> */}
           <TextField
             label="Discount"
             name="discount"
@@ -79,7 +79,7 @@ function EditStoreItems() {
             initialValue={item.discount}
             onChange={(val) => setItem({ ...item, discount: parseFloat(val) })}
           />
-          <div>
+          {/* <div>
             <span className="pb-2 text-sm">New or Refurbished?</span>
             <RadioGroup
               items={[
@@ -91,7 +91,7 @@ function EditStoreItems() {
               label="New or Refurbished?"
               onChange={(val) => setItem({ ...item, type: val })}
             />
-          </div>
+          </div> */}
           <div className="grid grid-flow-row gap-2 text-sm">
             <ImageUpload name="images" onChange={setImages} images={item.images} />
           </div>
