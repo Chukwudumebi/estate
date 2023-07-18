@@ -23,7 +23,7 @@ export default function CreateStore() {
       id: Math.random().toString(36).substring(2, 9),
       name: data.storename,
       category: data.category,
-      isPhysicallyLocated: data.location,
+      // isPhysicallyLocated: data.location,
       agreement: data.agreement,
       email: data.email,
       phone: data.phone,
