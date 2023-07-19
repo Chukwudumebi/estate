@@ -71,11 +71,11 @@ function Item({ id }) {
       </div>
       <div className="grid grid-cols-1fr-auto content-center gap-4">
         <div className="flex flex-col">
-          <span className="font-semibold">{price}</span>
-          <span>shipping: {shippingCost}</span>
+          {/* <span className="font-semibold">{price}</span> */}
+          {/* <span>shipping: {shippingCost}</span> */}
           <div className="flex flex-row items-end gap-1">
-            <span>{shortId.toUpperCase()}</span>
-            <Itemsearch />
+            {/* <span>{shortId.toUpperCase()}</span> */}
+            {/* <Itemsearch /> */}
           </div>
         </div>
 

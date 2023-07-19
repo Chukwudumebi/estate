@@ -74,7 +74,7 @@ function EditStore() {
           </div>
 
           <div className="grid grid-flow-row gap-2 text-sm">
-            <ImageUpload name="Store logo" onChange={setImages} images={store.images} />
+            <ImageUpload name="Property logo" onChange={setImages} images={store.images} />
           </div>
           <div className="flex flex-row gap-3 py-4 text-sm">
             <Link

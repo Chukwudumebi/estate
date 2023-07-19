@@ -46,7 +46,7 @@ export default function CreateStore() {
           <h2 className="font-bold text-sky-500 ">Property Profile</h2>
           <TextField label="Property name" name="storename" placeholder="Enter Property Name" />
           <CategoryFilter />
-          <ImageUpload name="Store Logo" onChange={setImages} />
+          <ImageUpload name="Property Logo" onChange={setImages} />
           {/* <div>
             <span className="font-semibold text-sky-500">Physically Located?</span>
             <RadioGroup
