@@ -1,44 +1,44 @@
 [
   {
     "id": 3,
-    "name": "Resort Villas",
+    "name": "76 Kingsberry, Dr Anderson",
     "images": [
       "https://media.istockphoto.com/id/908964390/photo/oleander-flowers-and-villa-monastero-in-background-lake-como-varenna.jpg?s=1024x1024&w=is&k=20&c=obEDcsbxtkzTxg96sZYg3sdcPoDJYF4DS5dNDRkWZzI="
     ],
     "description": "Experience unparalleled luxury and relaxation in this exquisite resort villa, boasting stunning design, world-class amenities, and a prime location for an unforgettable tropical getaway.",
     "price": 2000,
-    "shipping_cost": 100,
-    "user": {
-      "id": "58bb11b98d1af1a3ea02eedf2796b3073df7a0bf0aa4ea1f7f31d9c8ac496d359a829f23a67f91431d1f6b1daa19424917f8c5e80952fc439f3f345dccfec668a6e4dc5d4cdd4fb2ef676c5e1af7e107d8bc0ec1614ba945f5b9cbad0b67077bc199abf7d8fdb6de9e863d585cf76458c69ddad87c707c31f775d68418a8da79",
-      "rating": 3
-    }
+    "location": " Rochester, NY 14626",
+    "bed": 50,
+    "bathtub": 45,
+    "dimension": 217
+  
   },
   {
     "id": 2,
-    "name": "Appartment",
+    "name": "45 Lianne Dr, Greece Street",
     "images": [
       "https://media.istockphoto.com/id/1165384568/photo/europe-modern-complex-of-residential-buildings.jpg?s=1024x1024&w=is&k=20&c=1golptGIidGvd8qhQ7FvKAT2lFl7hIu8KGCJzBT_H8o="
     ],
     "description": "Apartment for rent, experience modern living in this elegantly designed apartment, featuring top-notch amenities and a prime location for the ultimate urban lifestyle.",
     "price": 2000,
-    "shipping_cost": 100,
-    "user": {
-      "id": "58bb11b98d1af1a3ea02eedf2796b3073df7a0bf0aa4ea1f7f31d9c8ac496d359a829f23a67f91431d1f6b1daa19424917f8c5e80952fc439f3f345dccfec668a6e4dc5d4cdd4fb2ef676c5e1af7e107d8bc0ec1614ba945f5b9cbad0b67077bc199abf7d8fdb6de9e863d585cf76458c69ddad87c707c31f775d68418a8da79",
-      "rating": 3
-    }
+    "location": " Tasley, VA 23441",
+    "bed": 20,
+    "bathtub": 17,
+    "dimension": 211
+    
   },
   {
     "id": 1,
-    "name": "Office building",
+    "name": "339 N Oakhurst Dr Apt 303",
     "images": [
       "https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     ],
     "description": "Experience a professional and sophisticated work environment in this state-of-the-art office building, featuring cutting-edge technology, premium amenities, and a prime location for unparalleled business success.",
     "price": 1000,
-    "shipping_cost": 100,
-    "user": {
-      "id": "9a829f23a67f91431d1f6b1daa19424917f8c5e80952fc439f3f345dccfec668a6e4dc5d4cdd4fb2ef676c5e1af7e107d8bc0ec1614ba945f5b9cbad0b67077bc199abf76458c69ddad87c707c31f775d68418a8da797d8fdb6de9e863d558bb11b98d1af1a3ea02eedf2796b3073df7a0bf0aa4ea1f7f31d9c8ac496d3585cf",
-      "rating": 4
-    }
+    "location": "Las Vegas",
+    "bed": 30,
+    "bathtub": 16,
+    "dimension": 212
+    
   }
 ]
