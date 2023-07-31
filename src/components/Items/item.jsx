@@ -169,7 +169,7 @@ function Item({ id }) {
  }
   return (
     <div className="flex w-full flex-col gap-4 border-2 border-b-slate-200">
-      <div className="relative flex w-full justify-center md:mb-10">
+      <div className="relative flex w-full justify-center sm:mb-10 md:mb-10">
         <ImageDialog images={images} />
       </div>
       <div className="mx-5 md:mt-20">
