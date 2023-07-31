@@ -8,7 +8,7 @@ function Items() {
 
   return (
     <ScrollArea.Root
-      className="max-h-3xl lg:max-h-xl mx-auto mt-20 h-full w-full  max-w-5xl overflow-hidden rounded-lg bg-slate-200"
+      className="max-h-3xl lg:max-h-xl mx-auto mt-20 h-full w-full  max-w-6xl overflow-hidden rounded-lg bg-slate-200"
       type="auto"
     >
       <ScrollArea.Viewport className="flex h-full w-full flex-col">
