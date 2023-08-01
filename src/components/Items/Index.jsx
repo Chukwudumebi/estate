@@ -16,12 +16,12 @@ function Items() {
         <div className="mb-8 flex flex-col items-center justify-center  space-y-8">
           <div className="text-3xl text-gray-700">Latest Properties</div>
           <div className="flex flex-row items-center space-x-3 text-xs text-[#696969] ">
-            <p className="hover:text-gray-700 hover:underline hover:decoration-blue-500">APARTMENT</p>
-            <p className="hover:text-gray-700 hover:underline hover:decoration-blue-500">FAMILY HOME</p>
-            <p className="hover:text-gray-700 hover:underline hover:decoration-blue-500">TOWNHOUSE</p>
-            <p className="hover:text-gray-700 hover:underline hover:decoration-blue-500">HOTEL</p>
-            <p className="hover:text-gray-700 hover:underline hover:decoration-blue-500">RESORT VILLAS</p>
-            <p className="hover:text-gray-700 hover:underline hover:decoration-blue-500">OFFICE BUILDING</p>
+            <p className="hover:text-gray-700 hover:underline hover:decoration-blue-500 cursor-pointer">APARTMENT</p>
+            <p className="hover:text-gray-700 hover:underline hover:decoration-blue-500 cursor-pointer">FAMILY HOME</p>
+            <p className="hover:text-gray-700 hover:underline hover:decoration-blue-500 cursor-pointer">TOWNHOUSE</p>
+            <p className="hover:text-gray-700 hover:underline hover:decoration-blue-500 cursor-pointer">HOTEL</p>
+            <p className="hover:text-gray-700 hover:underline hover:decoration-blue-500 cursor-pointer">RESORT VILLAS</p>
+            <p className="hover:text-gray-700 hover:underline hover:decoration-blue-500 cursor-pointer">OFFICE BUILDING</p>
           </div>
         </div>
         <div className="relative flex flex-wrap justify-center gap-4 font-grotesk text-sm">
