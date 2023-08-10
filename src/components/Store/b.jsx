@@ -57,7 +57,6 @@ function PropertyForm() {
         </div>
       </div>
 
-      {/* ... similar changes for other form fields ... */}
 
       <button type="submit" className="px-4 py-2 bg-green-500 text-white rounded">
         Submit
