@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { useStores } from '../../context/storeContext';
 import { useStoreItems } from '../../context/storeItemsContext';
 import Action from '../Actions/Action';
+import One from '../Actions/One';
 
 function StoreAction({ storeId }) {
   const navigate = useNavigate();
@@ -40,6 +41,14 @@ function StoreAction({ storeId }) {
           >
             <FaEdit className="text-sky-700 group-hover:text-neutral-100" />
           </Action>
+          <One
+            tooltip="Edit Listing"
+            onClick={() => {
+              navigate(`/edit-store/${store.id}`);
+            }}
+          >
+            <FaEdit className="text-sky-700 group-hover:text-neutral-100" />
+          </One>
           <Action
             tooltip="Add Property"
             onClick={() => {

@@ -21,13 +21,13 @@ function Actions() {
     });
   };
   return (
-    <div className="sticky top-0 z-10 grid w-full grid-cols-auto-1fr items-center gap-2 border-b border-neutral-100 bg-white px-4 py-2">
+    <div className="sticky top-0 z-10 grid w-full grid-cols-auto-1fr items-center gap-2 border-b border-neutral-100 bg-transparent px-4 py-2">
       <SearchBar />
       <div className="justify-self-end">
         <div className="flex items-center space-x-3">
           <Filters />
           <Action
-            tooltip="List property"
+            tooltip="Create Listing"
             isDisabled={stores.length > 0}
             onClick={() => {
               navigate('/create-store');

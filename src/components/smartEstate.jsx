@@ -7,7 +7,7 @@ function SmartEstate() {
             <div className="container mx-auto flex flex-col space-y-12 px-4 md:flex-row md:space-y-0">
               {/* who we are  */}
               <div className="mt-10 flex flex-col space-y-6 md:mb-10 md:w-1/2">
-                <div className="max-w-md text-center text-4xl font-bold text-white md:text-left">
+                <div className="max-w-md text-center text-4xl text-white md:text-left">
                   SMART REAL ESTATE CONTRACTS WITH A PUSH BUTTON
                   <p className="mt-4 max-w-sm text-center text-sm text-sky-700 md:text-left">
                     SMARTER, SECURE & FASTER

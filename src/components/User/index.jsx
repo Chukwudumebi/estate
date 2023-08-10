@@ -31,6 +31,7 @@ import bgImage from '../../assets/bg2.png';
 // export default User;
 
 function User() {
+
   return (
     <div>
       {/* Hero Section */}

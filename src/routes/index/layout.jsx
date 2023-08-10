@@ -1,11 +1,12 @@
 import { Outlet } from 'react-router-dom';
-// import User from '../../components/User';
+import User from '../../components/User';
+
 
 function IndexPage() {
   return (
     <div>
       <div className="flex flex-col">
-        {/* <User /> */}
+        <User />
         <Outlet />
       </div>
     </div>

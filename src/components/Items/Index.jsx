@@ -47,7 +47,7 @@ function Items() {
         <ScrollArea.Thumb className="relative flex-1 rounded-[10px] bg-gray-500 before:absolute before:left-1/2 before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-['']" />
       </ScrollArea.Scrollbar>
       <ScrollArea.Corner />
-    </ScrollArea.Root>
+    </ScrollArea.Root> 
   );
 }
 

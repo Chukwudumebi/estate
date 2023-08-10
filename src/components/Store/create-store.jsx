@@ -7,6 +7,8 @@ import RadioGroup from '../Inputs/RadioGroup';
 import Checkbox from '../Inputs/Checkbox';
 import { useStores } from '../../context/storeContext';
 import CategoryFilter from '../Filters/Category';
+import SaleType from '../Filters/SaleType';
+import TypeSale from '../Filters/TypeSale';
 
 export default function CreateStore() {
   const formRef = useRef(null);
@@ -43,9 +45,11 @@ export default function CreateStore() {
           onSubmit={handleSubmit}
           autoComplete="off"
         >
-          <h2 className="font-bold text-sky-500 ">Property Profile</h2>
-          <TextField label="Property name" name="storename" placeholder="Enter Property Name" />
+          <h2 className="font-bold text-sky-500 ">Property Owner</h2>
+          <TextField label="Owner's name" name="storename" placeholder="Enter Owner's name" />
           <CategoryFilter />
+          {/* <SaleType /> */}
+          <TypeSale />
           <ImageUpload name="Property Logo" onChange={setImages} />
           {/* <div>
             <span className="font-semibold text-sky-500">Physically Located?</span>
@@ -87,7 +91,7 @@ export default function CreateStore() {
               type="submit"
               className="flex-initial rounded-md border border-transparent bg-sky-600 px-3 py-2 text-white hover:border-neutral-700 hover:bg-white hover:text-neutral-700"
             >
-              Create Profile
+              Create Listing
             </button>
           </div>
         </form>

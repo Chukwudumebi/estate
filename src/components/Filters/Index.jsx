@@ -5,6 +5,7 @@ import CategoryFilter from './Category';
 import PriceFilter from './Price';
 import RegionFilter from './Region';
 import TypeFilter from './TypeFilter';
+import SaleType from './SaleType';
 
 function Filters() {
   return (
@@ -32,6 +33,7 @@ function Filters() {
             <TypeFilter />
             <RegionFilter />
             <PriceFilter />
+            <SaleType />
           </div>
 
           <Popover.Arrow className="PopoverArrow" />

@@ -1,10 +1,12 @@
 import Select from './Select';
 
 const options = [
-  { label: 'Apartment for rent', value: 'apartment for rent' },
-  { label: 'Family Home', value: 'family home' },
-  { label: 'Resort Villas', value: 'resort villas' },
-  { label: 'Office Building', value: 'office building' },
+  { label: 'Apartment', value: 'apartment' },
+  { label: 'Family Home', value: 'familyHome' },
+  { label: 'Townhouse', value: 'townHouse' },
+  { label: 'Hotel', value: 'hotel' },
+  { label: 'Resort Villas', value: 'resortVillas' },
+  { label: 'Office Building', value: 'officeBuilding' },
 ];
 
 function Category() {

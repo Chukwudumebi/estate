@@ -55,7 +55,7 @@
 
 #smart {
   position: relative;
-  background-image: url('/bg3.png');
+  background-image: url('./assets/bg3.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
