@@ -30,21 +30,20 @@ const ageOptions = [
   { label: 'Months', value: 'months' },
 ];
 
-function SaleType() {
-  const [saleType, setSaleType] = useState('total');
-  const [subdivisions, setSubdivisions] = useState(subdivisionOptions[0]);
-  const [selectValue, setSelectValue] = useState(subdivisionOptions[0]);
-  const [ownership, setOwnership] = useState(ownershipOptions[0]);
-  const [rent, setRent] = useState(0);
-  const [rentPeriod, setRentPeriod] = useState(rentOptions[0]);
-  const [taxes, setTaxes] = useState(0);
-  const [taxesPeriod, setTaxesPeriod] = useState(taxesOptions[0]);
-  const [age, setAge] = useState(0);
-  const [agePeriod, setAgePeriod] = useState(rentOptions[0]);
-  const [tenants, setTenants] = useState([]);
-  const [price, setPrice] = useState(0);
-  const [images, setImages] = useState([]);
-
+  function SaleType() {
+    const [saleType, setSaleType] = useState('total');
+    const [subdivisions, setSubdivisions] = useState(subdivisionOptions[0]);
+    const [selectValue, setSelectValue] = useState(subdivisionOptions[0]);
+    const [ownership, setOwnership] = useState(ownershipOptions[0]);
+    const [rent, setRent] = useState(0);
+    const [rentPeriod, setRentPeriod] = useState(rentOptions[0]);
+    const [taxes, setTaxes] = useState(0);
+    const [taxesPeriod, setTaxesPeriod] = useState(taxesOptions[0]);
+    const [age, setAge] = useState(0);
+    const [agePeriod, setAgePeriod] = useState(ageOptions[0]);
+    const [tenants, setTenants] = useState([]);
+    const [price, setPrice] = useState(0);
+    const [images, setImages] = useState([]);
   useEffect(() => {
     setSelectValue(subdivisions);
   }, [subdivisions]);
@@ -167,37 +166,31 @@ function SaleType() {
         />
         <TextField type="number" id="age" min={0} value={age} placeholder='Enter value for age' onChange={(e) => setAge(e.target.value)} className="w-full" />
       </div>
-      {/* <div>
-        <label className="text-sm font-medium mb-1" htmlFor="tenants">
-          Tenants
-        </label>
-        <input
-          type="text"
-          id="tenants"
-          placeholder="Enter tenant name"
-          className="w-full"
-          // TODO: add your logic to get the input value from the user
-        />
-        <button 
-  type="button" 
-  onClick={handleAddTenant} 
-  className="mt-2 px-4 py-2 bg-blue-600 text-white rounded"
->
-  Add Tenant
-</button>
+      {/* <div> */}
+        {/* <label className="text-sm font-medium mb-1" htmlFor="tenants"> */}
+          {/* Tenants */}
+        {/* </label> */}
+        {/* <input */}
+          {/* // type="text" */}
+          {/* // id="tenants" */}
+          {/* // placeholder="Enter tenant name" */}
+          {/* // className="w-full" */}
+          {/* // TODO: add your logic to get the input value from the user */}
+        {/* // /> */}
+        {/* <button  */}
+  {/*  type="button"  */}
+  {/*  onClick={handleAddTenant}  */}
+  {/*  className="mt-2 px-4 py-2 bg-blue-600 text-white rounded" */}
+{/* > */}
+  {/* Add Tenant */}
+{/* </button> */}
+      {/* <ul className="mt-2 space-y-1"> */}
+  {/* {tenants.map((tenant) => ( */}
+    {/* // <li key={tenant}>{tenant}</li> */}
+  {/* // ))} */}
+{/* </ul> */}
 
-        {/* <ul className="mt-2 space-y-1">
-          {tenants.map((tenant, index) => (
-            <li key={index}>{tenant}</li>
-          ))}
-        </ul> */}
-      {/* <ul className="mt-2 space-y-1">
-  {tenants.map((tenant) => (
-    <li key={tenant}>{tenant}</li>
-  ))}
-</ul>
-
-      </div> */}
+      {/* </div>  */}
     </form>
   );
 }

@@ -14,6 +14,7 @@ export default function CreateStore() {
   const formRef = useRef(null);
   const navigate = useNavigate();
   const [images, setImages] = useState([]);
+  const [saleType, setSaleType] = useState('total');
   const { dispatch } = useStores();
 
   const handleSubmit = (e) => {
@@ -25,13 +26,13 @@ export default function CreateStore() {
       id: Math.random().toString(36).substring(2, 9),
       name: data.storename,
       category: data.category,
-      // isPhysicallyLocated: data.location,
       agreement: data.agreement,
       email: data.email,
       phone: data.phone,
       images: prevImages,
       address: data.address,
       items: [],
+      saleType: data.SaleType,
     };
     dispatch({ type: 'CREATE_STORE', payload: store });
     navigate(`/store/${store.id}`);
@@ -48,21 +49,8 @@ export default function CreateStore() {
           <h2 className="font-bold text-sky-500 ">Property Owner</h2>
           <TextField label="Owner's name" name="storename" placeholder="Enter Owner's name" />
           <CategoryFilter />
-          {/* <SaleType /> */}
-          <TypeSale />
+          <TypeSale saleType={saleType} setSaleType={setSaleType} />
           <ImageUpload name="Property Logo" onChange={setImages} />
-          {/* <div>
-            <span className="font-semibold text-sky-500">Physically Located?</span>
-            <RadioGroup
-              items={[
-                { value: true, label: 'Yes' },
-                { label: 'No', value: false },
-              ]}
-              name="location"
-              label="physically located?"
-            />
-          </div> */}
-
           <h2 className="font-bold text-sky-500 ">Customer Contact Information</h2>
           <TextField name="email" placeholder="Enter Email" type="email" label="Email" />
           <TextField name="phone" placeholder="Enter Contact" type="text" label="Contact" />

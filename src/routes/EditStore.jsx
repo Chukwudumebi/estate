@@ -2,6 +2,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import React, { useState, useRef } from 'react';
 import ImageUpload from '../components/Inputs/ImageUpload';
 import { useStores } from '../context/storeContext';
+import TypeSale from '../components/Filters/TypeSale';
 
 function EditStore() {
   const formRef = useRef(null);
@@ -9,6 +10,7 @@ function EditStore() {
   const { id } = useParams();
   const { stores, dispatch } = useStores();
   const [store, setStore] = useState(() => stores.find((curr) => curr.id === id));
+  const [saleType, setSaleType] = useState(store.saleType || 'total'); 
   if (!store) {
     throw new Error('store  not found');
   }
@@ -19,7 +21,7 @@ function EditStore() {
     e.preventDefault();
     // create a new asset
     const previewImages = images.map((image) => URL.createObjectURL(image));
-    const updatedStore = { ...store, images: previewImages };
+    const updatedStore = { ...store, images: previewImages, saleType };
     dispatch({ type: 'EDIT_STORE', payload: updatedStore });
     navigate(`/store/${id}`);
   };
@@ -37,6 +39,7 @@ function EditStore() {
               value={store.name}
               onChange={(e) => setStore({ ...store, name: e.target.value })}
             />
+           <TypeSale saleType={saleType} setSaleType={setSaleType} /> 
           </div>
           <div className="grid grid-flow-row gap-2 text-sm">
             <label htmlFor="description">Email</label>

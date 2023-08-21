@@ -1,17 +1,14 @@
 import Items from '../../../components/Items/Index';
-// import User from '../../../components/User';
-import Action from '../../../components/actionButtons';
+import Action from '../../../components/Actions/actionButtons';
 import SmartEstate from '../../../components/smartEstate';
 import Testimonials from '../../../components/testimonials';
   
 function HomePage() {
   return (
     <div>
-      {/* <User /> */}
-      <Action />
       <Items />
-      <SmartEstate />
-      <Testimonials />
+      {/* <SmartEstate /> */}
+      {/* <Testimonials /> */}
     </div>
   );
 }

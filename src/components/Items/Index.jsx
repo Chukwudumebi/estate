@@ -1,6 +1,6 @@
 import * as ScrollArea from '@radix-ui/react-scroll-area';
 import { useItems } from '../../context/ItemsContext';
-import ActionsBar from '../Actions/Index';
+import ActionsBar from '../Actions/actionButtons';
 import Item from './item';
 
 function Items() {
@@ -8,11 +8,11 @@ function Items() {
 
   return (
     <ScrollArea.Root
-      className="max-h-3xl lg:max-h-xl mx-auto mt-20 mb-20 h-full w-full  max-w-6xl overflow-hidden rounded-lg bg-slate-200"
+      className="max-h-3xl lg:max-h-xl mx-auto mt-0.5 mb-20 h-full w-full  max-w-6xl overflow-hidden rounded-lg bg-white"
       type="auto"
     >
-      <ScrollArea.Viewport className="flex h-full w-full flex-col">
-        {/* <ActionsBar /> */}
+      <ScrollArea.Viewport className="flex h-full w-full flex-col mb-20">
+        <ActionsBar />
         <div className="mb-8 flex flex-col items-center justify-center  space-y-8">
           <div className="text-3xl text-gray-700">Latest Properties</div>
           <div className="flex flex-row items-center space-x-3 text-xs text-[#696969] ">

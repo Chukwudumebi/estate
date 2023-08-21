@@ -1,4 +1,4 @@
-import List from "./Actions/List";
+import List from "./List";
 
 function Action() {
   return (

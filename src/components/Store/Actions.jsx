@@ -22,8 +22,8 @@ function StoreAction({ storeId }) {
     });
   };
   return (
-    <div className="sticky top-0 z-10 grid h-fit w-full grid-cols-auto-1fr items-center gap-2 border-b border-neutral-100 bg-white p-2">
-      <div className="grid grid-cols-auto-1fr items-center gap-2">
+    <div className="sticky top-0 z-10 grid h-fit w-full grid-cols-auto-1fr justify-center gap-2 border-b border-neutral-100 bg-white p-2">
+      <div className="grid grid-cols-auto-1fr justify-self-start gap-2">
         <div className="aspect-square w-10 overflow-hidden">
           <img src={store.images[0]} alt="" className="aspect-square h-10 overflow-hidden rounded object-cover" />
         </div>
@@ -33,14 +33,6 @@ function StoreAction({ storeId }) {
 
       <div className="justify-self-end">
         <div className="flex items-center space-x-3">
-          <Action
-            tooltip="Edit Listing"
-            onClick={() => {
-              navigate(`/edit-store/${store.id}`);
-            }}
-          >
-            <FaEdit className="text-sky-700 group-hover:text-neutral-100" />
-          </Action>
           <One
             tooltip="Edit Listing"
             onClick={() => {
@@ -49,14 +41,14 @@ function StoreAction({ storeId }) {
           >
             <FaEdit className="text-sky-700 group-hover:text-neutral-100" />
           </One>
-          <Action
+          <One
             tooltip="Add Property"
             onClick={() => {
               navigate(`/store/${store.id}/add-item`);
             }}
           >
             <FaPlus className="text-sky-700 group-hover:text-neutral-100" />
-          </Action>
+          </One>
           <Action
             tooltip="Edit Property"
             isDisabled={selectedItems.length !== 1}

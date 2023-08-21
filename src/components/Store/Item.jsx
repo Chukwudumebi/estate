@@ -11,7 +11,7 @@ function StoreItem({ item }) {
   const { currency } = useCurrency();
   const { data: exchangeRate } = useExchangeRate(currency);
   const { dispatch } = useStoreItems();
-  const { images, description, selected, id, quantity, margin, discount, type, isOnSale } = item;
+  const { images, description, selected, id, quantity, margin, discount, type, isOnSale , name, location, bed, bathtub, dimension} = item;
   let price = '';
   let shippingCost = '';
   try {
@@ -57,23 +57,21 @@ function StoreItem({ item }) {
       </div>
       <div className="grid h-full grid-rows-1fr-auto gap-2 self-start">
         <div>
-          <p className="text-xs line-clamp-3">{description}</p>
-        </div>
-        <div className="flex flex-col self-end">
-          <Tag color={type === 'new' ? 'green' : 'yellow'}>{type}</Tag>
-          <div className="flex flex-row items-end gap-1">
-            <span>{shortId.toUpperCase()}</span>
-            <Itemsearch />
+          <p>
+            <span className="font-bold">{name}</span>
+          </p>
           </div>
+        <div>
+          <p className="text-xs line-clamp-3">{description}</p>
         </div>
       </div>
       <div className="grid grid-cols-auto-1fr content-center gap-4">
         <div className="flex flex-col">
           <span className="font-bold">{price}</span>
-          <span className="">shipping: {shippingCost}</span>
-          <span>Available Quantity: {quantity}</span>
-          <span>Profit Margin: {margin}%</span>
-          <span>Discount: {discount}%</span>
+          {/* <span className="">shipping: {shippingCost}</span> */}
+          {/* <span>Available Quantity: {quantity}</span> */}
+          {/* <span>Profit Margin: {margin}%</span> */}
+          {/* <span>Discount: {discount}%</span> */}
           {/* <div className="flex  items-center gap-2">
             <label className="Label" htmlFor="maxWidth">
               Discount
@@ -83,24 +81,6 @@ function StoreItem({ item }) {
         </div>
 
         <DropdownMenu itemId={id} />
-        {/* <div className="">
-            <div className="flex items-center gap-2">
-              <input type="checkbox" />
-              <span>Add to mailing list</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <input type="checkbox" />
-
-              <span>Place item on sale</span>
-            </div>
-
-            <div className="flex items-center justify-between gap-2">
-              <input type="radio" />
-              New
-              <input type="radio" />
-              Refurbished
-            </div>
-          </div> */}
       </div>
     </div>
   );
@@ -111,6 +91,11 @@ StoreItem.propTypes = {
   item: PropTypes.shape({
     id: PropTypes.string.isRequired,
     images: PropTypes.arrayOf(PropTypes.string).isRequired,
+    name: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    bed: PropTypes.number.isRequired,
+    bathtub: PropTypes.number.isRequired,
+    dimension: PropTypes.number.isRequired,
     description: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     shipping_cost: PropTypes.number.isRequired,

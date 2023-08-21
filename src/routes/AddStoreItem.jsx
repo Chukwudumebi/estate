@@ -24,6 +24,11 @@ export default function AddStoreItems() {
     const item = {
       id: Math.random().toString(36).substring(2, 9),
       storeId,
+      name: data.name,
+      location: data.location,
+      bed: data.bed,
+      bathtub: data.bathtub,
+      dimension: data.dimension,
       description: data.description,
       price: data.price,
       quantity: data.quantity,
@@ -49,15 +54,16 @@ export default function AddStoreItems() {
           onSubmit={handleSubmit}
           autoComplete="off"
         >
+          <TextField label="Name of Property" name="name" placeholder="Enter property Name" type="text" />
           <div className="grid grid-flow-row gap-2 text-sm ">
             <label htmlFor="description">Description</label>
             <textarea name="description" id="description" rows={4} className="w-full rounded bg-slate-100 p-2" />
           </div>
           <TextField label="Price" name="price" placeholder="$" type="number" />
-          {/* <TextField label="Shipping Cost" name="shipping" placeholder="$" type="number" /> */}
-          {/* <TextField label="Quantity" name="quantity" placeholder="Enter Quantity" type="number" /> */}
-          {/* <TextField label="Profit Margin" name="margin" placeholder="%" type="number" /> */}
-          {/* <TextField label="Discount" name="discount" placeholder="%" type="number" /> */}
+          <TextField label="Location" name="location" placeholder="Enter property location" type="text" />
+          <TextField label="Bedrooms" name="bed" placeholder="Enter number of Bedrooms" type="number" />
+          <TextField label="Bathtub" name="bathtub" placeholder="Enter number of Bathtub" type="number" />
+          <TextField label="Dimension" name="dimension" placeholder="Enter dimension" type="number" />
           <RegionFilter />
           <CategoryFilter />
           {/* <div>
