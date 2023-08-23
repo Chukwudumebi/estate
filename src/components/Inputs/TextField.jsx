@@ -10,7 +10,7 @@ function TextField({ label, name, type, placeholder, required, onChange, initial
   };
 
   return (
-    <div>
+    <div className="w-full">
       <label className="text-sm outline-none ring-0" htmlFor={name}>
         {label}
       </label>
@@ -27,6 +27,7 @@ function TextField({ label, name, type, placeholder, required, onChange, initial
     </div>
   );
 }
+
 
 TextField.defaultProps = {
   type: 'text',

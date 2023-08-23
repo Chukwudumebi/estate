@@ -1,18 +1,13 @@
 // Item.js
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBed, faBath, faHome, faExpand, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import { IoCopyOutline } from 'react-icons/io5';
-import { IoMdPaperPlane } from 'react-icons/io';
 import { useCurrency } from '../../context/currencyContext';
 import useExchangeRate from '../../hooks/useExchangeRate';
 import { useItems } from '../../context/ItemsContext';
-
 import ImageDialog from './ImageDialog';
-import Itemsearch from './itemsearch';
 
 function Item({ id }) {
   const { currency } = useCurrency();

@@ -35,7 +35,7 @@ function SelectInput({ options, placeholder, name, onChange }) {
   return (
     <Select.Root name={name} onValueChange={onChange}>
       <Select.Trigger
-        className="text-violet11 hover:bg-mauve3 data-[placeholder]:text-violet9 grid h-[35px] grid-cols-auto-1fr items-center gap-[5px] rounded border border-neutral-200 bg-white px-[15px] text-[13px] leading-none outline-none focus:border-neutral-900"
+        className="w-full text-violet11 hover:bg-mauve3 data-[placeholder]:text-violet9 grid h-[35px] grid-cols-auto-1fr items-center gap-[5px] rounded border border-neutral-200 bg-white px-[15px] text-[13px] leading-none outline-none focus:border-neutral-900"
         aria-label="Food"
       >
         <Select.Value placeholder={placeholder} />
@@ -64,11 +64,6 @@ function SelectInput({ options, placeholder, name, onChange }) {
   );
 }
 
-// SelectInput.propTypes = {
-//   options: PropTypes.arrayOf(PropTypes.shape({ label: PropTypes.string, value: PropTypes.string })).isRequired,
-//   placeholder: PropTypes.string.isRequired,
-//   name: PropTypes.string.isRequired,
-// };
 
 SelectInput.propTypes = {
   options: PropTypes.arrayOf(PropTypes.shape({ label: PropTypes.string, value: PropTypes.string })).isRequired,
