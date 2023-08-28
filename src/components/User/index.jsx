@@ -24,15 +24,15 @@ function User() {
     </div>
 
     <div className="col-start-2 row-start-1 flex flex-row  items-center gap-1 justify-self-end">
-      {/* <h1 className="text-sm font-medium uppercase">{shortID}</h1> */}
-      {/* <CopyToClipboard text={user.id}>
+      <h1 className="text-sm font-medium uppercase">{shortID}</h1>
+      <CopyToClipboard text={user.id}>
         <button
           className="grid aspect-square rounded-full border border-transparent p-1 active:border-sky-500 active:text-sky-500"
           type="button"
         >
           <FaCopy />
         </button>
-      </CopyToClipboard> */}
+      </CopyToClipboard>
       {/* <Search /> */}
     </div>
   </div>

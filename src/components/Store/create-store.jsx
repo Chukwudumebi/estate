@@ -3,18 +3,16 @@ import { Link, useNavigate } from 'react-router-dom';
 import { BsArrowLeftCircle } from 'react-icons/bs';
 import ImageUpload from '../Inputs/ImageUpload';
 import TextField from '../Inputs/TextField';
-import RadioGroup from '../Inputs/RadioGroup';
 import Checkbox from '../Inputs/Checkbox';
 import { useStores } from '../../context/storeContext';
-import CategoryFilter from '../Filters/Category';
-import SaleType from '../Filters/SaleType';
 import TypeSale from '../Filters/TypeSale';
+import ActionsBar  from '../Actions/actionButtons';
 
 export default function CreateStore() {
   const formRef = useRef(null);
   const navigate = useNavigate();
   const [images, setImages] = useState([]);
-  const [saleType, setSaleType] = useState('total');
+  const [saleType, setSaleType] = useState('total')
   const { dispatch } = useStores();
 
   const handleSubmit = (e) => {
@@ -38,9 +36,10 @@ export default function CreateStore() {
     navigate(`/store/${store.id}`);
   };
   return (
-    <div className="h-full pt-24">
+    <div className="min-h-screen pt-20">
       <div className="flex flex-col gap-6 p-4">
         <div className="max-h-3xl lg:max-h-xl mx-auto h-full w-full max-w-6xl overflow-hidden rounded-lg bg-white">
+        <ActionsBar displayList={false} displayHome />
           <form
             className="flex w-full flex-col gap-4 bg-white p-4 shadow"
             ref={formRef}
@@ -71,7 +70,7 @@ export default function CreateStore() {
                     <label className="text-sm outline-none ring-0" htmlFor="description">
                       Address
                     </label>
-                    <textarea name="address" id="address" rows={2} className="w-full rounded bg-slate-100 p-2" />
+                    <textarea name="address" id="address" rows={4} className="w-full rounded bg-slate-100 p-2" />
                   </div>
                 </div>
               </div>

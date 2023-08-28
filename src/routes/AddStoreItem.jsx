@@ -4,10 +4,10 @@ import { BsArrowLeftCircle } from 'react-icons/bs';
 import UploadImage from '../components/Inputs/ImageUpload';
 import TextField from '../components/Inputs/TextField';
 import RegionFilter from '../components/Filters/Region';
-// import RadioGroup from '../components/Inputs/RadioGroup';
 import CategoryFilter from '../components/Filters/Category';
 import user from '../data/user.json';
 import { useStoreItems } from '../context/storeItemsContext';
+import ActionsBar from '../components/Actions/actionButtons';
 
 export default function AddStoreItems() {
   const navigate = useNavigate();
@@ -46,8 +46,9 @@ export default function AddStoreItems() {
   };
 
   return (
-    <div className="min-h-screen w-screen overflow-x-hidden overflow-y-scroll p-4 pt-24 pb-20">
-      <div className="mx-auto h-full max-w-md overflow-hidden rounded-md bg-white">
+    <div className="min-h-screen w-screen overflow-x-hidden overflow-y-scroll p-2 pb-20 pt-36">
+      <div className="mx-auto h-full max-w-6xl overflow-hidden rounded-md bg-white">
+      <ActionsBar displayList={false} displayHome />
         <form
           className="flex w-full flex-col gap-4 bg-white p-4 shadow"
           ref={formRef}
@@ -55,31 +56,35 @@ export default function AddStoreItems() {
           autoComplete="off"
         >
           <TextField label="Name of Property" name="name" placeholder="Enter property Name" type="text" />
-          <div className="grid grid-flow-row gap-2 text-sm ">
-            <label htmlFor="description">Description</label>
-            <textarea name="description" id="description" rows={4} className="w-full rounded bg-slate-100 p-2" />
-          </div>
-          <TextField label="Price" name="price" placeholder="$" type="number" />
-          <TextField label="Location" name="location" placeholder="Enter property location" type="text" />
-          <TextField label="Bedrooms" name="bed" placeholder="Enter number of Bedrooms" type="number" />
-          <TextField label="Bathtub" name="bathtub" placeholder="Enter number of Bathtub" type="number" />
-          <TextField label="Dimension" name="dimension" placeholder="Enter dimension" type="number" />
-          <RegionFilter />
-          <CategoryFilter />
-          {/* <div>
-            <span className="pb-2 text-sm">New or Refurbished?</span>
-            <RadioGroup
-              items={[
-                { value: 'new', label: 'New' },
-                { label: 'Refurbished', value: 'refurbished' },
-              ]}
-              name="type"
-              label="New or Refurbished?"
-            />
-          </div> */}
-
-          <div className="grid grid-flow-row gap-2 text-sm ">
+          <div className="container mx-auto mt-4 flex flex-col space-y-8 md:flex-row md:space-x-4 md:space-y-0">
+            <div className="flex flex-col space-y-4 md:w-1/2">
+              <div className="flex flex-col gap-2 text-sm ">
+                <label htmlFor="description">Description</label>
+                <textarea name="description" id="description" rows={8} className="w-full rounded bg-slate-100 p-2" />
+              </div>
+              <div className="flex w-full flex-col items-center md:flex-row md:space-x-3">
+                <TextField label="Bedrooms" name="bed" placeholder="Enter number of Bedrooms" type="number" />
+                <TextField label="Bathtub" name="bathtub" placeholder="Enter number of Bathtub" type="number" />
+              </div>
+              <div className="flex w-full flex-col items-center md:flex-row md:space-x-3">
+                <TextField label="Dimension" name="dimension" placeholder="Enter dimension" type="number" />
+                <TextField label="Price" name="price" placeholder="$" type="number" />
+              </div>
+            </div>
+            <div className="flex flex-col space-y-4 md:w-1/2">
+              <TextField
+                label="Location"
+                name="location"
+                placeholder="Enter property location"
+                type="text"
+                className="gap-2"
+              />
+              <RegionFilter />
+              <CategoryFilter />
+              <div className="flex flex-col gap-2 text-sm ">
             <UploadImage name="images" onChange={setImages} />
+          </div>
+            </div>
           </div>
 
           <div className="flex flex-row gap-3 py-4 text-sm">

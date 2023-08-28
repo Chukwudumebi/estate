@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react';
 import ImageUpload from '../components/Inputs/ImageUpload';
 import { useStores } from '../context/storeContext';
 import TypeSale from '../components/Filters/TypeSale';
+import ActionsBar from '../components/Actions/actionButtons';
 
 function EditStore() {
   const formRef = useRef(null);
@@ -26,10 +27,12 @@ function EditStore() {
     navigate(`/store/${id}`);
   };
   return (
-    <div className="min-h-screen w-screen overflow-x-hidden overflow-y-scroll p-4 pt-24 pb-20">
-      <div className="m-2 mx-auto h-full max-w-md rounded-md bg-white">
-        <form className="flex w-full flex-col gap-4 p-4" ref={formRef} onSubmit={handleSubmit}>
-          <div className="grid grid-flow-row gap-2 text-sm">
+    <div className="min-h-screen w-screen overflow-x-hidden rounded-md overflow-y-scroll p-4 pt-36 pb-20">
+      <div className="m-2 mx-auto h-full max-w-6xl rounded-md bg-white">
+      <ActionsBar displayList={false} displayHome />
+        <form className="flex w-full flex-col gap-6 p-4" ref={formRef} onSubmit={handleSubmit}>
+        <div className="flex flex-col gap-2 text-sm">
+          <div className="mx-4">
             <label htmlFor="description">Name</label>
             <input
               type="text"
@@ -39,9 +42,15 @@ function EditStore() {
               value={store.name}
               onChange={(e) => setStore({ ...store, name: e.target.value })}
             />
+          </div>
            <TypeSale saleType={saleType} setSaleType={setSaleType} /> 
           </div>
-          <div className="grid grid-flow-row gap-2 text-sm">
+          <div className="flex w-full flex-col md:flex-row items-center md:space-x-3">
+          <div className="mx-5 flex w-full flex-grow flex-col gap-2 text-sm">
+            <ImageUpload name="Property logo" onChange={setImages} images={store.images} />
+          </div>
+          <div className="flex w-full flex-col text-sm">
+          <div className="flex flex-col items-start mr-4">
             <label htmlFor="description">Email</label>
             <input
               type="text"
@@ -52,7 +61,8 @@ function EditStore() {
               onChange={(e) => setStore({ ...store, email: e.target.value })}
             />
           </div>
-          <div className="grid grid-flow-row gap-2 text-sm">
+          <div className="flex w-full flex-col text-sm">
+          <div className="flex flex-col items-start mr-4">
             <label htmlFor="description">Contact</label>
             <input
               type="text"
@@ -64,7 +74,7 @@ function EditStore() {
             />
           </div>
 
-          <div className="relative grid grid-flow-row gap-1 text-sm">
+          <div className="flex flex-col items-start mr-4">
             <label htmlFor="description">Address</label>
             <textarea
               name="description"
@@ -75,11 +85,11 @@ function EditStore() {
               onChange={(e) => setStore({ ...store, address: e.target.value })}
             />
           </div>
-
-          <div className="grid grid-flow-row gap-2 text-sm">
-            <ImageUpload name="Property logo" onChange={setImages} images={store.images} />
           </div>
-          <div className="flex flex-row gap-3 py-4 text-sm">
+          </div>
+          </div>
+         
+          <div className="flex mx-4 flex-row gap-3 py-4 text-sm">
             <Link
               to="/"
               type="button"

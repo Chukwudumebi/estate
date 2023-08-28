@@ -40,51 +40,43 @@ function StoreItem({ item }) {
   }
   const shortId = `${id.slice(0, 6)}...${id.slice(-6)}`;
 
-  return (
-    <div className="grid w-full cursor-pointer grid-cols-auto-1fr-auto gap-4 border-b border-b-slate-200 p-4 hover:bg-slate-300">
-      <div className="justify-content-center grid grid-cols-auto-1fr items-center gap-3">
-        <input
-          type="checkbox"
-          name="select"
-          checked={selected}
-          onChange={() => {
-            dispatch({ type: 'TOGGLE_ITEM', payload: id });
-          }}
-          id=""
-          className="flex h-6 w-6 cursor-pointer appearance-none items-center justify-center rounded-md border border-slate-700 bg-slate-200 outline-none after:hidden after:aspect-square  after:h-6 after:rounded-md after:font-['Font_Awesome_5_Free'] after:text-xs after:font-bold after:text-white after:content-['\f00c'] checked:border-transparent checked:after:grid checked:after:items-center checked:after:justify-center after:checked:bg-sky-500 focus:ring-0"
-        />
-        <ImageDialogs images={images} />
-      </div>
-      <div className="grid h-full grid-rows-1fr-auto gap-2 self-start">
-        <div>
-          <p>
-            <span className="font-bold">{name}</span>
-          </p>
-          </div>
-        <div>
-          <p className="text-xs line-clamp-3">{description}</p>
-        </div>
-      </div>
-      <div className="grid grid-cols-auto-1fr content-center gap-4">
-        <div className="flex flex-col">
-          <span className="font-bold">{price}</span>
-          {/* <span className="">shipping: {shippingCost}</span> */}
-          {/* <span>Available Quantity: {quantity}</span> */}
-          {/* <span>Profit Margin: {margin}%</span> */}
-          {/* <span>Discount: {discount}%</span> */}
-          {/* <div className="flex  items-center gap-2">
-            <label className="Label" htmlFor="maxWidth">
-              Discount
-            </label>
-            <input id="maxWidth" defaultValue="10%" className="w-10" />
-          </div> */}
-        </div>
-
-        <DropdownMenu itemId={id} />
-      </div>
+return(
+<div className="flex flex-col md:flex-row mx-4 p-1 bg-[rgb(244,245,248)] bg-opacity-40 rounded-md md:pl-10 md:mx-8 md:space-y-0 space-y-3 md:space-x-8 my-3">
+  <div className="flex flex-col md:flex-row justify-center items-center gap-3">
+    <input
+      type="checkbox"
+      name="select"
+      checked={selected}
+      onChange={() => {
+        dispatch({ type: 'TOGGLE_ITEM', payload: id });
+      }}
+      id=""
+      className="h-6 w-6 cursor-pointer items-center justify-center rounded-md border border-slate-700 bg-slate-200 outline-none after:hidden after:aspect-square  after:h-6 after:rounded-md after:font-['Font_Awesome_5_Free'] after:text-xs after:font-bold after:text-white after:content-['\f00c']"
+    />
+    <ImageDialogs images={images} />
+  </div>
+    <div className="flex h-min md:max-w-screen-md flex-col items-center md:items-start rounded-lg bg-white">
+      <div className="flex flex-col ml-0 md:mb-6 md:ml-4 md:items-start space-y-1 items-center mt-3 bg-white justify-center">
+        <p className="text-md text-gray-700">
+      <span className="text-md text-gray-700">
+      {name}
+      </span>
+      </p>
+      <p className="text-md text-gray-700 flex flex-col">Description
+  <span className="line-clamp-4 md:w-10/12 bg-blue-200" rows={4}>{description}</span>
+</p> </div>
+<div className="flex md:flex-row flex-col sm:flex-grow items-center py-2 md:py-1 px-16 md:px-0 rounded-b-lg bg-[rgb(244,245,248)] justify-center md:space-x-20 sm:w-full">
+      <span className="font-bold sm:flex-grow flex text-[#8E97AC]">{price}</span>
+      <span className="text-[#8E97AC]">Bedromms: {bed}</span>
+      <span className="text-[#8E97AC]">Bathtub:{bathtub}</span>
+      <span className="text-[#8E97AC]">Dimension:{dimension}</span>
+      <DropdownMenu  itemId={id} />
+</div>
+    
+   
     </div>
-  );
-}
+  </div>
+)      }
 
 // props validation
 StoreItem.propTypes = {

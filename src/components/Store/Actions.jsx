@@ -21,17 +21,16 @@ function StoreAction({ storeId }) {
       dispatch({ type: 'DELETE_ITEM', payload: item.id });
     });
   };
+
   return (
-    <div className="sticky top-0 z-10 grid h-fit w-full grid-cols-auto-1fr justify-center gap-2 border-b border-neutral-100 bg-white p-2">
-      <div className="grid grid-cols-auto-1fr justify-self-start gap-2">
+    <div className="sticky top-0 z-10 flex h-fit w-full justify-between items-center gap-2 border-b border-neutral-100 bg-white p-2">
+      <div className="flex items-center gap-2 flex-grow">
         <div className="aspect-square w-10 overflow-hidden">
           <img src={store.images[0]} alt="" className="aspect-square h-10 overflow-hidden rounded object-cover" />
         </div>
-
-        <span className=" font-semibold">{store.name}</span>
+        <span className="font-semibold">{store.name}</span>
       </div>
-
-      <div className="justify-self-end">
+      <div className="self-end">
         <div className="flex items-center space-x-3">
           <One
             tooltip="Edit Listing"

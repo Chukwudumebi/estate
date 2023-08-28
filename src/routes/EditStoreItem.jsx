@@ -1,9 +1,11 @@
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import React, { useState, useRef } from 'react';
 import TextField from '../components/Inputs/TextField';
-import RadioGroup from '../components/Inputs/RadioGroup';
 import ImageUpload from '../components/Inputs/ImageUpload';
 import { useStoreItems } from '../context/storeItemsContext';
+import RegionFilter from '../components/Filters/Region';
+import CategoryFilter from '../components/Filters/Category';
+import ActionsBar from '../components/Actions/actionButtons';
 
 function EditStoreItems() {
   const formRef = useRef(null);
@@ -23,75 +25,55 @@ function EditStoreItems() {
     navigate(`/store/${storeId}`);
   };
   return (
-    <div className="min-h-screen w-screen overflow-x-hidden overflow-y-scroll p-4 pt-24 pb-20">
-      <div className="m-2 mx-auto h-full max-w-md rounded-md bg-white">
-        <form className="flex w-full flex-col gap-4 p-4" ref={formRef} onSubmit={handleSubmit}>
-          <div className="grid grid-flow-row gap-2 text-sm">
-            <label htmlFor="description">Description</label>
-            <textarea
-              name="description"
-              id="description"
-              rows={8}
-              className="w-full rounded bg-slate-100 p-2"
-              value={item.description}
-              onChange={(e) => setItem({ ...item, description: e.target.value })}
-            />
+    <div className="min-h-screen w-screen overflow-x-hidden overflow-y-scroll p-3 pb-20 pt-36">
+      <div className="m-2 mx-auto h-full max-w-6xl rounded-md bg-white">
+         <ActionsBar displayList={false} displayHome />
+        <form className="flex w-full flex-col gap-4 p-2" ref={formRef} onSubmit={handleSubmit}>
+          <div className="flex flex-col gap-2 text-sm">
+            <TextField label="Name of Property" name="name" placeholder="Enter property Name" type="text" />
+            <div className="container mx-auto mt-4 flex flex-col space-y-8 md:flex-row md:space-x-4 md:space-y-0">
+              <div className="flex flex-col space-y-4 md:w-1/2">
+                <div className="flex flex-col gap-2 text-sm ">
+                  <label htmlFor="description">Description</label>
+                  <textarea
+                    name="description"
+                    id="description"
+                    rows={8}
+                    className="w-full rounded bg-slate-100 p-2"
+                    value={item.description}
+                    onChange={(e) => setItem({ ...item, description: e.target.value })}
+                  />
+                </div>
+                <div className="flex w-full flex-col items-center md:flex-row md:space-x-3">
+                  <TextField label="Bedrooms" name="bed" placeholder="Enter number of Bedrooms" type="number" />
+                  <TextField label="Bathtub" name="bathtub" placeholder="Enter number of Bathtub" type="number" />
+                </div>
+                <div className="flex w-full flex-col items-center md:flex-row md:space-x-3">
+                  <TextField label="Dimension" name="dimension" placeholder="Enter dimension" type="number" />
+                  <TextField
+                    label="Price"
+                    name="price"
+                    placeholder="$"
+                    type="number"
+                    initialValue={item.price}
+                    onChange={(val) => setItem({ ...item, price: parseFloat(val) })}
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col space-y-4 md:w-1/2">
+              <TextField
+                label="Location"
+                name="location"
+                placeholder="Enter property location"
+                type="text"
+                className="gap-2"
+              />
+              <RegionFilter />
+              <CategoryFilter />
+            </div>
+            </div>
           </div>
 
-          <TextField
-            label="Price"
-            name="price"
-            placeholder="$"
-            type="number"
-            initialValue={item.price}
-            onChange={(val) => setItem({ ...item, price: parseFloat(val) })}
-          />
-          {/* <TextField
-            label="Shipping Cost"
-            name="shipping_cost"
-            placeholder="$"
-            type="number"
-            initialValue={item.shipping_cost}
-            onChange={(val) => setItem({ ...item, shipping_cost: parseFloat(val) })}
-          /> */}
-
-          {/* <TextField
-            label="Quantity"
-            name="quantity"
-            placeholder="Enter Quantity"
-            type="number"
-            initialValue={item.quantity}
-            onChange={(val) => setItem({ ...item, quantity: parseInt(val, 10) })}
-          /> */}
-          {/* <TextField
-            label="Profit Margin"
-            name="margin"
-            placeholder="%"
-            type="number"
-            initialValue={item.margin}
-            onChange={(val) => setItem({ ...item, margin: parseFloat(val) })}
-          /> */}
-          <TextField
-            label="Discount"
-            name="discount"
-            placeholder="%"
-            type="number"
-            initialValue={item.discount}
-            onChange={(val) => setItem({ ...item, discount: parseFloat(val) })}
-          />
-          {/* <div>
-            <span className="pb-2 text-sm">New or Refurbished?</span>
-            <RadioGroup
-              items={[
-                { value: 'new', label: 'New' },
-                { label: 'Refurbished', value: 'refurbished' },
-              ]}
-              initialChecked={item.type}
-              name="type"
-              label="New or Refurbished?"
-              onChange={(val) => setItem({ ...item, type: val })}
-            />
-          </div> */}
           <div className="grid grid-flow-row gap-2 text-sm">
             <ImageUpload name="images" onChange={setImages} images={item.images} />
           </div>

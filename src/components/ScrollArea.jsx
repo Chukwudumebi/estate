@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function ScrollArea({ children }) {
   return (
     <Root
-      className="mx-auto h-full max-h-full w-full max-w-3xl overflow-hidden rounded-lg bg-white shadow-lg"
+      className="mx-auto h-full max-h-full w-full max-w-6xl overflow-hidden rounded-lg bg-white shadow-lg"
       type="auto"
     >
       <Viewport className="grid h-full w-full bg-white">{children}</Viewport>
