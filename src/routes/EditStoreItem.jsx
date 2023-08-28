@@ -25,10 +25,10 @@ function EditStoreItems() {
     navigate(`/store/${storeId}`);
   };
   return (
-    <div className="min-h-screen w-screen overflow-x-hidden overflow-y-scroll p-3 pb-20 pt-36">
-      <div className="m-2 mx-auto h-full max-w-6xl rounded-md bg-white">
+    <div className="min-h-screen w-screen overflow-x-hidden overflow-y-scroll p-2 pb-20 pt-36">
+      <div className="mx-auto h-full max-w-6xl overflow-hidden rounded-md bg-white">
          <ActionsBar displayList={false} displayHome />
-        <form className="flex w-full flex-col gap-4 p-2" ref={formRef} onSubmit={handleSubmit}>
+        <form className="flex w-full flex-col gap-4 p-4" ref={formRef} onSubmit={handleSubmit}>
           <div className="flex flex-col gap-2 text-sm">
             <TextField label="Name of Property" name="name" placeholder="Enter property Name" type="text" />
             <div className="container mx-auto mt-4 flex flex-col space-y-8 md:flex-row md:space-x-4 md:space-y-0">
@@ -70,12 +70,11 @@ function EditStoreItems() {
               />
               <RegionFilter />
               <CategoryFilter />
-            </div>
-            </div>
-          </div>
-
-          <div className="grid grid-flow-row gap-2 text-sm">
+              <div className="flex flex-col gap-2 text-sm">
             <ImageUpload name="images" onChange={setImages} images={item.images} />
+          </div>
+            </div>
+            </div>
           </div>
           <div className="flex flex-row gap-3 py-4 text-sm">
             <Link
