@@ -80,7 +80,7 @@ export default function AddStoreItems() {
                 className="gap-2"
               />
               <RegionFilter />
-              <CategoryFilter />
+              <CategoryFilter/>
               <div className="flex flex-col gap-2 text-sm ">
             <UploadImage name="images" onChange={setImages} />
           </div>

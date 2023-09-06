@@ -30,7 +30,7 @@ function EditStoreItems() {
          <ActionsBar displayList={false} displayHome />
         <form className="flex w-full flex-col gap-4 p-4" ref={formRef} onSubmit={handleSubmit}>
           <div className="flex flex-col gap-2 text-sm">
-            <TextField label="Name of Property" name="name" placeholder="Enter property Name" type="text" />
+            <TextField label="Name of Property" name="name" placeholder="Enter property Name" type="text" initialValue={item.name} onChange={(val) => setItem({ ...item, name: val})}/>
             <div className="container mx-auto mt-4 flex flex-col space-y-8 md:flex-row md:space-x-4 md:space-y-0">
               <div className="flex flex-col space-y-4 md:w-1/2">
                 <div className="flex flex-col gap-2 text-sm ">
@@ -45,11 +45,11 @@ function EditStoreItems() {
                   />
                 </div>
                 <div className="flex w-full flex-col items-center md:flex-row md:space-x-3">
-                  <TextField label="Bedrooms" name="bed" placeholder="Enter number of Bedrooms" type="number" />
-                  <TextField label="Bathtub" name="bathtub" placeholder="Enter number of Bathtub" type="number" />
+                  <TextField label="Bedrooms" name="bed" placeholder="Enter number of Bedrooms" type="number" initialValue={item.bed} onChange={(val)=> setItem ({ ...item, bed: parseFloat(val)})}/>
+                  <TextField label="Bathtub" name="bathtub" placeholder="Enter number of Bathtub" type="number" initialValue={item.bathtub} onChange={(val)=> setItem ({ ...item, bathtub: parseFloat(val)})}/>
                 </div>
                 <div className="flex w-full flex-col items-center md:flex-row md:space-x-3">
-                  <TextField label="Dimension" name="dimension" placeholder="Enter dimension" type="number" />
+                  <TextField label="Dimension" name="dimension" placeholder="Enter dimension" type="number" initialValue={item.dimension} onChange={(val) => setItem ({ ...item, dimension: parseFloat(val)})}/>
                   <TextField
                     label="Price"
                     name="price"
@@ -67,6 +67,8 @@ function EditStoreItems() {
                 placeholder="Enter property location"
                 type="text"
                 className="gap-2"
+                initialValue={item.location}
+                onChange={(val) => setItem({ ...item, location: val })}
               />
               <RegionFilter />
               <CategoryFilter />
