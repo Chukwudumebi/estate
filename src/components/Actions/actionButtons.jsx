@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import List from "./List";
+// import PropertySearch from '../PropertySearch';
 import One from './One';
 import { useStores } from '../../context/storeContext';
+import Search from '../Search';
 
-function Action({ displayList, displayHome, displayView}) {
+function Action({ displayList, displayHome, displayView, displaybuy, query, handleInputChange}) {
   const navigate = useNavigate();
   const { stores } = useStores();
   return (
@@ -17,6 +19,19 @@ function Action({ displayList, displayHome, displayView}) {
                 <div className="mb-2 h-fit w-full cursor-pointer rounded-sm border-none px-3 py-3 pr-2 shadow-md hover:text-sky-600 sm:mb-0 sm:w-auto sm:pr-12">
                   <p className="flex flex-row items-center">
                     <List />
+                  </p>
+                </div>
+              )}
+               {displaybuy && (
+                <div className="mb-2 h-fit w-full cursor-pointer rounded-sm border-none px-3 py-3 pr-2 shadow-md hover:text-sky-600 sm:mb-0 sm:w-auto sm:pr-12">
+                  <p className="flex flex-row items-center">
+                    <One 
+                    onClick={() => {
+                      navigate ('/property-search')
+                    }}
+                    >
+                      Buy
+                    </One>
                   </p>
                 </div>
               )}
@@ -33,6 +48,7 @@ function Action({ displayList, displayHome, displayView}) {
                     </p>
               </div>
               )}
+              
                 {displayView && (
               <div className="mb-2 h-fit w-full cursor-pointer rounded-sm border-none px-3 py-3 pr-2 shadow-md hover:text-sky-600 sm:mb-0 sm:w-auto sm:pr-12">
                 <p className="flex flex-row items-center">
@@ -47,14 +63,12 @@ function Action({ displayList, displayHome, displayView}) {
                     </p>
               </div>
               )}
-              <div className="mb-2 h-fit w-full cursor-pointer rounded-sm border-none px-3 py-3 pr-2 shadow-md hover:text-sky-600 sm:mb-0 sm:w-auto sm:pr-12">
-                <p className="flex flex-row items-center">--</p> 
-                {/* buy 
-              </div> */}
               {/* <div className="mb-2 h-fit w-full cursor-pointer rounded-sm border-none px-3 py-3 pr-2 shadow-md hover:text-sky-600 sm:mb-0 sm:w-auto sm:pr-12">
-                <p className="flex flex-row items-center">--</p>
-                {/* Manage Property */}
-              </div>
+                <p className="flex flex-row items-center">
+                  <Search query={query} handleInputChange={handleInputChange}/>
+                  </p> 
+              
+              </div> */}
               <div className="mb-2 h-fit w-full cursor-pointer rounded-sm border-none px-3 py-3 pr-2 shadow-md hover:text-sky-600 sm:mb-0 sm:w-auto sm:pr-12">
                 <div className="flex flex-row items-center">
                  --
@@ -78,6 +92,9 @@ Action.propTypes = {
   displayList: PropTypes.bool.isRequired, 
   displayHome: PropTypes.bool.isRequired,
   displayView: PropTypes.bool.isRequired,
+  displaybuy: PropTypes.bool.isRequired,
+  query: PropTypes.string.isRequired,
+  handleInputChange: PropTypes.func.isRequired,
 };
 
 export default Action;

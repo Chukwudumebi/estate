@@ -31,7 +31,7 @@ const ageOptions = [
   { label: 'Months', value: 'months' },
 ];
 
-function SaleType({ className }) {
+function SaleType({ className, handleCategoryChange  }) {
   const [saleType, setSaleType] = useState('total');
   const [subdivisions, setSubdivisions] = useState(subdivisionOptions[0]);
   const [selectValue, setSelectValue] = useState(subdivisionOptions[0]);
@@ -56,7 +56,7 @@ function SaleType({ className }) {
       <div className="container mx-auto mt-2 flex flex-col space-y-12 px-4 md:flex-row md:space-x-8 md:space-y-0 ">
         <div className="flex flex-col space-y-12 md:w-1/2">
           <div className="items-center md:items-start">
-            <Category className="" />
+            <Category handleCategoryChange={handleCategoryChange} className="" />
             <div className="flex-grow">
               <label htmlFor="saleType" className="flex-grow text-sm font-medium text-gray-700 ">
                 Sale Type
@@ -174,13 +174,18 @@ function SaleType({ className }) {
     </form>
   );
 }
-
 SaleType.propTypes = {
   className: PropTypes.string,
+  handleCategoryChange: PropTypes.func,
 };
 
 SaleType.defaultProps = {
   className: '',
+  handleCategoryChange: () => {
+     // Empty function to avoid ESLint error
+  }, 
 };
 
+
 export default SaleType;
+

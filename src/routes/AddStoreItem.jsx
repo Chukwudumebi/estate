@@ -13,8 +13,17 @@ export default function AddStoreItems() {
   const navigate = useNavigate();
   const { id: storeId } = useParams();
   const [images, setImages] = useState([]);
+  const [selectedRegion, setSelectedRegion] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const formRef = useRef(null);
   const { dispatch } = useStoreItems();
+
+  const handleRegionChange = (selectedValue) => {
+    setSelectedRegion(selectedValue);
+  };
+  const handleCategoryChange = (selectedValue) => {
+    setSelectedCategory(selectedValue);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     // get form Data
@@ -40,6 +49,11 @@ export default function AddStoreItems() {
       selected: false,
       isOnSale: false,
       user,
+      region: selectedRegion,
+      category: selectedCategory,
+      saleType: data.saleType,
+      subdivisions: data.subdivisions,
+      ownership: data.ownership,
     };
     dispatch({ type: 'CREATE_ITEM', payload: item });
     navigate(`/store/${storeId}`);
@@ -69,6 +83,7 @@ export default function AddStoreItems() {
               <div className="flex w-full flex-col items-center md:flex-row md:space-x-3">
                 <TextField label="Dimension" name="dimension" placeholder="Enter dimension" type="number" />
                 <TextField label="Price" name="price" placeholder="$" type="number" />
+                {/* Saletype total or partial with subdivisions */}
               </div>
             </div>
             <div className="flex flex-col space-y-4 md:w-1/2">
@@ -79,8 +94,9 @@ export default function AddStoreItems() {
                 type="text"
                 className="gap-2"
               />
-              <RegionFilter />
-              <CategoryFilter/>
+              <RegionFilter handleRegionChange={handleRegionChange}/>
+              <CategoryFilter handleCategoryChange={handleCategoryChange}/>
+              
               <div className="flex flex-col gap-2 text-sm ">
             <UploadImage name="images" onChange={setImages} />
           </div>

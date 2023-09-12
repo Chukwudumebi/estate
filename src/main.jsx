@@ -19,6 +19,7 @@ import AddStoreItem from './routes/AddStoreItem';
 import CreateStore from './components/Store/create-store';
 import EditStoreItems from './routes/EditStoreItem';
 import EditStore from './routes/EditStore';
+import PropertySearch from './components/PropertySearch';
 
 const queryClient = new QueryClient();
 
@@ -34,7 +35,9 @@ const router = createBrowserRouter([
         children: [
           {
             path: '/',
-            element: <HomePage />,
+            element: (
+                <HomePage />
+            ),
           },
           {
             path: '/store/:id',
@@ -73,6 +76,10 @@ const router = createBrowserRouter([
         path: '/store/:storeId/edit-item/:itemId',
         element: <EditStoreItems />,
       },
+      {
+        path:'/property-search',
+        element:<PropertySearch />
+      }
     ],
   },
 ]);

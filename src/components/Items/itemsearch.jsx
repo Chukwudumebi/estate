@@ -55,6 +55,7 @@ export default function Itemsearch() {
               {result.map((user) => (
                 <div className="border-b p-3" key={user.id}>
                   {user.username}
+                 
                 </div>
               ))}
               {result.length < 1 ? (

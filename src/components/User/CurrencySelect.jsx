@@ -37,11 +37,15 @@ function CurrencySelect() {
     ...currencyQuery,
     initialData,
   });
-  const options = data.map((curr) => ({
+  // const options = data.map((curr) => ({
+  //   label: curr.code,
+  //   value: curr.code,
+  // }));
+  const options = data ? data.map((curr) => ({
     label: curr.code,
     value: curr.code,
-  }));
-
+  })) : [];
+  
   const handleChange = (selectedCurrency) => {
     if (selectedCurrency) {
       setCurrency(selectedCurrency.value);

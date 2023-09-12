@@ -1,6 +1,6 @@
 [
   {
-    "id": 3,
+    "id": "3",
     "name": "76 Kingsberry, Dr Anderson",
     "images": [
       "https://media.istockphoto.com/id/908964390/photo/oleander-flowers-and-villa-monastero-in-background-lake-como-varenna.jpg?s=1024x1024&w=is&k=20&c=obEDcsbxtkzTxg96sZYg3sdcPoDJYF4DS5dNDRkWZzI="
@@ -10,11 +10,15 @@
     "location": " Rochester, NY 14626",
     "bed": 50,
     "bathtub": 45,
-    "dimension": 217
+    "dimension": 217,
+    "region": "Asia",
+    "category": "apartment",
+    "saleType": "partial",
+    "subdivisions": "8"
   
   },
   {
-    "id": 2,
+    "id": "2",
     "name": "45 Lianne Dr, Greece Street",
     "images": [
       "https://media.istockphoto.com/id/1165384568/photo/europe-modern-complex-of-residential-buildings.jpg?s=1024x1024&w=is&k=20&c=1golptGIidGvd8qhQ7FvKAT2lFl7hIu8KGCJzBT_H8o="
@@ -24,11 +28,15 @@
     "location": " Tasley, VA 23441",
     "bed": 20,
     "bathtub": 17,
-    "dimension": 211
+    "dimension": 211,
+    "region": "Africa",
+    "category": "familyHome",
+    "saleType": "total"
+   
     
   },
   {
-    "id": 1,
+    "id": "1",
     "name": "339 N Oakhurst Dr Apt 303",
     "images": [
       "https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -38,7 +46,10 @@
     "location": "Las Vegas",
     "bed": 30,
     "bathtub": 16,
-    "dimension": 212
-    
+    "dimension": 212,
+    "region": "America",
+    "category": "hotel",
+    "saleType": "partial",
+    "subdivisions": "3"
   }
 ]

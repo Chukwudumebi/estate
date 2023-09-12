@@ -12,7 +12,7 @@ function Items() {
       type="auto"
     >
       <ScrollArea.Viewport className="flex h-full w-full flex-col mb-20">
-      <ActionsBar displayList displayView />
+      <ActionsBar displayList displayView  displaybuy/>
         <div className="mb-8 flex flex-col items-center justify-center  space-y-8">
           <div className="text-3xl text-gray-700">Latest Properties</div>
           <div className="flex flex-row items-center space-x-3 text-xs text-[#696969] ">
