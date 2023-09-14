@@ -3,123 +3,103 @@ import Item from './Items/item';
 import { useItems } from '../context/ItemsContext';
 import Search from './Search';
 import ActionsBar from './Actions/actionButtons';
-import Bedrooms from './Bedrooms';
-import Bathrooms from './Bathrooms';
 import User from './User';
 
-export default function PropertySearch() {
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [query, setQuery] = useState("");
-  const [selectedBedrooms, setSelectedBedrooms] = useState(""); 
-  const [selectedBathrooms, setSelectedBathrooms] = useState(""); 
+function PropertySearch() {
+  const [selectedFilter, setSelectedFilter] = useState('name');
+  const [query, setQuery] = useState('');
+  const [region, setRegion] = useState(''); 
+  const [category, setCategory] = useState(''); 
+
   const { items } = useItems();
 
   const handleInputChange = (event) => {
-    setQuery(event.target.value);
+    const { value } = event.target;
+    setQuery(value);
   };
 
-  const handleChange = (event) => {
-    setSelectedCategory(event.target.value);
+  const handleFilterChange = (event) => {
+    setSelectedFilter(event.target.value);
   };
 
-  const handleBedroomChange = (selectedValue) => {
-    setSelectedBedrooms(selectedValue); 
-  };
-  const handleBathroomChange = (selectedValue) => {
-    setSelectedBathrooms(selectedValue); 
+  const handleRegionChange = (event) => {
+    const { value } = event.target;
+    setRegion(value);
   };
 
-  function filteredData(items, selected, query, selectedRegion, selectedCategory) {
+  const handleCategoryChange = (event) => {
+    const { value } = event.target;
+    setCategory(value);
+  };
+
+  function filteredData(items, selectedFilter, query, region, category) {
     let filteredProducts = items;
-
-    if (query) {
-      const queryWords = query.toLowerCase().split('');
-
+  
+    if (query && selectedFilter !== 'region' && selectedFilter !== 'category') {
+      const queryWords = query.toLowerCase().split(' ');
       filteredProducts = filteredProducts.filter((item) =>
-        queryWords.some((word) =>
-          item.name.toLowerCase().includes(word) ||
-          item.location.toLowerCase().includes(word) ||
-          item.region.toLowerCase().includes(word) ||
-          item.category.toLowerCase().includes(word)
-        )
+        queryWords.some((word) => {
+          const value = item[selectedFilter];
+          if (typeof value === 'string') {
+            return value.toLowerCase().includes(word);
+          }
+          return false;
+        })
       );
     }
-
-    if (selectedRegion) {
-      filteredProducts = filteredProducts.filter(
-        ({ region }) => region.toLowerCase() === selectedRegion.toLowerCase()
-      );
-    }
-    
-    if (selectedCategory) {
-      filteredProducts = filteredProducts.filter(
-        ({ category }) => category.toLowerCase() === selectedCategory.toLowerCase()
-      );
+    if (region && selectedFilter === 'region') {
+      filteredProducts = filteredProducts.filter((item) => item.region.toLowerCase() === region.toLowerCase());
     }
 
- 
-    if (selectedBedrooms) {
-      const [min, max] = selectedBedrooms.split("-"); 
-      filteredProducts = filteredProducts.filter(({ bed }) => {
-        const bedCount = parseInt(bed, 10); 
-        const minCount = parseInt(min, 10);
-        const maxCount = parseInt(max, 10);
-        return bedCount >= minCount && bedCount <= maxCount;
-      });
+    if (category && selectedFilter === 'category') {
+      filteredProducts = filteredProducts.filter((item) => item.category.toLowerCase() === category.toLowerCase());
     }
-    
-    if (selectedBathrooms) {
-      const [min, max] = selectedBathrooms.split("-"); 
-      filteredProducts = filteredProducts.filter(({ bathtub }) => {
-        const bathCount = parseInt(bathtub, 10); 
-        const minCount = parseInt(min, 10);
-        const maxCount = parseInt(max, 10);
-        return bathCount >= minCount && bathCount <= maxCount;
-      });
-    }
-    
-
-    return (
-      <div>
-      <div className="relative flex flex-wrap justify-center gap-4 font-grotesk text-sm mb-20">
-        {filteredProducts.map(({ id, name, location, bed, bathtub, dimension, price }) => (
-          <div key={id} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <div className="overflow-hidden rounded-lg bg-white shadow-md">
-              <Item
-                key={id}
-                id={id}
-                name={name}
-                location={location}
-                bed={bed}
-                bathtub={bathtub}
-                dimension={dimension}
-                price={price}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
-      </div>
-    );
+  
+    return filteredProducts;
   }
-
-  const result = filteredData(items, selectedCategory, query);
+  
+  const result = filteredData(items, selectedFilter, query, region, category);
 
   return (
     <div className="min-h-screen m-48">
-        <User />
+      <User />
       <div className="flex flex-col gap-6 p-4">
         <div className="max-h-3xl lg:max-h-xl mx-auto h-full w-full max-w-6xl overflow-hidden rounded-lg bg-white ">
-          <ActionsBar displayHome  />
-          <div className=" flex-container flex flex-row justify-center space-x-3 items-center mb-2">
-            <Search query={query} handleInputChange={handleInputChange} />
-            <Bedrooms onBedroomChange={handleBedroomChange} /> 
-            <Bathrooms onBathroomChange={handleBathroomChange} /> 
+          <ActionsBar displayHome />
+          <div className="flex-container flex flex-row justify-center space-x-3 items-center mb-2">
+            <Search
+              selectedFilter={selectedFilter}
+              query={query}
+              handleInputChange={handleInputChange}
+              handleFilterChange={handleFilterChange}
+              region={region}
+              handleRegionChange={handleRegionChange} 
+              category={region}
+              handleCategoryChange={handleCategoryChange} 
+            />
           </div>
-          {result}
+          <div className="relative flex flex-wrap justify-center gap-4 font-grotesk text-sm mb-20">
+            {result.map(({ id, name, location, bed, bathtub, dimension, price }) => (
+              <div key={id} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+                <div className="overflow-hidden rounded-lg bg-white shadow-md">
+                  <Item
+                    key={id}
+                    id={id}
+                    name={name}
+                    location={location}
+                    bed={bed}
+                    bathtub={bathtub}
+                    dimension={dimension}
+                    price={price}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
+export default PropertySearch;

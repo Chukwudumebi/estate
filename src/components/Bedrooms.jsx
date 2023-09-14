@@ -31,5 +31,3 @@ Bedrooms.propTypes = {
 };
 
 export default Bedrooms;
-
-
