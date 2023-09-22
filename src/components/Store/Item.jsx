@@ -41,7 +41,7 @@ function StoreItem({ item }) {
   const shortId = `${id.slice(0, 6)}...${id.slice(-6)}`;
 
 return(
-<div className="flex flex-col md:flex-row mx-4 p-1 bg-[rgb(244,245,248)] bg-opacity-40 rounded-md md:pl-10 md:mx-8 md:space-y-0 space-y-3 md:space-x-8 my-3">
+<div className="flex flex-col md:flex-row mx-4 p-1 bg-[rgb(244,245,248)] bg-opacity-40 rounded-b-md md:pl-10 md:mx-8 md:space-y-0 space-y-3 md:space-x-8 my-3">
   <div className="flex flex-col md:flex-row justify-center items-center gap-3">
     <input
       type="checkbox"

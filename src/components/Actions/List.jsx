@@ -12,16 +12,16 @@ function List() {
   return (
 
     <div>
-        <div className="">
-          <One
+       <One
             isDisabled={stores.length > 0}
             onClick={() => {
               navigate('/create-store');
             }}
           >
+        <div className="">
             Create Listing
-          </One>
         </div>
+        </One>
     </div>
   );
 }

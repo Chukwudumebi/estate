@@ -1,6 +1,5 @@
 import * as ScrollArea from '@radix-ui/react-scroll-area';
 import { useItems } from '../../context/ItemsContext';
-import ActionsBar from '../Actions/actionButtons';
 import Item from './item';
 
 function Items() {
@@ -8,13 +7,12 @@ function Items() {
 
   return (
     <ScrollArea.Root
-      className="max-h-3xl lg:max-h-xl mx-auto mt-0.5 mb-20 h-full w-full  max-w-6xl overflow-hidden rounded-lg bg-white"
+      className="max-h-3xl lg:max-h-xl mx-auto mb-20 h-full w-full  max-w-6xl overflow-hidden rounded-b-lg bg-white"
       type="auto"
     >
       <ScrollArea.Viewport className="flex h-full w-full flex-col mb-20">
-      <ActionsBar displayList displayView  displaybuy/>
-        <div className="mb-8 flex flex-col items-center justify-center  space-y-8">
-          <div className="text-3xl text-gray-700">Latest Properties</div>
+        <div className="mb-8 flex flex-col items-center justify-center  space-y-6">
+          <div className="text-3xl mt-3 text-gray-700">Latest Properties</div>
           <div className="flex flex-row items-center space-x-3 text-xs text-[#696969] ">
             <p className="hover:text-gray-700 hover:underline hover:decoration-blue-500 cursor-pointer">APARTMENT</p>
             <p className="hover:text-gray-700 hover:underline hover:decoration-blue-500 cursor-pointer">FAMILY HOME</p>

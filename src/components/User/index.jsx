@@ -1,6 +1,6 @@
 import { FaCopy } from 'react-icons/fa';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import Search from './search';
+// import Search from './search';
 import CurrencySelect from './CurrencySelect';
 
 function User() {
@@ -11,9 +11,10 @@ function User() {
   };
   const shortID = `${user.id.slice(0, 6)}...${user.id.slice(-6)}`;
 
-
   return (
-    <div className="relative mx-auto grid w-full max-w-6xl grid-flow-dense  grid-cols-2 grid-rows-auto-1fr justify-center gap-2 rounded-xl bg-gradient-to-br from-blue-900 to-sky-600 p-3 px-4 text-center text-white">
+    <div >
+    <div className="relative mx-auto grid w-full max-w-6xl grid-flow-dense  grid-cols-2 grid-rows-auto-1fr justify-center gap-2 rounded-xl bg-gradient-to-br from-blue-900 to-sky-600 p-3 px-4 text-center text-white ">
+      
     <h1 className="text-md self-center justify-self-start font-semibold">Hi, @{user.user_name}</h1>
     <div className="col-start-1 flex flex-col items-start self-end">
       <h2 className="text-base font-bold md:text-xl">SQE Smart Real Estate</h2>
@@ -36,6 +37,7 @@ function User() {
       {/* <Search /> */}
     </div>
   </div>
+</div>
   );
 }
 

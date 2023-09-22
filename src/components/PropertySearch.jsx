@@ -61,12 +61,23 @@ function PropertySearch() {
   const result = filteredData(items, selectedFilter, query, region, category);
 
   return (
-    <div className="min-h-screen m-48">
-      <User />
-      <div className="flex flex-col gap-6 p-4">
-        <div className="max-h-3xl lg:max-h-xl mx-auto h-full w-full max-w-6xl overflow-hidden rounded-lg bg-white ">
-          <ActionsBar displayHome />
-          <div className="flex-container flex flex-row justify-center space-x-3 items-center mb-2">
+    // <div className="min-h-screen m-48">
+    <div className="h-screen pt-24 ">
+      <div className="flex flex-col relative">
+        <div
+          className="fixed top-30  left-0 right-0 z-50  flex justify-center" 
+          style={{ zIndex: 1000 }} 
+        >
+          
+          <div className="max-w-6xl w-full"> 
+            <User />
+            <ActionsBar displayHome />
+          </div>
+        </div> 
+      <div className="flex flex-col gap-6 py-4 mt-32">
+        <div className="max-h-3xl lg:max-h-xl mx-auto space-y-2 py-6 h-full w-full max-w-6xl overflow-hidden rounded-lg bg-white ">
+          
+          <div className="flex-container flex flex-row justify-center space-x-3 items-center mb-4">
             <Search
               selectedFilter={selectedFilter}
               query={query}
@@ -98,6 +109,7 @@ function PropertySearch() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
