@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
-// import ToolTip from '../Tooltip';
 
-// function One({ isDisabled, onClick, tooltip, children }) {
+
 function One({ isDisabled, onClick, children }) {
   return (
-    // <ToolTip text={tooltip}>
+ 
       <button
         className={`${
           isDisabled
@@ -16,7 +15,7 @@ function One({ isDisabled, onClick, children }) {
       >
         {children}
       </button>
-    // </ToolTip>
+   
   );
 }
 
@@ -27,7 +26,7 @@ One.defaultProps = {
 One.propTypes = {
   isDisabled: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
-  // tooltip: PropTypes.string.isRequired,
+
   children: PropTypes.node.isRequired,
 };
 
