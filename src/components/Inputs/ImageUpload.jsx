@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
+// ImageUpload component definition
 function ImageUpload({ name, maxFiles, maxSize, onChange, images }) {
   const [previews, setPreviews] = useState([]);
   const [isDragging, setIsDragging] = useState(false);
   const [fileList, setFileList] = useState([]);
 
+  // Handlers for drag and drop events
   const handleDragEnter = () => {
     setIsDragging(true);
   };
@@ -19,6 +21,7 @@ function ImageUpload({ name, maxFiles, maxSize, onChange, images }) {
     setIsDragging(false);
   };
 
+  // Effect hook to fetch images and set file list
   useEffect(() => {
     const fetchImage = async (url) => {
       const response = await fetch(url);
@@ -79,6 +82,7 @@ function ImageUpload({ name, maxFiles, maxSize, onChange, images }) {
             multiple
           />
         </div>
+        {/* Preview area */}
         <div className="grid h-40 grid-cols-2 grid-rows-2 gap-2 sm:h-44">
           {previews.slice(0, 4).map((preview, index) => (
             <div key={preview} className="relative h-full w-full overflow-hidden rounded shadow">

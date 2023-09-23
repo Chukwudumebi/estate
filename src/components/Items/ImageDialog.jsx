@@ -5,16 +5,22 @@ import { FaTimes } from 'react-icons/fa';
 
 export default function ImageDialog({ images, name }) {
   const [selectedImage, setSelectedImage] = useState(images[0]);
+    // Maximum number of visible images
   const maxVisibleImages = 5;
+  // Remaining images after the visible ones
   const remainingImages = images.slice(maxVisibleImages);
+  // Visible images
   const visibleImages = images.slice(0, maxVisibleImages);
+  // Ref for the remaining images container
   const remainingImagesContainerRef = useRef(null);
+  // State for showing remaining images
   const [showRemainingImages, setShowRemainingImages] = useState(false);
 
   const handleClick = (image) => {
     setSelectedImage(image);
   };
-
+  
+ // Function to handle click on remaining images
   const handleRemainingImagesClick = () => {
     setShowRemainingImages(true);
   };
